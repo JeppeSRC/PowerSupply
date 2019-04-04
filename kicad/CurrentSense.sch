@@ -1,4 +1,5 @@
 EESchema Schematic File Version 4
+LIBS:PowerSupply-cache
 EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
@@ -266,81 +267,50 @@ Connection ~ 6000 3500
 $Comp
 L Device:R R?
 U 1 1 5CA3F720
-P 5250 4500
+P 5100 4500
 AR Path="/5CA3F720" Ref="R?"  Part="1" 
 AR Path="/5CA3E8E1/5CA3F720" Ref="R3"  Part="1" 
-F 0 "R3" V 5043 4500 50  0000 C CNN
-F 1 "51k2" V 5134 4500 50  0000 C CNN
-F 2 "" V 5180 4500 50  0001 C CNN
-F 3 "~" H 5250 4500 50  0001 C CNN
-	1    5250 4500
-	0    1    1    0   
-$EndComp
-$Comp
-L Device:R R?
-U 1 1 5CA3F727
-P 4950 4500
-AR Path="/5CA3F727" Ref="R?"  Part="1" 
-AR Path="/5CA3E8E1/5CA3F727" Ref="R2"  Part="1" 
-F 0 "R2" V 4743 4500 50  0000 C CNN
-F 1 "51k2" V 4834 4500 50  0000 C CNN
-F 2 "" V 4880 4500 50  0001 C CNN
-F 3 "~" H 4950 4500 50  0001 C CNN
-	1    4950 4500
+F 0 "R3" V 4893 4500 50  0000 C CNN
+F 1 "82k5" V 4984 4500 50  0000 C CNN
+F 2 "" V 5030 4500 50  0001 C CNN
+F 3 "~" H 5100 4500 50  0001 C CNN
+	1    5100 4500
 	0    1    1    0   
 $EndComp
 $Comp
 L power:GNDREF #PWR?
 U 1 1 5CA3F72E
-P 4750 4600
+P 4900 4600
 AR Path="/5CA3F72E" Ref="#PWR?"  Part="1" 
 AR Path="/5CA3E8E1/5CA3F72E" Ref="#PWR09"  Part="1" 
-F 0 "#PWR09" H 4750 4350 50  0001 C CNN
-F 1 "GNDREF" H 4755 4427 50  0001 C CNN
-F 2 "" H 4750 4600 50  0001 C CNN
-F 3 "" H 4750 4600 50  0001 C CNN
-	1    4750 4600
+F 0 "#PWR09" H 4900 4350 50  0001 C CNN
+F 1 "GNDREF" H 4905 4427 50  0001 C CNN
+F 2 "" H 4900 4600 50  0001 C CNN
+F 3 "" H 4900 4600 50  0001 C CNN
+	1    4900 4600
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	4800 4500 4750 4500
-Wire Wire Line
-	4750 4500 4750 4600
+	4900 4500 4900 4600
 Wire Wire Line
 	5400 4500 5600 4500
 Wire Wire Line
 	5600 4500 5600 4650
-Connection ~ 5400 4500
 Wire Wire Line
 	6000 4500 5800 4500
 Wire Wire Line
 	5800 4500 5800 4650
-Wire Wire Line
-	5800 4650 6000 4650
 $Comp
 L Device:R R?
 U 1 1 5CA3F73C
-P 6000 4800
+P 6000 4950
 AR Path="/5CA3F73C" Ref="R?"  Part="1" 
 AR Path="/5CA3E8E1/5CA3F73C" Ref="R18"  Part="1" 
-F 0 "R18" H 6070 4846 50  0000 L CNN
-F 1 "51k2" H 6070 4755 50  0000 L CNN
-F 2 "" V 5930 4800 50  0001 C CNN
-F 3 "~" H 6000 4800 50  0001 C CNN
-	1    6000 4800
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:R R?
-U 1 1 5CA3F743
-P 6000 5100
-AR Path="/5CA3F743" Ref="R?"  Part="1" 
-AR Path="/5CA3E8E1/5CA3F743" Ref="R19"  Part="1" 
-F 0 "R19" H 6070 5146 50  0000 L CNN
-F 1 "51k2" H 6070 5055 50  0000 L CNN
-F 2 "" V 5930 5100 50  0001 C CNN
-F 3 "~" H 6000 5100 50  0001 C CNN
-	1    6000 5100
+F 0 "R18" H 6070 4996 50  0000 L CNN
+F 1 "82k5" H 6070 4905 50  0000 L CNN
+F 2 "" V 5930 4950 50  0001 C CNN
+F 3 "~" H 6000 4950 50  0001 C CNN
+	1    6000 4950
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
@@ -442,7 +412,6 @@ F 3 "http://www.ti.com/lit/ds/symlink/opa4196.pdf" H 5800 5100 50  0001 C CNN
 	1    5700 4800
 	0    -1   1    0   
 $EndComp
-Connection ~ 5800 4650
 Wire Wire Line
 	5400 3500 4550 3500
 Text HLabel 4550 3500 0    50   Input ~ 0
@@ -484,4 +453,18 @@ Wire Wire Line
 Connection ~ 6100 4200
 Wire Wire Line
 	5400 3500 5400 4200
+Wire Wire Line
+	5800 4650 6000 4650
+Wire Wire Line
+	6000 4650 6000 4800
+Connection ~ 5800 4650
+Wire Wire Line
+	6000 5100 6000 5250
+Wire Wire Line
+	4900 4500 4950 4500
+Wire Wire Line
+	5400 4500 5250 4500
+Connection ~ 5400 4500
+Text Notes 5200 2500 0    50   ~ 10
+NOTE: These bitches are THT\n
 $EndSCHEMATC

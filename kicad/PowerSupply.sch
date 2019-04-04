@@ -1,4 +1,5 @@
 EESchema Schematic File Version 4
+LIBS:PowerSupply-cache
 EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
@@ -79,12 +80,12 @@ $EndSheet
 $Comp
 L power:VDD #PWR08
 U 1 1 5CA4A3E2
-P 3400 2750
-F 0 "#PWR08" H 3400 2600 50  0001 C CNN
-F 1 "VDD" H 3417 2923 50  0000 C CNN
-F 2 "" H 3400 2750 50  0001 C CNN
-F 3 "" H 3400 2750 50  0001 C CNN
-	1    3400 2750
+P 3400 2700
+F 0 "#PWR08" H 3400 2550 50  0001 C CNN
+F 1 "VDD" H 3417 2873 50  0000 C CNN
+F 2 "" H 3400 2700 50  0001 C CNN
+F 3 "" H 3400 2700 50  0001 C CNN
+	1    3400 2700
 	1    0    0    -1  
 $EndComp
 $Sheet
@@ -110,7 +111,7 @@ F7 "Iread" I L 6100 2950 50
 F8 "Vreg" O L 6100 2850 50 
 $EndSheet
 Wire Wire Line
-	3400 2750 3550 2750
+	3400 2700 3550 2700
 Wire Wire Line
 	4050 2900 4800 2900
 Wire Wire Line
@@ -279,8 +280,6 @@ F 3 "http://www.ti.com/lit/ds/symlink/opa4196.pdf" H 2500 1300 50  0001 C CNN
 $EndComp
 Connection ~ 2450 1250
 Connection ~ 2450 750 
-Text GLabel 2750 2200 2    50   UnSpc ~ 0
-3V3
 Wire Wire Line
 	6700 2850 6900 2850
 Wire Wire Line
@@ -310,4 +309,113 @@ Wire Wire Line
 	5900 3750 5900 3050
 Wire Wire Line
 	5900 3050 6100 3050
+$Comp
+L power:+3V3 #PWR?
+U 1 1 5CA63B89
+P 2750 2200
+F 0 "#PWR?" H 2750 2050 50  0001 C CNN
+F 1 "+3V3" H 2765 2373 50  0000 C CNN
+F 2 "" H 2750 2200 50  0001 C CNN
+F 3 "" H 2750 2200 50  0001 C CNN
+	1    2750 2200
+	1    0    0    -1  
+$EndComp
+$Comp
+L Regulator_Linear:LD1086 U?
+U 1 1 5CA66683
+P 1650 2850
+F 0 "U?" H 1650 3115 50  0000 C CNN
+F 1 "LD1086D2T33" H 1650 3024 50  0000 C CNN
+F 2 "" H 1650 2850 50  0001 C CNN
+F 3 "" V 1650 2850 50  0001 C CNN
+	1    1650 2850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1300 2850 1050 2850
+Wire Wire Line
+	2000 2850 2100 2850
+$Comp
+L power:GNDREF #PWR?
+U 1 1 5CA6668C
+P 1650 3050
+F 0 "#PWR?" H 1650 2800 50  0001 C CNN
+F 1 "GNDREF" H 1655 2877 50  0001 C CNN
+F 2 "" H 1650 3050 50  0001 C CNN
+F 3 "" H 1650 3050 50  0001 C CNN
+	1    1650 3050
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C_Small C?
+U 1 1 5CA66692
+P 1050 2950
+F 0 "C?" H 1142 2996 50  0000 L CNN
+F 1 "10µF" H 1142 2905 50  0000 L CNN
+F 2 "" H 1050 2950 50  0001 C CNN
+F 3 "~" H 1050 2950 50  0001 C CNN
+	1    1050 2950
+	1    0    0    -1  
+$EndComp
+Connection ~ 1050 2850
+Wire Wire Line
+	1050 2850 900  2850
+Wire Wire Line
+	1650 3050 1050 3050
+Connection ~ 1650 3050
+$Comp
+L Device:C_Small C?
+U 1 1 5CA6669D
+P 2100 2950
+F 0 "C?" H 2192 2996 50  0000 L CNN
+F 1 "10µF" H 2192 2905 50  0000 L CNN
+F 2 "" H 2100 2950 50  0001 C CNN
+F 3 "~" H 2100 2950 50  0001 C CNN
+	1    2100 2950
+	1    0    0    -1  
+$EndComp
+Connection ~ 2100 2850
+$Comp
+L Device:C_Small C?
+U 1 1 5CA666A5
+P 2500 2950
+F 0 "C?" H 2592 2996 50  0000 L CNN
+F 1 "100nF" H 2592 2905 50  0000 L CNN
+F 2 "" H 2500 2950 50  0001 C CNN
+F 3 "~" H 2500 2950 50  0001 C CNN
+	1    2500 2950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2100 2850 2500 2850
+Wire Wire Line
+	2500 2850 2750 2850
+Connection ~ 2500 2850
+Wire Wire Line
+	2500 3050 2100 3050
+Connection ~ 2100 3050
+Wire Wire Line
+	2100 3050 1650 3050
+$Comp
+L power:VDD #PWR?
+U 1 1 5CA666B2
+P 900 2850
+F 0 "#PWR?" H 900 2700 50  0001 C CNN
+F 1 "VDD" H 917 3023 50  0000 C CNN
+F 2 "" H 900 2850 50  0001 C CNN
+F 3 "" H 900 2850 50  0001 C CNN
+	1    900  2850
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3V3A #PWR?
+U 1 1 5CA66941
+P 2750 2850
+F 0 "#PWR?" H 2950 2875 50  0001 C CNN
+F 1 "+3V3A" H 2732 3023 50  0000 C CNN
+F 2 "" H 2750 2850 50  0001 C CNN
+F 3 "" H 2750 2850 50  0001 C CNN
+	1    2750 2850
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC

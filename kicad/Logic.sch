@@ -1,4 +1,5 @@
 EESchema Schematic File Version 4
+LIBS:PowerSupply-cache
 EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
@@ -81,134 +82,11 @@ F 3 "~" H 6100 850 50  0001 C CNN
 	1    6100 850 
 	1    0    0    -1  
 $EndComp
-Text GLabel 6100 700  1    50   Input ~ 0
-3V3
-$Comp
-L Device:C_Small C?
-U 1 1 5CA4E47B
-P 5600 2350
-F 0 "C?" V 5829 2350 50  0000 C CNN
-F 1 "100nF" V 5738 2350 50  0000 C CNN
-F 2 "" H 5600 2350 50  0001 C CNN
-F 3 "~" H 5600 2350 50  0001 C CNN
-	1    5600 2350
-	0    -1   -1   0   
-$EndComp
-$Comp
-L power:GNDREF #PWR?
-U 1 1 5CA4E58C
-P 5750 2350
-F 0 "#PWR?" H 5750 2100 50  0001 C CNN
-F 1 "GNDREF" H 5755 2177 50  0001 C CNN
-F 2 "" H 5750 2350 50  0001 C CNN
-F 3 "" H 5750 2350 50  0001 C CNN
-	1    5750 2350
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:C_Small C?
-U 1 1 5CA4E707
-P 5900 2350
-F 0 "C?" V 5671 2350 50  0000 C CNN
-F 1 "100nF" V 5762 2350 50  0000 C CNN
-F 2 "" H 5900 2350 50  0001 C CNN
-F 3 "~" H 5900 2350 50  0001 C CNN
-	1    5900 2350
-	0    1    1    0   
-$EndComp
-Wire Wire Line
-	6000 2350 6000 2500
-Wire Wire Line
-	6000 2500 5600 2500
-$Comp
-L Device:C_Small C?
-U 1 1 5CA4E7BF
-P 5800 2800
-F 0 "C?" V 5571 2800 50  0000 C CNN
-F 1 "100nF" V 5662 2800 50  0000 C CNN
-F 2 "" H 5800 2800 50  0001 C CNN
-F 3 "~" H 5800 2800 50  0001 C CNN
-	1    5800 2800
-	0    1    1    0   
-$EndComp
-Wire Wire Line
-	5700 2800 5700 2900
-$Comp
-L power:GNDREF #PWR?
-U 1 1 5CA4E8C0
-P 5900 2800
-F 0 "#PWR?" H 5900 2550 50  0001 C CNN
-F 1 "GNDREF" H 5905 2627 50  0001 C CNN
-F 2 "" H 5900 2800 50  0001 C CNN
-F 3 "" H 5900 2800 50  0001 C CNN
-	1    5900 2800
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:C_Small C?
-U 1 1 5CA4EF8C
-P 5300 2350
-F 0 "C?" V 5071 2350 50  0000 C CNN
-F 1 "100nF" V 5162 2350 50  0000 C CNN
-F 2 "" H 5300 2350 50  0001 C CNN
-F 3 "~" H 5300 2350 50  0001 C CNN
-	1    5300 2350
-	0    1    1    0   
-$EndComp
-$Comp
-L power:GNDREF #PWR?
-U 1 1 5CA4F150
-P 5200 2350
-F 0 "#PWR?" H 5200 2100 50  0001 C CNN
-F 1 "GNDREF" H 5205 2177 50  0001 C CNN
-F 2 "" H 5200 2350 50  0001 C CNN
-F 3 "" H 5200 2350 50  0001 C CNN
-	1    5200 2350
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	5300 2850 5300 2900
-Wire Wire Line
-	5600 2500 5600 2900
-Wire Wire Line
-	5400 2850 5300 2850
-Wire Wire Line
-	5500 2850 5500 2900
-Wire Wire Line
-	5500 2350 5500 2850
-Connection ~ 5500 2850
-Wire Wire Line
-	5500 2850 5400 2850
-Wire Wire Line
-	5400 2350 5400 2900
 Wire Wire Line
 	5600 6000 5500 6000
 Connection ~ 5500 6000
 Wire Wire Line
 	5500 6000 5400 6000
-Wire Wire Line
-	5700 2350 5750 2350
-Connection ~ 5750 2350
-Wire Wire Line
-	5750 2350 5800 2350
-Text GLabel 5750 2050 1    50   Input ~ 0
-3V3
-Wire Wire Line
-	6050 2050 6050 2350
-Wire Wire Line
-	6050 2350 6000 2350
-Connection ~ 6000 2350
-Wire Wire Line
-	5450 2050 5450 2350
-Wire Wire Line
-	5450 2350 5500 2350
-Wire Wire Line
-	5450 2050 6050 2050
-Connection ~ 5500 2350
-Wire Wire Line
-	5450 2350 5400 2350
-Connection ~ 5450 2350
-Connection ~ 5400 2350
 $Comp
 L Device:Rotary_Encoder_Switch SW?
 U 1 1 5CA53AEC
@@ -287,14 +165,224 @@ F 3 "" H 2900 7550 50  0001 C CNN
 $EndComp
 Text Label 2900 7350 0    50   ~ 0
 ENC1_SW
-Text HLabel 1100 1100 0    50   Input ~ 0
+Text HLabel 7900 1700 0    50   Input ~ 0
 CLIM
-Text HLabel 1100 1200 0    50   Input ~ 0
+Text HLabel 6100 4800 2    50   Input ~ 0
 Vread
-Text HLabel 1100 1300 0    50   Input ~ 0
+Text HLabel 6100 4900 2    50   Input ~ 0
 Iread
-Text HLabel 1100 1450 0    50   Output ~ 0
+Text HLabel 7900 2050 0    50   Output ~ 0
 Iset
-Text HLabel 1100 1550 0    50   Output ~ 0
+Text HLabel 7900 2150 0    50   Output ~ 0
 Vset
+$Comp
+L power:+3V3 #PWR?
+U 1 1 5CA64031
+P 700 750
+F 0 "#PWR?" H 700 600 50  0001 C CNN
+F 1 "+3V3" H 715 923 50  0000 C CNN
+F 2 "" H 700 750 50  0001 C CNN
+F 3 "" H 700 750 50  0001 C CNN
+	1    700  750 
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GNDREF #PWR?
+U 1 1 5CA6406B
+P 700 950
+F 0 "#PWR?" H 700 700 50  0001 C CNN
+F 1 "GNDREF" H 705 777 50  0001 C CNN
+F 2 "" H 700 950 50  0001 C CNN
+F 3 "" H 700 950 50  0001 C CNN
+	1    700  950 
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C_Small C?
+U 1 1 5CA640A5
+P 700 850
+F 0 "C?" H 792 896 50  0000 L CNN
+F 1 "4.7µF" H 792 805 50  0000 L CNN
+F 2 "" H 700 850 50  0001 C CNN
+F 3 "~" H 700 850 50  0001 C CNN
+	1    700  850 
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3V3 #PWR?
+U 1 1 5CA645F8
+P 6100 700
+F 0 "#PWR?" H 6100 550 50  0001 C CNN
+F 1 "+3V3" H 6115 873 50  0000 C CNN
+F 2 "" H 6100 700 50  0001 C CNN
+F 3 "" H 6100 700 50  0001 C CNN
+	1    6100 700 
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C_Small C?
+U 1 1 5CA64B09
+P 1100 850
+F 0 "C?" H 1192 896 50  0000 L CNN
+F 1 "100nF" H 1192 805 50  0000 L CNN
+F 2 "" H 1100 850 50  0001 C CNN
+F 3 "~" H 1100 850 50  0001 C CNN
+	1    1100 850 
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C_Small C?
+U 1 1 5CA64B9D
+P 1500 850
+F 0 "C?" H 1592 896 50  0000 L CNN
+F 1 "100nF" H 1592 805 50  0000 L CNN
+F 2 "" H 1500 850 50  0001 C CNN
+F 3 "~" H 1500 850 50  0001 C CNN
+	1    1500 850 
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C_Small C?
+U 1 1 5CA64BC9
+P 1900 850
+F 0 "C?" H 1992 896 50  0000 L CNN
+F 1 "100nF" H 1992 805 50  0000 L CNN
+F 2 "" H 1900 850 50  0001 C CNN
+F 3 "~" H 1900 850 50  0001 C CNN
+	1    1900 850 
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	700  750  1100 750 
+Connection ~ 700  750 
+Connection ~ 1100 750 
+Wire Wire Line
+	1100 750  1500 750 
+Connection ~ 1500 750 
+Wire Wire Line
+	1500 750  1900 750 
+Wire Wire Line
+	700  950  1100 950 
+Connection ~ 700  950 
+Connection ~ 1100 950 
+Wire Wire Line
+	1100 950  1500 950 
+Connection ~ 1500 950 
+Wire Wire Line
+	1500 950  1900 950 
+Wire Wire Line
+	5300 2900 5400 2900
+Connection ~ 5400 2900
+Wire Wire Line
+	5400 2900 5500 2900
+$Comp
+L power:+3V3 #PWR?
+U 1 1 5CA65E4B
+P 5300 2900
+F 0 "#PWR?" H 5300 2750 50  0001 C CNN
+F 1 "+3V3" H 5315 3073 50  0000 C CNN
+F 2 "" H 5300 2900 50  0001 C CNN
+F 3 "" H 5300 2900 50  0001 C CNN
+	1    5300 2900
+	1    0    0    -1  
+$EndComp
+Connection ~ 5300 2900
+$Comp
+L power:+3V3A #PWR?
+U 1 1 5CA66E83
+P 700 1350
+F 0 "#PWR?" H 900 1375 50  0001 C CNN
+F 1 "+3V3A" H 682 1523 50  0000 C CNN
+F 2 "" H 700 1350 50  0001 C CNN
+F 3 "" H 700 1350 50  0001 C CNN
+	1    700  1350
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C_Small C?
+U 1 1 5CA66EC5
+P 700 1450
+F 0 "C?" H 792 1496 50  0000 L CNN
+F 1 "1µF" H 792 1405 50  0000 L CNN
+F 2 "" H 700 1450 50  0001 C CNN
+F 3 "~" H 700 1450 50  0001 C CNN
+	1    700  1450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C_Small C?
+U 1 1 5CA6715D
+P 1500 1450
+F 0 "C?" H 1592 1496 50  0000 L CNN
+F 1 "10nF" H 1592 1405 50  0000 L CNN
+F 2 "" H 1500 1450 50  0001 C CNN
+F 3 "~" H 1500 1450 50  0001 C CNN
+	1    1500 1450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	700  1350 1100 1350
+Connection ~ 700  1350
+Wire Wire Line
+	700  1550 1100 1550
+$Comp
+L Device:C_Small C?
+U 1 1 5CA67559
+P 1100 1450
+F 0 "C?" H 1192 1496 50  0000 L CNN
+F 1 "100n" H 1192 1405 50  0000 L CNN
+F 2 "" H 1100 1450 50  0001 C CNN
+F 3 "~" H 1100 1450 50  0001 C CNN
+	1    1100 1450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1100 1350 1500 1350
+Connection ~ 1100 1350
+Wire Wire Line
+	1500 1550 1100 1550
+Connection ~ 1100 1550
+$Comp
+L power:GNDREF #PWR?
+U 1 1 5CA67DD7
+P 700 1550
+F 0 "#PWR?" H 700 1300 50  0001 C CNN
+F 1 "GNDREF" H 705 1377 50  0001 C CNN
+F 2 "" H 700 1550 50  0001 C CNN
+F 3 "" H 700 1550 50  0001 C CNN
+	1    700  1550
+	1    0    0    -1  
+$EndComp
+Connection ~ 700  1550
+$Comp
+L Device:C_Small C?
+U 1 1 5CA685B9
+P 2300 850
+F 0 "C?" H 2392 896 50  0000 L CNN
+F 1 "10nF" H 2392 805 50  0000 L CNN
+F 2 "" H 2300 850 50  0001 C CNN
+F 3 "~" H 2300 850 50  0001 C CNN
+	1    2300 850 
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1900 750  2300 750 
+Connection ~ 1900 750 
+Wire Wire Line
+	2300 950  1900 950 
+Connection ~ 1900 950 
+Wire Wire Line
+	5600 2900 5700 2900
+$Comp
+L power:+3V3A #PWR?
+U 1 1 5CA69707
+P 5700 2900
+F 0 "#PWR?" H 5900 2925 50  0001 C CNN
+F 1 "+3V3A" H 5682 3073 50  0000 C CNN
+F 2 "" H 5700 2900 50  0001 C CNN
+F 3 "" H 5700 2900 50  0001 C CNN
+	1    5700 2900
+	1    0    0    -1  
+$EndComp
+Connection ~ 5700 2900
 $EndSCHEMATC
