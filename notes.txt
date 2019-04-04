@@ -1,7 +1,7 @@
 Regulator spec:
 
-    - Voltage Range:        0 - 20.48V
-    - Current Range:        0 - 4.096A
+    - Voltage Range:        0 - 20V
+    - Current Range:        0 - 4A
     - Voltage Precision:    ?
     - Current Precision:    ?
 
