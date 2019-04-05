@@ -309,11 +309,11 @@ struct GPIOx {
 };
 
 
-#define GPIOA ((struct GPIOx*)0x48000000);
-#define GPIOB ((struct GPIOx*)0x48000400);
-#define GPIOC ((struct GPIOx*)0x48000800);
-#define GPIOD ((struct GPIOx*)0x48000C00);
-#define GPIOE ((struct GPIOx*)0x48001000);
-#define GPIOF ((struct GPIOx*)0x48001400);
+#define GPIOA ((struct GPIOx*)0x48000000)
+#define GPIOB ((struct GPIOx*)0x48000400)
+#define GPIOC ((struct GPIOx*)0x48000800)
+#define GPIOD ((struct GPIOx*)0x48000C00)
+#define GPIOE ((struct GPIOx*)0x48001000)
+#define GPIOF ((struct GPIOx*)0x48001400)
 
 #endif
