@@ -1,0 +1,35 @@
+22:05:39 **** Incremental Build of configuration Debug for project MicroCode ****
+make -j8 all 
+Building file: ../startup/startup_stm32.s
+Building file: ../startup/sysmem.c
+Building file: ../src/main.c
+Invoking: MCU GCC Assembler
+Invoking: MCU GCC Compiler
+Invoking: MCU GCC Compiler
+D:\Development\Projects\Electronics\PowerSupply\workspace\MicroCode\bin\Debug
+arm-none-eabi-as -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -g -o "startup/startup_stm32.o" "../startup/startup_stm32.s"
+D:\Development\Projects\Electronics\PowerSupply\workspace\MicroCode\bin\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32 -DSTM32F3 -DSTM32F37 -DSTM32F373C8Tx -DDEBUG -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"startup/sysmem.d" -MT"startup/sysmem.o" -o "startup/sysmem.o" "../startup/sysmem.c"
+D:\Development\Projects\Electronics\PowerSupply\workspace\MicroCode\bin\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32 -DSTM32F3 -DSTM32F37 -DSTM32F373C8Tx -DDEBUG -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+Finished building: ../startup/startup_stm32.s
+ 
+../src/main.c:4:6: warning: return type of 'main' is not 'int' [-Wmain]
+ void main() {
+      ^~~~
+Finished building: ../src/main.c
+ 
+Finished building: ../startup/sysmem.c
+ 
+Building target: MicroCode.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -T"D:/Development/Projects/Electronics/PowerSupply/workspace/MicroCode/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "MicroCode.elf" @"objects.list"   -lm
+Finished building target: MicroCode.elf
+ 
+D:/Program Files (x86)/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.17.0.201812190825/tools/make/make --no-print-directory post-build
+d:/program files (x86)/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.17.0.201812190825/tools/make/sh: syntax error: unexpected "("
+makefile:34: recipe for target 'MicroCode.elf' failed
+make: *** [MicroCode.elf] Error 2
+
+22:05:39 Build Finished (took 499ms)
+
