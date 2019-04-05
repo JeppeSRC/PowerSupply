@@ -302,19 +302,18 @@ struct GPIOx {
 	struct GPIOx_PUPDR pupdr;
 	struct GPIOx_IDR idr;
 	struct GPIOx_ODR odr;
-	struct GPIOx_BSSR bssr;
+	struct GPIOx_BSRR bsrr;
 	unsigned int lockstuffwhichigivezerofucksabout;
 	struct GPIOx_AFR afr;
 	unsigned int somethingthatiprobablydontneed;
 };
 
 
-static struct GPIOx* GPIOA = 0x48000000;
-static struct GPIOx* GPIOB = 0x48000400;
-static struct GPIOx* GPIOC = 0x48000800;
-static struct GPIOx* GPIOD = 0x48000C00;
-static struct GPIOx* GPIOE = 0x48001000;
-static struct GPIOx* GPIOF = 0x48001400;
-
+#define GPIOA ((struct GPIOx*)0x48000000);
+#define GPIOB ((struct GPIOx*)0x48000400);
+#define GPIOC ((struct GPIOx*)0x48000800);
+#define GPIOD ((struct GPIOx*)0x48000C00);
+#define GPIOE ((struct GPIOx*)0x48001000);
+#define GPIOF ((struct GPIOx*)0x48001400);
 
 #endif
