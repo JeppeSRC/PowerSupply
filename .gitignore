@@ -1,2 +1,4 @@
 kicad/*.lib
 kicad/*.bak
+Debug/
+Release/
