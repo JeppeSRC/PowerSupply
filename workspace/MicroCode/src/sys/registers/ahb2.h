@@ -15,21 +15,21 @@ struct GPIOx_MODER {
 	union {
 		struct {
 			unsigned char p0 : 2;
-				unsigned char p1 : 2;
-				unsigned char p2 : 2;
-				unsigned char p3 : 2;
-				unsigned char p4 : 2;
-				unsigned char p5 : 2;
-				unsigned char p6 : 2;
-				unsigned char p7 : 2;
-				unsigned char p8 : 2;
-				unsigned char p9 : 2;
-				unsigned char p10 : 2;
-				unsigned char p11 : 2;
-				unsigned char p12 : 2;
-				unsigned char p13 : 2;
-				unsigned char p14 : 2;
-				unsigned char p15 : 2;
+			unsigned char p1 : 2;
+			unsigned char p2 : 2;
+			unsigned char p3 : 2;
+			unsigned char p4 : 2;
+			unsigned char p5 : 2;
+			unsigned char p6 : 2;
+			unsigned char p7 : 2;
+	    	unsigned char p8 : 2;
+			unsigned char p9 : 2;
+			unsigned char p10 : 2;
+			unsigned char p11 : 2;
+			unsigned char p12 : 2;
+			unsigned char p13 : 2;
+			unsigned char p14 : 2;
+			unsigned char p15 : 2;
 		};
 
 		unsigned int p : 32;
@@ -83,21 +83,21 @@ struct GPIOx_OSPEEDR {
 	union {
 		struct {
 			unsigned char p0 : 2;
-				unsigned char p1 : 2;
-				unsigned char p2 : 2;
-				unsigned char p3 : 2;
-				unsigned char p4 : 2;
-				unsigned char p5 : 2;
-				unsigned char p6 : 2;
-				unsigned char p7 : 2;
-				unsigned char p8 : 2;
-				unsigned char p9 : 2;
-				unsigned char p10 : 2;
-				unsigned char p11 : 2;
-				unsigned char p12 : 2;
-				unsigned char p13 : 2;
-				unsigned char p14 : 2;
-				unsigned char p15 : 2;
+			unsigned char p1 : 2;
+			unsigned char p2 : 2;
+			unsigned char p3 : 2;
+			unsigned char p4 : 2;
+			unsigned char p5 : 2;
+			unsigned char p6 : 2;
+			unsigned char p7 : 2;
+			unsigned char p8 : 2;
+			unsigned char p9 : 2;
+			unsigned char p10 : 2;
+			unsigned char p11 : 2;
+			unsigned char p12 : 2;
+			unsigned char p13 : 2;
+			unsigned char p14 : 2;
+			unsigned char p15 : 2;
 		};
 
 		unsigned int p : 32;
@@ -117,21 +117,21 @@ struct GPIOx_PUPDR {
 	union {
 		struct {
 			unsigned char p0 : 2;
-				unsigned char p1 : 2;
-				unsigned char p2 : 2;
-				unsigned char p3 : 2;
-				unsigned char p4 : 2;
-				unsigned char p5 : 2;
-				unsigned char p6 : 2;
-				unsigned char p7 : 2;
-				unsigned char p8 : 2;
-				unsigned char p9 : 2;
-				unsigned char p10 : 2;
-				unsigned char p11 : 2;
-				unsigned char p12 : 2;
-				unsigned char p13 : 2;
-				unsigned char p14 : 2;
-				unsigned char p15 : 2;
+			unsigned char p1 : 2;
+			unsigned char p2 : 2;
+			unsigned char p3 : 2;
+			unsigned char p4 : 2;
+			unsigned char p5 : 2;
+			unsigned char p6 : 2;
+			unsigned char p7 : 2;
+			unsigned char p8 : 2;
+			unsigned char p9 : 2;
+			unsigned char p10 : 2;
+			unsigned char p11 : 2;
+			unsigned char p12 : 2;
+			unsigned char p13 : 2;
+			unsigned char p14 : 2;
+			unsigned char p15 : 2;
 		};
 
 		unsigned int p : 32;
@@ -296,15 +296,15 @@ struct GPIOx_AFR {
 
 
 struct GPIOx {
-	struct GPIOx_MODER moder;
-	struct GPIOx_OTYPER otyper;
-	struct GPIOx_OSPEEDR ospeedr;
-	struct GPIOx_PUPDR pupdr;
-	struct GPIOx_IDR idr;
-	struct GPIOx_ODR odr;
-	struct GPIOx_BSRR bsrr;
+	struct GPIOx_MODER MODER;
+	struct GPIOx_OTYPER OTYPER;
+	struct GPIOx_OSPEEDR OSPEEDR;
+	struct GPIOx_PUPDR PUPDR;
+	struct GPIOx_IDR IDR;
+	struct GPIOx_ODR ODR;
+	struct GPIOx_BSRR BSRR;
 	unsigned int lockstuffwhichigivezerofucksabout;
-	struct GPIOx_AFR afr;
+	struct GPIOx_AFR AFR;
 	unsigned int somethingthatiprobablydontneed;
 };
 
