@@ -231,18 +231,18 @@ struct RCC_APB1RSTR {
 	unsigned char reserved3 : 1;
 	unsigned char USART2RST : 1;
 	unsigned char USART3RST : 1;
-	unsigned char reserved3 : 2;
+	unsigned char reserved4 : 2;
 	unsigned char I2C1RST : 1;
 	unsigned char I2C2RST : 1;
 	unsigned char USBRST : 1;
-	unsigned char reserved4 : 1;
+	unsigned char reserved5 : 1;
 	unsigned char CANRST : 1;
 	unsigned char DAC2RST : 1;
-	unsigned char reserved5 : 1;
+	unsigned char reserved6 : 1;
 	unsigned char PWRRST : 1;
 	unsigned char DAC1RST : 1;
 	unsigned char CECRST : 1;
-	unsigned char reserved6 : 1;
+	unsigned char reserved7 : 1;
 };
 
 struct RCC_AHBENR {
@@ -260,9 +260,9 @@ struct RCC_AHBENR {
 	unsigned char IOPDEN : 1;
 	unsigned char IOPEEN : 1;
 	unsigned char IOPFEN : 1;
-	unsigned char reserved3 : 1;
+	unsigned char reserved4 : 1;
 	unsigned char TSCEN : 1;
-	unsigned char reserved4 : 7;
+	unsigned char reserved5 : 7;
 
 };
 
@@ -308,18 +308,18 @@ struct RCC_APB1ENR {
 	unsigned char reserved3 : 1;
 	unsigned char USART2EN : 1;
 	unsigned char USART3EN : 1;
-	unsigned char reserved3 : 2;
+	unsigned char reserved4 : 2;
 	unsigned char I2C1EN : 1;
 	unsigned char I2C2EN : 1;
 	unsigned char USBEN : 1;
-	unsigned char reserved4 : 1;
+	unsigned char reserved5 : 1;
 	unsigned char CANEN : 1;
 	unsigned char DAC2EN : 1;
-	unsigned char reserved5 : 1;
+	unsigned char reserved6 : 1;
 	unsigned char PWREN : 1;
 	unsigned char DAC1EN : 1;
 	unsigned char CECEN : 1;
-	unsigned char reserved6 : 1;
+	unsigned char reserved7 : 1;
 };
 
 struct RCC_BDCR {
@@ -384,8 +384,8 @@ struct RCCx {
 	struct RCC_CR CR;
 	struct RCC_CFGR CFGR;
 	struct RCC_CIR CIR;
-	struct RCC_APB2RST APB2RST;
-	struct RCC_APB1RST APB1RST;
+	struct RCC_APB2RSTR APB2RSTR;
+	struct RCC_APB1RSTR APB1RSTR;
 	struct RCC_AHBENR AHBENR;
 	struct RCC_APB2ENR APB2ENR;
 	struct RCC_APB1ENR APB1ENR;
