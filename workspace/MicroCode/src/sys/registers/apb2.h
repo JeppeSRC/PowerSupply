@@ -105,7 +105,7 @@ struct COMPx {
 	struct COMP_CSR CSR;
 };
 
-#define COMP ((struct COMPx*)0x40010000 + sizeof(SYSCFGx))
+#define COMP ((struct COMPx*)0x4001001C)
 
 #pragma endregion
 
