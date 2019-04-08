@@ -33,7 +33,7 @@ struct PWRx {
 	struct PWR_CSR CSR;
 };
 
-#define ((struct PWRx*)0x40007000)
+#define PWR ((struct PWRx*)0x40007000)
 
 #pragma endregion
 
