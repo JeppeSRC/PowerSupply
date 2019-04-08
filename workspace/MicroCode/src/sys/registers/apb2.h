@@ -72,6 +72,8 @@ struct SYSCFGx {
 	struct SYSCFG_CFGR2 CFGR2;
 };
 
+#define SYSCFG ((struct SYSCFGx*)0x40010000)
+
 #pragma endregion
 
 
