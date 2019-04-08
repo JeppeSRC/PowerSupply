@@ -76,5 +76,37 @@ struct SYSCFGx {
 
 #pragma endregion
 
+#pragma region COMP
+
+struct COMP_CSR {
+	unsigned char COMP1EN : 1;
+	unsigned char COMP1_INP_DAC : 1;
+	unsigned char COMP1MODE : 2;
+	unsigned char COMP1INSEL : 3;
+	unsigned char reserved : 1;
+	unsigned char COMP1OUTSEL : 3;
+	unsigned char COMP1POL : 1;
+	unsigned char COMP1HYST : 2;
+	unsigned char COMP1OUT : 1;
+	unsigned char COMP1LOCK : 1;
+	unsigned char COMP2EN : 1;
+	unsigned char reserved2 : 1;
+	unsigned char COMP2MODE : 2;
+	unsigned char COMP2INSEL : 3;
+	unsigned char WNDWEN : 1;
+	unsigned char COMP2OUTSEL : 3;
+	unsigned char COMP2POL : 1;
+	unsigned char COMP2HYST : 2;
+	unsigned char COMP2OUT : 1;
+	unsigned char COMP2LOCK : 1;
+};
+
+struct COMPx {
+	struct COMP_CSR CSR;
+};
+
+#define COMP ((struct COMPx*)0x40010000 + sizeof(SYSCFGx))
+
+#pragma endregion
 
 #endif
