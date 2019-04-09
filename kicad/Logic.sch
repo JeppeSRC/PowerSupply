@@ -165,15 +165,15 @@ F 3 "" H 3500 7550 50  0001 C CNN
 $EndComp
 Text Label 3500 7350 0    50   ~ 0
 ENC1_SW
-Text HLabel 7900 1700 0    50   Input ~ 0
+Text HLabel 4700 5400 0    50   Input ~ 0
 CLIM
 Text HLabel 4700 5100 0    50   Input ~ 0
 Vread
 Text HLabel 4700 5200 0    50   Input ~ 0
 Iread
-Text HLabel 7900 2050 0    50   Output ~ 0
+Text HLabel 6100 3200 2    50   Output ~ 0
 Iset
-Text HLabel 7900 2150 0    50   Output ~ 0
+Text HLabel 6100 3100 2    50   Output ~ 0
 Vset
 $Comp
 L power:+3V3 #PWR?
