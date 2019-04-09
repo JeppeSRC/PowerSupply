@@ -167,9 +167,9 @@ Text Label 3500 7350 0    50   ~ 0
 ENC1_SW
 Text HLabel 7900 1700 0    50   Input ~ 0
 CLIM
-Text HLabel 6100 4800 2    50   Input ~ 0
+Text HLabel 4700 5100 0    50   Input ~ 0
 Vread
-Text HLabel 6100 4900 2    50   Input ~ 0
+Text HLabel 4700 5200 0    50   Input ~ 0
 Iread
 Text HLabel 7900 2050 0    50   Output ~ 0
 Iset
@@ -385,4 +385,58 @@ F 3 "" H 5700 2900 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Connection ~ 5700 2900
+$Comp
+L Switch:SW_DIP_x04 SW?
+U 1 1 5CAA887C
+P 1200 2350
+F 0 "SW?" H 1200 2817 50  0000 C CNN
+F 1 "SW_DIP_x04" H 1200 2726 50  0000 C CNN
+F 2 "" H 1200 2350 50  0001 C CNN
+F 3 "" H 1200 2350 50  0001 C CNN
+	1    1200 2350
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3V3 #PWR?
+U 1 1 5CAA899E
+P 750 2100
+F 0 "#PWR?" H 750 1950 50  0001 C CNN
+F 1 "+3V3" H 765 2273 50  0000 C CNN
+F 2 "" H 750 2100 50  0001 C CNN
+F 3 "" H 750 2100 50  0001 C CNN
+	1    750  2100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	750  2100 750  2150
+Wire Wire Line
+	750  2150 900  2150
+Text Label 4700 3300 2    50   ~ 0
+BOOT0
+Text Label 1500 2150 0    50   ~ 0
+BOOT0
+$Comp
+L Device:R R?
+U 1 1 5CAA99AF
+P 4150 3450
+F 0 "R?" H 4220 3496 50  0000 L CNN
+F 1 "50k" H 4220 3405 50  0000 L CNN
+F 2 "" V 4080 3450 50  0001 C CNN
+F 3 "~" H 4150 3450 50  0001 C CNN
+	1    4150 3450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4150 3300 4700 3300
+$Comp
+L power:GNDREF #PWR?
+U 1 1 5CAAA278
+P 4150 3600
+F 0 "#PWR?" H 4150 3350 50  0001 C CNN
+F 1 "GNDREF" H 4155 3427 50  0000 C CNN
+F 2 "" H 4150 3600 50  0001 C CNN
+F 3 "" H 4150 3600 50  0001 C CNN
+	1    4150 3600
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC

@@ -69,13 +69,13 @@ $EndComp
 Connection ~ 1300 1200
 Connection ~ 1300 700 
 $Sheet
-S 3550 2600 500  450 
+S 3550 2650 500  450 
 U 5CA3E8E1
 F0 "CurrentSense" 50
 F1 "CurrentSense.sch" 50
-F2 "Vin" I L 3550 2700 50 
-F3 "Vout" O R 4050 2700 50 
-F4 "Iread" O R 4050 2850 50 
+F2 "Vin" I L 3550 2750 50 
+F3 "Vout" O R 4050 2750 50 
+F4 "Iread" O R 4050 2900 50 
 $EndSheet
 $Comp
 L power:VDD #PWR08
