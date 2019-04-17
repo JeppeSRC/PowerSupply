@@ -1,6 +1,8 @@
 #ifndef SYS_REGISTERS_APB1_H_
 #define SYS_REGISTERS_APB1_H_
 
+#include "timer.h"
+
 #pragma region PWR
 
 struct PWR_CR {
