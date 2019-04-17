@@ -330,47 +330,11 @@ F 3 "~" H 5850 5500 50  0001 C CNN
 	1    5850 5500
 	1    0    0    -1  
 $EndComp
-$Comp
-L Device:R R?
-U 1 1 5CA3F753
-P 6100 5500
-AR Path="/5CA3F753" Ref="R?"  Part="1" 
-AR Path="/5CA3E8E1/5CA3F753" Ref="R20"  Part="1" 
-F 0 "R20" H 6170 5546 50  0000 L CNN
-F 1 "1k" H 6170 5455 50  0000 L CNN
-F 2 "" V 6030 5500 50  0001 C CNN
-F 3 "~" H 6100 5500 50  0001 C CNN
-	1    6100 5500
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:R R?
-U 1 1 5CA3F75A
-P 5600 5500
-AR Path="/5CA3F75A" Ref="R?"  Part="1" 
-AR Path="/5CA3E8E1/5CA3F75A" Ref="R5"  Part="1" 
-F 0 "R5" H 5670 5546 50  0000 L CNN
-F 1 "1k" H 5670 5455 50  0000 L CNN
-F 2 "" V 5530 5500 50  0001 C CNN
-F 3 "~" H 5600 5500 50  0001 C CNN
-	1    5600 5500
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	5850 5250 5850 5350
 Connection ~ 5850 5250
 Wire Wire Line
 	5850 5250 5700 5250
-Wire Wire Line
-	5850 5350 6100 5350
-Connection ~ 5850 5350
-Wire Wire Line
-	5600 5350 5850 5350
-Wire Wire Line
-	5600 5650 5850 5650
-Wire Wire Line
-	5850 5650 6100 5650
-Connection ~ 5850 5650
 $Comp
 L Device:C_Small C?
 U 1 1 5CA3F76A
