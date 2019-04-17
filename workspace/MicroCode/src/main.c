@@ -1,7 +1,8 @@
 
-extern void main();
+extern int main();
 
-void main() {
+#include "sys/registers/registers.h"
 
+int main() {
 
 }
