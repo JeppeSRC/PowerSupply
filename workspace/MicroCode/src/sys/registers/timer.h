@@ -18,8 +18,8 @@ struct TIM_CR2 {
 	unsigned char reserved : 3;
 	unsigned char CDDS : 1;
 	unsigned char MMS : 3;
-	unsigned char TI1S : 1:
-	unsigned int 24;
+	unsigned char TI1S : 1;
+	unsigned int reserved2 : 24;
 };
 
 struct TIM_SMCR {
@@ -50,7 +50,7 @@ struct TIM_DIER {
 	unsigned char CC4DE : 1;
 	unsigned char reserved3 : 1;
 	unsigned char TDE : 1;
-	unsigned char reserved4 : 17;
+	unsigned int reserved4 : 17;
 };
 
 struct TIM_SR {
