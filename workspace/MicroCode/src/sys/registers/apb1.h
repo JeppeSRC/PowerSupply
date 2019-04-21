@@ -155,6 +155,9 @@ struct DACx {
 	struct DAC_SR SR;
 };
 
+#define DAC1 ((struct DACx*)0x40007400)
+#define DAC2 ((struct DACx*)0x40009800)
+
 #pragma endregion
 
 #endif
