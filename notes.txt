@@ -14,5 +14,7 @@ Components:
     - VREF: LM4040-4.1/NOPB (http://www.ti.com/lit/ds/symlink/lm4040-n.pdf)
     - OPAMP: OPA4196IDR (http://www.ti.com/lit/ds/symlink/opa4196.pdf)
     - 3.3V REG: LD1086D2T33 (https://www.mouser.se/datasheet/2/389/ld1086-974047.pdf)
-    - Micro: STM32F373C(x) (https://www.st.com/resource/en/datasheet/stm32f373vc.pdf) (https://www.st.com/content/ccc/resource/technical/document/reference_manual/fa/06/c7/15/3b/2a/4c/f1/DM00041563.pdf/files/DM00041563.pdf/jcr:content/translations/en.DM00041563.pdf)
-
+    - Micro: STM32F373C(x):
+        Datasheet:          https://www.st.com/resource/en/datasheet/stm32f373vc.pdf 
+        Reference Manual:   https://www.st.com/content/ccc/resource/technical/document/reference_manual/fa/06/c7/15/3b/2a/4c/f1/DM00041563.pdf/files/DM00041563.pdf/jcr:content/translations/en.DM00041563.pdf)
+        Programming Manual: https://www.st.com/content/ccc/resource/technical/document/programming_manual/6c/3a/cb/e7/e4/ea/44/9b/DM00046982.pdf/files/DM00046982.pdf/jcr:content/translations/en.DM00046982.pdf
