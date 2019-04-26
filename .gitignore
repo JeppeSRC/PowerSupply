@@ -3,3 +3,6 @@ kicad/*.bak
 Debug/
 Release/
 .metadata/
+*.elf
+*.map
+*/obj/
