@@ -2,6 +2,7 @@ CC=arm-none-eabi-gcc
 AS=arm-none-eabi-as
 
 CFALGS= -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O3 -Wall
+LFLAGS= -nostartfiles -nodefaultlibs -nostdlib -Wl,--gc-sections
 
 INCLUDES= -Isrc/ 
 
@@ -18,7 +19,7 @@ all: $(MAIN)
 
 $(MAIN): obj/$(OBJ) obj/$(AOBJ)
 	@echo Linking
-	@$(CC) $(CFLAGS) $(INCLUDES) --specs=nosys.specs -T"LinkerScript.ld" -Wl,-Map=output.map -o $(MAIN) obj/$(OBJ) obj/$(AOBJ)
+	@$(CC) $(CFLAGS) $(LFLAGS) $(INCLUDES) --specs=nosys.specs -T"LinkerScript.ld" -Wl,-Map=output.map -o $(MAIN) obj/$(OBJ) obj/$(AOBJ)
 
 obj/%.o: %.c
 	@$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
