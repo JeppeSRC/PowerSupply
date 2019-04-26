@@ -1,7 +1,7 @@
 .syntax unified
 .thumb
-.section .isr_vector
 
+.global isr_vector
 .global Reset_Handler
 .global Default_Handler
 
@@ -18,7 +18,9 @@
     .set  \handler, Default_Handler
 .endm
 
-start:
+.section .isr_vector,"a"
+
+isr_vector:
     .word 0x20004000 //intitial SP value top of memory (16K)
     .word Reset_Handler
     IRQ NMI_Handler
