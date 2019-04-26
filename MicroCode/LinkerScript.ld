@@ -40,13 +40,11 @@ SECTIONS
   .bss : {
     . = ALIGN(4);
     _bssstart = .;
-    __bss_start__ = _bssstart;
     *(.bss)
     *(.bss*)
     *(COMMON)
     . = ALIGN(4);
     _bssend = .;
-    __bss_end__ = _bssend;
   } > RAM
 
 }
