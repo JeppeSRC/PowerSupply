@@ -1,0 +1,33 @@
+CC=arm-none-eabi-gcc
+AS=arm-none-eabi-as
+
+CFALGS= -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O3 -Wall
+
+INCLUDES= -Isrc/ 
+
+SRC= $(wildcard src/**/*.c) $(wildcard */*.c) 
+ASRC= $(wildcard src/**/*.asm) $(wildcard */*.asm)
+
+OBJ= $(SRC:.c=.o)
+AOBJ= $(ASRC:.asm=.o)
+
+MAIN= MicroCode.elf
+
+all: $(MAIN)
+	@echo Complete
+
+$(MAIN): obj/$(OBJ) obj/$(AOBJ)
+	@echo Linking
+	@$(CC) $(CFLAGS) $(INCLUDES) --specs=nosys.specs -T"LinkerScript.ld" -Wl,-Map=output.map -o $(MAIN) obj/$(OBJ) obj/$(AOBJ)
+
+obj/%.o: %.c
+	@$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
+	@echo Compiling $<
+
+obj/%.o: %.asm
+	@$(AS) $(CFLAGS) $(INCLUDES) -c $< -o $@
+	@echo Compiling $<
+
+test:
+	@echo $(SRC)
+	@echo $(OBJ)
