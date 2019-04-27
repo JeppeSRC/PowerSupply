@@ -439,4 +439,12 @@ F 3 "" H 4150 3600 50  0001 C CNN
 	1    4150 3600
 	1    0    0    -1  
 $EndComp
+Text Label 6100 3100 0    50   ~ 0
+ENC0_A
+Text Label 6100 3200 0    50   ~ 0
+ENC0_B
+Text Label 6100 3300 0    50   ~ 0
+ENC1_A
+Text Label 6100 3400 0    50   ~ 0
+ENC1_B
 $EndSCHEMATC
