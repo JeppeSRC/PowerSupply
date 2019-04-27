@@ -447,4 +447,8 @@ Text Label 6100 3300 0    50   ~ 0
 ENC1_A
 Text Label 6100 3400 0    50   ~ 0
 ENC1_B
+Text Label 6100 3600 0    50   ~ 0
+ENC0_SW
+Text Label 6100 3800 0    50   ~ 0
+ENC1_SW
 $EndSCHEMATC
