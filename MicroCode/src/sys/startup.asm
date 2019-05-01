@@ -134,26 +134,26 @@ Reset_Handler:
     ldr r0, TEXT_END 
     ldr r1, DATA_START
     ldr r2, DATA_END
-    subs r2, r2, r1
+    subs r2, r1
     beq DataZero
 
 DataCopy:
     ldrb r3, [r0], #1
     strb r3, [r1], #1
-    subs r2, r2, #1
+    subs r2, #1
     bne DataCopy
 
 DataZero:
     ldr r0, BSS_START
     ldr r1, BSS_END
-    subs r1, r1, r0
+    subs r1, r0
     beq Main
 
     eor r2, r2
 
 BssZero:
     strb r2, [r0], #1
-    subs r1, r1, #1
+    subs r1, #1
     bne BssZero
 
 Main:
