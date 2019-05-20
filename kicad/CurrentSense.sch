@@ -1,6 +1,5 @@
 EESchema Schematic File Version 4
-LIBS:PowerSupply-cache
-EELAYER 26 0
+EELAYER 29 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -314,8 +313,6 @@ F 3 "~" H 6000 4950 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	5700 5250 5700 5200
-Wire Wire Line
 	6000 5250 5850 5250
 $Comp
 L Device:R R?
@@ -364,16 +361,16 @@ $EndComp
 Wire Wire Line
 	5850 5650 5850 5800
 $Comp
-L Amplifier_Operational:OPA4196 U?
-U 1 1 5CA3F779
-P 5700 4800
+L symbols:OPA4196 U?
+U 2 1 5CA3F779
+P 5700 4850
 AR Path="/5CA3F779" Ref="U?"  Part="1" 
-AR Path="/5CA3E8E1/5CA3F779" Ref="U1"  Part="1" 
-F 0 "U1" V 5800 5150 50  0000 R CNN
-F 1 "OPA4196" V 5900 5250 50  0000 R CNN
-F 2 "" H 5700 4800 50  0001 C CNN
-F 3 "http://www.ti.com/lit/ds/symlink/opa4196.pdf" H 5800 5100 50  0001 C CNN
-	1    5700 4800
+AR Path="/5CA3E8E1/5CA3F779" Ref="U1"  Part="2" 
+F 0 "U1" V 5800 5200 50  0000 R CNN
+F 1 "OPA4196" V 5900 5300 50  0000 R CNN
+F 2 "" H 5700 4850 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/opa4196.pdf" H 5800 5150 50  0001 C CNN
+	2    5700 4850
 	0    -1   1    0   
 $EndComp
 Wire Wire Line
@@ -394,34 +391,28 @@ Iread
 Wire Wire Line
 	6000 3500 6750 3500
 $Comp
-L Amplifier_Operational:OPA4196 U?
-U 1 1 5CA3CCA9
+L symbols:OPA4196 U?
+U 5 1 5CA3CCA9
 P 6100 3800
 F 0 "U?" V 6250 4100 50  0000 R CNN
 F 1 "OPA4196" V 6350 4200 50  0000 R CNN
 F 2 "" H 6100 3800 50  0001 C CNN
 F 3 "http://www.ti.com/lit/ds/symlink/opa4196.pdf" H 6200 4100 50  0001 C CNN
-	1    6100 3800
+	5    6100 3800
 	0    -1   1    0   
 $EndComp
 Wire Wire Line
-	6000 3500 6000 3650
+	6000 3500 6000 3600
 Wire Wire Line
-	6200 3650 6350 3650
+	6200 3600 6350 3600
 Wire Wire Line
-	6350 3650 6350 4200
-Wire Wire Line
-	6350 4200 6100 4200
-Wire Wire Line
-	6100 4200 6000 4200
-Connection ~ 6100 4200
+	6350 3600 6350 4200
 Wire Wire Line
 	5400 3500 5400 4200
 Wire Wire Line
 	5800 4650 6000 4650
 Wire Wire Line
 	6000 4650 6000 4800
-Connection ~ 5800 4650
 Wire Wire Line
 	6000 5100 6000 5250
 Wire Wire Line
@@ -431,4 +422,10 @@ Wire Wire Line
 Connection ~ 5400 4500
 Text Notes 5200 2500 0    50   ~ 10
 NOTE: These bitches are THT\n
+Wire Wire Line
+	6000 4200 6100 4200
+Connection ~ 5800 4650
+Connection ~ 6100 4200
+Wire Wire Line
+	6100 4200 6350 4200
 $EndSCHEMATC

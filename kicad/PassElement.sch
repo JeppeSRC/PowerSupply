@@ -1,6 +1,5 @@
 EESchema Schematic File Version 4
-LIBS:PowerSupply-cache
-EELAYER 26 0
+EELAYER 29 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -15,7 +14,7 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L Transistor_FET:FQA36P15 U?
+L symbols:FQA36P15 U?
 U 1 1 5CA4A671
 P 5350 1900
 AR Path="/5CA4A671" Ref="U?"  Part="1" 
@@ -27,10 +26,10 @@ F 3 "" H 5300 1900 50  0001 C CNN
 	1    5350 1900
 	0    1    -1   0   
 $EndComp
-Text Label 5350 2200 0    50   ~ 0
+Text Label 5350 2150 0    50   ~ 0
 VReg
 $Comp
-L Transistor_FET:FQA36P15 U?
+L symbols:FQA36P15 U?
 U 1 1 5CA4A679
 P 5350 2500
 AR Path="/5CA4A679" Ref="U?"  Part="1" 
@@ -42,10 +41,10 @@ F 3 "" H 5300 2500 50  0001 C CNN
 	1    5350 2500
 	0    1    -1   0   
 $EndComp
-Text Label 5350 2800 0    50   ~ 0
+Text Label 5350 2750 0    50   ~ 0
 VReg
 $Comp
-L Transistor_FET:FQA36P15 U?
+L symbols:FQA36P15 U?
 U 1 1 5CA4A681
 P 5350 3100
 AR Path="/5CA4A681" Ref="U?"  Part="1" 
@@ -57,10 +56,10 @@ F 3 "" H 5300 3100 50  0001 C CNN
 	1    5350 3100
 	0    1    -1   0   
 $EndComp
-Text Label 5350 3400 0    50   ~ 0
+Text Label 5350 3350 0    50   ~ 0
 VReg
 $Comp
-L Transistor_FET:FQA36P15 U?
+L symbols:FQA36P15 U?
 U 1 1 5CA4A689
 P 5350 3700
 AR Path="/5CA4A689" Ref="U?"  Part="1" 
@@ -72,10 +71,10 @@ F 3 "" H 5300 3700 50  0001 C CNN
 	1    5350 3700
 	0    1    -1   0   
 $EndComp
-Text Label 5350 4000 0    50   ~ 0
+Text Label 5350 3950 0    50   ~ 0
 VReg
 $Comp
-L Transistor_FET:FQA36P15 U?
+L symbols:FQA36P15 U?
 U 1 1 5CA4A691
 P 5350 4300
 AR Path="/5CA4A691" Ref="U?"  Part="1" 
@@ -87,7 +86,7 @@ F 3 "" H 5300 4300 50  0001 C CNN
 	1    5350 4300
 	0    1    -1   0   
 $EndComp
-Text Label 5350 4600 0    50   ~ 0
+Text Label 5350 4550 0    50   ~ 0
 VReg
 Wire Wire Line
 	5050 1900 5150 1900
@@ -139,7 +138,7 @@ Wire Wire Line
 	5700 3100 6150 3100
 Text HLabel 6150 3100 2    50   Output ~ 0
 Vout
-Text HLabel 5350 4600 3    50   Input ~ 0
+Text HLabel 5350 4550 3    50   Input ~ 0
 VReg_set
 $Comp
 L Device:C_Small C9

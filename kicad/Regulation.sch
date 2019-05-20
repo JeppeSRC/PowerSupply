@@ -1,6 +1,5 @@
 EESchema Schematic File Version 4
-LIBS:PowerSupply-cache
-EELAYER 26 0
+EELAYER 29 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -14,9 +13,9 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-Text HLabel 4400 2750 0    50   Input ~ 0
+Text HLabel 4350 2750 0    50   Input ~ 0
 Vout
-Text HLabel 5850 5050 0    50   Input ~ 0
+Text HLabel 5800 5050 0    50   Input ~ 0
 Iset
 Text HLabel 6150 3900 0    50   Input ~ 0
 Vset
@@ -58,24 +57,22 @@ Wire Wire Line
 Wire Wire Line
 	6900 2850 6900 2900
 $Comp
-L Amplifier_Operational:OPA4196 U1
-U 2 1 5CA4D15A
+L symbols:OPA4196 U1
+U 3 1 5CA4D15A
 P 6450 2200
 F 0 "U1" H 6575 1835 50  0000 C CNN
 F 1 "OPA4196" H 6575 1926 50  0000 C CNN
 F 2 "" H 6450 2200 50  0001 C CNN
 F 3 "http://www.ti.com/lit/ds/symlink/opa4196.pdf" H 6550 2500 50  0001 C CNN
-	2    6450 2200
+	3    6450 2200
 	1    0    0    1   
 $EndComp
 Wire Wire Line
 	6850 2200 6850 1750
 Wire Wire Line
-	6850 1750 6300 1750
+	6850 1750 6250 1750
 Wire Wire Line
-	6300 1750 6300 2100
-Wire Wire Line
-	6300 2300 6150 2300
+	6250 1750 6250 2100
 Wire Wire Line
 	6150 2300 6150 2850
 Connection ~ 6150 2850
@@ -83,18 +80,17 @@ Wire Wire Line
 	6150 2850 6400 2850
 Wire Wire Line
 	6850 2200 7150 2200
-Connection ~ 6850 2200
 Text HLabel 7150 2200 2    50   Output ~ 0
 Vread
 $Comp
-L Amplifier_Operational:OPA4196 U1
-U 3 1 5CA4D6FC
+L symbols:OPA4196 U1
+U 2 1 5CA4D6FC
 P 6500 3800
 F 0 "U1" H 6625 4165 50  0000 C CNN
 F 1 "OPA4196" H 6625 4074 50  0000 C CNN
 F 2 "" H 6500 3800 50  0001 C CNN
 F 3 "http://www.ti.com/lit/ds/symlink/opa4196.pdf" H 6600 4100 50  0001 C CNN
-	3    6500 3800
+	2    6500 3800
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
@@ -102,14 +98,14 @@ Wire Wire Line
 Wire Wire Line
 	6150 3700 6350 3700
 $Comp
-L Amplifier_Operational:OPA4196 U1
-U 4 1 5CA4ED48
+L symbols:OPA4196 U1
+U 2 1 5CA4ED48
 P 6100 4950
 F 0 "U1" H 6225 5315 50  0000 C CNN
 F 1 "OPA4196" H 6225 5224 50  0000 C CNN
 F 2 "" H 6100 4950 50  0001 C CNN
 F 3 "http://www.ti.com/lit/ds/symlink/opa4196.pdf" H 6200 5250 50  0001 C CNN
-	4    6100 4950
+	2    6100 4950
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
@@ -156,12 +152,12 @@ Wire Wire Line
 	6800 5500 6800 5750
 Wire Wire Line
 	6800 5750 7050 5750
-Text HLabel 5850 4850 0    50   Input ~ 0
+Text HLabel 5800 4850 0    50   Input ~ 0
 Iread
 Wire Wire Line
 	6900 3800 7000 3800
 Wire Wire Line
-	5850 4850 5950 4850
+	5800 4850 5900 4850
 Text HLabel 8100 3800 2    50   Output ~ 0
 Vreg
 $Comp
@@ -205,7 +201,7 @@ F 3 "" H 7450 4100 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Amplifier_Operational:OPA4196 U?
+L symbols:OPA4196 U?
 U 2 1 5CA456C8
 P 4550 2850
 F 0 "U?" H 4675 3215 50  0000 C CNN
@@ -218,10 +214,9 @@ $EndComp
 Wire Wire Line
 	4950 2850 4950 3150
 Wire Wire Line
-	4950 3150 4400 3150
+	4950 3150 4350 3150
 Wire Wire Line
-	4400 3150 4400 2950
-Connection ~ 4950 2850
+	4350 3150 4350 2950
 Wire Wire Line
 	4950 2850 5450 2850
 Wire Wire Line
@@ -277,5 +272,7 @@ F 3 "" H 7750 4900 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	5850 5050 5950 5050
+	6150 2300 6250 2300
+Wire Wire Line
+	5800 5050 5900 5050
 $EndSCHEMATC

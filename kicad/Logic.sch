@@ -1,6 +1,5 @@
 EESchema Schematic File Version 4
-LIBS:PowerSupply-cache
-EELAYER 26 0
+EELAYER 29 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -288,7 +287,7 @@ F 3 "" H 5300 2900 50  0001 C CNN
 $EndComp
 Connection ~ 5300 2900
 $Comp
-L power:+3V3A #PWR?
+L symbols:+3V3A #PWR?
 U 1 1 5CA66E83
 P 700 1350
 F 0 "#PWR?" H 900 1375 50  0001 C CNN
@@ -322,7 +321,6 @@ F 3 "~" H 1500 1450 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	700  1350 1100 1350
-Connection ~ 700  1350
 Wire Wire Line
 	700  1550 1100 1550
 $Comp
@@ -374,7 +372,7 @@ Connection ~ 1900 950
 Wire Wire Line
 	5600 2900 5700 2900
 $Comp
-L power:+3V3A #PWR?
+L symbols:+3V3A #PWR?
 U 1 1 5CA69707
 P 5700 2900
 F 0 "#PWR?" H 5900 2925 50  0001 C CNN
@@ -384,7 +382,6 @@ F 3 "" H 5700 2900 50  0001 C CNN
 	1    5700 2900
 	1    0    0    -1  
 $EndComp
-Connection ~ 5700 2900
 $Comp
 L Switch:SW_DIP_x04 SW?
 U 1 1 5CAA887C

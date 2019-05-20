@@ -1,6 +1,5 @@
 EESchema Schematic File Version 4
-LIBS:PowerSupply-cache
-EELAYER 26 0
+EELAYER 29 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -56,18 +55,16 @@ Wire Wire Line
 Wire Wire Line
 	850  1050 850  1200
 $Comp
-L Amplifier_Operational:OPA4196 U1
-U 5 1 5CA23A34
+L symbols:OPA4196 U1
+U 1 1 5CA23A34
 P 1250 950
-F 0 "U1" H 1578 996 50  0000 L CNN
-F 1 "OPA4196" H 1578 905 50  0000 L CNN
+F 0 "U1" H 1550 1000 50  0000 L CNN
+F 1 "OPA4196" H 1550 900 50  0000 L CNN
 F 2 "" H 1250 950 50  0001 C CNN
 F 3 "http://www.ti.com/lit/ds/symlink/opa4196.pdf" H 1350 1250 50  0001 C CNN
-	5    1250 950 
+	1    1250 950 
 	1    0    0    -1  
 $EndComp
-Connection ~ 1300 1200
-Connection ~ 1300 700 
 $Sheet
 S 3550 2650 500  450 
 U 5CA3E8E1
@@ -123,7 +120,7 @@ Wire Wire Line
 Wire Wire Line
 	4800 2900 4800 3250
 $Comp
-L Regulator_Linear:LD1086 U2
+L symbols:LD1086 U2
 U 1 1 5CA128DD
 P 1650 2200
 F 0 "U2" H 1650 2465 50  0000 C CNN
@@ -134,9 +131,9 @@ F 3 "" V 1650 2200 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	1300 2200 1050 2200
+	1350 2200 1050 2200
 Wire Wire Line
-	2000 2200 2100 2200
+	1950 2200 2100 2200
 $Comp
 L power:GNDREF #PWR04
 U 1 1 5CA143C1
@@ -226,10 +223,6 @@ F4 "Iread" I L 6100 3850 50
 F5 "Iset" O L 6100 3650 50 
 F6 "Vset" O L 6100 3750 50 
 $EndSheet
-Wire Wire Line
-	2000 750  2450 750 
-Wire Wire Line
-	2450 1250 2000 1250
 $Comp
 L power:VDD #PWR06
 U 1 1 5CA2E77F
@@ -268,18 +261,16 @@ Wire Wire Line
 Wire Wire Line
 	2000 1100 2000 1250
 $Comp
-L Amplifier_Operational:OPA4196 U3
-U 5 1 5CA2E794
+L symbols:OPA4196 U3
+U 1 1 5CA2E794
 P 2400 1000
-F 0 "U3" H 2728 1046 50  0000 L CNN
-F 1 "OPA4196" H 2728 955 50  0000 L CNN
+F 0 "U3" H 2700 1050 50  0000 L CNN
+F 1 "OPA4196" H 2700 950 50  0000 L CNN
 F 2 "" H 2400 1000 50  0001 C CNN
 F 3 "http://www.ti.com/lit/ds/symlink/opa4196.pdf" H 2500 1300 50  0001 C CNN
-	5    2400 1000
+	1    2400 1000
 	1    0    0    -1  
 $EndComp
-Connection ~ 2450 1250
-Connection ~ 2450 750 
 Wire Wire Line
 	6700 2850 6900 2850
 Wire Wire Line
@@ -321,7 +312,7 @@ F 3 "" H 2750 2200 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Regulator_Linear:LD1086 U?
+L symbols:LD1086 U?
 U 1 1 5CA66683
 P 1650 2850
 F 0 "U?" H 1650 3115 50  0000 C CNN
@@ -332,9 +323,9 @@ F 3 "" V 1650 2850 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	1300 2850 1050 2850
+	1350 2850 1050 2850
 Wire Wire Line
-	2000 2850 2100 2850
+	1950 2850 2100 2850
 $Comp
 L power:GNDREF #PWR?
 U 1 1 5CA6668C
@@ -389,9 +380,6 @@ $EndComp
 Wire Wire Line
 	2100 2850 2500 2850
 Wire Wire Line
-	2500 2850 2750 2850
-Connection ~ 2500 2850
-Wire Wire Line
 	2500 3050 2100 3050
 Connection ~ 2100 3050
 Wire Wire Line
@@ -407,15 +395,34 @@ F 3 "" H 900 2850 50  0001 C CNN
 	1    900  2850
 	1    0    0    -1  
 $EndComp
+Wire Wire Line
+	2000 1250 2450 1250
+Wire Wire Line
+	2000 750  2450 750 
 $Comp
-L power:+3V3A #PWR?
-U 1 1 5CA66941
+L symbols:+3V3A #PWR?
+U 1 1 5CE59A05
 P 2750 2850
-F 0 "#PWR?" H 2950 2875 50  0001 C CNN
-F 1 "+3V3A" H 2732 3023 50  0000 C CNN
-F 2 "" H 2750 2850 50  0001 C CNN
-F 3 "" H 2750 2850 50  0001 C CNN
+F 0 "#PWR?" H 2750 3100 50  0001 C CNN
+F 1 "+3V3A" H 2750 3023 50  0000 C CNN
+F 2 "" H 2750 2880 50  0001 C CNN
+F 3 "" H 2750 2880 50  0001 C CNN
 	1    2750 2850
 	1    0    0    -1  
 $EndComp
+Wire Wire Line
+	2500 2850 2750 2850
+Connection ~ 2500 2850
+Connection ~ 2450 1250
+Connection ~ 2450 750 
+Connection ~ 1300 1200
+Connection ~ 1300 700 
+Wire Wire Line
+	5500 1450 5350 1450
+Wire Wire Line
+	5350 1450 5350 1700
+Wire Wire Line
+	5350 1700 4650 1700
+Wire Wire Line
+	4650 1700 4650 1550
 $EndSCHEMATC
