@@ -1,9 +1,12 @@
-kicad/*.lib
 kicad/*.bak
+kicad/*.bck
+kicad/*.dcm
+kicad/fp-info-cache
+kicad/PowerSupply-cache.lib
 Debug/
 Release/
 .metadata/
 *.elf
 *.map
 */obj/
-*.vscode
+*.vscode 
