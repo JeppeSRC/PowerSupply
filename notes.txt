@@ -2,11 +2,15 @@ Regulator spec:
 
     - Voltage Range:        0 - 20V
     - Current Range:        0 - 4A
-    - Voltage Precision:    ?
-    - Current Precision:    ?
+    - Voltage Precision:    10mV
+    - Current Precision:    10mA
 
 Notes:
     Input voltage: 230V/50Hz
+
+Display Layout:
+    0.00V 0.00A
+    0.00V 0.00A
 
 Components:
     - Pass transistor: FQA36P15 ~1.5 C°/W (https://www.mouser.se/datasheet/2/308/FQA36P15-1124509.pdf)
@@ -14,6 +18,9 @@ Components:
     - VREF: LM4040-4.1/NOPB (http://www.ti.com/lit/ds/symlink/lm4040-n.pdf)
     - OPAMP: OPA4196IDR (http://www.ti.com/lit/ds/symlink/opa4196.pdf)
     - 3.3V REG: LD1086D2T33 (https://www.mouser.se/datasheet/2/389/ld1086-974047.pdf)
+    - Display: NHD-0212WH-ATMI-JT
+        Datasheet: https://www.mouser.se/datasheet/2/291/NHD-0212WH-ATMI-JT-35118.pdf
+        ST7066U: http://www.newhavendisplay.com/app_notes/ST7066U.pdf
     - Micro: STM32F373C(x):
         Datasheet:          https://www.st.com/resource/en/datasheet/stm32f373vc.pdf 
         Reference Manual:   https://www.st.com/content/ccc/resource/technical/document/reference_manual/fa/06/c7/15/3b/2a/4c/f1/DM00041563.pdf/files/DM00041563.pdf/jcr:content/translations/en.DM00041563.pdf)
