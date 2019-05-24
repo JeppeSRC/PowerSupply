@@ -769,4 +769,26 @@ F 3 "" H 7950 5800 50  0001 C CNN
 	1    7950 5800
 	0    -1   -1   0   
 $EndComp
+Text Label 6950 4700 0    50   ~ 0
+Display_RS
+Text Label 6950 4800 0    50   ~ 0
+Display_RW
+Text Label 6950 4900 0    50   ~ 0
+Display_E
+Text Label 6950 5000 0    50   ~ 0
+Display_DB0
+Text Label 6950 5100 0    50   ~ 0
+Display_DB1
+Text Label 6950 5200 0    50   ~ 0
+Display_DB2
+Text Label 6950 5300 0    50   ~ 0
+Display_DB3
+Text Label 6950 5400 0    50   ~ 0
+Display_DB4
+Text Label 6950 5500 0    50   ~ 0
+Display_DB5
+Text Label 6950 5600 0    50   ~ 0
+Display_DB6
+Text Label 6950 5700 0    50   ~ 0
+Display_DB7
 $EndSCHEMATC
