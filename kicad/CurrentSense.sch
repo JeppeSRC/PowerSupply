@@ -22,8 +22,9 @@ AR Path="/5CA3F694" Ref="R?"  Part="1"
 AR Path="/5CA3E8E1/5CA3F694" Ref="R1"  Part="1" 
 F 0 "R1" V 5650 2400 50  0000 C CNN
 F 1 "1R" V 5650 2750 50  0000 C CNN
-F 2 "" V 5630 2600 50  0001 C CNN
-F 3 "~" H 5700 2600 50  0001 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0309_L9.0mm_D3.2mm_P12.70mm_Horizontal" V 5630 2600 50  0001 C CNN
+F 3 "https://www.mouser.se/datasheet/2/219/MF-MFS-RK-18760.pdf" H 5700 2600 50  0001 C CNN
+F 4 "MF1/4DC1R00F" H 5700 2600 50  0001 C CNN "MPN"
 	1    5700 2600
 	0    1    1    0   
 $EndComp
@@ -39,8 +40,9 @@ AR Path="/5CA3F69D" Ref="R?"  Part="1"
 AR Path="/5CA3E8E1/5CA3F69D" Ref="R2"  Part="1" 
 F 0 "R2" V 5650 2500 50  0000 C CNN
 F 1 "1R" V 5650 2850 50  0000 C CNN
-F 2 "" V 5630 2700 50  0001 C CNN
-F 3 "~" H 5700 2700 50  0001 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0309_L9.0mm_D3.2mm_P12.70mm_Horizontal" V 5630 2700 50  0001 C CNN
+F 3 "https://www.mouser.se/datasheet/2/219/MF-MFS-RK-18760.pdf" H 5700 2700 50  0001 C CNN
+F 4 "MF1/4DC1R00F" H 5700 2700 50  0001 C CNN "MPN"
 	1    5700 2700
 	0    1    1    0   
 $EndComp
@@ -56,8 +58,9 @@ AR Path="/5CA3F6A6" Ref="R?"  Part="1"
 AR Path="/5CA3E8E1/5CA3F6A6" Ref="R3"  Part="1" 
 F 0 "R3" V 5650 2600 50  0000 C CNN
 F 1 "1R" V 5650 2950 50  0000 C CNN
-F 2 "" V 5630 2800 50  0001 C CNN
-F 3 "~" H 5700 2800 50  0001 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0309_L9.0mm_D3.2mm_P12.70mm_Horizontal" V 5630 2800 50  0001 C CNN
+F 3 "https://www.mouser.se/datasheet/2/219/MF-MFS-RK-18760.pdf" H 5700 2800 50  0001 C CNN
+F 4 "MF1/4DC1R00F" H 5700 2800 50  0001 C CNN "MPN"
 	1    5700 2800
 	0    1    1    0   
 $EndComp
@@ -73,8 +76,9 @@ AR Path="/5CA3F6AF" Ref="R?"  Part="1"
 AR Path="/5CA3E8E1/5CA3F6AF" Ref="R4"  Part="1" 
 F 0 "R4" V 5650 2700 50  0000 C CNN
 F 1 "1R" V 5650 3050 50  0000 C CNN
-F 2 "" V 5630 2900 50  0001 C CNN
-F 3 "~" H 5700 2900 50  0001 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0309_L9.0mm_D3.2mm_P12.70mm_Horizontal" V 5630 2900 50  0001 C CNN
+F 3 "https://www.mouser.se/datasheet/2/219/MF-MFS-RK-18760.pdf" H 5700 2900 50  0001 C CNN
+F 4 "MF1/4DC1R00F" H 5700 2900 50  0001 C CNN "MPN"
 	1    5700 2900
 	0    1    1    0   
 $EndComp
@@ -90,8 +94,9 @@ AR Path="/5CA3F6B8" Ref="R?"  Part="1"
 AR Path="/5CA3E8E1/5CA3F6B8" Ref="R5"  Part="1" 
 F 0 "R5" V 5650 2800 50  0000 C CNN
 F 1 "1R" V 5650 3150 50  0000 C CNN
-F 2 "" V 5630 3000 50  0001 C CNN
-F 3 "~" H 5700 3000 50  0001 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0309_L9.0mm_D3.2mm_P12.70mm_Horizontal" V 5630 3000 50  0001 C CNN
+F 3 "https://www.mouser.se/datasheet/2/219/MF-MFS-RK-18760.pdf" H 5700 3000 50  0001 C CNN
+F 4 "MF1/4DC1R00F" H 5700 3000 50  0001 C CNN "MPN"
 	1    5700 3000
 	0    1    1    0   
 $EndComp
@@ -107,8 +112,9 @@ AR Path="/5CA3F6C1" Ref="R?"  Part="1"
 AR Path="/5CA3E8E1/5CA3F6C1" Ref="R6"  Part="1" 
 F 0 "R6" V 5650 2900 50  0000 C CNN
 F 1 "1R" V 5650 3250 50  0000 C CNN
-F 2 "" V 5630 3100 50  0001 C CNN
-F 3 "~" H 5700 3100 50  0001 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0309_L9.0mm_D3.2mm_P12.70mm_Horizontal" V 5630 3100 50  0001 C CNN
+F 3 "https://www.mouser.se/datasheet/2/219/MF-MFS-RK-18760.pdf" H 5700 3100 50  0001 C CNN
+F 4 "MF1/4DC1R00F" H 5700 3100 50  0001 C CNN "MPN"
 	1    5700 3100
 	0    1    1    0   
 $EndComp
@@ -124,8 +130,9 @@ AR Path="/5CA3F6CA" Ref="R?"  Part="1"
 AR Path="/5CA3E8E1/5CA3F6CA" Ref="R7"  Part="1" 
 F 0 "R7" V 5650 3000 50  0000 C CNN
 F 1 "1R" V 5650 3350 50  0000 C CNN
-F 2 "" V 5630 3200 50  0001 C CNN
-F 3 "~" H 5700 3200 50  0001 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0309_L9.0mm_D3.2mm_P12.70mm_Horizontal" V 5630 3200 50  0001 C CNN
+F 3 "https://www.mouser.se/datasheet/2/219/MF-MFS-RK-18760.pdf" H 5700 3200 50  0001 C CNN
+F 4 "MF1/4DC1R00F" H 5700 3200 50  0001 C CNN "MPN"
 	1    5700 3200
 	0    1    1    0   
 $EndComp
@@ -141,8 +148,9 @@ AR Path="/5CA3F6D3" Ref="R?"  Part="1"
 AR Path="/5CA3E8E1/5CA3F6D3" Ref="R8"  Part="1" 
 F 0 "R8" V 5650 3100 50  0000 C CNN
 F 1 "1R" V 5650 3450 50  0000 C CNN
-F 2 "" V 5630 3300 50  0001 C CNN
-F 3 "~" H 5700 3300 50  0001 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0309_L9.0mm_D3.2mm_P12.70mm_Horizontal" V 5630 3300 50  0001 C CNN
+F 3 "https://www.mouser.se/datasheet/2/219/MF-MFS-RK-18760.pdf" H 5700 3300 50  0001 C CNN
+F 4 "MF1/4DC1R00F" H 5700 3300 50  0001 C CNN "MPN"
 	1    5700 3300
 	0    1    1    0   
 $EndComp
@@ -158,8 +166,9 @@ AR Path="/5CA3F6DC" Ref="R?"  Part="1"
 AR Path="/5CA3E8E1/5CA3F6DC" Ref="R9"  Part="1" 
 F 0 "R9" V 5650 3200 50  0000 C CNN
 F 1 "1R" V 5650 3550 50  0000 C CNN
-F 2 "" V 5630 3400 50  0001 C CNN
-F 3 "~" H 5700 3400 50  0001 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0309_L9.0mm_D3.2mm_P12.70mm_Horizontal" V 5630 3400 50  0001 C CNN
+F 3 "https://www.mouser.se/datasheet/2/219/MF-MFS-RK-18760.pdf" H 5700 3400 50  0001 C CNN
+F 4 "MF1/4DC1R00F" H 5700 3400 50  0001 C CNN "MPN"
 	1    5700 3400
 	0    1    1    0   
 $EndComp
@@ -175,8 +184,9 @@ AR Path="/5CA3F6E5" Ref="R?"  Part="1"
 AR Path="/5CA3E8E1/5CA3F6E5" Ref="R10"  Part="1" 
 F 0 "R10" V 5650 3300 50  0000 C CNN
 F 1 "1R" V 5650 3650 50  0000 C CNN
-F 2 "" V 5630 3500 50  0001 C CNN
-F 3 "~" H 5700 3500 50  0001 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0309_L9.0mm_D3.2mm_P12.70mm_Horizontal" V 5630 3500 50  0001 C CNN
+F 3 "https://www.mouser.se/datasheet/2/219/MF-MFS-RK-18760.pdf" H 5700 3500 50  0001 C CNN
+F 4 "MF1/4DC1R00F" H 5700 3500 50  0001 C CNN "MPN"
 	1    5700 3500
 	0    1    1    0   
 $EndComp
@@ -369,8 +379,9 @@ AR Path="/5CA3F779" Ref="U?"  Part="1"
 AR Path="/5CA3E8E1/5CA3F779" Ref="U1"  Part="3" 
 F 0 "U1" V 5800 5200 50  0000 R CNN
 F 1 "OPA4196" V 5900 5300 50  0000 R CNN
-F 2 "" H 5700 4850 50  0001 C CNN
+F 2 "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm" H 5700 4850 50  0001 C CNN
 F 3 "http://www.ti.com/lit/ds/symlink/opa4196.pdf" H 5800 5150 50  0001 C CNN
+F 4 "OPA4196" H 5700 4850 50  0001 C CNN "MPN"
 	3    5700 4850
 	0    -1   1    0   
 $EndComp
@@ -397,8 +408,9 @@ U 2 1 5CA3CCA9
 P 6100 3800
 F 0 "U1" V 6250 4100 50  0000 R CNN
 F 1 "OPA4196" V 6350 4200 50  0000 R CNN
-F 2 "" H 6100 3800 50  0001 C CNN
+F 2 "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm" H 6100 3800 50  0001 C CNN
 F 3 "http://www.ti.com/lit/ds/symlink/opa4196.pdf" H 6200 4100 50  0001 C CNN
+F 4 "OPA4196" H 6100 3800 50  0001 C CNN "MPN"
 	2    6100 3800
 	0    -1   1    0   
 $EndComp
@@ -428,9 +440,9 @@ Connection ~ 6100 4200
 Wire Wire Line
 	6100 4200 6350 4200
 Text Notes 5400 2350 0    39   ~ 0
-Shunt resistors are 1W THT
+Shunt resistors are at least 1/4W 1% THT
 Text Notes 4650 4850 0    39   ~ 0
 82.5 / 10 = gain of 8.25
 Text Notes 5400 2500 0    39   ~ 0
-4A * 0.1R = 0.4V
+4A * 0.1R = 0.4V\n
 $EndSCHEMATC

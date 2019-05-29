@@ -20,8 +20,9 @@ U 1 1 5CA28159
 P 5350 1000
 F 0 "J1" H 5405 1467 50  0000 C CNN
 F 1 "USB_A" H 5405 1376 50  0000 C CNN
-F 2 "" H 5500 950 50  0001 C CNN
-F 3 " ~" H 5500 950 50  0001 C CNN
+F 2 "footprints:USBA" H 5500 950 50  0001 C CNN
+F 3 "https://www.mouser.se/datasheet/2/643/bel_SS-52100-001-1216592.pdf" H 5500 950 50  0001 C CNN
+F 4 "SS-52100-001" H 5350 1000 50  0001 C CNN "MPN"
 	1    5350 1000
 	1    0    0    -1  
 $EndComp
@@ -33,6 +34,7 @@ F 0 "U11" H 5400 4550 50  0000 C CNN
 F 1 "STM32F373C8Tx" H 5400 4400 50  0000 C CNN
 F 2 "Package_QFP:LQFP-48_7x7mm_P0.5mm" H 4800 2900 50  0001 R CNN
 F 3 "http://www.st.com/st-web-ui/static/active/en/resource/technical/document/datasheet/DM00046749.pdf" H 5400 4400 50  0001 C CNN
+F 4 "STM32F373C8Tx" H 5400 4400 50  0001 C CNN "MPN"
 	1    5400 4400
 	1    0    0    -1  
 $EndComp
@@ -664,8 +666,9 @@ U 1 1 5CE4A076
 P 8450 5100
 F 0 "J2" H 8530 5142 50  0000 L CNN
 F 1 "Display" H 8530 5051 50  0000 L CNN
-F 2 "" H 8450 5100 50  0001 C CNN
+F 2 "Connector_PinSocket_1.27mm:PinSocket_1x15_P1.27mm_Vertical" H 8450 5100 50  0001 C CNN
 F 3 "https://www.mouser.se/datasheet/2/291/NHD-0212WH-ATMI-JT-35118.pdf" H 8450 5100 50  0001 C CNN
+F 4 "NHD-0212WH-ATMI-JT" H 8450 5100 50  0001 C CNN "MPN"
 	1    8450 5100
 	1    0    0    -1  
 $EndComp

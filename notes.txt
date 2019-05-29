@@ -13,6 +13,8 @@ Display Layout:
     0.00V 0.00A
 
 Components:
+    - Current Shunt: MF1/4DC1R00F (https://www.mouser.se/datasheet/2/219/MF-MFS-RK-18760.pdf)
+    - USB Connector: SS-52100-001 (https://www.mouser.se/datasheet/2/643/bel_SS-52100-001-1216592.pdf)
     - Pass transistor: FQA36P15 ~1.5 C°/W (https://www.mouser.se/datasheet/2/308/FQA36P15-1124509.pdf)
     - Heat Sink: FA-T220-64E 3 C°/W (https://www.elfa.se/Web/Downloads/_t/ds/FA-T220-25E_eng_tds.pdf)
     - VREF: LM4040-4.1/NOPB (http://www.ti.com/lit/ds/symlink/lm4040-n.pdf)
