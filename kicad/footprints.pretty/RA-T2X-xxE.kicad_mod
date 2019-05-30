@@ -1,4 +1,6 @@
-(module RA-T2X-xxE (layer F.Cu) (tedit 5CEFA853)
+(module RA-T2X-xxE (layer F.Cu) (tedit 5CEFC11C)
+  (descr "Heatsink outline for RA-T2X series")
+  (tags heatsink)
   (fp_text reference REF** (at -0.05 -9.95) (layer F.SilkS)
     (effects (font (size 1 1) (thickness 0.15)))
   )
