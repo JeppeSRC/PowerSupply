@@ -265,9 +265,9 @@ U 1 1 5CE4A076
 P 8450 5200
 F 0 "J2" H 8530 5242 50  0000 L CNN
 F 1 "Display" H 8530 5151 50  0000 L CNN
-F 2 "Connector_PinSocket_1.27mm:PinSocket_1x15_P1.27mm_Vertical" H 8450 5200 50  0001 C CNN
-F 3 "https://www.mouser.se/datasheet/2/291/NHD-0212WH-ATMI-JT-35118.pdf" H 8450 5200 50  0001 C CNN
-F 4 "NHD-0212WH-ATMI-JT" H 8450 5200 50  0001 C CNN "MPN"
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x15_P2.54mm_Vertical" H 8450 5200 50  0001 C CNN
+F 3 "https://www.mouser.se/datasheet/2/276/0022284150_PCB_HEADERS-159054.pdf" H 8450 5200 50  0001 C CNN
+F 4 "22-28-4150" H 8450 5200 50  0001 C CNN "MPN"
 	1    8450 5200
 	1    0    0    -1  
 $EndComp
