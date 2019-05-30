@@ -134,6 +134,7 @@ F 0 "Q2" H 7441 5796 50  0000 L CNN
 F 1 "PN2222A" H 7441 5705 50  0000 L CNN
 F 2 "Package_TO_SOT_THT:TO-92_Inline" H 7450 5675 50  0001 L CIN
 F 3 "http://www.fairchildsemi.com/ds/PN/PN2222A.pdf" H 7250 5750 50  0001 L CNN
+F 4 "PN2222A" H 7250 5750 50  0001 C CNN "MPN"
 	1    7250 5750
 	1    0    0    -1  
 $EndComp
@@ -231,6 +232,7 @@ F 0 "Q1" H 8091 4504 50  0000 L CNN
 F 1 "PN2222A" H 8091 4595 50  0000 L CNN
 F 2 "Package_TO_SOT_THT:TO-92_Inline" H 8100 4475 50  0001 L CIN
 F 3 "http://www.fairchildsemi.com/ds/PN/PN2222A.pdf" H 7900 4550 50  0001 L CNN
+F 4 "PN2222A" H 7900 4550 50  0001 C CNN "MPN"
 	1    7900 4550
 	1    0    0    1   
 $EndComp

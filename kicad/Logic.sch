@@ -90,20 +90,10 @@ U 1 1 5CA53AEC
 P 1250 7450
 F 0 "SW2" H 1250 7817 50  0000 C CNN
 F 1 "ENC0 (Voltage)" H 1250 7726 50  0000 C CNN
-F 2 "" H 1100 7610 50  0001 C CNN
-F 3 "~" H 1250 7710 50  0001 C CNN
+F 2 "footprints:PEC12R-2xxxf-Sxxxx" H 1100 7610 50  0001 C CNN
+F 3 "https://www.mouser.se/datasheet/2/54/EC12R-777795.pdf" H 1250 7710 50  0001 C CNN
+F 4 "PEC12R-2220F-S0024" H 1250 7450 50  0001 C CNN "MPN"
 	1    1250 7450
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:Rotary_Encoder_Switch SW3
-U 1 1 5CA53BBE
-P 3200 7450
-F 0 "SW3" H 3200 7817 50  0000 C CNN
-F 1 "ENC1 (Current)" H 3200 7726 50  0000 C CNN
-F 2 "" H 3050 7610 50  0001 C CNN
-F 3 "~" H 3200 7710 50  0001 C CNN
-	1    3200 7450
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -189,8 +179,9 @@ U 1 1 5CAA887C
 P 4900 7450
 F 0 "SW1" H 4900 7917 50  0000 C CNN
 F 1 "SW_DIP_x04" H 4900 7826 50  0000 C CNN
-F 2 "" H 4900 7450 50  0001 C CNN
-F 3 "" H 4900 7450 50  0001 C CNN
+F 2 "Button_Switch_THT:SW_DIP_SPSTx04_Piano_10.8x11.72mm_W7.62mm_P2.54mm" H 4900 7450 50  0001 C CNN
+F 3 "https://www.mouser.se/datasheet/2/307/omron_03202018_A6FR_datasheet-1314011.pdf" H 4900 7450 50  0001 C CNN
+F 4 "A6FR-4104" H 4900 7450 50  0001 C CNN "MPN"
 	1    4900 7450
 	1    0    0    -1  
 $EndComp
@@ -269,198 +260,15 @@ F 3 "" H 4450 7250 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:+5V #PWR024
-U 1 1 5CE8EC33
-P 9350 700
-F 0 "#PWR024" H 9350 550 50  0001 C CNN
-F 1 "+5V" H 9365 873 50  0000 C CNN
-F 2 "" H 9350 700 50  0001 C CNN
-F 3 "" H 9350 700 50  0001 C CNN
-	1    9350 700 
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:R R28
-U 1 1 5CE94D02
-P 9350 850
-F 0 "R28" H 9420 896 50  0000 L CNN
-F 1 "50k" H 9420 805 50  0000 L CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 9280 850 50  0001 C CNN
-F 3 "~" H 9350 850 50  0001 C CNN
-	1    9350 850 
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:R R29
-U 1 1 5CE96E4F
-P 9650 850
-F 0 "R29" H 9720 896 50  0000 L CNN
-F 1 "50k" H 9720 805 50  0000 L CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 9580 850 50  0001 C CNN
-F 3 "~" H 9650 850 50  0001 C CNN
-	1    9650 850 
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:R R30
-U 1 1 5CE9749F
-P 9950 850
-F 0 "R30" H 10020 896 50  0000 L CNN
-F 1 "50k" H 10020 805 50  0000 L CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 9880 850 50  0001 C CNN
-F 3 "~" H 9950 850 50  0001 C CNN
-	1    9950 850 
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:R R27
-U 1 1 5CE97B22
-P 9050 850
-F 0 "R27" H 9120 896 50  0000 L CNN
-F 1 "50k" H 9120 805 50  0000 L CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 8980 850 50  0001 C CNN
-F 3 "~" H 9050 850 50  0001 C CNN
-	1    9050 850 
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:R R26
-U 1 1 5CE9823E
-P 8750 850
-F 0 "R26" H 8820 896 50  0000 L CNN
-F 1 "50k" H 8820 805 50  0000 L CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 8680 850 50  0001 C CNN
-F 3 "~" H 8750 850 50  0001 C CNN
-	1    8750 850 
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:R R25
-U 1 1 5CE9886D
-P 8450 850
-F 0 "R25" H 8520 896 50  0000 L CNN
-F 1 "50k" H 8520 805 50  0000 L CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 8380 850 50  0001 C CNN
-F 3 "~" H 8450 850 50  0001 C CNN
-	1    8450 850 
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:R R31
-U 1 1 5CE98F24
-P 10250 850
-F 0 "R31" H 10320 896 50  0000 L CNN
-F 1 "50k" H 10320 805 50  0000 L CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 10180 850 50  0001 C CNN
-F 3 "~" H 10250 850 50  0001 C CNN
-	1    10250 850 
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:R R32
-U 1 1 5CE99599
-P 10550 850
-F 0 "R32" H 10620 896 50  0000 L CNN
-F 1 "50k" H 10620 805 50  0000 L CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 10480 850 50  0001 C CNN
-F 3 "~" H 10550 850 50  0001 C CNN
-	1    10550 850 
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:R R24
-U 1 1 5CE99D4F
-P 8150 850
-F 0 "R24" H 8220 896 50  0000 L CNN
-F 1 "50k" H 8220 805 50  0000 L CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 8080 850 50  0001 C CNN
-F 3 "~" H 8150 850 50  0001 C CNN
-	1    8150 850 
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:R R33
-U 1 1 5CE9A483
-P 10850 850
-F 0 "R33" H 10920 896 50  0000 L CNN
-F 1 "50k" H 10920 805 50  0000 L CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 10780 850 50  0001 C CNN
-F 3 "~" H 10850 850 50  0001 C CNN
-	1    10850 850 
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:R R23
-U 1 1 5CE9AABA
-P 7900 850
-F 0 "R23" H 7970 896 50  0000 L CNN
-F 1 "50k" H 7970 805 50  0000 L CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 7830 850 50  0001 C CNN
-F 3 "~" H 7900 850 50  0001 C CNN
-	1    7900 850 
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	7900 700  8150 700 
-Connection ~ 8150 700 
-Wire Wire Line
-	8150 700  8450 700 
-Connection ~ 8450 700 
-Wire Wire Line
-	8450 700  8750 700 
-Connection ~ 8750 700 
-Wire Wire Line
-	8750 700  9050 700 
-Connection ~ 9050 700 
-Wire Wire Line
-	9050 700  9350 700 
-Connection ~ 9350 700 
-Wire Wire Line
-	9350 700  9650 700 
-Connection ~ 9650 700 
-Wire Wire Line
-	9650 700  9950 700 
-Connection ~ 9950 700 
-Wire Wire Line
-	9950 700  10250 700 
-Connection ~ 10250 700 
-Wire Wire Line
-	10250 700  10550 700 
-Connection ~ 10550 700 
-Wire Wire Line
-	10550 700  10850 700 
-Text Label 7900 1000 3    50   ~ 0
-Display_RS
-Text Label 8150 1000 3    50   ~ 0
-Display_RW
-Text Label 8450 1000 3    50   ~ 0
-Display_E
-Text Label 8750 1000 3    50   ~ 0
-Display_DB0
-Text Label 9050 1000 3    50   ~ 0
-Display_DB1
-Text Label 9350 1000 3    50   ~ 0
-Display_DB2
-Text Label 9650 1000 3    50   ~ 0
-Display_DB3
-Text Label 9950 1000 3    50   ~ 0
-Display_DB4
-Text Label 10250 1000 3    50   ~ 0
-Display_DB5
-Text Label 10550 1000 3    50   ~ 0
-Display_DB6
-Text Label 10850 1000 3    50   ~ 0
-Display_DB7
-$Comp
 L Connector_Generic:Conn_01x15 J2
 U 1 1 5CE4A076
-P 8450 5100
-F 0 "J2" H 8530 5142 50  0000 L CNN
-F 1 "Display" H 8530 5051 50  0000 L CNN
-F 2 "Connector_PinSocket_1.27mm:PinSocket_1x15_P1.27mm_Vertical" H 8450 5100 50  0001 C CNN
-F 3 "https://www.mouser.se/datasheet/2/291/NHD-0212WH-ATMI-JT-35118.pdf" H 8450 5100 50  0001 C CNN
-F 4 "NHD-0212WH-ATMI-JT" H 8450 5100 50  0001 C CNN "MPN"
-	1    8450 5100
+P 8450 5200
+F 0 "J2" H 8530 5242 50  0000 L CNN
+F 1 "Display" H 8530 5151 50  0000 L CNN
+F 2 "Connector_PinSocket_1.27mm:PinSocket_1x15_P1.27mm_Vertical" H 8450 5200 50  0001 C CNN
+F 3 "https://www.mouser.se/datasheet/2/291/NHD-0212WH-ATMI-JT-35118.pdf" H 8450 5200 50  0001 C CNN
+F 4 "NHD-0212WH-ATMI-JT" H 8450 5200 50  0001 C CNN "MPN"
+	1    8450 5200
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
@@ -486,55 +294,6 @@ Wire Wire Line
 Wire Wire Line
 	8250 4700 6100 4700
 $Comp
-L Device:R_POT_TRIM RV1
-U 1 1 5CEC56EF
-P 7850 4300
-F 0 "RV1" H 7780 4254 50  0000 R CNN
-F 1 "10k" H 7780 4345 50  0000 R CNN
-F 2 "footprints:Potentiometer_Bourns_3386G_Vertical" H 7850 4300 50  0001 C CNN
-F 3 "~" H 7850 4300 50  0001 C CNN
-	1    7850 4300
-	-1   0    0    1   
-$EndComp
-Wire Wire Line
-	7500 4600 8250 4600
-$Comp
-L power:+5V #PWR036
-U 1 1 5CED261C
-P 7850 4500
-F 0 "#PWR036" H 7850 4350 50  0001 C CNN
-F 1 "+5V" V 7865 4628 50  0000 L CNN
-F 2 "" H 7850 4500 50  0001 C CNN
-F 3 "" H 7850 4500 50  0001 C CNN
-	1    7850 4500
-	0    -1   -1   0   
-$EndComp
-$Comp
-L power:GNDREF #PWR035
-U 1 1 5CED5ADA
-P 8250 4150
-F 0 "#PWR035" H 8250 3900 50  0001 C CNN
-F 1 "GNDREF" H 8255 3977 50  0001 C CNN
-F 2 "" H 8250 4150 50  0001 C CNN
-F 3 "" H 8250 4150 50  0001 C CNN
-	1    8250 4150
-	0    -1   -1   0   
-$EndComp
-Wire Wire Line
-	7850 4500 8250 4500
-Wire Wire Line
-	8250 4400 8250 4150
-Wire Wire Line
-	7850 4450 7850 4500
-Connection ~ 7850 4500
-Wire Wire Line
-	7500 4600 7500 4300
-Wire Wire Line
-	7500 4300 7700 4300
-Wire Wire Line
-	7850 4150 8250 4150
-Connection ~ 8250 4150
-$Comp
 L Device:R R35
 U 1 1 5CEF91FC
 P 8100 5800
@@ -556,28 +315,6 @@ F 3 "" H 7950 5800 50  0001 C CNN
 	1    7950 5800
 	0    -1   -1   0   
 $EndComp
-Text Label 6950 4700 0    50   ~ 0
-Display_RS
-Text Label 6950 4800 0    50   ~ 0
-Display_RW
-Text Label 6950 4900 0    50   ~ 0
-Display_E
-Text Label 6950 5000 0    50   ~ 0
-Display_DB0
-Text Label 6950 5100 0    50   ~ 0
-Display_DB1
-Text Label 6950 5200 0    50   ~ 0
-Display_DB2
-Text Label 6950 5300 0    50   ~ 0
-Display_DB3
-Text Label 6950 5400 0    50   ~ 0
-Display_DB4
-Text Label 6950 5500 0    50   ~ 0
-Display_DB5
-Text Label 6950 5600 0    50   ~ 0
-Display_DB6
-Text Label 6950 5700 0    50   ~ 0
-Display_DB7
 Wire Wire Line
 	5500 6000 5600 6000
 Connection ~ 5500 6000
@@ -1055,4 +792,61 @@ Text Label 2550 2450 0    50   ~ 0
 VDD1
 Text Label 2550 3050 0    50   ~ 0
 VDD2
+$Comp
+L Device:Rotary_Encoder_Switch SW3
+U 1 1 5CA53BBE
+P 3200 7450
+F 0 "SW3" H 3200 7817 50  0000 C CNN
+F 1 "ENC1 (Current)" H 3200 7726 50  0000 C CNN
+F 2 "footprints:PEC12R-2xxxf-Sxxxx" H 3050 7610 50  0001 C CNN
+F 3 "https://www.mouser.se/datasheet/2/54/EC12R-777795.pdf" H 3200 7710 50  0001 C CNN
+F 4 "PEC12R-2220F-S0024" H 3200 7450 50  0001 C CNN "MPN"
+	1    3200 7450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8250 5900 8250 6100
+Wire Wire Line
+	8250 6100 8350 6100
+$Comp
+L power:GNDREF #PWR?
+U 1 1 5CF139AB
+P 8350 6100
+F 0 "#PWR?" H 8350 5850 50  0001 C CNN
+F 1 "GNDREF" H 8355 5927 50  0001 C CNN
+F 2 "" H 8350 6100 50  0001 C CNN
+F 3 "" H 8350 6100 50  0001 C CNN
+	1    8350 6100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8250 4500 8250 4200
+Wire Wire Line
+	8250 4200 8450 4200
+$Comp
+L power:GNDREF #PWR?
+U 1 1 5CF18C67
+P 8450 4200
+F 0 "#PWR?" H 8450 3950 50  0001 C CNN
+F 1 "GNDREF" H 8455 4027 50  0001 C CNN
+F 2 "" H 8450 4200 50  0001 C CNN
+F 3 "" H 8450 4200 50  0001 C CNN
+	1    8450 4200
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR?
+U 1 1 5CF19FC3
+P 7950 4550
+F 0 "#PWR?" H 7950 4400 50  0001 C CNN
+F 1 "+3.3V" H 7965 4723 50  0000 C CNN
+F 2 "" H 7950 4550 50  0001 C CNN
+F 3 "" H 7950 4550 50  0001 C CNN
+	1    7950 4550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8250 4600 7950 4600
+Wire Wire Line
+	7950 4600 7950 4550
 $EndSCHEMATC
