@@ -3,6 +3,7 @@ kicad/*.bck
 kicad/*.dcm
 kicad/fp-info-cache
 kicad/PowerSupply-cache.lib
+kicad/_autosave*
 Debug/
 Release/
 .metadata/
