@@ -16,7 +16,7 @@ Components:
     - Current Shunt: MF1/4DC1R00F (https://www.mouser.se/datasheet/2/219/MF-MFS-RK-18760.pdf)
     - USB Connector: SS-52100-001 (https://www.mouser.se/datasheet/2/643/bel_SS-52100-001-1216592.pdf)
     - Pass transistor: FQA36P15 ~1.5 C°/W (https://www.mouser.se/datasheet/2/308/FQA36P15-1124509.pdf)
-    - Heat Sink: FA-T220-64E 3 C°/W (https://www.elfa.se/Web/Downloads/_t/ds/FA-T220-25E_eng_tds.pdf)
+    - Heat Sink: RA-T2X-25E 3 C°/W (https://www.mouser.se/datasheet/2/303/sink_f_r-1265536.pdf)
     - VREF: LM4040-4.1/NOPB (http://www.ti.com/lit/ds/symlink/lm4040-n.pdf)
     - OPAMP: OPA4196IDR (http://www.ti.com/lit/ds/symlink/opa4196.pdf)
     - 3.3V REG: LD1086D2T33 (https://www.mouser.se/datasheet/2/389/ld1086-974047.pdf)
