@@ -1,5 +1,5 @@
-(module PEC12R-2xxxf-Sxxxx (layer F.Cu) (tedit 5CF40F18)
-  (fp_text reference REF** (at 16.7 -14.1) (layer F.SilkS)
+(module PEC12R-2xxxf-Sxxxx (layer F.Cu) (tedit 5CF413AC)
+  (fp_text reference REF** (at 0.15 -3.4) (layer F.SilkS)
     (effects (font (size 1 1) (thickness 0.15)))
   )
   (fp_text value PEC12R-2xxxf-Sxxxx (at 0.3 17) (layer F.Fab)
