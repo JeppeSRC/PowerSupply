@@ -931,7 +931,7 @@ U 1 1 5CE4A076
 P 8500 5100
 F 0 "J2" H 8580 5142 50  0000 L CNN
 F 1 "Display" H 8580 5051 50  0000 L CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_1x15_P2.54mm_Vertical" H 8500 5100 50  0001 C CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x16_P2.54mm_Vertical" H 8500 5100 50  0001 C CNN
 F 3 "https://www.mouser.se/datasheet/2/276/0022284150_PCB_HEADERS-159054.pdf" H 8500 5100 50  0001 C CNN
 F 4 "M20-9991646" H 8500 5100 50  0001 C CNN "MPN"
 	1    8500 5100
