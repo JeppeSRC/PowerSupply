@@ -20,7 +20,6 @@ Components:
     - VREF: LM4040-4.1/NOPB (http://www.ti.com/lit/ds/symlink/lm4040-n.pdf)
     - OPAMP: OPA4196IDR (http://www.ti.com/lit/ds/symlink/opa4196.pdf)
     - 3.3V REG: LD1086D2T33 (https://www.mouser.se/datasheet/2/389/ld1086-974047.pdf)
-    - 5.0V REG: LD1086D2T50TR (https://www.mouser.se/datasheet/2/389/ld1086-974047.pdf)
     - Display: NHD-0216HZ-FSW-FBW-33V3C
         Datasheet: https://www.mouser.se/datasheet/2/291/NHD-0216HZ-FSW-FBW-33V3C-51185.pdf
         ST7066U: http://www.newhavendisplay.com/app_notes/ST7066U.pdf
