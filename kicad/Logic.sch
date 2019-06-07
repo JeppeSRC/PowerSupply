@@ -326,8 +326,6 @@ Wire Wire Line
 Connection ~ 6950 800 
 Wire Wire Line
 	6950 800  7100 800 
-Wire Wire Line
-	5400 2900 5300 2900
 $Comp
 L symbols:+3V3A #PWR022
 U 1 1 5CF6F3CF
@@ -510,8 +508,6 @@ Text Label 5700 2900 1    50   ~ 0
 VDDSD
 Text Label 5500 2900 1    50   ~ 0
 VDD1
-Text Label 5400 2900 1    50   ~ 0
-VDD2
 Text Label 4700 3500 2    50   ~ 0
 VREFSD
 Connection ~ 850  2050
@@ -563,112 +559,6 @@ Text Label 1700 1300 0    50   ~ 0
 VDDSD
 Text Label 1700 1850 0    50   ~ 0
 VREFSD
-$Comp
-L power:+3V3 #PWR032
-U 1 1 5CA64031
-P 850 3050
-F 0 "#PWR032" H 850 2900 50  0001 C CNN
-F 1 "+3V3" H 865 3223 50  0000 C CNN
-F 2 "" H 850 3050 50  0001 C CNN
-F 3 "" H 850 3050 50  0001 C CNN
-	1    850  3050
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GNDREF #PWR033
-U 1 1 5CA6406B
-P 850 3250
-F 0 "#PWR033" H 850 3000 50  0001 C CNN
-F 1 "GNDREF" H 855 3077 50  0001 C CNN
-F 2 "" H 850 3250 50  0001 C CNN
-F 3 "" H 850 3250 50  0001 C CNN
-	1    850  3250
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:C_Small C27
-U 1 1 5CA640A5
-P 850 3150
-F 0 "C27" H 942 3196 50  0000 L CNN
-F 1 "4.7µF" H 942 3105 50  0000 L CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 850 3150 50  0001 C CNN
-F 3 "~" H 850 3150 50  0001 C CNN
-F 4 "GRM21BR71C475KE51L" H 850 3150 50  0001 C CNN "MPN"
-	1    850  3150
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:C_Small C28
-U 1 1 5CA64B09
-P 1250 3150
-F 0 "C28" H 1342 3196 50  0000 L CNN
-F 1 "100nF" H 1342 3105 50  0000 L CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 1250 3150 50  0001 C CNN
-F 3 "~" H 1250 3150 50  0001 C CNN
-F 4 "CC0805KRX7R9BB104" H 1250 3150 50  0001 C CNN "MPN"
-	1    1250 3150
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:C_Small C29
-U 1 1 5CA64B9D
-P 1650 3150
-F 0 "C29" H 1742 3196 50  0000 L CNN
-F 1 "100nF" H 1742 3105 50  0000 L CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 1650 3150 50  0001 C CNN
-F 3 "~" H 1650 3150 50  0001 C CNN
-F 4 "CC0805KRX7R9BB104" H 1650 3150 50  0001 C CNN "MPN"
-	1    1650 3150
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:C_Small C30
-U 1 1 5CA64BC9
-P 2050 3150
-F 0 "C30" H 2142 3196 50  0000 L CNN
-F 1 "100nF" H 2142 3105 50  0000 L CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 2050 3150 50  0001 C CNN
-F 3 "~" H 2050 3150 50  0001 C CNN
-F 4 "CC0805KRX7R9BB104" H 2050 3150 50  0001 C CNN "MPN"
-	1    2050 3150
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	850  3050 1250 3050
-Connection ~ 850  3050
-Connection ~ 1250 3050
-Wire Wire Line
-	1250 3050 1650 3050
-Connection ~ 1650 3050
-Wire Wire Line
-	1650 3050 2050 3050
-Wire Wire Line
-	850  3250 1250 3250
-Connection ~ 850  3250
-Connection ~ 1250 3250
-Wire Wire Line
-	1250 3250 1650 3250
-Connection ~ 1650 3250
-Wire Wire Line
-	1650 3250 2050 3250
-$Comp
-L Device:C_Small C31
-U 1 1 5CA685B9
-P 2450 3150
-F 0 "C31" H 2542 3196 50  0000 L CNN
-F 1 "10nF" H 2542 3105 50  0000 L CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 2450 3150 50  0001 C CNN
-F 3 "~" H 2450 3150 50  0001 C CNN
-F 4 "CC0805KRX7R0BB103" H 2450 3150 50  0001 C CNN "MPN"
-	1    2450 3150
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	2050 3050 2450 3050
-Connection ~ 2050 3050
-Wire Wire Line
-	2450 3250 2050 3250
-Connection ~ 2050 3250
 $Comp
 L power:+3V3 #PWR030
 U 1 1 5D073ED8
@@ -778,13 +668,8 @@ Connection ~ 2050 2650
 Wire Wire Line
 	2450 2450 2750 2450
 Connection ~ 2450 2450
-Wire Wire Line
-	2450 3050 2750 3050
-Connection ~ 2450 3050
 Text Label 2550 2450 0    50   ~ 0
 VDD1
-Text Label 2550 3050 0    50   ~ 0
-VDD2
 $Comp
 L Device:Rotary_Encoder_Switch SW2
 U 1 1 5CA53BBE
@@ -942,4 +827,9 @@ Wire Wire Line
 NoConn ~ 8300 4600
 Wire Wire Line
 	8300 5900 8250 5900
+Wire Wire Line
+	5300 2900 5400 2900
+Connection ~ 5400 2900
+Wire Wire Line
+	5400 2900 5500 2900
 $EndSCHEMATC

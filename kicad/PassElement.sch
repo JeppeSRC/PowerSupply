@@ -16,22 +16,6 @@ Comment4 ""
 $EndDescr
 $Comp
 L symbols:FQA36P15 U?
-U 1 1 5CA4A671
-P 5350 1900
-AR Path="/5CA4A671" Ref="U?"  Part="1" 
-AR Path="/5CA4A3FE/5CA4A671" Ref="U5"  Part="1" 
-F 0 "U5" V 5593 1900 50  0000 C CNN
-F 1 "FQA36P15" V 5502 1900 50  0000 C CNN
-F 2 "Package_TO_SOT_THT:TO-3P-3_Vertical" H 5300 1900 50  0001 C CNN
-F 3 "https://www.mouser.se/datasheet/2/308/FQA36P15-1124509.pdf" H 5300 1900 50  0001 C CNN
-F 4 "FQA36P15" H 5350 1900 50  0001 C CNN "MPN"
-	1    5350 1900
-	0    1    -1   0   
-$EndComp
-Text Label 5350 2150 0    50   ~ 0
-VReg
-$Comp
-L symbols:FQA36P15 U?
 U 1 1 5CA4A679
 P 5350 2500
 AR Path="/5CA4A679" Ref="U?"  Part="1" 
@@ -78,29 +62,8 @@ F 4 "FQA36P15" H 5350 3700 50  0001 C CNN "MPN"
 $EndComp
 Text Label 5350 3950 0    50   ~ 0
 VReg
-$Comp
-L symbols:FQA36P15 U?
-U 1 1 5CA4A691
-P 5350 4300
-AR Path="/5CA4A691" Ref="U?"  Part="1" 
-AR Path="/5CA4A3FE/5CA4A691" Ref="U9"  Part="1" 
-F 0 "U9" V 5593 4300 50  0000 C CNN
-F 1 "FQA36P15" V 5502 4300 50  0000 C CNN
-F 2 "Package_TO_SOT_THT:TO-3P-3_Vertical" H 5300 4300 50  0001 C CNN
-F 3 "https://www.mouser.se/datasheet/2/308/FQA36P15-1124509.pdf" H 5300 4300 50  0001 C CNN
-F 4 "FQA36P15" H 5350 4300 50  0001 C CNN "MPN"
-	1    5350 4300
-	0    1    -1   0   
-$EndComp
-Text Label 5350 4550 0    50   ~ 0
-VReg
-Wire Wire Line
-	5050 1900 5150 1900
 Wire Wire Line
 	5150 2500 5050 2500
-Connection ~ 5050 2500
-Wire Wire Line
-	5050 2500 5050 1900
 Wire Wire Line
 	5050 3100 5150 3100
 Wire Wire Line
@@ -109,21 +72,7 @@ Wire Wire Line
 	5050 3700 5150 3700
 Connection ~ 5050 3100
 Wire Wire Line
-	5050 3700 5050 4300
-Wire Wire Line
-	5050 4300 5150 4300
-Connection ~ 5050 3700
-Wire Wire Line
-	5550 1900 5700 1900
-Wire Wire Line
-	5700 1900 5700 2500
-Wire Wire Line
-	5700 4300 5550 4300
-Wire Wire Line
 	5550 3700 5700 3700
-Connection ~ 5700 3700
-Wire Wire Line
-	5700 3700 5700 4300
 Wire Wire Line
 	5550 3100 5700 3100
 Connection ~ 5700 3100
@@ -131,7 +80,6 @@ Wire Wire Line
 	5700 3100 5700 3700
 Wire Wire Line
 	5550 2500 5700 2500
-Connection ~ 5700 2500
 Wire Wire Line
 	5700 2500 5700 3100
 Wire Wire Line
@@ -144,7 +92,7 @@ Wire Wire Line
 	5700 3100 5900 3100
 Text HLabel 6150 3100 2    50   Output ~ 0
 Vout
-Text HLabel 5350 4550 3    50   Input ~ 0
+Text HLabel 5350 3950 3    50   Input ~ 0
 VReg_set
 $Comp
 L Device:C_Small C10
@@ -198,4 +146,74 @@ Wire Wire Line
 Connection ~ 4600 3100
 Wire Wire Line
 	4600 3100 5050 3100
+$Comp
+L Mechanical:Heatsink HS1
+U 1 1 5CFE3377
+P 6050 2000
+F 0 "HS1" H 6191 2121 50  0000 L CNN
+F 1 "RA-T2X-xxE" H 6191 2030 50  0000 L CNN
+F 2 "footprints:RA-T2X-xxE" H 6062 2000 50  0001 C CNN
+F 3 "~" H 6062 2000 50  0001 C CNN
+	1    6050 2000
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:Heatsink HS2
+U 1 1 5CFE6A1F
+P 6850 2000
+F 0 "HS2" H 6991 2121 50  0000 L CNN
+F 1 "RA-T2X-xxE" H 6991 2030 50  0000 L CNN
+F 2 "footprints:RA-T2X-xxE" H 6862 2000 50  0001 C CNN
+F 3 "~" H 6862 2000 50  0001 C CNN
+	1    6850 2000
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:Heatsink HS3
+U 1 1 5CFE6CAC
+P 7650 2000
+F 0 "HS3" H 7791 2121 50  0000 L CNN
+F 1 "RA-T2X-xxE" H 7791 2030 50  0000 L CNN
+F 2 "footprints:RA-T2X-xxE" H 7662 2000 50  0001 C CNN
+F 3 "~" H 7662 2000 50  0001 C CNN
+	1    7650 2000
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:Heatsink HS4
+U 1 1 5CFE707C
+P 8450 2000
+F 0 "HS4" H 8591 2121 50  0000 L CNN
+F 1 "RA-T2X-xxE" H 8591 2030 50  0000 L CNN
+F 2 "footprints:RA-T2X-xxE" H 8462 2000 50  0001 C CNN
+F 3 "~" H 8462 2000 50  0001 C CNN
+	1    8450 2000
+	1    0    0    -1  
+$EndComp
+Connection ~ 5700 2500
+Wire Wire Line
+	5700 1900 5700 2500
+Wire Wire Line
+	5550 1900 5700 1900
+Connection ~ 5050 2500
+Wire Wire Line
+	5050 2500 5050 1900
+Wire Wire Line
+	5050 1900 5150 1900
+Text Label 5350 2150 0    50   ~ 0
+VReg
+$Comp
+L symbols:FQA36P15 U?
+U 1 1 5CA4A671
+P 5350 1900
+AR Path="/5CA4A671" Ref="U?"  Part="1" 
+AR Path="/5CA4A3FE/5CA4A671" Ref="U5"  Part="1" 
+F 0 "U5" V 5593 1900 50  0000 C CNN
+F 1 "FQA36P15" V 5502 1900 50  0000 C CNN
+F 2 "Package_TO_SOT_THT:TO-3P-3_Vertical" H 5300 1900 50  0001 C CNN
+F 3 "https://www.mouser.se/datasheet/2/308/FQA36P15-1124509.pdf" H 5300 1900 50  0001 C CNN
+F 4 "FQA36P15" H 5350 1900 50  0001 C CNN "MPN"
+	1    5350 1900
+	0    1    -1   0   
+$EndComp
 $EndSCHEMATC
