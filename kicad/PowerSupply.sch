@@ -272,9 +272,6 @@ F 3 "" H 2800 750 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	1650 2400 1050 2400
-Connection ~ 2500 2850
-Wire Wire Line
-	2500 2850 2750 2850
 $Comp
 L symbols:+3V3A #PWR012
 U 1 1 5CE59A05
@@ -474,4 +471,7 @@ F 4 "GRM21BR6YA106KE43L" H 1050 2950 50  0001 C CNN "MPN"
 	1    1050 2950
 	1    0    0    -1  
 $EndComp
+Wire Wire Line
+	2750 2850 2500 2850
+Connection ~ 2500 2850
 $EndSCHEMATC
