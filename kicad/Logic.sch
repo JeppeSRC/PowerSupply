@@ -198,9 +198,9 @@ Text Label 6100 3300 0    50   ~ 0
 ENC1_A
 Text Label 6100 3400 0    50   ~ 0
 ENC1_B
-Text Label 6100 3600 0    50   ~ 0
+Text Label 6100 4500 0    50   ~ 0
 ENC0_SW
-Text Label 6100 3800 0    50   ~ 0
+Text Label 6100 4400 0    50   ~ 0
 ENC1_SW
 Wire Wire Line
 	5550 7250 5200 7250
@@ -210,8 +210,6 @@ NoConn ~ 4700 5600
 NoConn ~ 4700 5700
 NoConn ~ 4700 5800
 NoConn ~ 6100 5800
-NoConn ~ 6100 4500
-NoConn ~ 6100 4400
 NoConn ~ 6100 4300
 NoConn ~ 6100 4000
 NoConn ~ 6100 3900
@@ -832,4 +830,6 @@ Wire Wire Line
 Connection ~ 5400 2900
 Wire Wire Line
 	5400 2900 5500 2900
+NoConn ~ 6100 3600
+NoConn ~ 6100 3800
 $EndSCHEMATC
