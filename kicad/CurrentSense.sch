@@ -451,4 +451,17 @@ Text Notes 4650 4850 0    39   ~ 0
 82.5 / 10 = gain of 8.25
 Text Notes 5400 2500 0    39   ~ 0
 4A * 0.1R = 0.4V\n
+$Comp
+L Connector:TestPoint TP1
+U 1 1 5D284994
+P 6100 5800
+F 0 "TP1" H 6158 5918 50  0000 L CNN
+F 1 "Iread" H 6158 5827 50  0000 L CNN
+F 2 "TestPoint:TestPoint_Pad_D2.0mm" H 6300 5800 50  0001 C CNN
+F 3 "~" H 6300 5800 50  0001 C CNN
+	1    6100 5800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6100 5800 5850 5800
 $EndSCHEMATC

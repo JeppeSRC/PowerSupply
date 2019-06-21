@@ -47,7 +47,7 @@ Connection ~ 6150 2850
 Wire Wire Line
 	6150 2850 6400 2850
 Wire Wire Line
-	6850 2200 7150 2200
+	6850 2200 7000 2200
 Text HLabel 7150 2200 2    50   Output ~ 0
 Vread
 Wire Wire Line
@@ -80,7 +80,7 @@ Wire Wire Line
 	6900 3800 7000 3800
 Wire Wire Line
 	5800 4850 5900 4850
-Text HLabel 8450 3800 2    50   Output ~ 0
+Text HLabel 8700 3800 2    50   Output ~ 0
 Vreg
 Wire Wire Line
 	7300 3800 7450 3800
@@ -104,7 +104,7 @@ Wire Wire Line
 Wire Wire Line
 	4050 3150 4050 2950
 Wire Wire Line
-	6150 3900 6300 3900
+	6150 3900 6200 3900
 Wire Wire Line
 	8000 4350 8000 3800
 Wire Wire Line
@@ -131,7 +131,7 @@ $EndComp
 Wire Wire Line
 	6150 2300 6250 2300
 Wire Wire Line
-	5800 5050 5900 5050
+	5800 5050 5850 5050
 Wire Wire Line
 	6150 3700 6300 3700
 Text Notes 5150 3050 0    39   ~ 0
@@ -360,5 +360,71 @@ F 3 "~" H 8300 3800 50  0001 C CNN
 F 4 "RT0805FRE071KL" H 8300 3800 50  0001 C CNN "MPN"
 	1    8300 3800
 	0    1    1    0   
+$EndComp
+$Comp
+L Connector:TestPoint TP2
+U 1 1 5D27FEA5
+P 7000 2100
+F 0 "TP2" H 7058 2218 50  0000 L CNN
+F 1 "Vread" H 7058 2127 50  0000 L CNN
+F 2 "TestPoint:TestPoint_Pad_D2.0mm" H 7200 2100 50  0001 C CNN
+F 3 "~" H 7200 2100 50  0001 C CNN
+	1    7000 2100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7000 2200 7000 2100
+Connection ~ 7000 2200
+Wire Wire Line
+	7000 2200 7150 2200
+$Comp
+L Connector:TestPoint TP3
+U 1 1 5D281C71
+P 8550 3650
+F 0 "TP3" H 8608 3768 50  0000 L CNN
+F 1 "Vreg" H 8608 3677 50  0000 L CNN
+F 2 "TestPoint:TestPoint_Pad_D2.0mm" H 8750 3650 50  0001 C CNN
+F 3 "~" H 8750 3650 50  0001 C CNN
+	1    8550 3650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8550 3650 8550 3800
+Wire Wire Line
+	8550 3800 8450 3800
+Wire Wire Line
+	8550 3800 8700 3800
+Connection ~ 8550 3800
+$Comp
+L Connector:TestPoint TP4
+U 1 1 5D2877CA
+P 6200 4100
+F 0 "TP4" H 6142 4126 50  0000 R CNN
+F 1 "Vset" H 6142 4217 50  0000 R CNN
+F 2 "TestPoint:TestPoint_Pad_D2.0mm" H 6400 4100 50  0001 C CNN
+F 3 "~" H 6400 4100 50  0001 C CNN
+	1    6200 4100
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	6200 4100 6200 3900
+Connection ~ 6200 3900
+Wire Wire Line
+	6200 3900 6300 3900
+Wire Wire Line
+	5850 5200 5850 5050
+Connection ~ 5850 5050
+Wire Wire Line
+	5850 5050 5900 5050
+$Comp
+L Connector:TestPoint TP5
+U 1 1 5D28AE47
+P 5850 5200
+F 0 "TP5" H 5792 5226 50  0000 R CNN
+F 1 "Iset" H 5792 5317 50  0000 R CNN
+F 2 "TestPoint:TestPoint_Pad_D2.0mm" H 6050 5200 50  0001 C CNN
+F 3 "~" H 6050 5200 50  0001 C CNN
+	1    5850 5200
+	-1   0    0    1   
 $EndComp
 $EndSCHEMATC

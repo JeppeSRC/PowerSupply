@@ -159,9 +159,9 @@ Text HLabel 4700 5100 0    50   Input ~ 0
 Vread
 Text HLabel 4700 5200 0    50   Input ~ 0
 Iread
-Text HLabel 6100 3700 2    50   Output ~ 0
-Iset
 Text HLabel 6100 3500 2    50   Output ~ 0
+Iset
+Text HLabel 6100 3700 2    50   Output ~ 0
 Vset
 $Comp
 L power:+3V3 #PWR023
