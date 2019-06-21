@@ -1350,15 +1350,15 @@ Text Label 4700 4600 2    50   ~ 0
 CODE_B1
 Text Label 4700 4700 2    50   ~ 0
 CODE_B2
-Text Label 4700 4800 2    50   ~ 0
-CODE_B3
-Text Label 4700 4900 2    50   ~ 0
-CODE_B4
-Text Label 6100 3900 0    50   ~ 0
-CODE_B6
 Text Label 6100 3800 0    50   ~ 0
-CODE_B5
+CODE_B3
+Text Label 6100 3900 0    50   ~ 0
+CODE_B4
+Text Label 4700 4800 2    50   ~ 0
+CODE_B6
 Text Label 6100 4000 0    50   ~ 0
+CODE_B5
+Text Label 4700 4900 2    50   ~ 0
 CODE_B7
 NoConn ~ 4700 5800
 NoConn ~ 4700 5700
