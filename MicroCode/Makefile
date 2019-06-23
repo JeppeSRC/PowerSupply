@@ -14,6 +14,8 @@ AOBJ= $(ASRC:.asm=.o)
 
 MAIN= MicroCode.elf
 
+.PHONY: clean
+
 all: $(MAIN)
 	@echo Complete
 
@@ -28,6 +30,9 @@ obj/%.o: %.c
 obj/%.o: %.asm
 	@$(AS) $(CFLAGS) $(INCLUDES) -c $< -o $@
 	@echo Compiling $<
+
+clean:
+	rm -rf obj/**.o
 
 test:
 	@echo $(SRC)
