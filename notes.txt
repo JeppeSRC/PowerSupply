@@ -15,9 +15,8 @@ Display Layout:
 Components:
     - Current Shunt: MF1/4DC1R00F (https://www.mouser.se/datasheet/2/219/MF-MFS-RK-18760.pdf)
     - USB Connector: SS-52100-001 (https://www.mouser.se/datasheet/2/643/bel_SS-52100-001-1216592.pdf)
-    - Pass transistor: FQA36P15 ~1.5 C°/W (https://www.mouser.se/datasheet/2/308/FQA36P15-1124509.pdf)
+    - Pass transistor: FQP17P10 (https://www.mouser.se/datasheet/2/308/FQP17P10-1296917.pdf)
     - Heat Sink: RA-T2X-25E 3 C°/W (https://www.mouser.se/datasheet/2/303/sink_f_r-1265536.pdf)
-    - VREF: LM4040-4.1/NOPB (http://www.ti.com/lit/ds/symlink/lm4040-n.pdf)
     - OPAMP: OPA4196IDR (http://www.ti.com/lit/ds/symlink/opa4196.pdf)
     - 3.3V REG: LD1086D2T33 (https://www.mouser.se/datasheet/2/389/ld1086-974047.pdf)
     - Display: NHD-0216HZ-FSW-FBW-33V3C
@@ -25,5 +24,5 @@ Components:
         ST7066U: http://www.newhavendisplay.com/app_notes/ST7066U.pdf
     - Micro: STM32F373C(x):
         Datasheet:          https://www.st.com/resource/en/datasheet/stm32f373vc.pdf 
-        Reference Manual:   https://www.st.com/content/ccc/resource/technical/document/reference_manual/fa/06/c7/15/3b/2a/4c/f1/DM00041563.pdf/files/DM00041563.pdf/jcr:content/translations/en.DM00041563.pdf)
+        Reference Manual:   https://w*ww.st.com/content/ccc/resource/technical/document/reference_manual/fa/06/c7/15/3b/2a/4c/f1/DM00041563.pdf/files/DM00041563.pdf/jcr:content/translations/en.DM00041563.pdf)
         Programming Manual: https://www.st.com/content/ccc/resource/technical/document/programming_manual/6c/3a/cb/e7/e4/ea/44/9b/DM00046982.pdf/files/DM00046982.pdf/jcr:content/translations/en.DM00046982.pdf
