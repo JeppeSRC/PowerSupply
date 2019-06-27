@@ -160,4 +160,16 @@ struct DACx {
 
 #pragma endregion
 
+#pragma region TIMERS
+
+#define TIM2 	((TIMxA*)0x40000000)
+#define TIM3 	((TIMxA*)0x40000400)
+#define TIM4 	((TIMxA*)0x40000800)
+#define TIM5 	((TIMxA*)0x40000C00)
+#define TIM6 	((TIMxB*)0x40001000)
+#define TIM7 	((TIMxB*)0x40001400)
+#define TIM18 	((TIMxB*)0x40009C00)
+
+#pragma endregion
+
 #endif

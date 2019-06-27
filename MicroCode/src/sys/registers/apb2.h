@@ -1,6 +1,8 @@
 #ifndef SYS_REGISTERS_APB2_H_
 #define SYS_REGISTERS_APB2_H_
 
+#include "timer.h"
+
 #pragma region SYSCFG 
 
 struct SYSCFG_CFGR1 {
@@ -106,6 +108,12 @@ struct COMPx {
 };
 
 #define COMP ((struct COMPx*)0x4001001C)
+
+#pragma endregion
+
+#pragma region TIMERS
+
+#define TIM19 ((TIMxA*)0x40015C00)
 
 #pragma endregion
 

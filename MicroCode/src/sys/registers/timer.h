@@ -2,7 +2,7 @@
 #define SYS_REGISTERS_TIMER_H_
 
 
-struct TIM_CR1 {
+struct TIM32_CR1 {
 	unsigned char CEN : 1;
 	unsigned char UDIS : 1;
 	unsigned char URS : 1;
@@ -14,7 +14,7 @@ struct TIM_CR1 {
 	unsigned int reserved : 22;
 };
 
-struct TIM_CR2 {
+struct TIM32_CR2 {
 	unsigned char reserved : 3;
 	unsigned char CDDS : 1;
 	unsigned char MMS : 3;
@@ -22,7 +22,7 @@ struct TIM_CR2 {
 	unsigned int reserved2 : 24;
 };
 
-struct TIM_SMCR {
+struct TIM32_SMCR {
 	unsigned char SMS : 3;
 	unsigned char reserved : 1;
 	unsigned char TS : 3;
@@ -34,7 +34,7 @@ struct TIM_SMCR {
 	unsigned int reserved2 : 16;
 };
 
-struct TIM_DIER {
+struct TIM32_DIER {
 	unsigned char UIE : 1;
 	unsigned char CC1IE : 1;
 	unsigned char CC2IE : 1;
@@ -53,7 +53,7 @@ struct TIM_DIER {
 	unsigned int reserved4 : 17;
 };
 
-struct TIM_SR {
+struct TIM32_SR {
 	unsigned char UIF : 1;
 	unsigned char CC1IF : 1;
 	unsigned char CC2IF : 1;
@@ -69,7 +69,7 @@ struct TIM_SR {
 	unsigned int reserved3 : 19;
 };
 
-struct TIM_EGR {
+struct TIM32_EGR {
 	unsigned char UG : 1;
 	unsigned char CC1G : 1;
 	unsigned char CC2G : 1;
@@ -80,7 +80,7 @@ struct TIM_EGR {
 	unsigned int reserved2 : 25;
 };
 
-struct TIM_CCMR1 {
+struct TIM32_CCMR1 {
 	union {
 		struct {
 			unsigned char CC1S : 2;
@@ -108,7 +108,7 @@ struct TIM_CCMR1 {
 	unsigned short reserved3 : 16;
 };
 
-struct TIM_CCMR2 {
+struct TIM32_CCMR2 {
 	union {
 		struct {
 			unsigned char CC3S : 2;
@@ -136,7 +136,7 @@ struct TIM_CCMR2 {
 	unsigned short reserved3 : 16;
 };
 
-struct TIM_CCER {
+struct TIM32_CCER {
 	unsigned char CC1E : 1;
 	unsigned char CC1P : 1;
 	unsigned char reserved : 1;
@@ -155,44 +155,97 @@ struct TIM_CCER {
 	unsigned char CC4NP : 1;
 };
 
-typedef unsigned int TIM_CNT;
-typedef unsigned int TIM_PSC;
-typedef unsigned int TIM_ARR;
-typedef unsigned int TIM_CCRx;
+typedef unsigned int TIM32_CNT;
+typedef unsigned int TIM32_PSC;
+typedef unsigned int TIM32_ARR;
+typedef unsigned int TIM32_CCRx;
 
-struct TIM_DCR {
+struct TIM32_DCR {
 	unsigned char DBA : 5;
 	unsigned char reserved : 3;
 	unsigned char DBL5 : 5;
 	unsigned int reserved2 : 19;
 };
 
-struct TIM_DMAR {
+struct TIM32_DMAR {
 	unsigned short DMAB : 16;
 	unsigned short reserved : 16;
 };
 
-struct TIMx {
-	struct TIM_CR1 CR1;
-	struct TIM_CR2 CR2;
-	struct TIM_SMCR SMCR;
-	struct TIM_DIER DIER;
-	struct TIM_SR SR;
-	struct TIM_EGR EGR;
-	struct TIM_CCMR1 CCMR1;
-	struct TIM_CCMR2 CCMR2;
-	struct TIM_CCER CCER;
-	TIM_CNT CNT;
-	TIM_PSC PSC;
-	TIM_ARR ARR;
+
+//Timers 2, 3, 4, 5, 19
+struct TIMxA {
+	struct TIM32_CR1 CR1;
+	struct TIM32_CR2 CR2;
+	struct TIM32_SMCR SMCR;
+	struct TIM32_DIER DIER;
+	struct TIM32_SR SR;
+	struct TIM32_EGR EGR;
+	struct TIM32_CCMR1 CCMR1;
+	struct TIM32_CCMR2 CCMR2;
+	struct TIM32_CCER CCER;
+	TIM32_CNT CNT;
+	TIM32_PSC PSC;
+	TIM32_ARR ARR;
 	unsigned int reserved : 32;
-	TIM_CCRx CCR1;
-	TIM_CCRx CCR2;
-	TIM_CCRx CCR3;
-	TIM_CCRx CCR4;
+	TIM32_CCRx CCR1;
+	TIM32_CCRx CCR2;
+	TIM32_CCRx CCR3;
+	TIM32_CCRx CCR4;
 	unsigned int reserved2 : 32;
-	struct TIM_DCR DCR;
-	struct TIM_DMAR DMAR;
+	struct TIM32_DCR DCR;
+	struct TIM32_DMAR DMAR;
+};
+
+struct TIM16_CR1 {
+	unsigned char CEN : 1;
+	unsigned char UDIS : 1;
+	unsigned char URS : 1;
+	unsigned char OPM : 1;
+	unsigned char reserved : 3;
+	unsigned char ARPE : 1;
+	unsigned char reserved2 : 8;
+};
+
+struct TIM16_CR2 {
+	unsigned char reserved : 4;
+	unsigned char MMS : 3;
+	unsigned short reserved2 : 9;
+};
+
+struct TIM16_DIER {
+	unsigned char UIE : 1;
+	unsigned char reserved : 7;
+	unsigned char UDE : 1;
+	unsigned char reserved2 : 7;
+};
+
+struct TIM16_SR {
+	unsigned char UIF : 1;
+	unsigned short reserved : 15;
+};
+
+struct TIM16_EGR {
+	unsigned char UG : 1;
+	unsigned short reserved : 15;
+};
+
+typedef unsigned int TIM16_CNT;
+typedef unsigned int TIM16_PSC;
+typedef unsigned int TIM16_ARR;
+
+// Timers 6, 7, 18
+struct TIMxB {
+	struct TIM16_CR1 CR1;
+	struct TIM16_CR2 CR2;
+	unsigned short reserved;
+	struct TIM16_DIER DIER;
+	struct TIM16_SR SR;
+	struct TIM16_EGR EGR;
+	unsigned long long reserved2 : 48;
+	TIM16_CNT CNT;
+	TIM16_PSC PSC;
+	TIM16_ARR ARR;
 };
 
 #endif
