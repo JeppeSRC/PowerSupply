@@ -1,6 +1,8 @@
 #ifndef SYS_REGISTERS_AHB2_H_
 #define SYS_REGISTERS_AHB2_H_
 
+#include <core/def.h>
+
 /*
  * GPIO port mode:
  *
@@ -14,25 +16,25 @@
 struct GPIOx_MODER {
 	union {
 		struct {
-			unsigned char p0 : 2;
-			unsigned char p1 : 2;
-			unsigned char p2 : 2;
-			unsigned char p3 : 2;
-			unsigned char p4 : 2;
-			unsigned char p5 : 2;
-			unsigned char p6 : 2;
-			unsigned char p7 : 2;
-	    	unsigned char p8 : 2;
-			unsigned char p9 : 2;
-			unsigned char p10 : 2;
-			unsigned char p11 : 2;
-			unsigned char p12 : 2;
-			unsigned char p13 : 2;
-			unsigned char p14 : 2;
-			unsigned char p15 : 2;
+			uint8 p0 : 2;
+			uint8 p1 : 2;
+			uint8 p2 : 2;
+			uint8 p3 : 2;
+			uint8 p4 : 2;
+			uint8 p5 : 2;
+			uint8 p6 : 2;
+			uint8 p7 : 2;
+	    	uint8 p8 : 2;
+			uint8 p9 : 2;
+			uint8 p10 : 2;
+			uint8 p11 : 2;
+			uint8 p12 : 2;
+			uint8 p13 : 2;
+			uint8 p14 : 2;
+			uint8 p15 : 2;
 		};
 
-		unsigned int p : 32;
+		uint32 p : 32;
 	};
 
 };
@@ -48,27 +50,27 @@ struct GPIOx_MODER {
 struct GPIOx_OTYPER {
 	union {
 		struct {
-			unsigned char p0 : 1;
-			unsigned char p1 : 1;
-			unsigned char p2 : 1;
-			unsigned char p3 : 1;
-			unsigned char p4 : 1;
-			unsigned char p5 : 1;
-			unsigned char p6 : 1;
-			unsigned char p7 : 1;
-			unsigned char p8 : 1;
-			unsigned char p9 : 1;
-			unsigned char p10 : 1;
-			unsigned char p11 : 1;
-			unsigned char p12 : 1;
-			unsigned char p13 : 1;
-			unsigned char p14 : 1;
-			unsigned char p15 : 1;
+			uint8 p0 : 1;
+			uint8 p1 : 1;
+			uint8 p2 : 1;
+			uint8 p3 : 1;
+			uint8 p4 : 1;
+			uint8 p5 : 1;
+			uint8 p6 : 1;
+			uint8 p7 : 1;
+			uint8 p8 : 1;
+			uint8 p9 : 1;
+			uint8 p10 : 1;
+			uint8 p11 : 1;
+			uint8 p12 : 1;
+			uint8 p13 : 1;
+			uint8 p14 : 1;
+			uint8 p15 : 1;
 		};
 
-		unsigned int p : 16;
+		uint32 p : 16;
 	};
-	unsigned int reserved : 16;
+	uint32 reserved : 16;
 };
 
 /*
@@ -82,25 +84,25 @@ struct GPIOx_OTYPER {
 struct GPIOx_OSPEEDR {
 	union {
 		struct {
-			unsigned char p0 : 2;
-			unsigned char p1 : 2;
-			unsigned char p2 : 2;
-			unsigned char p3 : 2;
-			unsigned char p4 : 2;
-			unsigned char p5 : 2;
-			unsigned char p6 : 2;
-			unsigned char p7 : 2;
-			unsigned char p8 : 2;
-			unsigned char p9 : 2;
-			unsigned char p10 : 2;
-			unsigned char p11 : 2;
-			unsigned char p12 : 2;
-			unsigned char p13 : 2;
-			unsigned char p14 : 2;
-			unsigned char p15 : 2;
+			uint8 p0 : 2;
+			uint8 p1 : 2;
+			uint8 p2 : 2;
+			uint8 p3 : 2;
+			uint8 p4 : 2;
+			uint8 p5 : 2;
+			uint8 p6 : 2;
+			uint8 p7 : 2;
+			uint8 p8 : 2;
+			uint8 p9 : 2;
+			uint8 p10 : 2;
+			uint8 p11 : 2;
+			uint8 p12 : 2;
+			uint8 p13 : 2;
+			uint8 p14 : 2;
+			uint8 p15 : 2;
 		};
 
-		unsigned int p : 32;
+		uint32 p : 32;
 	};
 };
 
@@ -116,25 +118,25 @@ struct GPIOx_OSPEEDR {
 struct GPIOx_PUPDR {
 	union {
 		struct {
-			unsigned char p0 : 2;
-			unsigned char p1 : 2;
-			unsigned char p2 : 2;
-			unsigned char p3 : 2;
-			unsigned char p4 : 2;
-			unsigned char p5 : 2;
-			unsigned char p6 : 2;
-			unsigned char p7 : 2;
-			unsigned char p8 : 2;
-			unsigned char p9 : 2;
-			unsigned char p10 : 2;
-			unsigned char p11 : 2;
-			unsigned char p12 : 2;
-			unsigned char p13 : 2;
-			unsigned char p14 : 2;
-			unsigned char p15 : 2;
+			uint8 p0 : 2;
+			uint8 p1 : 2;
+			uint8 p2 : 2;
+			uint8 p3 : 2;
+			uint8 p4 : 2;
+			uint8 p5 : 2;
+			uint8 p6 : 2;
+			uint8 p7 : 2;
+			uint8 p8 : 2;
+			uint8 p9 : 2;
+			uint8 p10 : 2;
+			uint8 p11 : 2;
+			uint8 p12 : 2;
+			uint8 p13 : 2;
+			uint8 p14 : 2;
+			uint8 p15 : 2;
 		};
 
-		unsigned int p : 32;
+		uint32 p : 32;
 	};
 
 };
@@ -148,27 +150,27 @@ struct GPIOx_PUPDR {
 struct GPIOx_IDR {
 	union {
 		struct {
-			unsigned char p0 : 1;
-			unsigned char p1 : 1;
-			unsigned char p2 : 1;
-			unsigned char p3 : 1;
-			unsigned char p4 : 1;
-			unsigned char p5 : 1;
-			unsigned char p6 : 1;
-			unsigned char p7 : 1;
-			unsigned char p8 : 1;
-			unsigned char p9 : 1;
-			unsigned char p10 : 1;
-			unsigned char p11 : 1;
-			unsigned char p12 : 1;
-			unsigned char p13 : 1;
-			unsigned char p14 : 1;
-			unsigned char p15 : 1;
+			uint8 p0 : 1;
+			uint8 p1 : 1;
+			uint8 p2 : 1;
+			uint8 p3 : 1;
+			uint8 p4 : 1;
+			uint8 p5 : 1;
+			uint8 p6 : 1;
+			uint8 p7 : 1;
+			uint8 p8 : 1;
+			uint8 p9 : 1;
+			uint8 p10 : 1;
+			uint8 p11 : 1;
+			uint8 p12 : 1;
+			uint8 p13 : 1;
+			uint8 p14 : 1;
+			uint8 p15 : 1;
 		};
 
-		unsigned int p : 16;
+		uint32 p : 16;
 	};
-	unsigned int reserved : 16;
+	uint32 reserved : 16;
 
 };
 
@@ -181,27 +183,27 @@ struct GPIOx_IDR {
 struct GPIOx_ODR {
 	union {
 		struct {
-			unsigned char p0 : 1;
-			unsigned char p1 : 1;
-			unsigned char p2 : 1;
-			unsigned char p3 : 1;
-			unsigned char p4 : 1;
-			unsigned char p5 : 1;
-			unsigned char p6 : 1;
-			unsigned char p7 : 1;
-			unsigned char p8 : 1;
-			unsigned char p9 : 1;
-			unsigned char p10 : 1;
-			unsigned char p11 : 1;
-			unsigned char p12 : 1;
-			unsigned char p13 : 1;
-			unsigned char p14 : 1;
-			unsigned char p15 : 1;
+			uint8 p0 : 1;
+			uint8 p1 : 1;
+			uint8 p2 : 1;
+			uint8 p3 : 1;
+			uint8 p4 : 1;
+			uint8 p5 : 1;
+			uint8 p6 : 1;
+			uint8 p7 : 1;
+			uint8 p8 : 1;
+			uint8 p9 : 1;
+			uint8 p10 : 1;
+			uint8 p11 : 1;
+			uint8 p12 : 1;
+			uint8 p13 : 1;
+			uint8 p14 : 1;
+			uint8 p15 : 1;
 		};
 
-		unsigned int p : 16;
+		uint32 p : 16;
 	};
-	unsigned int reserved : 16;
+	uint32 reserved : 16;
 };
 
 /*
@@ -214,41 +216,41 @@ struct GPIOx_ODR {
 struct GPIOx_BSRR {
 	union {
 		struct {
-			unsigned char ps0 : 1;
-			unsigned char ps1 : 1;
-			unsigned char ps2 : 1;
-			unsigned char ps3 : 1;
-			unsigned char ps4 : 1;
-			unsigned char ps5 : 1;
-			unsigned char ps6 : 1;
-			unsigned char ps7 : 1;
-			unsigned char ps8 : 1;
-			unsigned char ps9 : 1;
-			unsigned char ps10 : 1;
-			unsigned char ps11 : 1;
-			unsigned char ps12 : 1;
-			unsigned char ps13 : 1;
-			unsigned char ps14 : 1;
-			unsigned char ps15 : 1;
-			unsigned char pr0 : 1;
-			unsigned char pr1 : 1;
-			unsigned char pr2 : 1;
-			unsigned char pr3 : 1;
-			unsigned char pr4 : 1;
-			unsigned char pr5 : 1;
-			unsigned char pr6 : 1;
-			unsigned char pr7 : 1;
-			unsigned char pr8 : 1;
-			unsigned char pr9 : 1;
-			unsigned char pr10 : 1;
-			unsigned char pr11 : 1;
-			unsigned char pr12 : 1;
-			unsigned char pr13 : 1;
-			unsigned char pr14 : 1;
-			unsigned char pr15 : 1;
+			uint8 ps0 : 1;
+			uint8 ps1 : 1;
+			uint8 ps2 : 1;
+			uint8 ps3 : 1;
+			uint8 ps4 : 1;
+			uint8 ps5 : 1;
+			uint8 ps6 : 1;
+			uint8 ps7 : 1;
+			uint8 ps8 : 1;
+			uint8 ps9 : 1;
+			uint8 ps10 : 1;
+			uint8 ps11 : 1;
+			uint8 ps12 : 1;
+			uint8 ps13 : 1;
+			uint8 ps14 : 1;
+			uint8 ps15 : 1;
+			uint8 pr0 : 1;
+			uint8 pr1 : 1;
+			uint8 pr2 : 1;
+			uint8 pr3 : 1;
+			uint8 pr4 : 1;
+			uint8 pr5 : 1;
+			uint8 pr6 : 1;
+			uint8 pr7 : 1;
+			uint8 pr8 : 1;
+			uint8 pr9 : 1;
+			uint8 pr10 : 1;
+			uint8 pr11 : 1;
+			uint8 pr12 : 1;
+			uint8 pr13 : 1;
+			uint8 pr14 : 1;
+			uint8 pr15 : 1;
 		};
 
-		unsigned int p : 32;
+		uint32 p : 32;
 	};
 };
 
@@ -276,22 +278,22 @@ struct GPIOx_BSRR {
  */
 
 struct GPIOx_AFR {
-	unsigned char p0 : 4;
-	unsigned char p1 : 4;
-	unsigned char p2 : 4;
-	unsigned char p3 : 4;
-	unsigned char p4 : 4;
-	unsigned char p5 : 4;
-	unsigned char p6 : 4;
-	unsigned char p7 : 4;
-	unsigned char p8 : 4;
-	unsigned char p9 : 4;
-	unsigned char p10 : 4;
-	unsigned char p11 : 4;
-	unsigned char p12 : 4;
-	unsigned char p13 : 4;
-	unsigned char p14 : 4;
-	unsigned char p15 : 4;
+	uint8 p0 : 4;
+	uint8 p1 : 4;
+	uint8 p2 : 4;
+	uint8 p3 : 4;
+	uint8 p4 : 4;
+	uint8 p5 : 4;
+	uint8 p6 : 4;
+	uint8 p7 : 4;
+	uint8 p8 : 4;
+	uint8 p9 : 4;
+	uint8 p10 : 4;
+	uint8 p11 : 4;
+	uint8 p12 : 4;
+	uint8 p13 : 4;
+	uint8 p14 : 4;
+	uint8 p15 : 4;
 };
 
 
@@ -303,9 +305,9 @@ struct GPIOx {
 	struct GPIOx_IDR IDR;
 	struct GPIOx_ODR ODR;
 	struct GPIOx_BSRR BSRR;
-	unsigned int lockstuffwhichigivezerofucksabout;
+	uint32 lockstuffwhichigivezerofucksabout;
 	struct GPIOx_AFR AFR;
-	unsigned int somethingthatiprobablydontneed;
+	uint32 somethingthatiprobablydontneed;
 };
 
 

@@ -1,116 +1,118 @@
 #ifndef SYS_REGISTERS_AHB1_H_
 #define SYS_REGISTERS_AHB1_H_
 
+#include <core/def.h>
+
 #pragma region DMA
 
 struct DMA_ISR {
 	//Channel 1
-	unsigned char GIF1 : 1;
-	unsigned char TCIF1 : 1;
-	unsigned char HTIF1 : 1;
-	unsigned char TEIF1 : 1;
+	uint8 GIF1 : 1;
+	uint8 TCIF1 : 1;
+	uint8 HTIF1 : 1;
+	uint8 TEIF1 : 1;
 	//Channel 2
-	unsigned char GIF2 : 1;
-	unsigned char TCIF2 : 1;
-	unsigned char HTIF2 : 1;
-	unsigned char TEIF2 : 1;
+	uint8 GIF2 : 1;
+	uint8 TCIF2 : 1;
+	uint8 HTIF2 : 1;
+	uint8 TEIF2 : 1;
 	//Channel 3
-	unsigned char GIF3 : 1;
-	unsigned char TCIF3 : 1;
-	unsigned char HTIF3 : 1;
-	unsigned char TEIF3 : 1;
+	uint8 GIF3 : 1;
+	uint8 TCIF3 : 1;
+	uint8 HTIF3 : 1;
+	uint8 TEIF3 : 1;
 	//Channel 4
-	unsigned char GIF4 : 1;
-	unsigned char TCIF4 : 1;
-	unsigned char HTIF4 : 1;
-	unsigned char TEIF4 : 1;
+	uint8 GIF4 : 1;
+	uint8 TCIF4 : 1;
+	uint8 HTIF4 : 1;
+	uint8 TEIF4 : 1;
 	//Channel 5
-	unsigned char GIF5 : 1;
-	unsigned char TCIF5 : 1;
-	unsigned char HTIF5 : 1;
-	unsigned char TEIF5 : 1;
+	uint8 GIF5 : 1;
+	uint8 TCIF5 : 1;
+	uint8 HTIF5 : 1;
+	uint8 TEIF5 : 1;
 	//Channel 6
-	unsigned char GIF6 : 1;
-	unsigned char TCIF6 : 1;
-	unsigned char HTIF6 : 1;
-	unsigned char TEIF6 : 1;
+	uint8 GIF6 : 1;
+	uint8 TCIF6 : 1;
+	uint8 HTIF6 : 1;
+	uint8 TEIF6 : 1;
 	//Channel 7
-	unsigned char GIF7 : 1;
-	unsigned char TCIF7 : 1;
-	unsigned char HTIF7 : 1;
-	unsigned char TEIF7 : 1;
+	uint8 GIF7 : 1;
+	uint8 TCIF7 : 1;
+	uint8 HTIF7 : 1;
+	uint8 TEIF7 : 1;
 
-	unsigned char reserved : 4;
+	uint8 reserved : 4;
 };
 
 struct DMA_IFCR {
 						//Channel 1
-	unsigned char CGIF1 : 1;
-	unsigned char CTCIF1 : 1;
-	unsigned char CHTIF1 : 1;
-	unsigned char CTEIF1 : 1;
+	uint8 CGIF1 : 1;
+	uint8 CTCIF1 : 1;
+	uint8 CHTIF1 : 1;
+	uint8 CTEIF1 : 1;
 	//Channel 2
-	unsigned char CGIF2 : 1;
-	unsigned char CTCIF2 : 1;
-	unsigned char CHTIF2 : 1;
-	unsigned char CTEIF2 : 1;
+	uint8 CGIF2 : 1;
+	uint8 CTCIF2 : 1;
+	uint8 CHTIF2 : 1;
+	uint8 CTEIF2 : 1;
 	//Channel 3
-	unsigned char CGIF3 : 1;
-	unsigned char CTCIF3 : 1;
-	unsigned char CHTIF3 : 1;
-	unsigned char CTEIF3 : 1;
+	uint8 CGIF3 : 1;
+	uint8 CTCIF3 : 1;
+	uint8 CHTIF3 : 1;
+	uint8 CTEIF3 : 1;
 	//Channel 4
-	unsigned char FGIF4 : 1;
-	unsigned char FTCIF4 : 1;
-	unsigned char FHTIF4 : 1;
-	unsigned char FTEIF4 : 1;
+	uint8 FGIF4 : 1;
+	uint8 FTCIF4 : 1;
+	uint8 FHTIF4 : 1;
+	uint8 FTEIF4 : 1;
 	//Channel 5
-	unsigned char CGIF5 : 1;
-	unsigned char CTCIF5 : 1;
-	unsigned char CHTIF5 : 1;
-	unsigned char CTEIF5 : 1;
+	uint8 CGIF5 : 1;
+	uint8 CTCIF5 : 1;
+	uint8 CHTIF5 : 1;
+	uint8 CTEIF5 : 1;
 	//Channel 6
-	unsigned char CGIF6 : 1;
-	unsigned char CTCIF6 : 1;
-	unsigned char CHTIF6 : 1;
-	unsigned char CTEIF6 : 1;
+	uint8 CGIF6 : 1;
+	uint8 CTCIF6 : 1;
+	uint8 CHTIF6 : 1;
+	uint8 CTEIF6 : 1;
 	//Channel 7
-	unsigned char CGIF7 : 1;
-	unsigned char CTCIF7 : 1;
-	unsigned char CHTIF7 : 1;
-	unsigned char CTEIF7 : 1;
+	uint8 CGIF7 : 1;
+	uint8 CTCIF7 : 1;
+	uint8 CHTIF7 : 1;
+	uint8 CTEIF7 : 1;
 
-	unsigned char reserved : 4;
+	uint8 reserved : 4;
 };
 
 struct DMA_CCRx {
-	unsigned char EN : 1;
-	unsigned char TCIE : 1;
-	unsigned char HTIE : 1;
-	unsigned char TEIE : 1;
-	unsigned char DIR : 1;
-	unsigned char CIRC : 1;
-	unsigned char PINC : 1;
-	unsigned char MINC : 1;
-	unsigned char PSIZE : 2;
-	unsigned char MSIZE : 2;
-	unsigned char PL : 2;
-	unsigned char MEM2MEM : 1;
+	uint8 EN : 1;
+	uint8 TCIE : 1;
+	uint8 HTIE : 1;
+	uint8 TEIE : 1;
+	uint8 DIR : 1;
+	uint8 CIRC : 1;
+	uint8 PINC : 1;
+	uint8 MINC : 1;
+	uint8 PSIZE : 2;
+	uint8 MSIZE : 2;
+	uint8 PL : 2;
+	uint8 MEM2MEM : 1;
 
-	unsigned int reserved : 17;
+	uint32 reserved : 17;
 };
 
 struct DMA_CNDTRx {
-	unsigned short NDT : 16;
-	unsigned short reserved : 16;
+	uint16 NDT : 16;
+	uint16 reserved : 16;
 };
 
 struct DMA_CPARx {
-	unsigned int PA : 32;
+	uint32 PA : 32;
 };
 
 struct DMA_CMARx {
-	unsigned int MA : 32;
+	uint32 MA : 32;
 };
 
 #define DMA_CHANNEL(n) struct DMA_CCRx CCR##n; struct DMA_CNDTRx CNDTR##n; struct DMA_CPARx CPAR##n; struct DMA_CMARx CMAR##n;
@@ -137,247 +139,247 @@ struct DMAx {
 #pragma region RCC
 
 struct RCC_CR {
-	unsigned char HSION : 1;
-	unsigned char HSIRDY : 1;
-	unsigned char reserved : 1;
-	unsigned char HSITRIM : 5;
-	unsigned char HSICAL : 8;
-	unsigned char HSEON : 1;
-	unsigned char HSERDY : 1;
-	unsigned char HSEBYP : 1;
-	unsigned char CSSON : 1;
-	unsigned char reserved1 : 4;
-	unsigned char PLLON : 1;
-	unsigned char PLLRDY : 1;
-	unsigned char reserved2 : 6;
+	uint8 HSION : 1;
+	uint8 HSIRDY : 1;
+	uint8 reserved : 1;
+	uint8 HSITRIM : 5;
+	uint8 HSICAL : 8;
+	uint8 HSEON : 1;
+	uint8 HSERDY : 1;
+	uint8 HSEBYP : 1;
+	uint8 CSSON : 1;
+	uint8 reserved1 : 4;
+	uint8 PLLON : 1;
+	uint8 PLLRDY : 1;
+	uint8 reserved2 : 6;
 };
 
 struct RCC_CFGR {
-	unsigned char SW : 2;
-	unsigned char SWS : 2;
-	unsigned char HPRE : 4;
-	unsigned char PPRE1 : 3;
-	unsigned char PPRE2 : 3;
-	unsigned char ADCPRE : 2;
-	unsigned char PLLSRC : 1;
-	unsigned char PLLXTPRE : 1;
-	unsigned char PLLMUL : 4;
-	unsigned char USBPRE : 1;
-	unsigned char reserved : 1;
-	unsigned char MCO : 3;
-	unsigned char SDPRE : 5;
+	uint8 SW : 2;
+	uint8 SWS : 2;
+	uint8 HPRE : 4;
+	uint8 PPRE1 : 3;
+	uint8 PPRE2 : 3;
+	uint8 ADCPRE : 2;
+	uint8 PLLSRC : 1;
+	uint8 PLLXTPRE : 1;
+	uint8 PLLMUL : 4;
+	uint8 USBPRE : 1;
+	uint8 reserved : 1;
+	uint8 MCO : 3;
+	uint8 SDPRE : 5;
 };
 
 struct RCC_CIR {
-	unsigned char LSIRDYF : 1;
-	unsigned char LSERDYF : 1;
-	unsigned char HSIRDYF : 1;
-	unsigned char HSERDYF : 1;
-	unsigned char PLLRDYF : 1;
-	unsigned char reserved : 2;
-	unsigned char CSSF : 1;
-	unsigned char LSIRDYIE : 1;
-	unsigned char LSERDYIE : 1;
-	unsigned char HSIRDYIE : 1;
-	unsigned char HSERDYIE : 1;
-	unsigned char PLLRDYIE : 1;
-	unsigned char reserved1 : 3;
-	unsigned char LSIRDYC : 1;
-	unsigned char LSERDYC : 1;
-	unsigned char HSIRDYC : 1;
-	unsigned char HSERDYC : 1;
-	unsigned char PLLRDYC : 1;
-	unsigned char reserved2 : 2;
-	unsigned char CSSC : 1;
-	unsigned char reserved3 : 8;
+	uint8 LSIRDYF : 1;
+	uint8 LSERDYF : 1;
+	uint8 HSIRDYF : 1;
+	uint8 HSERDYF : 1;
+	uint8 PLLRDYF : 1;
+	uint8 reserved : 2;
+	uint8 CSSF : 1;
+	uint8 LSIRDYIE : 1;
+	uint8 LSERDYIE : 1;
+	uint8 HSIRDYIE : 1;
+	uint8 HSERDYIE : 1;
+	uint8 PLLRDYIE : 1;
+	uint8 reserved1 : 3;
+	uint8 LSIRDYC : 1;
+	uint8 LSERDYC : 1;
+	uint8 HSIRDYC : 1;
+	uint8 HSERDYC : 1;
+	uint8 PLLRDYC : 1;
+	uint8 reserved2 : 2;
+	uint8 CSSC : 1;
+	uint8 reserved3 : 8;
 };
 
 struct RCC_APB2RSTR {
-	unsigned char SYSCFGRST : 1;
-	unsigned char reserved : 8;
-	unsigned char ADCRST : 1;
-	unsigned char reserved1 : 2;
-	unsigned char SPI1RST : 1;
-	unsigned char reserved2 : 1;
-	unsigned char USART1RST : 1;
-	unsigned char reserved3 : 1;
-	unsigned char TIM15RST : 1;
-	unsigned char TIM16RST : 1;
-	unsigned char TIM17RST : 1;
-	unsigned char TIM19RST : 1;
-	unsigned char reserved4 : 4;
-	unsigned char SDAD1RST : 1;
-	unsigned char SDAD2RST : 1;
-	unsigned char SDAD3RST : 1;
-	unsigned char reserved5 : 5;
+	uint8 SYSCFGRST : 1;
+	uint8 reserved : 8;
+	uint8 ADCRST : 1;
+	uint8 reserved1 : 2;
+	uint8 SPI1RST : 1;
+	uint8 reserved2 : 1;
+	uint8 USART1RST : 1;
+	uint8 reserved3 : 1;
+	uint8 TIM15RST : 1;
+	uint8 TIM16RST : 1;
+	uint8 TIM17RST : 1;
+	uint8 TIM19RST : 1;
+	uint8 reserved4 : 4;
+	uint8 SDAD1RST : 1;
+	uint8 SDAD2RST : 1;
+	uint8 SDAD3RST : 1;
+	uint8 reserved5 : 5;
 };
 
 struct RCC_APB1RSTR {
-	unsigned char TIM2RST : 1;
-	unsigned char TIM3RST : 1;
-	unsigned char TIM4RST : 1;
-	unsigned char TIM5RST : 1;
-	unsigned char TIM6RST : 1;
-	unsigned char TIM7RST : 1;
-	unsigned char TIM12RST : 1;
-	unsigned char TIM13RST : 1;
-	unsigned char TIM14RST : 1;
-	unsigned char TIM18RST : 1;
-	unsigned char reserved : 1;
-	unsigned char WWDGRST : 1;
-	unsigned char reserved2 : 2;
-	unsigned char SPI2RST : 1;
-	unsigned char SPI3RST : 1;
-	unsigned char reserved3 : 1;
-	unsigned char USART2RST : 1;
-	unsigned char USART3RST : 1;
-	unsigned char reserved4 : 2;
-	unsigned char I2C1RST : 1;
-	unsigned char I2C2RST : 1;
-	unsigned char USBRST : 1;
-	unsigned char reserved5 : 1;
-	unsigned char CANRST : 1;
-	unsigned char DAC2RST : 1;
-	unsigned char reserved6 : 1;
-	unsigned char PWRRST : 1;
-	unsigned char DAC1RST : 1;
-	unsigned char CECRST : 1;
-	unsigned char reserved7 : 1;
+	uint8 TIM2RST : 1;
+	uint8 TIM3RST : 1;
+	uint8 TIM4RST : 1;
+	uint8 TIM5RST : 1;
+	uint8 TIM6RST : 1;
+	uint8 TIM7RST : 1;
+	uint8 TIM12RST : 1;
+	uint8 TIM13RST : 1;
+	uint8 TIM14RST : 1;
+	uint8 TIM18RST : 1;
+	uint8 reserved : 1;
+	uint8 WWDGRST : 1;
+	uint8 reserved2 : 2;
+	uint8 SPI2RST : 1;
+	uint8 SPI3RST : 1;
+	uint8 reserved3 : 1;
+	uint8 USART2RST : 1;
+	uint8 USART3RST : 1;
+	uint8 reserved4 : 2;
+	uint8 I2C1RST : 1;
+	uint8 I2C2RST : 1;
+	uint8 USBRST : 1;
+	uint8 reserved5 : 1;
+	uint8 CANRST : 1;
+	uint8 DAC2RST : 1;
+	uint8 reserved6 : 1;
+	uint8 PWRRST : 1;
+	uint8 DAC1RST : 1;
+	uint8 CECRST : 1;
+	uint8 reserved7 : 1;
 };
 
 struct RCC_AHBENR {
-	unsigned char DMAEN : 1;
-	unsigned char DMA2EN : 1;
-	unsigned char SRAMEN : 1;
-	unsigned char reserved : 1;
-	unsigned char FLITFEN : 1;
-	unsigned char reserved2 : 1;
-	unsigned char CRCEN : 1;
-	unsigned short reserved3 : 10;
-	unsigned char IOPAEN : 1;
-	unsigned char IOPBEN : 1;
-	unsigned char IOPCEN : 1;
-	unsigned char IOPDEN : 1;
-	unsigned char IOPEEN : 1;
-	unsigned char IOPFEN : 1;
-	unsigned char reserved4 : 1;
-	unsigned char TSCEN : 1;
-	unsigned char reserved5 : 7;
+	uint8 DMAEN : 1;
+	uint8 DMA2EN : 1;
+	uint8 SRAMEN : 1;
+	uint8 reserved : 1;
+	uint8 FLITFEN : 1;
+	uint8 reserved2 : 1;
+	uint8 CRCEN : 1;
+	uint16 reserved3 : 10;
+	uint8 IOPAEN : 1;
+	uint8 IOPBEN : 1;
+	uint8 IOPCEN : 1;
+	uint8 IOPDEN : 1;
+	uint8 IOPEEN : 1;
+	uint8 IOPFEN : 1;
+	uint8 reserved4 : 1;
+	uint8 TSCEN : 1;
+	uint8 reserved5 : 7;
 
 };
 
 struct RCC_APB2ENR {
-	unsigned char SYSCFGEN : 1;
-	unsigned char reserved : 8;
-	unsigned char ADCEN : 1;
-	unsigned char reserved2 : 2;
-	unsigned char SPI1EN : 1;
-	unsigned char reserved3 : 1;
-	unsigned char USART1EN : 1;
-	unsigned char reserved4 : 1;
-	unsigned char TIM15EN : 1;
-	unsigned char TIM16EN : 1;
-	unsigned char TIM17EN : 1;
-	unsigned char TIM19EN : 1;
-	unsigned char reserved5 : 2;
-	unsigned char DBGMCUEN : 1;
-	unsigned char reserved6 : 1;
-	unsigned char SDADC1EN : 1;
-	unsigned char SDADC2EN : 1;
-	unsigned char SDADC3EN : 1;
-	unsigned char reserved7 : 5;
+	uint8 SYSCFGEN : 1;
+	uint8 reserved : 8;
+	uint8 ADCEN : 1;
+	uint8 reserved2 : 2;
+	uint8 SPI1EN : 1;
+	uint8 reserved3 : 1;
+	uint8 USART1EN : 1;
+	uint8 reserved4 : 1;
+	uint8 TIM15EN : 1;
+	uint8 TIM16EN : 1;
+	uint8 TIM17EN : 1;
+	uint8 TIM19EN : 1;
+	uint8 reserved5 : 2;
+	uint8 DBGMCUEN : 1;
+	uint8 reserved6 : 1;
+	uint8 SDADC1EN : 1;
+	uint8 SDADC2EN : 1;
+	uint8 SDADC3EN : 1;
+	uint8 reserved7 : 5;
 
 };
 
 struct RCC_APB1ENR {
-	unsigned char TIM2EN : 1;
-	unsigned char TIM3EN : 1;
-	unsigned char TIM4EN : 1;
-	unsigned char TIM5EN : 1;
-	unsigned char TIM6EN : 1;
-	unsigned char TIM7EN : 1;
-	unsigned char TIM12EN : 1;
-	unsigned char TIM13EN : 1;
-	unsigned char TIM14EN : 1;
-	unsigned char TIM18EN : 1;
-	unsigned char reserved : 1;
-	unsigned char WWDGEN : 1;
-	unsigned char reserved2 : 2;
-	unsigned char SPI2EN : 1;
-	unsigned char SPI3EN : 1;
-	unsigned char reserved3 : 1;
-	unsigned char USART2EN : 1;
-	unsigned char USART3EN : 1;
-	unsigned char reserved4 : 2;
-	unsigned char I2C1EN : 1;
-	unsigned char I2C2EN : 1;
-	unsigned char USBEN : 1;
-	unsigned char reserved5 : 1;
-	unsigned char CANEN : 1;
-	unsigned char DAC2EN : 1;
-	unsigned char reserved6 : 1;
-	unsigned char PWREN : 1;
-	unsigned char DAC1EN : 1;
-	unsigned char CECEN : 1;
-	unsigned char reserved7 : 1;
+	uint8 TIM2EN : 1;
+	uint8 TIM3EN : 1;
+	uint8 TIM4EN : 1;
+	uint8 TIM5EN : 1;
+	uint8 TIM6EN : 1;
+	uint8 TIM7EN : 1;
+	uint8 TIM12EN : 1;
+	uint8 TIM13EN : 1;
+	uint8 TIM14EN : 1;
+	uint8 TIM18EN : 1;
+	uint8 reserved : 1;
+	uint8 WWDGEN : 1;
+	uint8 reserved2 : 2;
+	uint8 SPI2EN : 1;
+	uint8 SPI3EN : 1;
+	uint8 reserved3 : 1;
+	uint8 USART2EN : 1;
+	uint8 USART3EN : 1;
+	uint8 reserved4 : 2;
+	uint8 I2C1EN : 1;
+	uint8 I2C2EN : 1;
+	uint8 USBEN : 1;
+	uint8 reserved5 : 1;
+	uint8 CANEN : 1;
+	uint8 DAC2EN : 1;
+	uint8 reserved6 : 1;
+	uint8 PWREN : 1;
+	uint8 DAC1EN : 1;
+	uint8 CECEN : 1;
+	uint8 reserved7 : 1;
 };
 
 struct RCC_BDCR {
-	unsigned char LSEON : 1;
-	unsigned char LSERDT : 1;
-	unsigned char LSEBYP : 1;
-	unsigned char LSEDRV : 2;
-	unsigned char reserved : 3;
-	unsigned char RTCSEL : 2;
-	unsigned char reserved2 : 5;
-	unsigned char RTCEN : 1;
-	unsigned char RDRST : 1;
-	unsigned short reserved3 : 15;
+	uint8 LSEON : 1;
+	uint8 LSERDT : 1;
+	uint8 LSEBYP : 1;
+	uint8 LSEDRV : 2;
+	uint8 reserved : 3;
+	uint8 RTCSEL : 2;
+	uint8 reserved2 : 5;
+	uint8 RTCEN : 1;
+	uint8 RDRST : 1;
+	uint16 reserved3 : 15;
 };
 
 struct RCC_CSR {
-	unsigned char LSION : 1;
-	unsigned char LSIRDY : 1;
-	unsigned int reserved : 21;
-	unsigned char V18PWRRSTF : 1;
-	unsigned char RMVF : 1;
-	unsigned char OBLRSTF : 1;
-	unsigned char PINRSTF : 1;
-	unsigned char PORRSTF : 1;
-	unsigned char SFTRSTF : 1;
-	unsigned char IWDGRSTF : 1;
-	unsigned char WWDGRSTF : 1;
-	unsigned char LPWRRSTF : 1;
+	uint8 LSION : 1;
+	uint8 LSIRDY : 1;
+	uint32 reserved : 21;
+	uint8 V18PWRRSTF : 1;
+	uint8 RMVF : 1;
+	uint8 OBLRSTF : 1;
+	uint8 PINRSTF : 1;
+	uint8 PORRSTF : 1;
+	uint8 SFTRSTF : 1;
+	uint8 IWDGRSTF : 1;
+	uint8 WWDGRSTF : 1;
+	uint8 LPWRRSTF : 1;
 };
 
 struct RCC_AHBRSTR {
-	unsigned int reserved : 17;
-	unsigned char IOPARST : 1;
-	unsigned char IOPBRST : 1;
-	unsigned char IOPCRST : 1;
-	unsigned char IOPDRST : 1;
-	unsigned char IOPERST : 1;
-	unsigned char IOPFRST : 1;
-	unsigned char reserved2 : 1;
-	unsigned char TSCRST : 1;
-	unsigned char reserved3 : 7;
+	uint32 reserved : 17;
+	uint8 IOPARST : 1;
+	uint8 IOPBRST : 1;
+	uint8 IOPCRST : 1;
+	uint8 IOPDRST : 1;
+	uint8 IOPERST : 1;
+	uint8 IOPFRST : 1;
+	uint8 reserved2 : 1;
+	uint8 TSCRST : 1;
+	uint8 reserved3 : 7;
 };
 
 struct RCC_CFGR2 {
-	unsigned char PREDIV : 4;
-	unsigned int reserved : 28;
+	uint8 PREDIV : 4;
+	uint32 reserved : 28;
 };
 
 struct RCC_CFGR3 {
-	unsigned char USART1SW : 2;
+	uint8 USART1SW : 2;
 	unsigned reserved : 2;
-	unsigned char I2C1SW : 1;
-	unsigned char I2C2SW : 1;
-	unsigned char CECSW : 1;
-	unsigned short reserved2 : 9;
-	unsigned char USART2SW : 2;
-	unsigned char USART3SW : 2;
-	unsigned short reserved3 : 12;
+	uint8 I2C1SW : 1;
+	uint8 I2C2SW : 1;
+	uint8 CECSW : 1;
+	uint16 reserved2 : 9;
+	uint8 USART2SW : 2;
+	uint8 USART3SW : 2;
+	uint16 reserved3 : 12;
 };
 
 struct RCCx {
