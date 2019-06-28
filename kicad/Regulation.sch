@@ -145,6 +145,28 @@ Connection ~ 8000 3800
 Wire Wire Line
 	8000 4900 7700 4900
 Connection ~ 4650 2850
+Wire Wire Line
+	7000 2200 7000 2100
+Connection ~ 7000 2200
+Wire Wire Line
+	7000 2200 7150 2200
+Wire Wire Line
+	8550 3650 8550 3800
+Wire Wire Line
+	8550 3800 8450 3800
+Wire Wire Line
+	8550 3800 8700 3800
+Connection ~ 8550 3800
+Wire Wire Line
+	6200 4100 6200 3900
+Connection ~ 6200 3900
+Wire Wire Line
+	6200 3900 6300 3900
+Wire Wire Line
+	5850 5200 5850 5050
+Connection ~ 5850 5050
+Wire Wire Line
+	5850 5050 5900 5050
 $Comp
 L Device:R R21
 U 1 1 5CA4CBE5
@@ -225,7 +247,6 @@ F 0 "R22" V 6943 3800 50  0000 C CNN
 F 1 "?" V 7034 3800 50  0000 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 7080 3800 50  0001 C CNN
 F 3 "~" H 7150 3800 50  0001 C CNN
-F 4 "RT0805FRE071KL" H 7150 3800 50  0001 C CNN "MPN"
 	1    7150 3800
 	0    1    1    0   
 $EndComp
@@ -285,7 +306,6 @@ F 0 "R23" V 7493 3800 50  0000 C CNN
 F 1 "?" V 7584 3800 50  0000 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 7630 3800 50  0001 C CNN
 F 3 "~" H 7700 3800 50  0001 C CNN
-F 4 "RT0805FRE071KL" H 7700 3800 50  0001 C CNN "MPN"
 	1    7700 3800
 	0    1    1    0   
 $EndComp
@@ -357,7 +377,6 @@ F 0 "R24" V 8093 3800 50  0000 C CNN
 F 1 "?" V 8184 3800 50  0000 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 8230 3800 50  0001 C CNN
 F 3 "~" H 8300 3800 50  0001 C CNN
-F 4 "RT0805FRE071KL" H 8300 3800 50  0001 C CNN "MPN"
 	1    8300 3800
 	0    1    1    0   
 $EndComp
@@ -372,11 +391,6 @@ F 3 "~" H 7200 2100 50  0001 C CNN
 	1    7000 2100
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	7000 2200 7000 2100
-Connection ~ 7000 2200
-Wire Wire Line
-	7000 2200 7150 2200
 $Comp
 L Connector:TestPoint TP3
 U 1 1 5D281C71
@@ -388,13 +402,6 @@ F 3 "~" H 8750 3650 50  0001 C CNN
 	1    8550 3650
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	8550 3650 8550 3800
-Wire Wire Line
-	8550 3800 8450 3800
-Wire Wire Line
-	8550 3800 8700 3800
-Connection ~ 8550 3800
 $Comp
 L Connector:TestPoint TP4
 U 1 1 5D2877CA
@@ -406,16 +413,6 @@ F 3 "~" H 6400 4100 50  0001 C CNN
 	1    6200 4100
 	-1   0    0    1   
 $EndComp
-Wire Wire Line
-	6200 4100 6200 3900
-Connection ~ 6200 3900
-Wire Wire Line
-	6200 3900 6300 3900
-Wire Wire Line
-	5850 5200 5850 5050
-Connection ~ 5850 5050
-Wire Wire Line
-	5850 5050 5900 5050
 $Comp
 L Connector:TestPoint TP5
 U 1 1 5D28AE47
