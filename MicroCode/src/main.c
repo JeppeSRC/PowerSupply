@@ -53,8 +53,12 @@ void setup() {
 	RCC->CFGR.PLLMUL = 3; // Set PLL multiplier to 5
 
 	RCC->CR.PLLON = 1; // Enable PLL
+
+	while (RCC->CR.PLLRDY != 1); // Wait for PLL ready
+
 	RCC->CFGR.SW = 2; // Set PLL as system clock source
 
+	
 }
 
 int main() {
