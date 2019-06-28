@@ -43,6 +43,20 @@
 
 #include <sys/registers/registers.h>
 
+void setup() {
+	//Clock setup
+	RCC->CR.PLLON = 0; // Disable PLL
+
+	while (RCC->CR.PLLRDY != 0); // Wait for PLL ready
+
+	RCC->CFGR.PLLSRC = 0; // Set PLL source to HSI/2
+	RCC->CFGR.PLLMUL = 3; // Set PLL multiplier to 5
+
+	RCC->CR.PLLON = 1; // Enable PLL
+	RCC->CFGR.SW = 2; // Set PLL as system clock source
+
+}
+
 int main() {
 
 	
