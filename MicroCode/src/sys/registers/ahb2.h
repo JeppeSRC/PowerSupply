@@ -232,6 +232,13 @@ struct GPIOx_BSRR {
 			uint8 ps13 : 1;
 			uint8 ps14 : 1;
 			uint8 ps15 : 1;
+		};
+
+		uint16 ps;
+	};
+
+	union {
+		struct {
 			uint8 pr0 : 1;
 			uint8 pr1 : 1;
 			uint8 pr2 : 1;
@@ -250,7 +257,7 @@ struct GPIOx_BSRR {
 			uint8 pr15 : 1;
 		};
 
-		uint32 p : 32;
+		uint16 pr;
 	};
 };
 
