@@ -1,6 +1,8 @@
 CC=arm-none-eabi-gcc
 AS=arm-none-eabi-as
 
+MK=md
+
 CFALGS= -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O3 -Wall
 LFLAGS= -nostartfiles -nodefaultlibs -nostdlib -Wl,--gc-sections
 
@@ -14,9 +16,8 @@ AOBJ= $(ASRC:.asm=.o)
 
 MAIN= MicroCode.elf
 
-.PHONY: clean
-
-all: $(MAIN)
+.PHONY: build
+build: makeDirs $(MAIN)
 	@echo Complete
 
 $(MAIN): obj/$(OBJ) obj/$(AOBJ)
@@ -31,9 +32,9 @@ obj/%.o: %.asm
 	@$(AS) $(CFLAGS) $(INCLUDES) -c $< -o $@
 	@echo Compiling $<
 
-clean:
-	rm -rf obj/**.o
+makeDirs:
+	@if not exist obj\src mkdir obj\src\sys obj\src\core\driver
 
-test:
-	@echo $(SRC)
-	@echo $(OBJ)
+.PHONY: clean
+clean:
+	@rmdir /Q /S obj

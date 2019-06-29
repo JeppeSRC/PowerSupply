@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Release|ARM">
+      <Configuration>Release</Configuration>
+      <Platform>ARM</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <ProjectGuid>{2FF2023B-C820-40FC-9080-5206D9C081E2}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+    <PlatformToolset>v142</PlatformToolset>
+    <ConfigurationType>Makefile</ConfigurationType>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+    <OutDir />
+    <IntDir />
+    <NMakeBuildCommandLine>make build</NMakeBuildCommandLine>
+    <NMakeIncludeSearchPath>src</NMakeIncludeSearchPath>
+    <NMakeCleanCommandLine>
+    </NMakeCleanCommandLine>
+    <TargetName />
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+    <BuildLog>
+      <Path />
+    </BuildLog>
+    <Link>
+      <OutputFile />
+      <ProgramDatabaseFile />
+      <ProfileGuidedDatabase />
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="src\core\driver\display.c" />
+    <ClCompile Include="src\main.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\core\def.h" />
+    <ClInclude Include="src\core\driver\display.h" />
+    <ClInclude Include="src\sys\registers\ahb1.h" />
+    <ClInclude Include="src\sys\registers\ahb2.h" />
+    <ClInclude Include="src\sys\registers\apb1.h" />
+    <ClInclude Include="src\sys\registers\apb2.h" />
+    <ClInclude Include="src\sys\registers\registers.h" />
+    <ClInclude Include="src\sys\registers\timer.h" />
+    <ClInclude Include="src\sys\time.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\sys\startup.asm" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

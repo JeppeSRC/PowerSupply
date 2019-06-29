@@ -43,6 +43,10 @@
 
 #include <sys/registers/registers.h>
 
+struct BN {
+	uint8 dank;
+};
+
 void setup() {
 	//Clock setup
 	RCC->CR.PLLON = 0; // Disable PLL
