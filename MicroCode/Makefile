@@ -1,40 +1,42 @@
 CC=arm-none-eabi-gcc
 AS=arm-none-eabi-as
 
-MK=md
-
-CFALGS= -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O3 -Wall
+AFLAGS= -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16
+CFLAGS= $(AFLAGS) -O3 -Wno-unknown-pragmas -Wall
 LFLAGS= -nostartfiles -nodefaultlibs -nostdlib -Wl,--gc-sections
 
 INCLUDES= -Isrc/ 
 
-SRC= $(wildcard src/**/*.c) $(wildcard */*.c) 
-ASRC= $(wildcard src/**/*.asm) $(wildcard */*.asm)
-
-OBJ= $(SRC:.c=.o)
-AOBJ= $(ASRC:.asm=.o)
-
 MAIN= MicroCode.elf
+
+SRC= $(wildcard */*.c */*/*.c */*/*/*.c */*/*/*/*.c */*/*/*/*/*.c */*.asm */*/*.asm */*/*/*.asm */*/*/*/*.asm */*/*/*/*/*.asm)
+OBJ= $(subst src/,obj/,$(subst .c,.o,$(subst .asm,.o,$(SRC))))
 
 .PHONY: build
 build: makeDirs $(MAIN)
 	@echo Complete
 
-$(MAIN): obj/$(OBJ) obj/$(AOBJ)
+$(MAIN): $(subst obj/,src/,$(OBJ))
 	@echo Linking
-	@$(CC) $(CFLAGS) $(LFLAGS) $(INCLUDES) --specs=nosys.specs -T"LinkerScript.ld" -Wl,-Map=output.map -o $(MAIN) obj/$(OBJ) obj/$(AOBJ)
+	@$(CC) $(CFLAGS) $(LFLAGS) $(INCLUDES) --specs=nosys.specs -T"LinkerScript.ld" -Wl,-Map=output.map -o $(MAIN) $(OBJ)
 
-obj/%.o: %.c
-	@$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
+%.o: %.c
 	@echo Compiling $<
+	@$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $(subst src/,obj/,$@)
 
-obj/%.o: %.asm
-	@$(AS) $(CFLAGS) $(INCLUDES) -c $< -o $@
-	@echo Compiling $<
+%.o: %.asm
+	@echo Assembling $<
+	@$(AS) $(AFLAGS) $(INCLUDES) -c $< -o $(subst src/,obj/,$@)
 
 makeDirs:
-	@if not exist obj\src mkdir obj\src\sys obj\src\core\driver
+	@if not exist obj\sys mkdir obj\sys obj\core\driver
 
 .PHONY: clean
 clean:
 	@rmdir /Q /S obj
+
+test:
+	@echo $(SRC)
+	@echo $(OBJ)
+	@echo $(subst obj/,src/,$(OBJ))
+	
