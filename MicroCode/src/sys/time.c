@@ -18,7 +18,7 @@ void DelayMillis(uint16 milliSeconds) {
 }
 
 void DelayMicros(uint16 microSeconds) {
-	TIM18->PSC = 19; // Setting clock to 1Mhz (20 Mhz / (19+1)) to get one cycle each microSecond
+	TIM18->PSC = 19; // Setting clock to 1Mhz (20 Mhz / (19+1)) to get one cycle every microSecond
 	TIM18->ARR = microSeconds;
 	TIM18->CR1.CEN = 1;
 
