@@ -9,8 +9,8 @@ Notes:
     Input voltage: 230V/50Hz
 
 Display Layout:
-    0.00V 0.00A
-    0.00V 0.00A
+    SET 0.00V 0.00A
+    OUT 0.00V 0.00A
 
 Components:
     - Current Shunt: MF1/4DC1R00F (https://www.mouser.se/datasheet/2/219/MF-MFS-RK-18760.pdf)
