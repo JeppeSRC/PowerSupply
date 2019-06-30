@@ -47,6 +47,14 @@
 // APB		20 Mhz
 // SDADC	1  Mhz
 
+/* Display Format 2x16
+	
+	-------------------
+	|SET  0.00V 0.00A |
+	|OUT  0.00V 0.00A |
+	-------------------
+*/
+
 #include <sys/registers/registers.h>
 
 
@@ -148,7 +156,7 @@ void setup() {
 	GPIOF->OSPEEDR.p7 = 0;
 	GPIOB->OSPEEDR.p0 = 0;
 	GPIOB->OSPEEDR.p1 = 0;
-	GPIOB->OSPEEDR.p2 = 0;
+	GPIOB->OSPEEDR.p2 = 3;
 	GPIOB->OSPEEDR.p3 = 0;
 	GPIOB->OSPEEDR.p4 = 0;
 	GPIOB->OSPEEDR.p5 = 0;
