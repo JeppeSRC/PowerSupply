@@ -231,9 +231,9 @@ struct TIM16_EGR {
 	uint16 reserved : 15;
 };
 
-typedef uint32 TIM16_CNT;
-typedef uint32 TIM16_PSC;
-typedef uint32 TIM16_ARR;
+typedef uint16 TIM16_CNT;
+typedef uint16 TIM16_PSC;
+typedef uint16 TIM16_ARR;
 
 // Timers 6, 7, 18
 struct TIMxB {
