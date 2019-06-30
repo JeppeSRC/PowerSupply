@@ -41,11 +41,14 @@
 	Display_D7		PB14			26
  */
 
+
+// SYSCLK	20 Mhz
+// AHB		20 Mhz
+// APB		20 Mhz
+// SDADC	1  Mhz
+
 #include <sys/registers/registers.h>
 
-struct BN {
-	uint8 dank;
-};
 
 void setup() {
 	//Clock setup
