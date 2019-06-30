@@ -5,7 +5,7 @@
 
 void InitializeTimers();
 
-void Delay(uint16 seconds); 
+void Delay(uint8 seconds); 
 void DelayMillis(uint16 milliSeceonds);
 void DelayMicros(uint16 microSeconds);
 
