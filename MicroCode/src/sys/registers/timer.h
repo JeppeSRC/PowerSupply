@@ -206,12 +206,14 @@ struct TIM16_CR1 {
 	uint8 reserved : 3;
 	uint8 ARPE : 1;
 	uint8 reserved2 : 8;
+	uint16 reserved3 : 16;
 };
 
 struct TIM16_CR2 {
 	uint8 reserved : 4;
 	uint8 MMS : 3;
 	uint16 reserved2 : 9;
+	uint16 reserved3 : 16;
 };
 
 struct TIM16_DIER {
@@ -219,16 +221,19 @@ struct TIM16_DIER {
 	uint8 reserved : 7;
 	uint8 UDE : 1;
 	uint8 reserved2 : 7;
+	uint16 reserved3 : 16;
 };
 
 struct TIM16_SR {
 	uint8 UIF : 1;
 	uint16 reserved : 15;
+	uint16 reserved2 : 16;
 };
 
 struct TIM16_EGR {
 	uint8 UG : 1;
 	uint16 reserved : 15;
+	uint16 reserved2 : 16;
 };
 
 typedef uint16 TIM16_CNT;
@@ -239,14 +244,19 @@ typedef uint16 TIM16_ARR;
 struct TIMxB {
 	struct TIM16_CR1 CR1;
 	struct TIM16_CR2 CR2;
-	uint16 reserved;
+	uint32 reserved;
 	struct TIM16_DIER DIER;
 	struct TIM16_SR SR;
 	struct TIM16_EGR EGR;
-	unsigned long long reserved2 : 48;
+	uint32 res;
+	uint32 res1;
+	uint32 res2;
 	TIM16_CNT CNT;
+	uint16 reserved3;
 	TIM16_PSC PSC;
+	uint16 reserved4;
 	TIM16_ARR ARR;
+	uint16 reserved5;
 };
 
 #endif
