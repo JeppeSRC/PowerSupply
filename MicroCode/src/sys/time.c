@@ -9,8 +9,8 @@ void InitializeTimers() {
 	TIM18->CR1.URS = 1;
 }
 
-void Delay(uint16 seconds) {
-
+void Delay(uint8 seconds) {
+	DelayMillis(((uint16)seconds & 0x7F) * 1000); // 64 seconds MAX
 }
 
 void DelayMillis(uint16 milliSeconds) {
