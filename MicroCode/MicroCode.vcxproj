@@ -44,12 +44,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\core\driver\display.c" />
+    <ClCompile Include="src\core\string.c" />
     <ClCompile Include="src\main.c" />
     <ClCompile Include="src\sys\time.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\core\def.h" />
     <ClInclude Include="src\core\driver\display.h" />
+    <ClInclude Include="src\core\string.h" />
     <ClInclude Include="src\sys\registers\ahb1.h" />
     <ClInclude Include="src\sys\registers\ahb2.h" />
     <ClInclude Include="src\sys\registers\apb1.h" />
