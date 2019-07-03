@@ -2,7 +2,7 @@ CC=arm-none-eabi-gcc
 AS=arm-none-eabi-as
 
 AFLAGS= -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16
-CFLAGS= $(AFLAGS) -O3 -Wno-unknown-pragmas -Wall
+CFLAGS= $(AFLAGS) -O3 -Wno-unknown-pragmas -Wno-nonnull-compare -Wall
 LFLAGS= -nostartfiles -nodefaultlibs -nostdlib -Wl,--gc-sections
 
 INCLUDES= -Isrc/ 
