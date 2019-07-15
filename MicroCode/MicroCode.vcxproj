@@ -26,10 +26,9 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
     <OutDir />
     <IntDir />
-    <NMakeBuildCommandLine>make build</NMakeBuildCommandLine>
+    <NMakeBuildCommandLine>FuckMake build</NMakeBuildCommandLine>
     <NMakeIncludeSearchPath>src</NMakeIncludeSearchPath>
-    <NMakeCleanCommandLine>
-    </NMakeCleanCommandLine>
+    <NMakeCleanCommandLine>FuckMake clean</NMakeCleanCommandLine>
     <TargetName />
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
