@@ -13,3 +13,4 @@ Release/
 *.vscode 
 *.vs
 *.log
+*.obj

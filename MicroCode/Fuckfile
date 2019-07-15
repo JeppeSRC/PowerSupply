@@ -1,0 +1,41 @@
+!FuckMake
+
+CC = arm-none-eabi-gcc
+LD =%(CC)
+AS = arm-none-eabi-as
+
+CFILES = GetFiles(src/,*.c,)
+ASMFILES = GetFiles(src/,*.asm,)
+
+INC = -Isrc
+
+OutDir = bin/
+ObjDir = %(OutDir)obj/
+
+AFLAGS = -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16
+CFLAGS = %(AFLAGS) -O3 -Wno-unknown-pragmas -Wno-nonnull-compare -Wall
+LFLAGS = -nostartfiles -nodefaultlibs -nostdlib -Wl,--gc-sections --specs=nosys.specs -T"LinkerScript.ld"
+
+
+Compile {
+    Msg(Compiling %Input)
+    !%(CC) %(CFLAGS) %(INC) -c -o %Output %Input 
+}
+
+Assemble {
+    Msg(Assembling %Input)
+    !%(AS) %(AFLAGS) %(INC) -c -o %Output %Input
+}
+
+Link {
+    Msg(Linking %Output)
+    !%(LD) %(LFLAGS) -o %Output %Input
+}
+
+build:
+    ExecuteList(Compile, %(CFILES), %(ObjDir))
+    ExecuteList(Assemble, %(ASMFILES), %(ObjDir))
+    Execute(Link, GetFiles(%(ObjDir), *.obj,), %(OutDir)MicroCode.elf)
+
+clean:
+    DeleteFiles(GetFiles(%(ObjDir),*.obj,) bin/MicroCode.elf)
