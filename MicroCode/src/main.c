@@ -71,9 +71,9 @@ void setup() {
 
 	while (RCC->CR.PLLRDY != 1); // Wait for PLL ready
 
+	RCC->CFGR.SDPRE = 0b11000; // SDADC division factor 20 (1Mhz)
 	RCC->CFGR.SW = 0b10; // Set PLL as system clock source
 
-	RCC->CFGR.SDPRE = 0b11000; // SDADC division factor 20 (1Mhz)
 
 	//GPIO setup
 	// CLock enable
