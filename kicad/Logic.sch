@@ -174,18 +174,6 @@ F 3 "" H 6950 800 50  0001 C CNN
 	1    6950 800 
 	1    0    0    -1  
 $EndComp
-$Comp
-L Switch:SW_DIP_x04 SW3
-U 1 1 5CAA887C
-P 4250 7450
-F 0 "SW3" H 4250 7917 50  0000 C CNN
-F 1 "SW_DIP_x04" H 4250 7826 50  0000 C CNN
-F 2 "Button_Switch_THT:SW_DIP_SPSTx04_Piano_10.8x11.72mm_W7.62mm_P2.54mm" H 4250 7450 50  0001 C CNN
-F 3 "https://www.mouser.se/datasheet/2/307/omron_03202018_A6FR_datasheet-1314011.pdf" H 4250 7450 50  0001 C CNN
-F 4 "A6FR-4104" H 4250 7450 50  0001 C CNN "MPN"
-	1    4250 7450
-	1    0    0    -1  
-$EndComp
 Text Label 4700 3300 2    50   ~ 0
 BOOT0
 Text Label 4550 7250 0    50   ~ 0
@@ -202,8 +190,6 @@ Text Label 6100 4500 0    50   ~ 0
 ENC0_SW
 Text Label 6100 4400 0    50   ~ 0
 ENC1_SW
-NoConn ~ 4550 7350
-NoConn ~ 4550 7450
 NoConn ~ 6100 5800
 NoConn ~ 6500 1200
 $Comp
@@ -758,14 +744,6 @@ Connection ~ 7950 5800
 Wire Wire Line
 	7650 5800 7450 5800
 Connection ~ 7650 5800
-Wire Wire Line
-	3950 7450 3950 7550
-Connection ~ 3950 7550
-Wire Wire Line
-	3950 7550 3950 7600
-Connection ~ 3950 7450
-Wire Wire Line
-	3950 7450 3950 7350
 Text Label 4700 3100 2    50   ~ 0
 NRST
 Text Label 5850 7450 0    50   ~ 0
@@ -1224,9 +1202,6 @@ Text Label 6100 3900 0    50   ~ 0
 CODE_B4
 Text Label 6100 4000 0    50   ~ 0
 CODE_B5
-NoConn ~ 4700 5800
-NoConn ~ 4700 5700
-NoConn ~ 4700 5600
 Text Label 4700 4800 2    50   ~ 0
 CODE_B1
 Wire Wire Line
@@ -1394,4 +1369,36 @@ F 3 "" H 6050 7650 50  0001 C CNN
 	1    6050 7650
 	1    0    0    -1  
 $EndComp
+Wire Wire Line
+	3950 7550 3950 7600
+Connection ~ 3950 7550
+Wire Wire Line
+	3950 7450 3950 7350
+Wire Wire Line
+	3950 7450 3950 7550
+Connection ~ 3950 7450
+$Comp
+L Switch:SW_DIP_x04 SW3
+U 1 1 5CAA887C
+P 4250 7450
+F 0 "SW3" H 4250 7917 50  0000 C CNN
+F 1 "SW_DIP_x04" H 4250 7826 50  0000 C CNN
+F 2 "Button_Switch_THT:SW_DIP_SPSTx04_Piano_10.8x11.72mm_W7.62mm_P2.54mm" H 4250 7450 50  0001 C CNN
+F 3 "https://www.mouser.se/datasheet/2/307/omron_03202018_A6FR_datasheet-1314011.pdf" H 4250 7450 50  0001 C CNN
+F 4 "A6FR-4104" H 4250 7450 50  0001 C CNN "MPN"
+	1    4250 7450
+	1    0    0    -1  
+$EndComp
+Text Label 4550 7350 0    50   ~ 0
+PC13
+Text Label 4700 5600 2    50   ~ 0
+PC13
+Text Label 4700 5700 2    50   ~ 0
+PC14
+Text Label 4700 5800 2    50   ~ 0
+PC15
+Text Label 4550 7450 0    50   ~ 0
+PC14
+Text Label 4550 7550 0    50   ~ 0
+PC15
 $EndSCHEMATC
