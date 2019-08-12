@@ -32,4 +32,6 @@ Components:
 Changes in v2:
     - External Crystal Oscillator
     - Dedicated push button switch for MCU reset
+    - USART header
+    - Removed one 3v3 regulator
 
