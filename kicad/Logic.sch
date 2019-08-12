@@ -288,17 +288,6 @@ Connection ~ 6950 800
 Wire Wire Line
 	6950 800  7100 800 
 $Comp
-L symbols:+3V3A #PWR022
-U 1 1 5CF6F3CF
-P 850 750
-F 0 "#PWR022" H 1050 775 50  0001 C CNN
-F 1 "+3V3A" H 832 923 50  0000 C CNN
-F 2 "" H 850 750 50  0001 C CNN
-F 3 "" H 850 750 50  0001 C CNN
-	1    850  750 
-	-1   0    0    -1  
-$EndComp
-$Comp
 L Device:C_Small C15
 U 1 1 5CF6F3D5
 P 1650 850
@@ -346,17 +335,6 @@ F 3 "" H 850 950 50  0001 C CNN
 	-1   0    0    -1  
 $EndComp
 $Comp
-L symbols:+3V3A #PWR025
-U 1 1 5CFE4684
-P 850 1300
-F 0 "#PWR025" H 1050 1325 50  0001 C CNN
-F 1 "+3V3A" H 832 1473 50  0000 C CNN
-F 2 "" H 850 1300 50  0001 C CNN
-F 3 "" H 850 1300 50  0001 C CNN
-	1    850  1300
-	-1   0    0    -1  
-$EndComp
-$Comp
 L Device:C_Small C18
 U 1 1 5CFE468A
 P 1650 1400
@@ -401,17 +379,6 @@ F 1 "GNDREF" H 855 1327 50  0001 C CNN
 F 2 "" H 850 1500 50  0001 C CNN
 F 3 "" H 850 1500 50  0001 C CNN
 	1    850  1500
-	-1   0    0    -1  
-$EndComp
-$Comp
-L symbols:+3V3A #PWR028
-U 1 1 5CFE812D
-P 850 1850
-F 0 "#PWR028" H 1050 1875 50  0001 C CNN
-F 1 "+3V3A" H 832 2023 50  0000 C CNN
-F 2 "" H 850 1850 50  0001 C CNN
-F 3 "" H 850 1850 50  0001 C CNN
-	1    850  1850
 	-1   0    0    -1  
 $EndComp
 $Comp
@@ -472,7 +439,6 @@ VDD1
 Text Label 4700 3500 2    50   ~ 0
 VREFSD
 Connection ~ 850  2050
-Connection ~ 850  1850
 Wire Wire Line
 	850  1850 1250 1850
 Wire Wire Line
@@ -500,7 +466,6 @@ Connection ~ 1250 1300
 Wire Wire Line
 	1250 1300 1650 1300
 Connection ~ 850  1500
-Connection ~ 850  1300
 Connection ~ 1650 750 
 Wire Wire Line
 	1650 750  1950 750 
@@ -515,7 +480,6 @@ Connection ~ 1250 750
 Wire Wire Line
 	1250 750  1650 750 
 Connection ~ 850  950 
-Connection ~ 850  750 
 Text Label 1700 1300 0    50   ~ 0
 VDDSD
 Text Label 1700 1850 0    50   ~ 0
@@ -1401,4 +1365,37 @@ Text Label 4550 7450 0    50   ~ 0
 PC14
 Text Label 4550 7550 0    50   ~ 0
 PC15
+$Comp
+L power:+3V3 #PWR?
+U 1 1 5D51BAC9
+P 850 1850
+F 0 "#PWR?" H 850 1700 50  0001 C CNN
+F 1 "+3V3" H 865 2023 50  0000 C CNN
+F 2 "" H 850 1850 50  0001 C CNN
+F 3 "" H 850 1850 50  0001 C CNN
+	1    850  1850
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3V3 #PWR?
+U 1 1 5D51DFA1
+P 850 1300
+F 0 "#PWR?" H 850 1150 50  0001 C CNN
+F 1 "+3V3" H 865 1473 50  0000 C CNN
+F 2 "" H 850 1300 50  0001 C CNN
+F 3 "" H 850 1300 50  0001 C CNN
+	1    850  1300
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3V3 #PWR?
+U 1 1 5D520217
+P 850 750
+F 0 "#PWR?" H 850 600 50  0001 C CNN
+F 1 "+3V3" H 865 923 50  0000 C CNN
+F 2 "" H 850 750 50  0001 C CNN
+F 3 "" H 850 750 50  0001 C CNN
+	1    850  750 
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
