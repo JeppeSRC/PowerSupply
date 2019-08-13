@@ -190,7 +190,6 @@ Text Label 6100 4500 0    50   ~ 0
 ENC0_SW
 Text Label 6100 4400 0    50   ~ 0
 ENC1_SW
-NoConn ~ 6100 5800
 NoConn ~ 6500 1200
 $Comp
 L power:GNDREF #PWR044
@@ -203,28 +202,6 @@ F 3 "" H 3950 7600 50  0001 C CNN
 	1    3950 7600
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	8300 5700 6100 5700
-Wire Wire Line
-	6100 5600 8300 5600
-Wire Wire Line
-	8300 5500 6100 5500
-Wire Wire Line
-	6100 5400 8300 5400
-Wire Wire Line
-	8300 5300 6100 5300
-Wire Wire Line
-	6100 5200 8300 5200
-Wire Wire Line
-	8300 5100 6100 5100
-Wire Wire Line
-	6100 5000 8300 5000
-Wire Wire Line
-	8300 4900 6100 4900
-Wire Wire Line
-	6100 4800 8300 4800
-Wire Wire Line
-	8300 4700 6100 4700
 $Comp
 L Device:R R31
 U 1 1 5CEF91FC
@@ -633,17 +610,6 @@ F 1 "GNDREF" H 8505 4027 50  0001 C CNN
 F 2 "" H 8500 4200 50  0001 C CNN
 F 3 "" H 8500 4200 50  0001 C CNN
 	1    8500 4200
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:+3.3V #PWR035
-U 1 1 5CF19FC3
-P 7950 4450
-F 0 "#PWR035" H 7950 4300 50  0001 C CNN
-F 1 "+3.3V" H 7965 4623 50  0000 C CNN
-F 2 "" H 7950 4450 50  0001 C CNN
-F 3 "" H 7950 4450 50  0001 C CNN
-	1    7950 4450
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
@@ -1274,4 +1240,96 @@ F 3 "" H 850 750 50  0001 C CNN
 	1    850  750 
 	1    0    0    -1  
 $EndComp
+Text Label 6100 3900 0    50   ~ 0
+USART_TX
+Text Label 6100 4000 0    50   ~ 0
+USART_RX
+$Comp
+L Connector_Generic:Conn_01x04 J?
+U 1 1 5D529B99
+P 8500 3800
+F 0 "J?" H 8580 3792 50  0000 L CNN
+F 1 "USART" H 8580 3701 50  0000 L CNN
+F 2 "" H 8500 3800 50  0001 C CNN
+F 3 "~" H 8500 3800 50  0001 C CNN
+	1    8500 3800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8300 4200 8300 4000
+Connection ~ 8300 4200
+Text Label 8300 3800 2    50   ~ 0
+USART_TX
+Text Label 8300 3900 2    50   ~ 0
+USART_RX
+Wire Wire Line
+	8200 3550 8200 3700
+Wire Wire Line
+	8200 3700 8300 3700
+$Comp
+L power:+3.3V #PWR035
+U 1 1 5CF19FC3
+P 8200 3550
+F 0 "#PWR035" H 8200 3400 50  0001 C CNN
+F 1 "+3.3V" H 8215 3723 50  0000 C CNN
+F 2 "" H 8200 3550 50  0001 C CNN
+F 3 "" H 8200 3550 50  0001 C CNN
+	1    8200 3550
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR?
+U 1 1 5D53D1A2
+P 7950 4450
+F 0 "#PWR?" H 7950 4300 50  0001 C CNN
+F 1 "+3.3V" H 7965 4623 50  0000 C CNN
+F 2 "" H 7950 4450 50  0001 C CNN
+F 3 "" H 7950 4450 50  0001 C CNN
+	1    7950 4450
+	1    0    0    -1  
+$EndComp
+Text Label 6100 4700 0    50   ~ 0
+Display_RS
+Text Label 6100 4800 0    50   ~ 0
+Display_RW
+Text Label 6100 4900 0    50   ~ 0
+Display_E
+Text Label 6100 5000 0    50   ~ 0
+Display_D0
+Text Label 6100 5100 0    50   ~ 0
+Display_D1
+Text Label 6100 5200 0    50   ~ 0
+Display_D2
+Text Label 6100 5300 0    50   ~ 0
+Display_D3
+Text Label 6100 5400 0    50   ~ 0
+Display_D4
+Text Label 6100 5500 0    50   ~ 0
+Display_D5
+Text Label 6100 5600 0    50   ~ 0
+Display_D6
+Text Label 6100 5700 0    50   ~ 0
+Display_D7
+Text Label 8300 4700 2    50   ~ 0
+Display_RS
+Text Label 8300 4800 2    50   ~ 0
+Disply_RW
+Text Label 8300 4900 2    50   ~ 0
+Display_E
+Text Label 8300 5000 2    50   ~ 0
+Display_D0
+Text Label 8300 5100 2    50   ~ 0
+Display_D1
+Text Label 8300 5200 2    50   ~ 0
+Display_D2
+Text Label 8300 5300 2    50   ~ 0
+Display_D3
+Text Label 8300 5500 2    50   ~ 0
+Display_D5
+Text Label 8300 5400 2    50   ~ 0
+Display_D4
+Text Label 8300 5600 2    50   ~ 0
+Display_D6
+Text Label 8300 5700 2    50   ~ 0
+Display_D7
 $EndSCHEMATC
