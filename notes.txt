@@ -34,4 +34,6 @@ Changes in v2:
     - Dedicated push button switch for MCU reset
     - USART header
     - Removed one 3v3 regulator
-
+    - Encoder debouncing
+    - Capacitor on USB_D+ pullup
+    - Removed some status LEDs
