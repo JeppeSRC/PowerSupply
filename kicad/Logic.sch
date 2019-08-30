@@ -1253,8 +1253,6 @@ F 3 "" H 7950 4450 50  0001 C CNN
 $EndComp
 Text Label 6100 4700 0    50   ~ 0
 Display_RS
-Text Label 6100 4800 0    50   ~ 0
-Display_RW
 Text Label 6100 4900 0    50   ~ 0
 Display_E
 Text Label 6100 5000 0    50   ~ 0
@@ -1275,10 +1273,6 @@ Text Label 6100 5700 0    50   ~ 0
 Display_D7
 Text Label 8300 4700 2    50   ~ 0
 Display_RS
-Text Label 8300 4800 2    50   ~ 0
-Disply_RW
-Text Label 8300 4900 2    50   ~ 0
-Display_E
 Text Label 8300 5000 2    50   ~ 0
 Display_D0
 Text Label 8300 5100 2    50   ~ 0
@@ -1664,4 +1658,11 @@ F 3 "" H 950 5800 50  0001 C CNN
 	1    950  5800
 	0    1    1    0   
 $EndComp
+NoConn ~ 6100 5800
+Text Label 8300 4900 2    50   ~ 0
+Display_E
+Text Label 6100 4800 0    50   ~ 0
+Display_RW
+Text Label 8300 4800 2    50   ~ 0
+Display_RW
 $EndSCHEMATC
