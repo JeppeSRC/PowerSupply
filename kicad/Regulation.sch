@@ -425,10 +425,10 @@ F 3 "~" H 6050 5200 50  0001 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L Connector:TestPoint TP?
+L Connector:TestPoint TP6
 U 1 1 5D68EE47
 P 6150 3150
-F 0 "TP?" V 6104 3338 50  0000 L CNN
+F 0 "TP6" V 6104 3338 50  0000 L CNN
 F 1 "Vout Low" V 6195 3338 50  0000 L CNN
 F 2 "" H 6350 3150 50  0001 C CNN
 F 3 "~" H 6350 3150 50  0001 C CNN
