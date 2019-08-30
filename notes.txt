@@ -37,3 +37,4 @@ Changes in v2:
     - Encoder debouncing
     - Capacitor on USB_D+ pullup
     - Removed some status LEDs
+    - Fixed encoder footprint
