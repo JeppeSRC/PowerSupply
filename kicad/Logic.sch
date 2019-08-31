@@ -1221,9 +1221,9 @@ $EndComp
 Wire Wire Line
 	8300 4200 8300 4000
 Connection ~ 8300 4200
-Text Label 8300 3800 2    50   ~ 0
-USART_TX
 Text Label 8300 3900 2    50   ~ 0
+USART_TX
+Text Label 8300 3800 2    50   ~ 0
 USART_RX
 Wire Wire Line
 	8200 3550 8200 3700
