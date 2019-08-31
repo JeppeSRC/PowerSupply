@@ -138,8 +138,6 @@ F 3 "" H 6950 800 50  0001 C CNN
 $EndComp
 Text Label 4700 3300 2    50   ~ 0
 BOOT0
-Text Label 4550 7250 0    50   ~ 0
-BOOT0
 Text Label 6100 3100 0    50   ~ 0
 ENC0_A
 Text Label 6100 3200 0    50   ~ 0
@@ -153,17 +151,6 @@ ENC0_SW
 Text Label 6100 4400 0    50   ~ 0
 ENC1_SW
 NoConn ~ 6500 1200
-$Comp
-L power:GNDREF #PWR044
-U 1 1 5CE86A36
-P 3950 7600
-F 0 "#PWR044" H 3950 7350 50  0001 C CNN
-F 1 "GNDREF" H 3955 7427 50  0001 C CNN
-F 2 "" H 3950 7600 50  0001 C CNN
-F 3 "" H 3950 7600 50  0001 C CNN
-	1    3950 7600
-	1    0    0    -1  
-$EndComp
 $Comp
 L Device:R R31
 U 1 1 5CEF91FC
@@ -575,7 +562,7 @@ F 3 "" H 8500 4200 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	8300 4500 7950 4500
+	8300 4500 8150 4500
 Wire Wire Line
 	7950 4500 7950 4450
 $Comp
@@ -996,21 +983,6 @@ F 3 "" H 4150 3600 50  0001 C CNN
 	1    4150 3600
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	3950 7250 3900 7250
-Wire Wire Line
-	3900 7250 3900 7200
-$Comp
-L power:+3V3 #PWR039
-U 1 1 5CE85B78
-P 3900 7200
-F 0 "#PWR039" H 3900 7050 50  0001 C CNN
-F 1 "+3V3" H 3915 7373 50  0000 C CNN
-F 2 "" H 3900 7200 50  0001 C CNN
-F 3 "" H 3900 7200 50  0001 C CNN
-	1    3900 7200
-	1    0    0    -1  
-$EndComp
 $Comp
 L Device:Crystal Y1
 U 1 1 5D42C138
@@ -1138,38 +1110,6 @@ F 3 "" H 6050 7650 50  0001 C CNN
 	1    6050 7650
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	3950 7550 3950 7600
-Connection ~ 3950 7550
-Wire Wire Line
-	3950 7450 3950 7350
-Wire Wire Line
-	3950 7450 3950 7550
-Connection ~ 3950 7450
-$Comp
-L Switch:SW_DIP_x04 SW3
-U 1 1 5CAA887C
-P 4250 7450
-F 0 "SW3" H 4250 7917 50  0000 C CNN
-F 1 "SW_DIP_x04" H 4250 7826 50  0000 C CNN
-F 2 "Button_Switch_THT:SW_DIP_SPSTx04_Piano_10.8x11.72mm_W7.62mm_P2.54mm" H 4250 7450 50  0001 C CNN
-F 3 "https://www.mouser.se/datasheet/2/307/omron_03202018_A6FR_datasheet-1314011.pdf" H 4250 7450 50  0001 C CNN
-F 4 "A6FR-4104" H 4250 7450 50  0001 C CNN "MPN"
-	1    4250 7450
-	1    0    0    -1  
-$EndComp
-Text Label 4550 7350 0    50   ~ 0
-PC13
-Text Label 4700 5600 2    50   ~ 0
-PC13
-Text Label 4700 5700 2    50   ~ 0
-PC14
-Text Label 4700 5800 2    50   ~ 0
-PC15
-Text Label 4550 7450 0    50   ~ 0
-PC14
-Text Label 4550 7550 0    50   ~ 0
-PC15
 $Comp
 L power:+3V3 #PWR022
 U 1 1 5D51BAC9
@@ -1208,12 +1148,12 @@ USART_TX
 Text Label 6100 4000 0    50   ~ 0
 USART_RX
 $Comp
-L Connector_Generic:Conn_01x04 J3
+L Connector_Generic:Conn_01x05 J3
 U 1 1 5D529B99
 P 8500 3800
 F 0 "J3" H 8580 3792 50  0000 L CNN
 F 1 "USART" H 8580 3701 50  0000 L CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical" H 8500 3800 50  0001 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_2x03_P2.54mm_Vertical" H 8500 3800 50  0001 C CNN
 F 3 "~" H 8500 3800 50  0001 C CNN
 	1    8500 3800
 	1    0    0    -1  
@@ -1221,25 +1161,10 @@ $EndComp
 Wire Wire Line
 	8300 4200 8300 4000
 Connection ~ 8300 4200
-Text Label 8300 3900 2    50   ~ 0
-USART_TX
 Text Label 8300 3800 2    50   ~ 0
+USART_TX
+Text Label 8300 3600 2    50   ~ 0
 USART_RX
-Wire Wire Line
-	8200 3550 8200 3700
-Wire Wire Line
-	8200 3700 8300 3700
-$Comp
-L power:+3.3V #PWR035
-U 1 1 5CF19FC3
-P 8200 3550
-F 0 "#PWR035" H 8200 3400 50  0001 C CNN
-F 1 "+3.3V" H 8215 3723 50  0000 C CNN
-F 2 "" H 8200 3550 50  0001 C CNN
-F 3 "" H 8200 3550 50  0001 C CNN
-	1    8200 3550
-	1    0    0    -1  
-$EndComp
 $Comp
 L power:+3.3V #PWR032
 U 1 1 5D53D1A2
@@ -1665,4 +1590,16 @@ Text Label 6100 4800 0    50   ~ 0
 Display_RW
 Text Label 8300 4800 2    50   ~ 0
 Display_RW
+NoConn ~ 4700 5800
+NoConn ~ 4700 5700
+NoConn ~ 4700 5600
+Text Label 8300 3700 2    50   ~ 0
+BOOT0
+Wire Wire Line
+	8150 4500 8150 3900
+Wire Wire Line
+	8150 3900 8300 3900
+Connection ~ 8150 4500
+Wire Wire Line
+	8150 4500 7950 4500
 $EndSCHEMATC
