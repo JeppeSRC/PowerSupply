@@ -115,7 +115,7 @@ F 3 "" H 1950 5350 50  0001 C CNN
 $EndComp
 Text Label 2300 5150 0    50   ~ 0
 ENC1_SW
-Text HLabel 4700 5400 0    50   Input ~ 0
+Text HLabel 6100 3600 2    50   Input ~ 0
 CLIM
 Text HLabel 4700 5100 0    50   Input ~ 0
 Vread
@@ -709,7 +709,7 @@ F 4 "APTD3216LZGCK" H 9950 900 50  0001 C CNN "MPN"
 	1    9950 900 
 	-1   0    0    1   
 $EndComp
-Text Label 4700 5600 2    50   ~ 0
+Text Label 4700 4800 2    50   ~ 0
 OUTPUT_ON
 Wire Wire Line
 	4700 3300 4150 3300
@@ -1354,8 +1354,8 @@ Wire Wire Line
 	8150 4500 7950 4500
 NoConn ~ 6100 4300
 NoConn ~ 6100 3800
-NoConn ~ 4700 4900
-NoConn ~ 4700 4800
+NoConn ~ 4700 5600
+NoConn ~ 4700 5700
 $Comp
 L Device:R R36
 U 1 1 5D97B048
@@ -1416,7 +1416,7 @@ F 4 "APTD3216LZGCK" H 9950 1650 50  0001 C CNN "MPN"
 	1    9950 1650
 	-1   0    0    1   
 $EndComp
-Text Label 4700 5700 2    50   ~ 0
+Text Label 4700 4900 2    50   ~ 0
 C_LIMIT
-NoConn ~ 6100 3600
+NoConn ~ 4700 5400
 $EndSCHEMATC
