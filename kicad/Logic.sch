@@ -142,36 +142,36 @@ Text Label 6100 3100 0    50   ~ 0
 ENC0_A
 Text Label 6100 3200 0    50   ~ 0
 ENC0_B
-Text Label 6100 3300 0    50   ~ 0
+Text Label 6100 5300 0    50   ~ 0
 ENC1_A
-Text Label 6100 3400 0    50   ~ 0
+Text Label 6100 5400 0    50   ~ 0
 ENC1_B
-Text Label 6100 4500 0    50   ~ 0
+Text Label 6100 3300 0    50   ~ 0
 ENC0_SW
-Text Label 6100 4400 0    50   ~ 0
+Text Label 6100 3400 0    50   ~ 0
 ENC1_SW
 NoConn ~ 6500 1200
 $Comp
 L Device:R R31
 U 1 1 5CEF91FC
-P 7800 5950
-F 0 "R31" V 7850 6200 50  0000 C CNN
-F 1 "1k" V 7850 5750 50  0000 C CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 7730 5950 50  0001 C CNN
-F 3 "~" H 7800 5950 50  0001 C CNN
-F 4 "RT0805FRE071KL" H 7800 5950 50  0001 C CNN "MPN"
-	1    7800 5950
+P 7800 5450
+F 0 "R31" V 7850 5700 50  0000 C CNN
+F 1 "1k" V 7850 5250 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 7730 5450 50  0001 C CNN
+F 3 "~" H 7800 5450 50  0001 C CNN
+F 4 "RT0805FRE071KL" H 7800 5450 50  0001 C CNN "MPN"
+	1    7800 5450
 	0    -1   -1   0   
 $EndComp
 $Comp
 L power:+3V3 #PWR036
 U 1 1 5CEFB24B
-P 7450 5800
-F 0 "#PWR036" H 7450 5650 50  0001 C CNN
-F 1 "+3V3" V 7465 5928 50  0000 L CNN
-F 2 "" H 7450 5800 50  0001 C CNN
-F 3 "" H 7450 5800 50  0001 C CNN
-	1    7450 5800
+P 7450 5300
+F 0 "#PWR036" H 7450 5150 50  0001 C CNN
+F 1 "+3V3" V 7465 5428 50  0000 L CNN
+F 2 "" H 7450 5300 50  0001 C CNN
+F 3 "" H 7450 5300 50  0001 C CNN
+	1    7450 5300
 	0    -1   -1   0   
 $EndComp
 Wire Wire Line
@@ -534,18 +534,18 @@ F 4 "PEC12R-2220F-S0024" H 1650 5250 50  0001 C CNN "MPN"
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	8250 5900 8250 6100
+	8250 5400 8250 5600
 Wire Wire Line
-	8250 6100 8350 6100
+	8250 5600 8350 5600
 $Comp
 L power:GNDREF #PWR038
 U 1 1 5CF139AB
-P 8350 6100
-F 0 "#PWR038" H 8350 5850 50  0001 C CNN
-F 1 "GNDREF" H 8355 5927 50  0001 C CNN
-F 2 "" H 8350 6100 50  0001 C CNN
-F 3 "" H 8350 6100 50  0001 C CNN
-	1    8350 6100
+P 8350 5600
+F 0 "#PWR038" H 8350 5350 50  0001 C CNN
+F 1 "GNDREF" H 8355 5427 50  0001 C CNN
+F 2 "" H 8350 5600 50  0001 C CNN
+F 3 "" H 8350 5600 50  0001 C CNN
+	1    8350 5600
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
@@ -568,82 +568,81 @@ Wire Wire Line
 $Comp
 L Device:R R30
 U 1 1 5CF9B0E6
-P 7800 5800
-F 0 "R30" V 7850 6050 50  0000 C CNN
-F 1 "1k" V 7850 5600 50  0000 C CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 7730 5800 50  0001 C CNN
-F 3 "~" H 7800 5800 50  0001 C CNN
-F 4 "RT0805FRE071KL" H 7800 5800 50  0001 C CNN "MPN"
-	1    7800 5800
+P 7800 5300
+F 0 "R30" V 7850 5550 50  0000 C CNN
+F 1 "1k" V 7850 5100 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 7730 5300 50  0001 C CNN
+F 3 "~" H 7800 5300 50  0001 C CNN
+F 4 "RT0805FRE071KL" H 7800 5300 50  0001 C CNN "MPN"
+	1    7800 5300
 	0    -1   -1   0   
 $EndComp
 $Comp
 L Device:R R32
 U 1 1 5CF9D1EA
-P 7800 6100
-F 0 "R32" V 7850 6350 50  0000 C CNN
-F 1 "1k" V 7850 5900 50  0000 C CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 7730 6100 50  0001 C CNN
-F 3 "~" H 7800 6100 50  0001 C CNN
-F 4 "RT0805FRE071KL" H 7800 6100 50  0001 C CNN "MPN"
-	1    7800 6100
+P 7800 5600
+F 0 "R32" V 7850 5850 50  0000 C CNN
+F 1 "1k" V 7850 5400 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 7730 5600 50  0001 C CNN
+F 3 "~" H 7800 5600 50  0001 C CNN
+F 4 "RT0805FRE071KL" H 7800 5600 50  0001 C CNN "MPN"
+	1    7800 5600
 	0    -1   -1   0   
 $EndComp
 $Comp
 L Device:R R33
 U 1 1 5CF9F638
-P 7800 6250
-F 0 "R33" V 7850 6500 50  0000 C CNN
-F 1 "1k" V 7850 6050 50  0000 C CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 7730 6250 50  0001 C CNN
-F 3 "~" H 7800 6250 50  0001 C CNN
-F 4 "RT0805FRE071KL" H 7800 6250 50  0001 C CNN "MPN"
-	1    7800 6250
+P 7800 5750
+F 0 "R33" V 7850 6000 50  0000 C CNN
+F 1 "1k" V 7850 5550 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 7730 5750 50  0001 C CNN
+F 3 "~" H 7800 5750 50  0001 C CNN
+F 4 "RT0805FRE071KL" H 7800 5750 50  0001 C CNN "MPN"
+	1    7800 5750
 	0    -1   -1   0   
 $EndComp
 Wire Wire Line
-	7950 6250 7950 6100
-Connection ~ 7950 5950
+	7950 5750 7950 5600
+Connection ~ 7950 5450
 Wire Wire Line
-	7950 5950 7950 5800
-Connection ~ 7950 6100
+	7950 5450 7950 5300
+Connection ~ 7950 5600
 Wire Wire Line
-	7950 6100 7950 5950
+	7950 5600 7950 5450
 Wire Wire Line
-	7650 5800 7650 5950
-Connection ~ 7650 5950
+	7650 5300 7650 5450
+Connection ~ 7650 5450
 Wire Wire Line
-	7650 5950 7650 6100
-Connection ~ 7650 6100
+	7650 5450 7650 5600
+Connection ~ 7650 5600
 Wire Wire Line
-	7650 6100 7650 6250
+	7650 5600 7650 5750
 Wire Wire Line
-	7950 5800 8300 5800
-Connection ~ 7950 5800
+	7950 5300 8300 5300
+Connection ~ 7950 5300
 Wire Wire Line
-	7650 5800 7450 5800
-Connection ~ 7650 5800
+	7650 5300 7450 5300
+Connection ~ 7650 5300
 Text Label 4700 3100 2    50   ~ 0
 NRST
 Text Label 5850 7450 0    50   ~ 0
 NRST
 $Comp
-L Connector_Generic:Conn_01x16 J2
+L Connector_Generic:Conn_01x11 J2
 U 1 1 5CE4A076
-P 8500 5100
-F 0 "J2" H 8580 5142 50  0000 L CNN
-F 1 "Display" H 8580 5051 50  0000 L CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x16_P2.54mm_Vertical" H 8500 5100 50  0001 C CNN
-F 3 "https://www.mouser.se/datasheet/2/276/0022284150_PCB_HEADERS-159054.pdf" H 8500 5100 50  0001 C CNN
-F 4 "M20-9991646" H 8500 5100 50  0001 C CNN "MPN"
-	1    8500 5100
+P 8500 4900
+F 0 "J2" H 8580 4942 50  0000 L CNN
+F 1 "Display" H 8580 4851 50  0000 L CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x11_P2.54mm_Vertical" H 8500 4900 50  0001 C CNN
+F 3 "https://www.mouser.se/datasheet/2/276/0022284150_PCB_HEADERS-159054.pdf" H 8500 4900 50  0001 C CNN
+F 4 "M20-9991646" H 8500 4900 50  0001 C CNN "MPN"
+	1    8500 4900
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
 	8300 4200 8300 4400
-NoConn ~ 8300 4600
 Wire Wire Line
-	8300 5900 8250 5900
+	8300 5400 8250 5400
 Wire Wire Line
 	5300 2900 5400 2900
 Connection ~ 5400 2900
@@ -709,7 +708,7 @@ F 4 "APTD3216LZGCK" H 9950 900 50  0001 C CNN "MPN"
 	1    9950 900 
 	-1   0    0    1   
 $EndComp
-Text Label 4700 4800 2    50   ~ 0
+Text Label 6100 5500 0    50   ~ 0
 OUTPUT_ON
 Wire Wire Line
 	4700 3300 4150 3300
@@ -928,43 +927,27 @@ F 3 "" H 7950 4450 50  0001 C CNN
 	1    7950 4450
 	1    0    0    -1  
 $EndComp
-Text Label 6100 4700 0    50   ~ 0
+Text Label 6100 4300 0    50   ~ 0
 Display_RS
-Text Label 6100 4900 0    50   ~ 0
+Text Label 4700 4900 2    50   ~ 0
 Display_E
-Text Label 6100 5000 0    50   ~ 0
-Display_D0
-Text Label 6100 5100 0    50   ~ 0
-Display_D1
-Text Label 6100 5200 0    50   ~ 0
-Display_D2
-Text Label 6100 5300 0    50   ~ 0
-Display_D3
-Text Label 6100 5400 0    50   ~ 0
+Text Label 6100 4400 0    50   ~ 0
 Display_D4
-Text Label 6100 5500 0    50   ~ 0
+Text Label 6100 4500 0    50   ~ 0
 Display_D5
-Text Label 6100 5600 0    50   ~ 0
+Text Label 6100 5000 0    50   ~ 0
 Display_D6
-Text Label 6100 5700 0    50   ~ 0
+Text Label 6100 5100 0    50   ~ 0
 Display_D7
-Text Label 8300 4700 2    50   ~ 0
+Text Label 8300 4600 2    50   ~ 0
 Display_RS
 Text Label 8300 5000 2    50   ~ 0
-Display_D0
-Text Label 8300 5100 2    50   ~ 0
-Display_D1
-Text Label 8300 5200 2    50   ~ 0
-Display_D2
-Text Label 8300 5300 2    50   ~ 0
-Display_D3
-Text Label 8300 5500 2    50   ~ 0
 Display_D5
-Text Label 8300 5400 2    50   ~ 0
+Text Label 8300 4900 2    50   ~ 0
 Display_D4
-Text Label 8300 5600 2    50   ~ 0
+Text Label 8300 5100 2    50   ~ 0
 Display_D6
-Text Label 8300 5700 2    50   ~ 0
+Text Label 8300 5200 2    50   ~ 0
 Display_D7
 $Comp
 L Device:C_Small C6
@@ -1335,12 +1318,11 @@ F 3 "" H 950 5800 50  0001 C CNN
 	1    950  5800
 	0    1    1    0   
 $EndComp
-NoConn ~ 6100 5800
-Text Label 8300 4900 2    50   ~ 0
-Display_E
-Text Label 6100 4800 0    50   ~ 0
-Display_RW
 Text Label 8300 4800 2    50   ~ 0
+Display_E
+Text Label 4700 4800 2    50   ~ 0
+Display_RW
+Text Label 8300 4700 2    50   ~ 0
 Display_RW
 NoConn ~ 4700 5800
 Text Label 8300 3700 2    50   ~ 0
@@ -1352,7 +1334,6 @@ Wire Wire Line
 Connection ~ 8150 4500
 Wire Wire Line
 	8150 4500 7950 4500
-NoConn ~ 6100 4300
 NoConn ~ 6100 3800
 NoConn ~ 4700 5600
 NoConn ~ 4700 5700
@@ -1416,7 +1397,13 @@ F 4 "APTD3216LZGCK" H 9950 1650 50  0001 C CNN "MPN"
 	1    9950 1650
 	-1   0    0    1   
 $EndComp
-Text Label 4700 4900 2    50   ~ 0
+Text Label 6100 5600 0    50   ~ 0
 C_LIMIT
 NoConn ~ 4700 5400
+NoConn ~ 6100 4700
+NoConn ~ 6100 4800
+NoConn ~ 6100 4900
+NoConn ~ 6100 5200
+NoConn ~ 6100 5700
+NoConn ~ 6100 5800
 $EndSCHEMATC
