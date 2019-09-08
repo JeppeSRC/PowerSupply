@@ -38,3 +38,5 @@ Changes in v2:
     - Capacitor on USB_D+ pullup
     - Removed some status LEDs
     - Fixed encoder footprint
+    - 4 Bit interface with display
+    - Changed timers used for encoders
