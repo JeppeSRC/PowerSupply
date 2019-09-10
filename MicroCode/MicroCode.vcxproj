@@ -45,6 +45,7 @@
     <ClCompile Include="src\core\driver\display.c" />
     <ClCompile Include="src\core\string.c" />
     <ClCompile Include="src\main.c" />
+    <ClCompile Include="src\sys\setup.c" />
     <ClCompile Include="src\sys\time.c" />
   </ItemGroup>
   <ItemGroup>
@@ -57,6 +58,7 @@
     <ClInclude Include="src\sys\registers\apb2.h" />
     <ClInclude Include="src\sys\registers\registers.h" />
     <ClInclude Include="src\sys\registers\timer.h" />
+    <ClInclude Include="src\sys\setup.h" />
     <ClInclude Include="src\sys\time.h" />
   </ItemGroup>
   <ItemGroup>
