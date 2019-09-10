@@ -22,7 +22,7 @@ void InitializeClock() {
 	while (RCC->CR.PLLRDY != 1); // Wait for PLL ready
 
 	RCC->CFGR.USBPRE = 1;
-	RCC->CFGR.SDPRE = 0b11111; // SDADC division factor 48 (1MHz)
+	RCC->CFGR.SDPRE = 0b10011; // SDADC division factor 48 (1MHz)
 	RCC->CFGR.PPRE1 = 0b100; // Set APB1 prescaler. AHB / 2 (24MHz)
 	RCC->CFGR.SW = 0b10; // Set PLL as system clock source
 	RCC->CR.HSION = 0;
@@ -68,9 +68,4 @@ void InitializeGPIO() {
 	GPIO_PUPDR(GPIOB, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1);
 	GPIOF->PUPDR.p6 = 0;
 	GPIOF->PUPDR.p7 = 0;
-}
-
-void InitializeDAC() {
-	RCC->APB1ENR.DAC1EN = 1;
-	RCC->APB1ENR.DAC2EN = 1;
 }
