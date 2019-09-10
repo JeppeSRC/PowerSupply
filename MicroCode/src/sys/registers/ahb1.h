@@ -3,6 +3,9 @@
 
 #include <core/def.h>
 
+#pragma pack(push)
+#pragma pack(1)
+
 #pragma region DMA
 
 struct DMA_ISR {
@@ -403,3 +406,5 @@ struct RCCx {
 #pragma endregion
 
 #endif
+
+#pragma pack(pop)
