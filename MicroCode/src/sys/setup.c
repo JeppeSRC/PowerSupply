@@ -69,3 +69,12 @@ void InitializeGPIO() {
 	GPIOF->PUPDR.p6 = 0;
 	GPIOF->PUPDR.p7 = 0;
 }
+
+void InitializeDAC() {
+	RCC->APB1ENR.DAC1EN = 1;
+	RCC->APB1ENR.DAC2EN = 1;
+}
+
+void InitializeSDADC() {
+
+}
