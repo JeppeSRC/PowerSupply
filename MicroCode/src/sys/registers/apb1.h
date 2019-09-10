@@ -10,34 +10,13 @@
 
 #pragma region PWR
 
-struct PWR_CR {
-	uint8 LPDS : 1;
-	uint8 PDDS : 1;
-	uint8 CWUF : 1;
-	uint8 PVDE : 1;
-	uint8 PLS : 3;
-	uint8 DBP : 1;
-	uint8 ENSD1 : 1;
-	uint8 ENSD2 : 1;
-	uint8 ENSD3 : 1;
-	uint32 reserved : 20;
-};
 
-struct PWR_CSR {
-	uint8 WUF : 1;
-	uint8 SBF : 1;
-	uint8 PVDO : 1;
-	uint8 VREFINTRDYF : 1;
-	uint8 reserved : 4;
-	uint8 EWUP1 : 1;
-	uint8 EWUP2 : 1;
-	uint8 EWUP3 : 1;
-	uint32 reserved2 : 21;
-};
+#define PWR_CR(OP, LDPS, PDDS, CWUF, CSBF, PVDE, PLS, DBP, ENSD1, ENSD2, ENSD3) PWR->CR OP ((ENSD3 << 11) | (ENSD2 << 10) | (ENSD1 << 9) | (DBP << 8) | (PLS << 5) | (PVDE << 4) | (CSBF << 3) |(CWUF << 2) | (PDDS << 1) | LPDS)
+#define PWR_CSR(OP, WUF, SBF, PVDO, VREFINTRDYF, EWUP1, EWUP2, EWUP3) PWR->CSR OP ((EWUP3 << 10) | (EWUP2 << 9) | (EWUP1 << 8) | (VREFINTRDYF << 3) | (PVDO << 2) | (SBF << 1) | WUF)
 
 struct PWRx {
-	struct PWR_CR CR;
-	struct PWR_CSR CSR;
+	uint32 CR;
+	uint32 CSR;
 };
 
 #define PWR ((struct PWRx*)0x40007000)
