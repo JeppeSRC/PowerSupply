@@ -2,12 +2,24 @@
 
 // bus clock speed 24 Mhz
 // TIM18 reserved for delay functions
+// TIM2 reserved for time tracking
 
 void InitializeTimers() {
 	RCC->APB1ENR.TIM18EN = 1;
 	TIM18->CR1.ARPE = 0;
 	TIM18->CR1.OPM = 1;
 	TIM18->CR1.URS = 1;
+
+	RCC->APB1ENR.TIM2EN = 1;
+	TIM2->ARR = ~0;
+	TIM2->PSC = 23;
+	TIM2->CR1.URS = 1;
+	TIM2->CR1.UDIS = 1;
+	TIM2->CR1.CEN = 1;
+}
+
+void ResetTimers() {
+	TIM2->CNT = 0;
 }
 
 void Delay(uint8 seconds) {
@@ -28,4 +40,12 @@ void DelayMicros(uint16 microSeconds) {
 	TIM18->CR1.CEN = 1;
 
 	asm("wfe");
+}
+
+void Millis() {
+	return TIM2->CNT / 1000;
+}
+
+void Micros() {
+	return TIM2->CNT;
 }
