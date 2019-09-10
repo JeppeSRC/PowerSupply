@@ -7,7 +7,6 @@
 
 void InitializeTimers() {
 	RCC->APB1ENR.TIM18EN = 1;
-	TIM18_CR1(=, 0, 0, 1, 1, 0);
 
 	RCC->APB1ENR.TIM2EN = 1;
 	TIM2->ARR = ~0;
@@ -26,7 +25,7 @@ void Delay(uint8 seconds) {
 void DelayMillis(uint16 milliSeconds) {
 	TIM18->PSC = 23999; // Setting clock to 1 khz (20 Mhz / (19999 + 1)) to get one cycle every milliSecond
 	TIM18->ARR = milliSeconds;
-	TIM18_CR1(| , 1, 0, 0, 0, 0);
+	TIM18_CR1(= , 1, 0, 1, 1, 0);
 
 	asm("wfe");
 }
@@ -34,7 +33,7 @@ void DelayMillis(uint16 milliSeconds) {
 void DelayMicros(uint16 microSeconds) {
 	TIM18->PSC = 23; // Setting clock to 1Mhz (20 Mhz / (19+1)) to get one cycle every microSecond
 	TIM18->ARR = microSeconds;
-	TIM18_CR1(| , 1, 0, 0, 0, 0);
+	TIM18_CR1(= , 1, 0, 1, 1, 0);
 
 	asm("wfe");
 }
