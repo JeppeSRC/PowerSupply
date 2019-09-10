@@ -64,141 +64,63 @@ void setup() {
 
 	while (RCC->CR.PLLRDY != 0); // Wait for PLL ready
 
-	RCC->CFGR.PLLSRC = 0; // Set PLL source to HSI/2
-	RCC->CFGR.PLLMUL = 0b11; // Set PLL multiplier to 5 (20Mhz)
+	RCC->CFGR.PLLXTPRE = 0; // Set HSE prediv to 1
+	RCC->CFGR.PLLSRC = 1; // Set PLL source to HSE/PREDIV
+	RCC->CFGR.PLLMUL = 0xA; // Set PLL multiplier to 12 (48MHz)
+
+	RCC->CR.HSEON = 1; //Enable HSE
+
+	while (RCC->CR.HSERDY != 0); //Wait for HSE
 
 	RCC->CR.PLLON = 1; // Enable PLL
 
 	while (RCC->CR.PLLRDY != 1); // Wait for PLL ready
 
-	RCC->CFGR.SDPRE = 0b11000; // SDADC division factor 20 (1Mhz)
+	RCC->CFGR.USBPRE = 1; 
+	RCC->CFGR.SDPRE = 0b11111; // SDADC division factor 48 (1MHz)
+	RCC->CFGR.PPRE1 = 0b100; // Set APB1 prescaler. AHB / 2 (24MHz)
 	RCC->CFGR.SW = 0b10; // Set PLL as system clock source
+	RCC->CR.HSION = 0;
 
-
-	//GPIO setup
 	// CLock enable
+	// GPIO
 	RCC->AHBENR.IOPAEN = 1;
 	RCC->AHBENR.IOPBEN = 1;
 	RCC->AHBENR.IOPDEN = 1;
 	RCC->AHBENR.IOPEEN = 1;
 	RCC->AHBENR.IOPFEN = 1;
 
-	// Alternate function mode
-	GPIOA->MODER.p0 = 2;
-	GPIOA->MODER.p1 = 2;
-	GPIOA->MODER.p2 = 2;
-	GPIOA->MODER.p3 = 2;
+	//SDADC
+	RCC->APB2ENR.SDADC1EN = 1;
+	RCC->APB2ENR.SDADC2EN = 1;
 
-	GPIOA->AFR.p0 = AF1;
-	GPIOA->AFR.p1 = AF1;
-	GPIOA->AFR.p2 = AF2;
-	GPIOA->AFR.p3 = AF2;
+	//IO pin setup
+	//Alternate function
+	GPIOA->AFR.p0 = AF11;
+	GPIOA->AFR.p1 = AF11;
+	GPIOA->AFR.p9 = AF7;
+	GPIOA->AFR.p10 = AF7;
+	GPIOB->AFR.p6 = AF2;
+	GPIOB->AFR.p7 = AF2;
 
-	//Analog mode
-	GPIOA->MODER.p4 = 3;
-	GPIOA->MODER.p6 = 3;
-	GPIOA->MODER.p11 = 3;
-	GPIOA->MODER.p12 = 3;
+	//Mode
+	GPIO_MODER(GPIOA, 2, 2, 0, 0, 0, 3, 3, 0, 0, 2, 2, 3, 3, 1, 1, 1);
+	GPIO_MODER(GPIOB, 0, 0, 0, 1, 1, 0, 2, 2, 1, 1, 0, 0, 0, 0, 0, 0);
+	GPIOE->MODER.p6 = 3;
 	GPIOE->MODER.p9 = 3;
-	GPIOE->MODER.p8 = 3;
-
-	//Output 
-	GPIOA->MODER.p5 = 1;
-	GPIOA->MODER.p8 = 1;
-	GPIOA->MODER.p9 = 1;
-	GPIOA->MODER.p10 = 1;
-	GPIOA->MODER.p13 = 1;
-	GPIOF->MODER.p0 = 1;
-	GPIOF->MODER.p1 = 1;
 	GPIOF->MODER.p6 = 1;
 	GPIOF->MODER.p7 = 1;
-	GPIOB->MODER.p0 = 1;
-	GPIOB->MODER.p1 = 1;
-	GPIOB->MODER.p2 = 1;
-	GPIOB->MODER.p3 = 1;
-	GPIOB->MODER.p4 = 1;
-	GPIOB->MODER.p5 = 1;
-	GPIOB->MODER.p6 = 1;
-	GPIOB->MODER.p7 = 1;
-	GPIOB->MODER.p8 = 1;
-	GPIOB->MODER.p9 = 1;
-	GPIOB->MODER.p14 = 1;
 
-	GPIOA->OTYPER.p5 = 0;
-	GPIOA->OTYPER.p8 = 0;
-	GPIOA->OTYPER.p9 = 0;
-	GPIOA->OTYPER.p10 = 0;
-	GPIOA->OTYPER.p13 = 0;
-	GPIOF->OTYPER.p0 = 0;
-	GPIOF->OTYPER.p1 = 0;
-	GPIOF->OTYPER.p6 = 0;
-	GPIOF->OTYPER.p7 = 0;
-	GPIOB->OTYPER.p0 = 0;
-	GPIOB->OTYPER.p1 = 0;
-	GPIOB->OTYPER.p2 = 0;
-	GPIOB->OTYPER.p3 = 0;
-	GPIOB->OTYPER.p4 = 0;
-	GPIOB->OTYPER.p5 = 0;
-	GPIOB->OTYPER.p6 = 0;
-	GPIOB->OTYPER.p7 = 0;
-	GPIOB->OTYPER.p8 = 0;
-	GPIOB->OTYPER.p9 = 0;
-	GPIOB->OTYPER.p14 = 0;
+	//Speed
+	GPIOA->OSPEEDR.p = ~0;
+	GPIOB->OSPEEDR.p = ~0;
+	GPIOF->OSPEEDR.p = ~0;
 
-	GPIOA->OSPEEDR.p5 = 0;
-	GPIOA->OSPEEDR.p8 = 0;
-	GPIOA->OSPEEDR.p9 = 0;
-	GPIOA->OSPEEDR.p10 = 0;
-	GPIOA->OSPEEDR.p13 = 0;
-	GPIOF->OSPEEDR.p0 = 0;
-	GPIOF->OSPEEDR.p1 = 0;
-	GPIOF->OSPEEDR.p6 = 0;
-	GPIOF->OSPEEDR.p7 = 0;
-	GPIOB->OSPEEDR.p0 = 0;
-	GPIOB->OSPEEDR.p1 = 0;
-	GPIOB->OSPEEDR.p2 = 3;
-	GPIOB->OSPEEDR.p3 = 0;
-	GPIOB->OSPEEDR.p4 = 0;
-	GPIOB->OSPEEDR.p5 = 0;
-	GPIOB->OSPEEDR.p6 = 0;
-	GPIOB->OSPEEDR.p7 = 0;
-	GPIOB->OSPEEDR.p8 = 0;
-	GPIOB->OSPEEDR.p9 = 0;
-	GPIOB->OSPEEDR.p14 = 0;
-
-	GPIOA->PUPDR.p5 = 0;
-	GPIOA->PUPDR.p8 = 0;
-	GPIOA->PUPDR.p9 = 0;
-	GPIOA->PUPDR.p10 = 0;
-	GPIOA->PUPDR.p13 = 0;
-	GPIOF->PUPDR.p0 = 0;
-	GPIOF->PUPDR.p1 = 0;
+	//Pull up/pull down
+	GPIO_PUPDR(GPIOA, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0);
+	GPIO_PUPDR(GPIOB, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1);
 	GPIOF->PUPDR.p6 = 0;
 	GPIOF->PUPDR.p7 = 0;
-	GPIOB->PUPDR.p0 = 0;
-	GPIOB->PUPDR.p1 = 0;
-	GPIOB->PUPDR.p2 = 0;
-	GPIOB->PUPDR.p3 = 0;
-	GPIOB->PUPDR.p4 = 0;
-	GPIOB->PUPDR.p5 = 0;
-	GPIOB->PUPDR.p6 = 0;
-	GPIOB->PUPDR.p7 = 0;
-	GPIOB->PUPDR.p8 = 0;
-	GPIOB->PUPDR.p9 = 0;
-	GPIOB->PUPDR.p14 = 0;
-
-	//Input mode
-	GPIOA->MODER.p14 = 0;
-	GPIOA->MODER.p15 = 0;
-	GPIOD->MODER.p8 = 0;
-
-	GPIOA->OSPEEDR.p14 = 0;
-	GPIOA->OSPEEDR.p15 = 0;
-	GPIOD->OSPEEDR.p8 = 0;
-
-	GPIOA->PUPDR.p14 = 1;
-	GPIOA->PUPDR.p15 = 1;
-	GPIOD->PUPDR.p8 = 1;
 }
 
 int main() {
