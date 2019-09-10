@@ -64,7 +64,7 @@ void setup() {
 
 	while (RCC->CR.PLLRDY != 0); // Wait for PLL ready
 
-	RCC->CFGR.PLLXTPRE = 0; // Set HSE prediv to 1
+	RCC->CFGR.PLLXTPRE = 0; // Disable HSE prescaler
 	RCC->CFGR.PLLSRC = 1; // Set PLL source to HSE/PREDIV
 	RCC->CFGR.PLLMUL = 0xA; // Set PLL multiplier to 12 (48MHz)
 
@@ -86,7 +86,6 @@ void setup() {
 	// GPIO
 	RCC->AHBENR.IOPAEN = 1;
 	RCC->AHBENR.IOPBEN = 1;
-	RCC->AHBENR.IOPDEN = 1;
 	RCC->AHBENR.IOPEEN = 1;
 	RCC->AHBENR.IOPFEN = 1;
 
