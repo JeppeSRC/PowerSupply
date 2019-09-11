@@ -1,6 +1,3 @@
-
-
-
 #include <sys/setup.h>
 
 
