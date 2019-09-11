@@ -12,6 +12,8 @@
 	Display_D7		PB4				40
  */
 
+#define MAKE_INST(rs, rw, data) ((rs << 9) | (rw << 8) | data)
+
 #define ODRA_MASK 0x1FFFFFFF 
 #define ODRB_MASK 0xFFFFFFE7
 #define ODRF_MASK 0xFFFFFF3F
@@ -73,7 +75,12 @@ uint8 ReadResult() {
 }
 
 void WaitBusy() {
-	
+	ExecuteCommand(MAKE_INST(0, 1, 0));
+	DelayMicros(10);
+
+	while (ReadResult() & 0x80) {
+		DelayMicros(10);
+	}
 }
 
 void ClearDisplay() {
