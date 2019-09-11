@@ -1,8 +1,15 @@
 #include "setup.h"
 
+void InitializeClock();
+void InitializeGPIO();
+void InitializeDAC();
+void InitializeSDADC();
+
 void Initialize() {
 	InitializeClock();
 	InitializeGPIO();
+	InitializeDAC();
+	InitializeSDADC();
 }
 
 void InitializeClock() {

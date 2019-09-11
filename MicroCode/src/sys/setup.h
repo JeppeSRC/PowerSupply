@@ -48,7 +48,3 @@
 #include <sys/registers/registers.h>
 
 void Initialize();
-void InitializeClock();
-void InitializeGPIO();
-void InitializeDAC();
-void InitializeSDADC();
