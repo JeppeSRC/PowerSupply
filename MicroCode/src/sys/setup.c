@@ -1,4 +1,5 @@
 #include "setup.h"
+#include <core/driver/display.h>
 
 void InitializeClock();
 void InitializeGPIO();
@@ -8,6 +9,7 @@ void InitializeSDADC();
 void Initialize() {
 	InitializeClock();
 	InitializeGPIO();
+	InitializeDisplay();
 	InitializeDAC();
 	InitializeSDADC();
 }
