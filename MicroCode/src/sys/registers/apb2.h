@@ -67,6 +67,8 @@
 #define SDADC2_CONFCHR2(OP, CONFCH8) SDADC_CONFCHR2(SDADC2, OP, CONFCH8)
 #define SDADC3_CONFCHR2(OP, CONFCH8) SDADC_CONFCHR2(SDADC3, OP, CONFCH8)
 
+#pragma pack(push)
+#pragma pack(1)
 
 struct SDADCx {
 	uint32 CR1;
@@ -102,8 +104,9 @@ struct SDADCx {
 	uint32 RDATA12R;
 	uint32 JDATA13R;
 	uint32 RDATA13R;
-
 };
+
+#pragma pack(pop)
 
 #define SDADC1 ((struct SDADCx*)0x40016000)
 #define SDADC2 ((struct SDADCx*)0x40016400)
@@ -111,6 +114,5 @@ struct SDADCx {
 
 #pragma endregion
 
-#pragma pack(pop)
 
 #endif
