@@ -73,6 +73,12 @@ void InitializeGPIO() {
 void InitializeDAC() {
 	RCC->APB1ENR.DAC1EN = 1;
 	RCC->APB1ENR.DAC2EN = 1;
+
+	DAC1_CR(=, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0);
+	DAC2_CR(=, 1, 1, 0, 0, 0, 0, 0, 0);
+
+	DAC1->DHR12R2 = 0;
+	DAC2->DHR12R1 = 0;
 }
 
 void InitializeSDADC() {
