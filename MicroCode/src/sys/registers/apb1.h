@@ -11,7 +11,7 @@
 #pragma region PWR
 
 
-#define PWR_CR(OP, LDPS, PDDS, CWUF, CSBF, PVDE, PLS, DBP, ENSD1, ENSD2, ENSD3) PWR->CR OP ((ENSD3 << 11) | (ENSD2 << 10) | (ENSD1 << 9) | (DBP << 8) | (PLS << 5) | (PVDE << 4) | (CSBF << 3) |(CWUF << 2) | (PDDS << 1) | LPDS)
+#define PWR_CR(OP, LPDS, PDDS, CWUF, CSBF, PVDE, PLS, DBP, ENSD1, ENSD2, ENSD3) PWR->CR OP ((ENSD3 << 11) | (ENSD2 << 10) | (ENSD1 << 9) | (DBP << 8) | (PLS << 5) | (PVDE << 4) | (CSBF << 3) |(CWUF << 2) | (PDDS << 1) | LPDS)
 #define PWR_CSR(OP, WUF, SBF, PVDO, VREFINTRDYF, EWUP1, EWUP2, EWUP3) PWR->CSR OP ((EWUP3 << 10) | (EWUP2 << 9) | (EWUP1 << 8) | (VREFINTRDYF << 3) | (PVDO << 2) | (SBF << 1) | WUF)
 
 struct PWRx {
