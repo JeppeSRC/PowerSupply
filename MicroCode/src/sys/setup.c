@@ -86,7 +86,7 @@ void InitializeDAC() {
 void InitializeSDADC() {
 	PWR_CR(=, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0); // Enable SDADC1 and 2 power stuff
 	RCC->APB2ENR.SDADC1EN = 1; // Enable SDADC1 clock
-	RCC->APB2ENR.SDADC2EN = 2; // ENable SDADC2 clock
+	RCC->APB2ENR.SDADC2EN = 1; // ENable SDADC2 clock
 
 	SDADC1_CR1(=, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1); // Enter init mode
 	SDADC2_CR1(=, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1); // Enter init mode
