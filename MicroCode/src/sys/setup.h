@@ -8,8 +8,8 @@
 	ENC1_B			PB7				43
 	ENC1_SW			PA3				13
 	----------------------------------
-	Iset			PA5				15
-	Vset			PA6				16
+	Iset			PA5				15 DAC1_CH2
+	Vset			PA6				16 DAC2_CH1
 	----------------------------------
 	Iread			PE9				22
 	Vread			PE8				21
@@ -35,7 +35,7 @@
  // AHB		48 Mhz
  // APB2	48 Mhz
  // APB1	24 Mhz
- // SDADC	1  Mhz
+ // SDADC	6  Mhz
 
  /* Display Format 2x16
 
