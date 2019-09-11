@@ -9,17 +9,17 @@ void InitializeClock() {
 	RCC->CR.PLLON = 0; // Disable PLL
 	RCC->CR.HSEON = 1; //Enable HSE
 
-	while (RCC->CR.PLLRDY != 0); // Wait for PLL ready
+	while (RCC->CR.PLLRDY == 1); // Wait for PLL ready
 
 	RCC->CFGR.PLLXTPRE = 0; // Disable HSE prescaler
 	RCC->CFGR.PLLSRC = 1; // Set PLL source to HSE/PREDIV
 	RCC->CFGR.PLLMUL = 0xA; // Set PLL multiplier to 12 (48MHz)
 
-	while (RCC->CR.HSERDY != 0); //Wait for HSE
+	while (RCC->CR.HSERDY == 0); //Wait for HSE
 
 	RCC->CR.PLLON = 1; // Enable PLL
 
-	while (RCC->CR.PLLRDY != 1); // Wait for PLL ready
+	while (RCC->CR.PLLRDY == 0); // Wait for PLL ready
 
 	RCC->CFGR.USBPRE = 1;
 	RCC->CFGR.SDPRE = 0b10011; // SDADC division factor 48 (1MHz)
@@ -33,11 +33,6 @@ void InitializeClock() {
 	RCC->AHBENR.IOPBEN = 1;
 	RCC->AHBENR.IOPEEN = 1;
 	RCC->AHBENR.IOPFEN = 1;
-
-	//SDADC
-	RCC->APB2ENR.SDADC1EN = 1;
-	RCC->APB2ENR.SDADC2EN = 1;
-
 }
 
 void InitializeGPIO() {
@@ -82,5 +77,5 @@ void InitializeDAC() {
 }
 
 void InitializeSDADC() {
-
+	
 }
