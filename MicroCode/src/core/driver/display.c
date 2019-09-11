@@ -83,7 +83,7 @@ void WaitBusy() {
 	}
 }
 
-void ClearDisplay() {
+void DisplayClear() {
 	ExecuteCommand(MAKE_INST(0, 0, 1));
 	DelayMillis(2);
 }
