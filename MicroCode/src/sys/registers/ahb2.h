@@ -3,18 +3,6 @@
 
 #include <core/def.h>
 
-
-
-/*
- * GPIO port mode:
- *
- * 		00: Input Mode
- * 		01: General purpose output
- * 		10: Alternate function
- * 		11: Analog
- *
- */
-
 #pragma pack(push)
 #pragma pack(1)
 
