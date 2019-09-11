@@ -99,7 +99,12 @@ void SetDDRAMAddress(uint8 address) {
 }
 
 void Print(const char* string) {
+	uint32 len = strlen(string);
 
+	for (uint32 i = 0; i < len; i++) {
+		ExecuteCommand(MAKE_INST(1, 0, string[i]));
+		DelayMicros(40);
+	}
 }
 
 void InitializeDisplay() {
