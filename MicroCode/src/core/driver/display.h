@@ -4,6 +4,7 @@
 #include <core/def.h>
 
 void InitializeDisplay();
+void DisplayControl(uint8 displayOn, uint8 cursorOn, uint8 blinkOn);
 void DisplayPrint(uint8 address, const char* string);
 
 #endif

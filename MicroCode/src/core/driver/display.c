@@ -84,15 +84,18 @@ void WaitBusy() {
 }
 
 void ClearDisplay() {
-
+	ExecuteCommand(MAKE_INST(0, 0, 1));
+	DelayMillis(2);
 }
 
 void ReturnHome() {
-
+	ExecuteCommand(MAKE_INST(0, 0, 2));
+	DelayMillis(2);
 }
 
 void SetDDRAMAddress(uint8 address) {
-
+	ExecuteCommand(MAKE_INST(0, 0, 0x80 | (address & 0x7F)));
+	DelayMicros(40);
 }
 
 void Print(const char* string) {
@@ -100,7 +103,32 @@ void Print(const char* string) {
 }
 
 void InitializeDisplay() {
+	DelayMillis(100);
+	GPIOB->ODR &= ODRB_MASK;// Set D6 and D7 low
+	GPIOF->ODR &= ODRF_MASK;// Set RW and E low
 
+	uint32 odra = GPIOA->ODR & ODRA_MASK;
+
+	GPIOA->ODR = odra | 0x80000000; // Set D4 low and D5 high to change interface to 4bit
+
+	//Toggle E
+	GPIOF->ODR ^= 0x80;
+	DelayMicros(1);
+	GPIOF->ODR ^= 0x80;
+
+	DelayMillis(50);
+	ExecuteCommand(MAKE_INST(0, 0, 0x2C)); // Function set: Set num lines to 2 and Fonts size 5x11
+	DelayMicros(50);
+
+	ExecuteCommand(MAKE_INST(0, 0, 6)); // Entry mode: Set dram to increment without display shift
+	DelayMicros(50);
+
+	DisplayControl(1, 0, 0);
+}
+
+void DisplayControl(uint8 displayOn, uint8 cursorOn, uint8 blinkOn) {
+	ExecuteCommand(MAKE_INST(0, 0, 0x8 | ((displayOn & 0x1) << 2) | ((cursorOn & 0x1) << 1) | (blinkOn & 0x1)));
+	DelayMicros(40);
 }
 
 void DisplayPrint(uint8 address, const char* string) {
