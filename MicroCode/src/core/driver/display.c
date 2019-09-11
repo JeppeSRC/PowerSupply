@@ -47,6 +47,31 @@ void ExecuteCommand(uint32 instCode) {
 	GPIOF->ODR ^= 0x80;
 }
 
+uint8 ReadResult() {
+	GPIOA->MODER &= 0x0FFFFFFF; // Set D4 and D5 to input
+	GPIOB->MODER &= 0xFFFFFC3F; // Set D6 and D7 to input
+
+	uint8 res = 0;
+
+	//Toggle E
+	GPIOF->ODR ^= 0x80;
+	DelayMicros(1);
+	res = ((GPIOB->IDR & 0xE7) << 3) | ((GPIOA->IDR & 0xC0000000) >> 10); // High nibble
+	GPIOF->ODR ^= 0x80;
+
+	DelayMicros(1);
+
+	GPIOF->ODR ^= 0x80;
+	DelayMicros(1);
+	res |= ((GPIOB->IDR & 0xE7) >> 1) | ((GPIOA->IDR & 0xC0000000) >> 14); // Low nibble
+	GPIOF->ODR ^= 0x80;
+
+	GPIOA->MODER |= 0x50000000; //Set D4 and D5 to output
+	GPIOB->MODER |= 0x140; //Set D6 and D7 to output
+
+	return res;
+}
+
 void WaitBusy() {
 	
 }
