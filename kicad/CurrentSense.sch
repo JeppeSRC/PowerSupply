@@ -291,8 +291,6 @@ F 4 "PCF0805R-82K5BT1" H 5100 4500 50  0001 C CNN "MPN"
 	0    1    1    0   
 $EndComp
 Wire Wire Line
-	4900 4500 4900 4600
-Wire Wire Line
 	5400 4500 5600 4500
 Wire Wire Line
 	5600 4500 5600 4650
@@ -460,4 +458,6 @@ F 3 "" H 5850 6100 50  0001 C CNN
 	1    5850 6100
 	1    0    0    -1  
 $EndComp
+Wire Wire Line
+	4900 4500 4900 4600
 $EndSCHEMATC
