@@ -24,11 +24,11 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
-    <OutDir />
-    <IntDir />
-    <NMakeBuildCommandLine>FuckMake build</NMakeBuildCommandLine>
+    <OutDir>bin/</OutDir>
+    <IntDir>bin/</IntDir>
+    <NMakeBuildCommandLine>tools\FuckMake.exe build</NMakeBuildCommandLine>
     <NMakeIncludeSearchPath>src</NMakeIncludeSearchPath>
-    <NMakeCleanCommandLine>FuckMake clean</NMakeCleanCommandLine>
+    <NMakeCleanCommandLine>tools\FuckMake.exe clean</NMakeCleanCommandLine>
     <TargetName />
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
