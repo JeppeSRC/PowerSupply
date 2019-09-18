@@ -6,8 +6,7 @@ kicad/fp-info-cache
 kicad/PowerSupply-cache.lib
 kicad/_autosave*
 MicroCode/tools/
-Debug/
-Release/
+bin/
 .metadata/
 *.elf
 *.map
