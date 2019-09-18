@@ -32,10 +32,16 @@ Link {
     !%(LD) %(LFLAGS) -o %Output %Input
 }
 
+ConvertToDFU {
+    Msg(Converting ELF (%Input) to DFU (%Output))
+    !tools\elf2dfuse.exe %Input %Output 0xFFFF 0xFFFF
+}
+
 build:
     ExecuteList(Compile, %(CFILES), %(ObjDir))
     ExecuteList(Assemble, %(ASMFILES), %(ObjDir))
     Execute(Link, GetFiles(%(ObjDir), *.obj,), %(OutDir)MicroCode.elf)
+    Execute(ConvertToDFU, %(OutDir)MicroCode.elf, %(OutDir)MicroCode.dfu)
 
 clean:
     DeleteFiles(GetFiles(%(ObjDir),*.obj,) bin/MicroCode.elf)
