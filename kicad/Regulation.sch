@@ -1,5 +1,6 @@
 EESchema Schematic File Version 4
-EELAYER 29 0
+LIBS:PowerSupply-cache
+EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -83,8 +84,6 @@ Wire Wire Line
 Wire Wire Line
 	8000 4350 8000 3800
 Wire Wire Line
-	8000 3800 8150 3800
-Wire Wire Line
 	8000 4750 8000 4900
 Wire Wire Line
 	6800 4550 6800 4600
@@ -127,8 +126,6 @@ Wire Wire Line
 	7000 2200 7150 2200
 Wire Wire Line
 	8550 3650 8550 3800
-Wire Wire Line
-	8550 3800 8450 3800
 Wire Wire Line
 	8550 3800 8700 3800
 Connection ~ 8550 3800
@@ -345,17 +342,6 @@ F 4 "APC0805B10K0N" H 5100 2850 50  0001 C CNN "MPN"
 	0    1    1    0   
 $EndComp
 $Comp
-L Device:R R24
-U 1 1 5CF58C44
-P 8300 3800
-F 0 "R24" V 8093 3800 50  0000 C CNN
-F 1 "?" V 8184 3800 50  0000 C CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 8230 3800 50  0001 C CNN
-F 3 "~" H 8300 3800 50  0001 C CNN
-	1    8300 3800
-	0    1    1    0   
-$EndComp
-$Comp
 L Connector:TestPoint TP2
 U 1 1 5D27FEA5
 P 7000 2100
@@ -423,4 +409,6 @@ F 3 "" H 7450 4100 50  0001 C CNN
 	1    7450 4100
 	1    0    0    -1  
 $EndComp
+Wire Wire Line
+	8000 3800 8550 3800
 $EndSCHEMATC

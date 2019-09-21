@@ -1,5 +1,6 @@
 EESchema Schematic File Version 4
-EELAYER 29 0
+LIBS:PowerSupply-cache
+EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -27,8 +28,6 @@ F 4 "FQP17P10" H 5350 2500 50  0001 C CNN "MPN"
 	1    5350 2500
 	0    1    -1   0   
 $EndComp
-Text Label 5350 2750 0    50   ~ 0
-VReg
 $Comp
 L symbols:FQP17P10 U?
 U 1 1 5CA4A681
@@ -43,8 +42,6 @@ F 4 "FQP17P10" H 5350 3100 50  0001 C CNN "MPN"
 	1    5350 3100
 	0    1    -1   0   
 $EndComp
-Text Label 5350 3350 0    50   ~ 0
-VReg
 $Comp
 L symbols:FQP17P10 U?
 U 1 1 5CA4A689
@@ -59,8 +56,6 @@ F 4 "FQP17P10" H 5350 3700 50  0001 C CNN "MPN"
 	1    5350 3700
 	0    1    -1   0   
 $EndComp
-Text Label 5350 3950 0    50   ~ 0
-VReg
 Wire Wire Line
 	5150 2500 5050 2500
 Wire Wire Line
@@ -91,7 +86,7 @@ Wire Wire Line
 	5700 3100 5900 3100
 Text HLabel 6150 3100 2    50   Output ~ 0
 Vout
-Text HLabel 5350 3950 3    50   Input ~ 0
+Text HLabel 5350 4450 3    50   Input ~ 0
 VReg_set
 $Comp
 L Device:C_Small C10
@@ -126,49 +121,49 @@ Wire Wire Line
 $Comp
 L Mechanical:Heatsink HS1
 U 1 1 5CFE3377
-P 6050 2000
-F 0 "HS1" H 6191 2121 50  0000 L CNN
-F 1 "RA-T2X-xxE" H 6191 2030 50  0000 L CNN
-F 2 "footprints:RA-T2X-xxE" H 6062 2000 50  0001 C CNN
-F 3 "~" H 6062 2000 50  0001 C CNN
-F 4 "RA-T2X-xxE" H 6050 2000 50  0001 C CNN "MPN"
-	1    6050 2000
+P 6750 1950
+F 0 "HS1" H 6891 2071 50  0000 L CNN
+F 1 "RA-T2X-xxE" H 6891 1980 50  0000 L CNN
+F 2 "footprints:RA-T2X-xxE" H 6762 1950 50  0001 C CNN
+F 3 "~" H 6762 1950 50  0001 C CNN
+F 4 "RA-T2X-xxE" H 6750 1950 50  0001 C CNN "MPN"
+	1    6750 1950
 	1    0    0    -1  
 $EndComp
 $Comp
 L Mechanical:Heatsink HS2
 U 1 1 5CFE6A1F
-P 6850 2000
-F 0 "HS2" H 6991 2121 50  0000 L CNN
-F 1 "RA-T2X-xxE" H 6991 2030 50  0000 L CNN
-F 2 "footprints:RA-T2X-xxE" H 6862 2000 50  0001 C CNN
-F 3 "~" H 6862 2000 50  0001 C CNN
-F 4 "RA-T2X-xxE" H 6850 2000 50  0001 C CNN "MPN"
-	1    6850 2000
+P 7550 1950
+F 0 "HS2" H 7691 2071 50  0000 L CNN
+F 1 "RA-T2X-xxE" H 7691 1980 50  0000 L CNN
+F 2 "footprints:RA-T2X-xxE" H 7562 1950 50  0001 C CNN
+F 3 "~" H 7562 1950 50  0001 C CNN
+F 4 "RA-T2X-xxE" H 7550 1950 50  0001 C CNN "MPN"
+	1    7550 1950
 	1    0    0    -1  
 $EndComp
 $Comp
 L Mechanical:Heatsink HS3
 U 1 1 5CFE6CAC
-P 7650 2000
-F 0 "HS3" H 7791 2121 50  0000 L CNN
-F 1 "RA-T2X-xxE" H 7791 2030 50  0000 L CNN
-F 2 "footprints:RA-T2X-xxE" H 7662 2000 50  0001 C CNN
-F 3 "~" H 7662 2000 50  0001 C CNN
-F 4 "RA-T2X-xxE" H 7650 2000 50  0001 C CNN "MPN"
-	1    7650 2000
+P 8350 1950
+F 0 "HS3" H 8491 2071 50  0000 L CNN
+F 1 "RA-T2X-xxE" H 8491 1980 50  0000 L CNN
+F 2 "footprints:RA-T2X-xxE" H 8362 1950 50  0001 C CNN
+F 3 "~" H 8362 1950 50  0001 C CNN
+F 4 "RA-T2X-xxE" H 8350 1950 50  0001 C CNN "MPN"
+	1    8350 1950
 	1    0    0    -1  
 $EndComp
 $Comp
 L Mechanical:Heatsink HS4
 U 1 1 5CFE707C
-P 8450 2000
-F 0 "HS4" H 8591 2121 50  0000 L CNN
-F 1 "RA-T2X-xxE" H 8591 2030 50  0000 L CNN
-F 2 "footprints:RA-T2X-xxE" H 8462 2000 50  0001 C CNN
-F 3 "~" H 8462 2000 50  0001 C CNN
-F 4 "RA-T2X-xxE" H 8450 2000 50  0001 C CNN "MPN"
-	1    8450 2000
+P 9150 1950
+F 0 "HS4" H 9291 2071 50  0000 L CNN
+F 1 "RA-T2X-xxE" H 9291 1980 50  0000 L CNN
+F 2 "footprints:RA-T2X-xxE" H 9162 1950 50  0001 C CNN
+F 3 "~" H 9162 1950 50  0001 C CNN
+F 4 "RA-T2X-xxE" H 9150 1950 50  0001 C CNN "MPN"
+	1    9150 1950
 	1    0    0    -1  
 $EndComp
 Connection ~ 5700 2500
@@ -181,8 +176,6 @@ Wire Wire Line
 	5050 2500 5050 1900
 Wire Wire Line
 	5050 1900 5150 1900
-Text Label 5350 2150 0    50   ~ 0
-VReg
 $Comp
 L symbols:FQP17P10 U?
 U 1 1 5CA4A671
@@ -219,4 +212,68 @@ F 3 "" H 4600 3300 50  0001 C CNN
 	1    4600 3300
 	1    0    0    -1  
 $EndComp
+$Comp
+L Device:R R39
+U 1 1 5DB0B8C7
+P 5350 4100
+F 0 "R39" H 5280 4054 50  0000 R CNN
+F 1 "100R" H 5280 4145 50  0000 R CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 5280 4100 50  0001 C CNN
+F 3 "~" H 5350 4100 50  0001 C CNN
+	1    5350 4100
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	5350 4250 5350 4450
+$Comp
+L Device:R R37
+U 1 1 5DB0D18B
+P 6400 2750
+F 0 "R37" V 6200 2750 50  0000 C CNN
+F 1 "100R" V 6300 2750 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 6330 2750 50  0001 C CNN
+F 3 "~" H 6400 2750 50  0001 C CNN
+	1    6400 2750
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R24
+U 1 1 5DB0E618
+P 6400 2150
+F 0 "R24" V 6193 2150 50  0000 C CNN
+F 1 "100R" V 6284 2150 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 6330 2150 50  0001 C CNN
+F 3 "~" H 6400 2150 50  0001 C CNN
+	1    6400 2150
+	0    1    1    0   
+$EndComp
+Connection ~ 6550 2750
+Wire Wire Line
+	6550 2750 6550 2150
+Wire Wire Line
+	6250 2150 5350 2150
+Wire Wire Line
+	6250 2750 5350 2750
+Wire Wire Line
+	5350 4250 6550 4250
+Wire Wire Line
+	6550 2750 6550 4250
+Connection ~ 5350 4250
+$Comp
+L Device:R R38
+U 1 1 5DB178D6
+P 4950 4100
+F 0 "R38" H 5020 4146 50  0000 L CNN
+F 1 "100R" H 5020 4055 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 4880 4100 50  0001 C CNN
+F 3 "~" H 4950 4100 50  0001 C CNN
+	1    4950 4100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4950 4250 5350 4250
+Wire Wire Line
+	4950 3950 4950 3350
+Wire Wire Line
+	4950 3350 5350 3350
 $EndSCHEMATC
