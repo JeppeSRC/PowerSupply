@@ -358,9 +358,6 @@ Wire Wire Line
 Wire Wire Line
 	850  750  1250 750 
 Wire Wire Line
-	850  950  1250 950 
-Connection ~ 1250 950 
-Wire Wire Line
 	1250 950  1650 950 
 Connection ~ 1250 750 
 Wire Wire Line
@@ -1414,7 +1411,10 @@ F 3 "" H 850 950 50  0001 C CNN
 	1    850  950 
 	1    0    0    -1  
 $EndComp
-Connection ~ 850  950 
 Connection ~ 850  2050
 Connection ~ 850  1400
+Wire Wire Line
+	1250 950  850  950 
+Connection ~ 1250 950 
+Connection ~ 850  950 
 $EndSCHEMATC
