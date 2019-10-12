@@ -1418,4 +1418,6 @@ Wire Wire Line
 	1250 950  850  950 
 Connection ~ 1250 950 
 Connection ~ 850  950 
+Text Notes 3450 4150 0    50   ~ 0
+Crystal Load Capacitance = 15pF\nPCB, MCU ~10pF
 $EndSCHEMATC
