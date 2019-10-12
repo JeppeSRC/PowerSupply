@@ -2,7 +2,7 @@
 
   (general
     (thickness 1.6)
-    (drawings 25)
+    (drawings 29)
     (tracks 896)
     (zones 0)
     (modules 115)
@@ -17,10 +17,11 @@
     (37 F.SilkS user)
     (38 B.Mask user)
     (39 F.Mask user)
+    (40 Dwgs.User user)
     (44 Edge.Cuts user)
-    (45 Margin user hide)
-    (46 B.CrtYd user hide)
-    (47 F.CrtYd user hide)
+    (45 Margin user)
+    (46 B.CrtYd user)
+    (47 F.CrtYd user)
   )
 
   (setup
@@ -4682,6 +4683,10 @@
     )
   )
 
+  (gr_line (start 93 0) (end 93 116) (layer Dwgs.User) (width 0.05) (tstamp 5DA18295))
+  (gr_line (start 0 0) (end 93 0) (layer Dwgs.User) (width 0.05) (tstamp 5DA18291))
+  (gr_line (start 0 0) (end 0 116) (layer Dwgs.User) (width 0.05) (tstamp 5DA1828C))
+  (gr_line (start 0 116) (end 93 116) (layer Dwgs.User) (width 0.05) (tstamp 5DA18283))
   (gr_text "REV 2" (at 37 113.7) (layer F.SilkS)
     (effects (font (size 1 1) (thickness 0.15)))
   )
