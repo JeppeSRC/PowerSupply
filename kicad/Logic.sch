@@ -34,7 +34,7 @@ F 0 "U10" H 5400 4550 50  0000 C CNN
 F 1 "STM32F373C8Tx" H 5400 4400 50  0000 C CNN
 F 2 "Package_QFP:LQFP-48_7x7mm_P0.5mm" H 4800 2900 50  0001 R CNN
 F 3 "http://www.st.com/st-web-ui/static/active/en/resource/technical/document/datasheet/DM00046749.pdf" H 5400 4400 50  0001 C CNN
-F 4 "STM32F373C8Tx" H 5400 4400 50  0001 C CNN "MPN"
+F 4 "STM32F373C8T6" H 5400 4400 50  0001 C CNN "MPN"
 	1    5400 4400
 	1    0    0    -1  
 $EndComp
