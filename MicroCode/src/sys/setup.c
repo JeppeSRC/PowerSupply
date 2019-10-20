@@ -31,7 +31,7 @@ void InitializeClock() {
 	while (RCC->CR.PLLRDY == 0); // Wait for PLL ready
 
 	RCC->CFGR.USBPRE = 1;
-	RCC->CFGR.SDPRE = 0b10011; // SDADC division factor 48 (1MHz)
+	RCC->CFGR.SDPRE = 0b10011; // SDADC division factor 8 (6MHz)
 	RCC->CFGR.PPRE1 = 0b100; // Set APB1 prescaler. AHB / 2 (24MHz)
 	RCC->CFGR.SW = 0b10; // Set PLL as system clock source
 	RCC->CR.HSION = 0;

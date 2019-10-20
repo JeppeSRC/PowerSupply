@@ -38,7 +38,7 @@ isr_vector:
     .word 0
     IRQ PendSV_Handler
     IRQ SysTick_Handler
-    IRQ WWDG_Handler
+    IRQ WWDG_Handler //position 0
     IRQ PVD_Handler
     IRQ TAMP_Handerl
     IRQ RTC_WKUP_Handler
