@@ -115,4 +115,15 @@ struct SDADCx {
 #pragma endregion
 
 
+#pragma region SYSCFG
+
+#define SYSCFG 0x40010000
+
+#define SYSCFG_EXTICR1(OP, EXTI0, EXTI1, EXTI2, EXTI3) ((*(unsigned int*)(SYSCFG+0x8)) OP ((EXTI3 << 12) | (EXTI2 << 8) | (EXTI1 << 4) | EXTI0))
+#define SYSCFG_EXTICR2(OP, EXTI4, EXTI5, EXTI6, EXTI7) ((*(unsigned int*)(SYSCFG+0xC)) OP ((EXTI7 << 12) | (EXTI6 << 8) | (EXTI5 << 4) | EXTI4))
+#define SYSCFG_EXTICR3(OP, EXTI8, EXTI9, EXTI10, EXTI11) ((*(unsigned int*)(SYSCFG+0x10)) OP ((EXTI11 << 12) | (EXTI10 << 8) | (EXTI9 << 4) | EXTI8))
+#define SYSCFG_EXTICR4(OP, EXTI12, EXTI13, EXTI14, EXTI15) ((*(unsigned int*)(SYSCFG+0x14)) OP ((EXTI15 << 12) | (EXTI14 << 8) | (EXTI13 << 4) | EXTI12))
+
+#pragma endregion
+
 #endif
