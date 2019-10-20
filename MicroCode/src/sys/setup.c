@@ -49,13 +49,13 @@ void InitializeClock() {
 void InitializeGPIO() {
 	//IO pin setup
 	//Alternate function
-	GPIOA_AFRL(=, AF11, AF11, 0, 0, 0, 0, 0, 0);
+	GPIOA_AFRL(=, 0, 0, 0, 0, 0, 0, 0, 0);
 	GPIOA_AFRH(=, 0, AF7, AF7, 0, 0, 0, 0, 0);
-	GPIOB_AFRL(=, 0, 0, 0, 0, 0, 0, AF2, AF2);
+	GPIOB_AFRL(=, 0, 0, 0, 0, 0, 0, 0, 0);
 
 	//Mode
-	GPIOA_MODER(=, 2, 2, 0, 0, 0, 3, 3, 0, 0, 2, 2, 3, 3, 1, 1, 1);
-	GPIOB_MODER(=, 0, 0, 0, 1, 1, 0, 2, 2, 1, 1, 0, 0, 0, 0, 0, 0);
+	GPIOA_MODER(=, 0, 0, 0, 0, 0, 3, 3, 0, 0, 2, 2, 3, 3, 1, 1, 1);
+	GPIOB_MODER(=, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0);
 	GPIOE_MODER(=, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 0, 0, 0, 0, 0, 0);
 	GPIOF_MODER(=, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0);
 
