@@ -114,6 +114,18 @@ struct SDADCx {
 
 #pragma endregion
 
+#pragma region EXTI
+
+#define EXTI 0x40010400
+#define EXTI_IMR (*(unsigned int*)(EXTI))
+#define EXTI_EMR (*(unsigned int*)(EXTI+0x04))
+#define EXTI_RTSR (*(unsigned int*)(EXTI+0x08))
+#define EXTI_FTSR (*(unsigned int*)(EXTI+0x0C))
+#define EXTI_SWIER (*(unsigned int*)(EXTI+0x010))
+#define EXTI_PR (*(unsigned int*)(EXTI+0x014))
+
+
+#pragma end
 
 #pragma region SYSCFG
 
