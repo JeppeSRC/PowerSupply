@@ -162,8 +162,6 @@ Main:
 
     bl main
 	
-	b .
-
 Default_Handler:
     b .
 
