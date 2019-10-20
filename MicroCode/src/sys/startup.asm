@@ -130,6 +130,7 @@ DATA_END:   .word _dataend
 BSS_START:  .word _bssstart
 BSS_END:    .word _bssend
 
+.thumb_func
 Reset_Handler:
     ldr r0, TEXT_END 
     ldr r1, DATA_START
@@ -161,7 +162,8 @@ Main:
     eor r1, r1
 
     bl main
-	
+
+.thumb_func
 Default_Handler:
     b .
 
