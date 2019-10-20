@@ -161,6 +161,8 @@ Main:
     eor r1, r1
 
     bl main
+	
+	b .
 
 Default_Handler:
     b .
