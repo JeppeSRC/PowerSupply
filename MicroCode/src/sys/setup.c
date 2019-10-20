@@ -5,6 +5,7 @@ void InitializeClock();
 void InitializeGPIO();
 void InitializeDAC();
 void InitializeSDADC();
+void InitializeEncoders();
 
 void Initialize() {
 	InitializeClock();
@@ -12,6 +13,7 @@ void Initialize() {
 	InitializeDisplay();
 	InitializeDAC();
 	InitializeSDADC();
+	InitializeEncoders();
 }
 
 void InitializeClock() {
@@ -107,4 +109,14 @@ void InitializeSDADC() {
 
 	SDADC1_CR2(|=, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0);
 	SDADC2_CR2(|=, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0);
+}
+
+void InitializeEncoders() {
+	SYSCFG_EXTICR1(|=, 0, 0, 0, 0); //Set EXTI0 interrupt to trigger on PA0
+	SYSCFG_EXTICR2(|=, 0, 0, 1, 0); //Set EXTI6 interrupt to trigger on PB6
+	
+	EXTI_IMR |= 0x41; // Enabled EXTI0 and EXTI6 interrupts
+	EXTI_RTSR |= 0x41; //Set EXTI0 and EXTI6 interrupts to trigger on rising edge
+
+	// ISR handlers are implemented in main.c
 }
