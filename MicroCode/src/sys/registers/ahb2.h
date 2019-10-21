@@ -10,6 +10,8 @@
 #define GPIOE 0x48001000
 #define GPIOF 0x48001400
 
+#define MODER(port, data) ((data & 0x3) << (port << 1))
+
 #define GPIOA_MODER (*(unsigned int*)GPIOA)
 #define GPIOB_MODER (*(unsigned int*)GPIOB)
 #define GPIOC_MODER (*(unsigned int*)GPIOC)
@@ -17,6 +19,7 @@
 #define GPIOE_MODER (*(unsigned int*)GPIOE)
 #define GPIOF_MODER (*(unsigned int*)GPIOF)
 
+#define OTYPER(port, data) ((data & 0x01) << port)
 
 #define GPIOA_OTYPER (*(unsigned int*)(GPIOA+0x04))
 #define GPIOB_OTYPER (*(unsigned int*)(GPIOB+0x04))
@@ -25,6 +28,7 @@
 #define GPIOE_OTYPER (*(unsigned int*)(GPIOE+0x04))
 #define GPIOF_OTYPER (*(unsigned int*)(GPIOF+0x04))
 
+#define OSPEEDR(port, data) MODER(port, data)
 
 #define GPIOA_OSPEEDR (*(unsigned int*)(GPIOA+0x08))
 #define GPIOB_OSPEEDR (*(unsigned int*)(GPIOB+0x08))
@@ -33,6 +37,7 @@
 #define GPIOE_OSPEEDR (*(unsigned int*)(GPIOE+0x08))
 #define GPIOF_OSPEEDR (*(unsigned int*)(GPIOF+0x08))
 
+#define PUPDR(port, data) MODER(port, data)
 
 #define GPIOA_PUPDR (*(unsigned int*)(GPIOA+0x0C))
 #define GPIOB_PUPDR	(*(unsigned int*)(GPIOB+0x0C))
@@ -41,6 +46,7 @@
 #define GPIOE_PUPDR	(*(unsigned int*)(GPIOE+0x0C))
 #define GPIOF_PUPDR	(*(unsigned int*)(GPIOF+0x0C))
 
+#define IDR(port, data) OTYPER(port, data)
 
 #define GPIOA_IDR (*(unsigned int*)(GPIOA+0x10))
 #define GPIOB_IDR (*(unsigned int*)(GPIOB+0x10))
@@ -49,6 +55,7 @@
 #define GPIOE_IDR (*(unsigned int*)(GPIOE+0x10))
 #define GPIOF_IDR (*(unsigned int*)(GPIOF+0x10))
 
+#define ODR(port, data) OTYPER(port, data)
 
 #define GPIOA_ODR (*(unsigned int*)(GPIOA+0x14))
 #define GPIOB_ODR (*(unsigned int*)(GPIOB+0x14))
@@ -56,6 +63,9 @@
 #define GPIOD_ODR (*(unsigned int*)(GPIOD+0x14))
 #define GPIOE_ODR (*(unsigned int*)(GPIOE+0x14))
 #define GPIOF_ODR (*(unsigned int*)(GPIOF+0x14))
+
+#define BS(port, data) ((data & 0x01) << port)
+#define BR(port, data) ((data & 0x01) << (port +  16))
 
 #define GPIOA_BSRR (*(unsigned int*)(GPIOA+0x18))
 #define GPIOB_BSRR (*(unsigned int*)(GPIOB+0x18))
@@ -77,7 +87,6 @@
 #define GPIOD_AFRL (*(unsigned int*)(GPIOD+0x20))
 #define GPIOE_AFRL (*(unsigned int*)(GPIOE+0x20))
 #define GPIOF_AFRL (*(unsigned int*)(GPIOF+0x20))
-
 
 #define GPIOA_AFRH (*(unsigned int*)(GPIOA+0x24))
 #define GPIOB_AFRH (*(unsigned int*)(GPIOB+0x24))
