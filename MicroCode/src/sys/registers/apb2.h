@@ -8,39 +8,22 @@
 #define TIM19 0x40015C00
 
 #define TIM19_CR1 (*(unsigned int*)TIM19)
-
 #define TIM19_CR2 (*(unsigned int*)(TIM19+0x04))
-
 #define TIM19_SMCR (*(unsigned int*)(TIM19+0x08))
-
 #define TIM19_DIER (*(unsigned int*)(TIM19+0x0C))
-
 #define TIM19_SR (*(unsigned int*)(TIM19+0x10))
-
 #define TIM19_EGR (*(unsigned int*)(TIM19+0x14))
-
 #define TIM19_CCMR1 (*(unsigned int*)(TIM19+0x18))
-
 #define TIM19_CCMR2 (*(unsigned int*)(TIM19+0x1C))
-
 #define TIM19_CCER (*(unsigned int*)(TIM19+0x20))
-
 #define TIM19_CNT (*(unsigned int*)(TIM19+0x24))
-
 #define TIM19_PSC (*(unsigned int*)(TIM19+0x28))
-
 #define TIM19_ARR (*(unsigned int*)(TIM19+0x2C))
-
 #define TIM19_CCR1 (*(unsigned int*)(TIM19+0x34))
-
 #define TIM19_CCR2 (*(unsigned int*)(TIM19+0x38))
-
 #define TIM19_CCR3 (*(unsigned int*)(TIM19+0x3C))
-
 #define TIM19_CCR4 (*(unsigned int*)(TIM19+0x40))
-
 #define TIM19_DCR (*(unsigned int*)(TIM19+0x48))
-
 #define TIM19_DMAR (*(unsigned int*)(TIM19+0x4C))
 
 #pragma endregion
