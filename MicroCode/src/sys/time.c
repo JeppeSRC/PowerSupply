@@ -7,15 +7,15 @@
 
 void InitializeTimers() {
 	RCC->APB1ENR.TIM18EN = 1;
-
 	RCC->APB1ENR.TIM2EN = 1;
-	TIM2->ARR = ~0;
-	TIM2->PSC = 23;
-	TIM2_CR1(=, 1, 1, 1, 0, 0, 0, 0, 0);
+
+	TIM2_ARR = ~0;
+	TIM2_PSC = 23;
+	TIM2_CR1 = 0x07;
 }
 
 void ResetTimers() {
-	TIM2->CNT = 0;
+	TIM2_CNT = 0;
 }
 
 void Delay(uint8 seconds) {
@@ -23,25 +23,25 @@ void Delay(uint8 seconds) {
 }
 
 void DelayMillis(uint16 milliSeconds) {
-	TIM18->PSC = 23999; // Setting clock to 1 khz (24 Mhz / (23999 + 1)) to get one cycle every milliSecond
-	TIM18->ARR = milliSeconds;
-	TIM18_CR1(= , 1, 0, 1, 1, 0);
+	TIM18_PSC = 23999; // Setting clock to 1 khz (24 Mhz / (23999 + 1)) to get one cycle every milliSecond
+	TIM18_ARR = milliSeconds;
+	TIM18_CR1 = 0x0D;
 
-	while (TIM18_CR1(&, 1, 0, 0, 0, 0));
+	while (TIM18_CR1 & 0x01);
 }
 
 void DelayMicros(uint16 microSeconds) {
-	TIM18->PSC = 23; // Setting clock to 1Mhz (24 Mhz / (23+1)) to get one cycle every microSecond
-	TIM18->ARR = microSeconds;
-	TIM18_CR1(= , 1, 0, 1, 1, 0);
+	TIM18_PSC = 23; // Setting clock to 1Mhz (24 Mhz / (23+1)) to get one cycle every microSecond
+	TIM18_ARR = microSeconds;
+	TIM18_CR1 = 0x0D;
 
-	while (TIM18_CR1(&, 1, 0, 0, 0, 0));
+	while (TIM18_CR1 & 0x01);
 }
 
 uint32 Millis() {
-	return TIM2->CNT / 1000;
+	return TIM2_CNT / 1000;
 }
 
 uint32 Micros() {
-	return TIM2->CNT;
+	return TIM2_CNT;
 }
