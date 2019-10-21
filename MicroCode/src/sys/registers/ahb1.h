@@ -6,29 +6,6 @@
 #pragma pack(push)
 #pragma pack(1)
 
-#pragma region DMA
-
-#define DMA_CHANNEL(n) uint32 CCR##n; uint32 CNDTR##n; uint32 CPAR##n; uint32 CMAR##n;
-
-struct DMAx {
-	uint32 ISR;
-	uint32 IFCR;
-
-	DMA_CHANNEL(1);
-	DMA_CHANNEL(2);
-	DMA_CHANNEL(3);
-	DMA_CHANNEL(4);
-	DMA_CHANNEL(5);
-	DMA_CHANNEL(6);
-	DMA_CHANNEL(7);
-
-};
-
-#define DMA1 ((struct DMAx*)0x40020000)
-#define DMA2 ((struct DMAx*)0x40020400)
-
-#pragma endregion
-
 #pragma region RCC
 
 struct RCC_CR {
