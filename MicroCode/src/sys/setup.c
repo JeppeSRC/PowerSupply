@@ -84,32 +84,35 @@ void InitializeDAC() {
 }
 
 void InitializeSDADC() {
-	PWR_CR(=, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0); // Enable SDADC1 and 2 power stuff
+	PWR_CR = 0x600; // Enable SDADC1 and 2 power stuff
 	RCC->APB2ENR.SDADC1EN = 1; // Enable SDADC1 clock
 	RCC->APB2ENR.SDADC2EN = 1; // ENable SDADC2 clock
 
-	SDADC1_CR1(=, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1); // Enter init mode
-	SDADC2_CR1(=, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1); // Enter init mode
+	SDADC1_CR1 = 0x80000000; // Enter init mode
+	SDADC2_CR1 = 0x80000000; // Enter init mode
 
-	while (SDADC1_ISR(&, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1) && SDADC2_ISR(&, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1)); //Wait for INITRDY
+	while (!(SDADC1_ISR & 0x80000000) && !(SDADC2_ISR & 0x80000000)); //Wait for INITRDY
 
-	SDADC1_CR2(=, 1, 0, 0, 0, 0, 0, 0, 0, 7, 1, 0, 1); // Enable SDADC1, Fast mode and set channel to 7, Vref to external
-	SDADC2_CR2(=, 1, 0, 0, 0, 0, 0, 0, 0, 8, 1, 0, 1); // Enable SDADC2, Fast mode and set channel to 8
-	SDADC1_CONF0R(=, 0, 0, 3, 0); // Single ended zero voltage mode, x1 gain
-	SDADC2_CONF0R(=, 0, 0, 3, 0); // Single ended zero voltage mode, x1 gain
+	SDADC1_CR2 = 0x1880001; // Enable SDADC1, Fast mode and set channel to 8, Vref to external
+	SDADC2_CR2 = 0x1870001; // Enable SDADC2, Fast mode and set channel to 7, Vref to external
+	SDADC1_CONF0R = 0x0C000000; // Single ended zero voltage mode, x1 gain
+	SDADC2_CONF0R = 0x0C000000; // Single ended zero voltage mode, x1 gain
 	//SDADC_CONFCHR1 has CONF0R set as default
-	SDADC1_CR1(=, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0); //Leave init mode
-	SDADC2_CR1(=, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0); //Leave init mode
+	SDADC1_CR1 = 0; //Leave init mode
+	SDADC2_CR1 = 0; //Leave init mode
 
-	while (SDADC1_ISR(&, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0) && SDADC2_ISR(&, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0)); //Wait for SDADC1 to be stable
+	while (SDADC1_ISR & 0x8000 && SDADC2_ISR & 0x8000); //Wait for SDADC1 to be stable
 
-	SDADC1_CR2(|= , 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0); //Start calibration
-	SDADC2_CR2(|= , 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0); //Start calibration
+	SDADC1_CR2 |= 0x10; //Start calibration
+	SDADC2_CR2 |= 0x10; //Start calibration
 
-	while (SDADC1_ISR(&, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0) && SDADC2_ISR(&, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0)); //Wait for calibration to finish
+	while (!(SDADC1_ISR & 0x01) && !(SDADC2_ISR & 0x01)); //Wait for calibration to finish
 
-	SDADC1_CR2(|=, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0);
-	SDADC2_CR2(|=, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0);
+	SDADC1_CLRISR = 1; // Clear EOCALF in SDADC_ISR
+	SDADC2_CLRISR = 1; // Clear EOCALF in SDADC_ISR
+
+	SDADC1_CR2 |= 0x800000; // Start conversion
+	SDADC2_CR2 |= 0x800000;	// Start conversion
 }
 
 void InitializeEncoders() {
