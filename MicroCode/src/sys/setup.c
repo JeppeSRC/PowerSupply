@@ -48,27 +48,28 @@ void InitializeClock() {
 
 void InitializeGPIO() {
 	//IO pin setup
-	//Alternate function
-	GPIOA_AFRL(=, 0, 0, 0, 0, 0, 0, 0, 0);
-	GPIOA_AFRH(=, 0, AF7, AF7, 0, 0, 0, 0, 0);
-	GPIOB_AFRL(=, 0, 0, 0, 0, 0, 0, 0, 0);
+	//Alternate functions
+	GPIOA_AFRH = 0x770;
 
 	//Mode
-	GPIOA_MODER(=, 0, 0, 0, 0, 0, 3, 3, 0, 0, 2, 2, 3, 3, 1, 1, 1);
-	GPIOB_MODER(=, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0);
-	GPIOE_MODER(=, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 0, 0, 0, 0, 0, 0);
-	GPIOF_MODER(=, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0);
+	GPIOA_MODER = MODER(5, 3) | MODER(6, 4) | MODER(9, 2) | MODER(10, 2) | MODER(11, 3) | MODER(12, 3) | MODER(13, 1) | MODER(14, 1) | MODER(15, 1);
+	GPIOB_MODER = MODER(3, 1) | MODER(4, 1) | MODER(8, 1) | MODER(9, 1);
+	GPIOE_MODER = MODER(8, 3) | MODER(9, 3);
+	GPIOF_MODER = MODER(6, 1) | MODER(7, 1);
 
 	//Speed
-	GPIOA->OSPEEDR = ~0;
-	GPIOB->OSPEEDR = ~0;
-	GPIOE->OSPEEDR = ~0;
-	GPIOF->OSPEEDR = ~0;
+	GPIOA_OSPEEDR = ~0;
+	GPIOB_OSPEEDR = ~0;
+	GPIOE_OSPEEDR = ~0;
+	GPIOF_OSPEEDR = ~0;
 
 	//Pull up/pull down
-	GPIOA_PUPDR(=, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0);
-	GPIOB_PUPDR(=, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1);
-	GPIOF_PUPDR(&=, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1);
+	GPIOA_PUPDR = PUPDR(4, 1);
+	GPIOB_PUPDR = 0;
+	GPIOC_PUPDR = 0x54000000;
+	GPIOD_PUPDR = PUPDR(8, 1);
+	GPIOE_PUPDR = 0;
+	GPIOE_PUPDR = 0;
 }
 
 void InitializeDAC() {
