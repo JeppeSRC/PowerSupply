@@ -64,8 +64,8 @@
 #define GPIOE_ODR (*(uint32*)(GPIOE+0x14))
 #define GPIOF_ODR (*(uint32*)(GPIOF+0x14))
 
-#define BS(port, data) (1 << port)
-#define BR(port, data) (1 << (port +  16))
+#define BS(port) (1 << port)
+#define BR(port) (1 << (port +  16))
 
 #define GPIOA_BSRR (*(uint32*)(GPIOA+0x18))
 #define GPIOB_BSRR (*(uint32*)(GPIOB+0x18))
