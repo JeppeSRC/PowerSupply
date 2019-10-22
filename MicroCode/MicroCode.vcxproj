@@ -57,7 +57,6 @@
     <ClInclude Include="src\sys\registers\apb1.h" />
     <ClInclude Include="src\sys\registers\apb2.h" />
     <ClInclude Include="src\sys\registers\registers.h" />
-    <ClInclude Include="src\sys\registers\timer.h" />
     <ClInclude Include="src\sys\setup.h" />
     <ClInclude Include="src\sys\time.h" />
   </ItemGroup>

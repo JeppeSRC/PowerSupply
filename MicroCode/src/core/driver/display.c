@@ -25,51 +25,51 @@
 */
 
 void ExecuteCommand(uint32 instCode) {
-	uint32 odra = GPIOA->ODR & ODRA_MASK;
-	uint32 odrb = GPIOB->ODR & ODRB_MASK;
-	uint32 odrf = GPIOA->ODR & ODRF_MASK;
+	uint32 odra = GPIOA_ODR & ODRA_MASK;
+	uint32 odrb = GPIOB_ODR & ODRB_MASK;
+	uint32 odrf = GPIOA_ODR & ODRF_MASK;
 
 	//Sets RS, RW and high nibble of instruction
-	GPIOA->ODR = (odra |= ((instCode & 0x200) << 4)) | ((instCode & 0x30) << 10); //Sets RS, D4 and D5
-	GPIOB->ODR = odrb | ((instCode & 0xC0) >> 3); //Sets D6 and D7
-	GPIOF->ODR = odrf | ((instCode & 0x100) >> 2); //Sets RW
+	GPIOA_ODR = (odra |= ((instCode & 0x200) << 4)) | ((instCode & 0x30) << 10); //Sets RS, D4 and D5
+	GPIOB_ODR = odrb | ((instCode & 0xC0) >> 3); //Sets D6 and D7
+	GPIOF_ODR = odrf | ((instCode & 0x100) >> 2); //Sets RW
 
 	//Toggle E
-	GPIOF->ODR ^= 0x80;
+	GPIOF_ODR ^= 0x80;
 	DelayMicros(1);
-	GPIOF->ODR ^= 0x80;
+	GPIOF_ODR ^= 0x80;
 	
 	//Sets low nibble of instruction
-	GPIOA->ODR = odra | ((instCode & 0x3) << 14); //Sets D4 and D5
-	GPIOB->ODR = odrb | ((instCode & 0xC) << 1); //Sets D6 and D7
+	GPIOA_ODR = odra | ((instCode & 0x3) << 14); //Sets D4 and D5
+	GPIOB_ODR = odrb | ((instCode & 0xC) << 1); //Sets D6 and D7
 
 	//Toggle E
-	GPIOF->ODR ^= 0x80;
+	GPIOF_ODR ^= 0x80;
 	DelayMicros(1);
-	GPIOF->ODR ^= 0x80;
+	GPIOF_ODR ^= 0x80;
 }
 
 uint8 ReadResult() {
-	GPIOA->MODER &= 0x0FFFFFFF; // Set D4 and D5 to input
-	GPIOB->MODER &= 0xFFFFFC3F; // Set D6 and D7 to input
+	GPIOA_MODER &= 0x0FFFFFFF; // Set D4 and D5 to input
+	GPIOB_MODER &= 0xFFFFFC3F; // Set D6 and D7 to input
 
 	uint8 res = 0;
 
 	//Toggle E
-	GPIOF->ODR ^= 0x80;
+	GPIOF_ODR ^= 0x80;
 	DelayMicros(1);
-	res = ((GPIOB->IDR & 0xE7) << 3) | ((GPIOA->IDR & 0xC0000000) >> 10); // High nibble
-	GPIOF->ODR ^= 0x80;
+	res = ((GPIOB_IDR & 0xE7) << 3) | ((GPIOA_IDR & 0xC0000000) >> 10); // High nibble
+	GPIOF_ODR ^= 0x80;
 
 	DelayMicros(1);
 
-	GPIOF->ODR ^= 0x80;
+	GPIOF_ODR ^= 0x80;
 	DelayMicros(1);
-	res |= ((GPIOB->IDR & 0xE7) >> 1) | ((GPIOA->IDR & 0xC0000000) >> 14); // Low nibble
-	GPIOF->ODR ^= 0x80;
+	res |= ((GPIOB_IDR & 0xE7) >> 1) | ((GPIOA_IDR & 0xC0000000) >> 14); // Low nibble
+	GPIOF_ODR ^= 0x80;
 
-	GPIOA->MODER |= 0x50000000; //Set D4 and D5 to output
-	GPIOB->MODER |= 0x140; //Set D6 and D7 to output
+	GPIOA_MODER |= 0x50000000; //Set D4 and D5 to output
+	GPIOB_MODER |= 0x140; //Set D6 and D7 to output
 
 	return res;
 }
@@ -109,17 +109,17 @@ void Print(const char* string) {
 
 void InitializeDisplay() {
 	DelayMillis(100);
-	GPIOB->ODR &= ODRB_MASK;// Set D6 and D7 low
-	GPIOF->ODR &= ODRF_MASK;// Set RW and E low
+	GPIOB_ODR &= ODRB_MASK;// Set D6 and D7 low
+	GPIOF_ODR &= ODRF_MASK;// Set RW and E low
 
-	uint32 odra = GPIOA->ODR & ODRA_MASK;
+	uint32 odra = GPIOA_ODR & ODRA_MASK;
 
-	GPIOA->ODR = odra | 0x80000000; // Set D4 low and D5 high to change interface to 4bit
+	GPIOA_ODR = odra | 0x80000000; // Set D4 low and D5 high to change interface to 4bit
 
 	//Toggle E
-	GPIOF->ODR ^= 0x80;
+	GPIOF_ODR ^= 0x80;
 	DelayMicros(1);
-	GPIOF->ODR ^= 0x80;
+	GPIOF_ODR ^= 0x80;
 
 	DelayMillis(50);
 	ExecuteCommand(MAKE_INST(0, 0, 0x2C)); // Function set: Set num lines to 2 and Fonts size 5x11
