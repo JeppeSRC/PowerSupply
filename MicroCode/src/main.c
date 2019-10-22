@@ -1,7 +1,7 @@
 #include <sys/setup.h>
 
-volatile unsigned int vSet = 0;
-volatile unsigned int cSet = 0;
+volatile uint32 vSet = 0;
+volatile uint32 cSet = 0;
 
 void EXTI0_Handler() { //Encoder 0 (Voltage)
 	vSet += (GPIOA_IDR & IDR(1, 1)) >> 1;
