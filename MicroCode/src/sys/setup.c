@@ -116,8 +116,8 @@ void InitializeSDADC() {
 }
 
 void InitializeEncoders() {
-	SYSCFG_EXTICR1(|=, 0, 0, 0, 0); //Set EXTI0 interrupt to trigger on PA0
-	SYSCFG_EXTICR2(|=, 0, 0, 1, 0); //Set EXTI6 interrupt to trigger on PB6
+	SYSCFG_EXTICR1 = 0; //Set EXTI0 interrupt to trigger on PA0
+	SYSCFG_EXTICR2 = 0x100; //Set EXTI6 interrupt to trigger on PB6
 	
 	EXTI_IMR |= 0x41; // Enabled EXTI0 and EXTI6 interrupts
 	EXTI_RTSR |= 0x41; //Set EXTI0 and EXTI6 interrupts to trigger on rising edge
