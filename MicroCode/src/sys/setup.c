@@ -116,11 +116,11 @@ void InitializeSDADC() {
 }
 
 void InitializeEncoders() {
-	SYSCFG_EXTICR1 = 0; //Set EXTI0 interrupt to trigger on PA0
+	SYSCFG_EXTICR1 = 0; //Set EXTI0 interrupt to trigger on PA0, EXTI2 on PA2, EXTI3 on PA3
 	SYSCFG_EXTICR2 = 0x100; //Set EXTI6 interrupt to trigger on PB6
 	
-	EXTI_IMR |= 0x41; // Enabled EXTI0 and EXTI6 interrupts
-	EXTI_RTSR |= 0x41; //Set EXTI0 and EXTI6 interrupts to trigger on rising edge
+	EXTI_IMR |= 0x4D; // Enabled EXTI0, EXTI1, EXTI3 and EXTI6 interrupts
+	EXTI_RTSR |= 0x4D; //Set EXTI0, EXTI1, EXTI3 and EXTI6 interrupts to trigger on rising edge
 
 	// ISR handlers are implemented in main.c
 }
