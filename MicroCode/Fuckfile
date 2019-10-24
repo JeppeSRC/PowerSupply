@@ -13,7 +13,7 @@ OutDir = bin/
 ObjDir = %(OutDir)obj/
 
 AFLAGS = -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16
-CFLAGS = %(AFLAGS) -O3 -Wno-unknown-pragmas -Wno-nonnull-compare -Wall
+CFLAGS = %(AFLAGS) -O3 -Wno-unknown-pragmas -Wno-nonnull-compare -Wall -Wno-builtin-declaration-mismatch
 LFLAGS = -nostartfiles -nodefaultlibs -nostdlib -Wl,--gc-sections --specs=nosys.specs -T"LinkerScript.ld"
 
 
