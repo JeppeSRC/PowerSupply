@@ -94,7 +94,6 @@
 #define EXTI_SWIER (*(uint32*)(EXTI+0x010))
 #define EXTI_PR (*(uint32*)(EXTI+0x014))
 
-
 #pragma end
 
 #pragma region SYSCFG
