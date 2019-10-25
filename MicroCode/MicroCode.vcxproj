@@ -45,6 +45,7 @@
     <ClCompile Include="src\core\driver\display.c" />
     <ClCompile Include="src\core\string.c" />
     <ClCompile Include="src\main.c" />
+    <ClCompile Include="src\sys\error.c" />
     <ClCompile Include="src\sys\memory.c" />
     <ClCompile Include="src\sys\setup.c" />
     <ClCompile Include="src\sys\time.c" />
