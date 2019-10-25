@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Release|ARM">
@@ -45,6 +45,7 @@
     <ClCompile Include="src\core\driver\display.c" />
     <ClCompile Include="src\core\string.c" />
     <ClCompile Include="src\main.c" />
+    <ClCompile Include="src\sys\memory.c" />
     <ClCompile Include="src\sys\setup.c" />
     <ClCompile Include="src\sys\time.c" />
   </ItemGroup>
@@ -52,6 +53,7 @@
     <ClInclude Include="src\core\def.h" />
     <ClInclude Include="src\core\driver\display.h" />
     <ClInclude Include="src\core\string.h" />
+    <ClInclude Include="src\sys\memory.h" />
     <ClInclude Include="src\sys\registers\ahb1.h" />
     <ClInclude Include="src\sys\registers\ahb2.h" />
     <ClInclude Include="src\sys\registers\apb1.h" />
