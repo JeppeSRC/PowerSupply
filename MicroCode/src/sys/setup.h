@@ -50,4 +50,6 @@
 
 #include <sys/registers/registers.h>
 
+#define USE_HSE 0
+
 void Initialize();

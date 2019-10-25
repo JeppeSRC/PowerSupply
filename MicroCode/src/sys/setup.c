@@ -18,15 +18,20 @@ void Initialize() {
 
 void InitializeClock() {
 	RCC->CR.PLLON = 0; // Disable PLL
-	RCC->CR.HSEON = 1; //Enable HSE
-
+	
 	while (RCC->CR.PLLRDY == 1); // Wait for PLL ready
 
 	RCC->CFGR.PLLXTPRE = 0; // Disable HSE prescaler
-	RCC->CFGR.PLLSRC = 1; // Set PLL source to HSE/PREDIV
 	RCC->CFGR.PLLMUL = 0xA; // Set PLL multiplier to 12 (48MHz)
 
+#if USE_HSE
+	RCC->CR.HSEON = 1; //Enable HSE
+	RCC->CFGR.PLLSRC = 1; // Set PLL source to HSE/PREDIV
+
 	while (RCC->CR.HSERDY == 0); //Wait for HSE
+#else
+	RCC->CFGR.PLLSRC = 0;
+#endif
 
 	RCC->CR.PLLON = 1; // Enable PLL
 
@@ -36,7 +41,10 @@ void InitializeClock() {
 	RCC->CFGR.SDPRE = 0b10011; // SDADC division factor 8 (6MHz)
 	RCC->CFGR.PPRE1 = 0b100; // Set APB1 prescaler. AHB / 2 (24MHz)
 	RCC->CFGR.SW = 0b10; // Set PLL as system clock source
+
+#if USE_HSE
 	RCC->CR.HSION = 0;
+#endif
 
 	// CLock enable
 	// GPIO
