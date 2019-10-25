@@ -19,7 +19,6 @@ void HardFault_Handler() {
 	Error(1000);
 }
 
-
 void MMFault_Handler() {
 	Error(1500);
 }
