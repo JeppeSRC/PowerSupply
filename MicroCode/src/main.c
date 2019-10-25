@@ -4,6 +4,8 @@
 #include <sys/memory.h>
 #include <core/string.h>
 
+#define DEBUG 1
+
 volatile uint16 vSet = 0; //Variable used by the encoders
 volatile uint16 cSet = 0; //Variable used by the encoders
 
@@ -38,8 +40,15 @@ char line2Buffer[17];
 int main() {
 	Initialize();
 	
-	DisplayClear();
 	DisplayControl(1, 0, 0);
+
+#if DEBUG
+	DisplayPrint(0, "Stating....");
+	DisplayPrint(0x40, "Debug Mode");
+	Delay(2);
+#endif
+
+	DisplayClear();
 
 	while (1) {
 		DelayMillis(20); 
