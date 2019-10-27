@@ -34,7 +34,7 @@ Link {
 
 ConvertToDFU {
     Msg(Converting ELF (%Input) to DFU (%Output))
-    !tools\elf2dfuse.exe %Input %Output 0xFFFF 0xFFFF
+    !tools\elf2dfuse.exe %Input %Output 0483 DF11
 }
 
 build:
