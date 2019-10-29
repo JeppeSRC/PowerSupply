@@ -6,16 +6,11 @@ MEMORY {
 }
 
 
-SECTIONS 
-{
+SECTIONS {
 
   .isr_vector : {
     . = ALIGN(4);
     KEEP(*(.isr_vector))
-    . = ALIGN(4);
-  } > FLASH
-
-  .text : {
     . = ALIGN(4);
     *(.text)
     *(.text*)
@@ -26,7 +21,6 @@ SECTIONS
     . = ALIGN(4);
     _textend = .;
   } > FLASH
-
 
   .data : {
     . = ALIGN(4);
