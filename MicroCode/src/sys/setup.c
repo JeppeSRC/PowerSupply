@@ -9,53 +9,45 @@ void InitializeEncoders();
 
 void Initialize() {
 	InitializeClock();
-	InitializeGPIO();
+	/*InitializeGPIO();
 	InitializeDisplay();
 	InitializeDAC();
 	InitializeSDADC();
-	InitializeEncoders();
+	InitializeEncoders();*/
 }
 
 void InitializeClock() {
-	RCC->CR.PLLON = 0; // Disable PLL
+	RCC_CR &= ~PLLON; // Disable PLL
 	
-	while (RCC->CR.PLLRDY == 1); // Wait for PLL ready
+	while (RCC_CR & PLLRDY); // Wait for PLL ready
 
-	RCC->CFGR.PLLXTPRE = 0; // Disable HSE prescaler
-	RCC->CFGR.PLLMUL = 0xA; // Set PLL multiplier to 12 (48MHz)
+	RCC_CFGR = SDPRE(0b10011) | USBPRE | PLLMUL(0b1010) | PPRE1(0b100);
 
 #if USE_HSE
 	RCC->CR.HSEON = 1; //Enable HSE
 	RCC->CFGR.PLLSRC = 1; // Set PLL source to HSE/PREDIV
 
 	while (RCC->CR.HSERDY == 0); //Wait for HSE
-#else
-	RCC->CFGR.PLLSRC = 0;
 #endif
 
-	RCC->CR.PLLON = 1; // Enable PLL
+	RCC_CR |= PLLON; // Enable PLL
 
-	while (RCC->CR.PLLRDY == 0); // Wait for PLL ready
+	while (RCC_CR & PLLRDY); // Wait for PLL ready
 
-	RCC->CFGR.USBPRE = 1;
-	RCC->CFGR.SDPRE = 0b10011; // SDADC division factor 8 (6MHz)
-	RCC->CFGR.PPRE1 = 0b100; // Set APB1 prescaler. AHB / 2 (24MHz)
-	RCC->CFGR.SW = 0b10; // Set PLL as system clock source
+	RCC_CFGR |= SW(0b10); // Set PLL as system clock source
 
 #if USE_HSE
-	RCC->CR.HSION = 0;
+	RCC_CR &= ~HSION;
 #endif
-
-	// CLock enable
-	// GPIO
-	RCC->AHBENR.IOPAEN = 1;
-	RCC->AHBENR.IOPBEN = 1;
-	RCC->AHBENR.IOPEEN = 1;
-	RCC->AHBENR.IOPFEN = 1;
 }
 
 void InitializeGPIO() {
-	//IO pin setup
+
+	// CLock enable
+	RCC_AHBENR | IOPAEN | IOPBEN | IOPEEN | IOPFEN;
+
+	asm("mov r1, r1"); //NOP instruction so GPIO peripherals aren't accessed right after being enabled
+
 	//Alternate functions
 	GPIOA_AFRH = 0x770;
 
@@ -74,15 +66,12 @@ void InitializeGPIO() {
 	//Pull up/pull down
 	GPIOA_PUPDR = PUPDR(4, 1);
 	GPIOB_PUPDR = 0;
-	GPIOC_PUPDR = 0x54000000;
-	GPIOD_PUPDR = PUPDR(8, 1);
 	GPIOE_PUPDR = 0;
 	GPIOE_PUPDR = 0;
 }
 
 void InitializeDAC() {
-	RCC->APB1ENR.DAC1EN = 1;
-	RCC->APB1ENR.DAC2EN = 1;
+	RCC_APB1ENR |= DAC1EN | DAC2EN;
 	
 	DAC1_CR = 0x10000; //Enable only channel 2
 	DAC2_CR = 1;
@@ -93,8 +82,7 @@ void InitializeDAC() {
 
 void InitializeSDADC() {
 	PWR_CR = 0x600; // Enable SDADC1 and 2 power stuff
-	RCC->APB2ENR.SDADC1EN = 1; // Enable SDADC1 clock
-	RCC->APB2ENR.SDADC2EN = 1; // ENable SDADC2 clock
+	RCC_APB2ENR |= SDADC1EN | SDADC2EN; // Enable SDADC1 and SDADC2 clock
 
 	SDADC1_CR1 = 0x80000000; // Enter init mode
 	SDADC2_CR1 = 0x80000000; // Enter init mode
