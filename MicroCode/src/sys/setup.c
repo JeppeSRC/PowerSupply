@@ -44,7 +44,7 @@ void InitializeClock() {
 void InitializeGPIO() {
 
 	// CLock enable
-	RCC_AHBENR | IOPAEN | IOPBEN | IOPEEN | IOPFEN;
+	RCC_AHBENR |= IOPAEN | IOPBEN | IOPEEN | IOPFEN;
 
 	asm("mov r1, r1"); //NOP instruction so GPIO peripherals aren't accessed right after being enabled
 
