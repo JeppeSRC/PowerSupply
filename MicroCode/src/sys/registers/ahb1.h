@@ -7,7 +7,7 @@
 
 #define RCC 0x40021000
 
-#define RCC_CR (*(uint32*)(RCC))
+#define RCC_CR (*(volatile uint32*)(RCC))
 
 #define PLLRDY 0x2000000
 #define PLLON 0x1000000
@@ -20,7 +20,7 @@
 #define HSIRDY 0x2
 #define HSION 0x1
 
-#define RCC_CFGR (*(uint32*)(RCC+0x04))
+#define RCC_CFGR (*(volatile uint32*)(RCC+0x04))
 
 #define SDPRE(sdpre) ((sdpre & 0x1F) << 27)
 #define MCO(mco) ((mco & 0x7) << 24)
@@ -35,7 +35,7 @@
 #define SWS(sws) ((sws & 0x3) << 2)
 #define SW(sw) ((sw & 0x3))
 
-#define RCC_CIR (*(uint32*)(RCC+0x08))
+#define RCC_CIR (*(volatile uint32*)(RCC+0x08))
 
 #define CSSC 0x800000
 #define PLLRDYC 0x100000
@@ -55,7 +55,7 @@
 #define LSERDYF 0x2
 #define LSIRDYF 0x1
 
-#define RCC_APB2RSTR (*(uint32*)(RCC+0x0C))
+#define RCC_APB2RSTR (*(volatile uint32*)(RCC+0x0C))
 
 #define SDADC3RST 0x4000000
 #define SDADC2RST 0x2000000
@@ -69,7 +69,7 @@
 #define ADCRST 0x200
 #define SYSCFGRST 0x1
 
-#define RCC_APB1RSTR (*(uint32*)(RCC+0x10))
+#define RCC_APB1RSTR (*(volatile uint32*)(RCC+0x10))
 
 #define CECRST 0x40000000
 #define DAC1RST 0x20000000
@@ -95,7 +95,7 @@
 #define TIM3RST 0x2
 #define TIM2RST 0x1
 
-#define RCC_AHBENR (*(uint32*)(RCC+0x14))
+#define RCC_AHBENR (*(volatile uint32*)(RCC+0x14))
 
 #define TSCEN 0x1000000
 #define IOPFEN 0x400000
@@ -110,7 +110,7 @@
 #define DMA2EN 0x2
 #define DMA1EN 0x1
 
-#define RCC_APB2ENR (*(uint32*)(RCC+0x18))
+#define RCC_APB2ENR (*(volatile uint32*)(RCC+0x18))
 
 #define SDADC3EN 0x4000000
 #define SDADC2EN 0x2000000
@@ -125,7 +125,7 @@
 #define ADCEN 0x200
 #define SYSCFGEB 0x1
 
-#define RCC_APB1ENR (*(uint32*)(RCC+0x1C))
+#define RCC_APB1ENR (*(volatile uint32*)(RCC+0x1C))
 
 #define CECEN 0x40000000
 #define DAC1EN 0x20000000
@@ -151,7 +151,7 @@
 #define TIM3EN 0x2
 #define TIM2EN 0x1
 
-#define RCC_BDCR (*(uint32*)(RCC+0x20))
+#define RCC_BDCR (*(volatile uint32*)(RCC+0x20))
 
 #define BDRST 0x10000
 #define RTCEN 0x8000
@@ -161,7 +161,7 @@
 #define LSERDY 0x2
 #define LSEON 0x1
 
-#define RCC_CSR (*(uint32*)(RCC+0x24))
+#define RCC_CSR (*(volatile uint32*)(RCC+0x24))
 
 #define LPWRRSTF 0x80000000
 #define WWDGRSTF 0x40000000
@@ -175,7 +175,7 @@
 #define LSIRDY 0x2
 #define LSION 0x1
 
-#define RCC_AHBRSTR (*(uint32*)(RCC+0x28))
+#define RCC_AHBRSTR (*(volatile uint32*)(RCC+0x28))
 
 #define TSCRST 0x1000000
 #define IOPFRST 0x400000
@@ -185,11 +185,11 @@
 #define IOPBRST 0x40000
 #define IOPARST 0x20000
 
-#define RCC_CFGR2 (*(uint32*)(RCC+0x2C))
+#define RCC_CFGR2 (*(volatile uint32*)(RCC+0x2C))
 
 #define PREDIV(div) (div & 0xF)
 
-#define RCC_CFGR3 (*(uint32*)(RCC+0x30))
+#define RCC_CFGR3 (*(volatile uint32*)(RCC+0x30))
 
 #define USART3SW(sw) ((sw & 0x3) << 18)
 #define USART2SW(sw) ((sw & 0x3) << 16)
@@ -203,5 +203,3 @@
 #pragma endregion
 
 #endif
-
-#pragma pack(pop)
