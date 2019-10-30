@@ -6,8 +6,7 @@
 #include <memory.h>
 
 void InitializeTimers() {
-	RCC->APB1ENR.TIM18EN = 1;
-	RCC->APB1ENR.TIM2EN = 1;
+	RCC_APB1ENR |= TIM18EN | TIM2EN;
 
 	TIM2_ARR = ~0;
 	TIM2_PSC = 23;
