@@ -1,6 +1,6 @@
 #include "time.h"
 
-// bus clock speed 24 Mhz
+// timer clock speed 48 Mhz
 // TIM18 reserved for delay functions
 // TIM2 reserved for time tracking
 #include <memory.h>
@@ -22,7 +22,7 @@ void Delay(uint8 seconds) {
 }
 
 void DelayMillis(uint16 milliSeconds) {
-	TIM18_PSC = 23999; // Setting clock to 1 khz (24 Mhz / (23999 + 1)) to get one cycle every milliSecond
+	TIM18_PSC = 47999; // Setting clock to 1 khz (48 MHz / (47999 + 1)) to get one cycle every milliSecond
 	TIM18_ARR = milliSeconds;
 	TIM18_CR1 = 0x0D;
 
@@ -30,7 +30,7 @@ void DelayMillis(uint16 milliSeconds) {
 }
 
 void DelayMicros(uint16 microSeconds) {
-	TIM18_PSC = 23; // Setting clock to 1Mhz (24 Mhz / (23+1)) to get one cycle every microSecond
+	TIM18_PSC = 47; // Setting clock to 1MHz (48 MHz / (47+1)) to get one cycle every microSecond
 	TIM18_ARR = microSeconds;
 	TIM18_CR1 = 0x0D;
 
