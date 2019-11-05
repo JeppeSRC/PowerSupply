@@ -25,29 +25,6 @@
 */
 
 void ExecuteCommand(uint32 instCode) {
-	/*uint32 odra = GPIOA_ODR & ODRA_MASK;
-	uint32 odrb = GPIOB_ODR & ODRB_MASK;
-	uint32 odrf = GPIOF_ODR & ODRF_MASK;
-
-	//Sets RS, RW and high nibble of instruction
-	GPIOA_ODR = (odra |= ((instCode & 0x200) << 20)) | ((instCode & 0x30) << 26); //Sets RS, D4 and D5
-	GPIOB_ODR = odrb | ((instCode & 0xC0) >> 3); //Sets D6 and D7
-	GPIOF_ODR = odrf | ((instCode & 0x100) >> 2); //Sets RW
-
-	//Toggle E
-	GPIOF_ODR ^= 0x80;
-	DelayMicros(4);
-	GPIOF_ODR ^= 0x80;
-	DelayMicros(4);
-	//Sets low nibble of instruction
-	GPIOA_ODR = odra | ((instCode & 0x3) << 30); //Sets D4 and D5
-	GPIOB_ODR = odrb | ((instCode & 0xC) << 1);  //Sets D6 and D7
-
-	//Toggle E
-	GPIOF_ODR ^= 0x80;
-	DelayMicros(4);
-	GPIOF_ODR ^= 0x80;*/
-
 	//Set RS, RW and high nibble of instruction
 	GPIOA_BSRR = ((instCode & 0x200) << 4) | (((instCode & 0x200) ^ 0x200) << 20) | ((instCode & 0x30) << 10) | (((instCode & 0x30) ^ 0x30) << 26); //Set RS, D4 and D5
 	GPIOF_BSRR = ((instCode & 0x100) >> 2) | (((instCode & 0x100) ^ 0x100) << 14); //Set RS
@@ -133,9 +110,9 @@ void InitializeDisplay() {
 	GPIOA_ODR = (GPIOA_ODR & ODRA_MASK) | ODR(15, 1); // Set D4 low and D5 high to change interface to 4bit
 
 	//Toggle E
-	GPIOF_ODR ^= ODR(7, 1);
+	GPIOF_BSRR = BS(7);
 	DelayMicros(4);
-	GPIOF_ODR ^= ODR(7, 1);
+	GPIOF_BSRR = BR(7);
 	DelayMicros(100);
 
 	ExecuteCommand(MAKE_INST(0, 0, 0x2C)); // Function set: Set num lines to 2 and Fonts size 5x11
