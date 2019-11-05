@@ -1,5 +1,6 @@
 #include "setup.h"
 #include <core/driver/display.h>
+#include "time.h"
 
 void InitializeClock();
 void InitializeGPIO();
@@ -9,29 +10,32 @@ void InitializeEncoders();
 
 void Initialize() {
 	InitializeClock();
-	/*InitializeGPIO();
+	InitializeTimers();
+	DelayMicros(10);
+	DelayMillis(10);
+	InitializeGPIO();
 	InitializeDisplay();
 	InitializeDAC();
-	InitializeSDADC();
-	InitializeEncoders();*/
+	InitializeEncoders();
+	//InitializeSDADC();
 }
 
 void InitializeClock() {
 	RCC_CR &= ~PLLON; // Disable PLL
 	
-	while (RCC_CR & PLLRDY); // Wait for PLL ready
+	while ((RCC_CR & PLLRDY) != 0); // Wait for PLL ready
 
 	RCC_CFGR = SDPRE(0b10011) | USBPRE | PLLMUL(0b1010) | PPRE1(0b100);
 
 #if USE_HSE
-	RCC->CR.HSEON = 1; //Enable HSE
-	RCC->CFGR.PLLSRC = 1; // Set PLL source to HSE/PREDIV
+	RCC_CR |= HSEON; //Enable HSE
+	RCC_CFGR |= PLLSRC; // Set PLL source to HSE/PREDIV
 
-	while (RCC->CR.HSERDY == 0); //Wait for HSE
+	while ((RCC_CR & HSERDY) == 0); //Wait for HSE
 #endif
-
+	
 	RCC_CR |= PLLON; // Enable PLL
-
+	
 	while (RCC_CR & PLLRDY); // Wait for PLL ready
 
 	RCC_CFGR |= SW(0b10); // Set PLL as system clock source
@@ -46,7 +50,7 @@ void InitializeGPIO() {
 	// CLock enable
 	RCC_AHBENR |= IOPAEN | IOPBEN | IOPEEN | IOPFEN;
 
-	asm("mov r1, r1"); //NOP instruction so GPIO peripherals aren't accessed right after being enabled
+	NOP; //NOP instruction so GPIO peripherals aren't accessed right after being enabled
 
 	//Alternate functions
 	GPIOA_AFRH = 0x770;
@@ -73,6 +77,8 @@ void InitializeGPIO() {
 void InitializeDAC() {
 	RCC_APB1ENR |= DAC1EN | DAC2EN;
 	
+	NOP;
+
 	DAC1_CR = 0x10000; //Enable only channel 2
 	DAC2_CR = 1;
 	
@@ -82,33 +88,38 @@ void InitializeDAC() {
 
 void InitializeSDADC() {
 	PWR_CR = 0x600; // Enable SDADC1 and 2 power stuff
+
+	NOP;
+
 	RCC_APB2ENR |= SDADC1EN | SDADC2EN; // Enable SDADC1 and SDADC2 clock
 
-	SDADC1_CR1 = 0x80000000; // Enter init mode
-	SDADC2_CR1 = 0x80000000; // Enter init mode
-
-	while (!(SDADC1_ISR & 0x80000000) && !(SDADC2_ISR & 0x80000000)); //Wait for INITRDY
-
-	SDADC1_CR2 = 0x1880001; // Enable SDADC1, Fast mode and set channel to 8, Vref to external
-	SDADC2_CR2 = 0x1870001; // Enable SDADC2, Fast mode and set channel to 7, Vref to external
+	NOP;
+	SDADC1_CR2 = 0x1080000; // Enable SDADC1, Fast mode and continuous mode, set channel to 8, Vref to external
+	SDADC2_CR2 = 0x1070000; // Enable SDADC2, Fast mode and continuous mode, set channel to 7, Vref to external
 	SDADC1_CONF0R = 0x0C000000; // Single ended zero voltage mode, x1 gain
 	SDADC2_CONF0R = 0x0C000000; // Single ended zero voltage mode, x1 gain
 	//SDADC_CONFCHR1 has CONF0R set as default
-	SDADC1_CR1 = 0; //Leave init mode
-	SDADC2_CR1 = 0; //Leave init mode
-
-	while (SDADC1_ISR & 0x8000 && SDADC2_ISR & 0x8000); //Wait for SDADC1 to be stable
-
+	
+	SDADC1_CR2 |= 0x01;
+	SDADC2_CR2 |= 0x01;
+	
 	SDADC1_CR2 |= 0x10; //Start calibration
+
+	while ((SDADC1_ISR & 0x01) == 0) { //Wait for calibration to finish
+		GPIOA_ODR ^= ODR(15, 1);
+	}
+
 	SDADC2_CR2 |= 0x10; //Start calibration
 
-	while (!(SDADC1_ISR & 0x01) && !(SDADC2_ISR & 0x01)); //Wait for calibration to finish
-
+	while ((SDADC2_ISR & 0x01) == 0) {
+		GPIOB_ODR ^= ODR(3, 1);
+	}
+		
 	SDADC1_CLRISR = 1; // Clear EOCALF in SDADC_ISR
 	SDADC2_CLRISR = 1; // Clear EOCALF in SDADC_ISR
 
-	SDADC1_CR2 |= 0x800000; // Start conversion
-	SDADC2_CR2 |= 0x800000;	// Start conversion
+	SDADC1_CR2 |= 0xC00000; // Start conversion
+	SDADC2_CR2 |= 0xC00000;	// Start conversion
 }
 
 void InitializeEncoders() {
