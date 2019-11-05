@@ -6,11 +6,14 @@
 #include <memory.h>
 
 void InitializeTimers() {
-	RCC_APB1ENR |= TIM18EN | TIM2EN;
+	RCC_APB1ENR |= TIM18EN | TIM2EN | TIM7EN;
 
 	TIM2_ARR = ~0;
 	TIM2_PSC = 23;
 	TIM2_CR1 = 0x07;
+
+	TIM7_PSC = 47999; // Setting clock to 1 khz (48 MHz / (47999 + 1)) to get one cycle every milliSecond
+	TIM18_PSC = 47; // Setting clock to 1MHz (48 MHz / (47+1)) to get one cycle every microSecond
 }
 
 void ResetTimers() {
@@ -22,15 +25,13 @@ void Delay(uint8 seconds) {
 }
 
 void DelayMillis(uint16 milliSeconds) {
-	TIM18_PSC = 47999; // Setting clock to 1 khz (48 MHz / (47999 + 1)) to get one cycle every milliSecond
-	TIM18_ARR = milliSeconds;
-	TIM18_CR1 = 0x0D;
+	TIM7_ARR = milliSeconds;
+	TIM7_CR1 = 0x0D;
 
-	while (TIM18_CR1 & 0x01);
+	while (TIM7_CR1 & 0x01);
 }
 
 void DelayMicros(uint16 microSeconds) {
-	TIM18_PSC = 47; // Setting clock to 1MHz (48 MHz / (47+1)) to get one cycle every microSecond
 	TIM18_ARR = microSeconds;
 	TIM18_CR1 = 0x0D;
 
