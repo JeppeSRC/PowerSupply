@@ -5,9 +5,9 @@
 void Error(uint16 period) {
 	while (1) {
 		DelayMillis(period >> 1);
-		GPIOB_ODR ^= ODR(9, 1);
+		GPIOB_BSRR = BS(4);
 		DelayMillis(period >> 1);
-		GPIOB_ODR ^= ODR(9, 1);
+		GPIOB_BSRR = BR(4);
 	}
 }
 
