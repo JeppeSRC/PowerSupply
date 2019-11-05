@@ -40,6 +40,11 @@ char line2Buffer[17];
 int main() {
 	Initialize();
 	
+	DisplayPrint(0, "Hello World!");
+	DisplayPrint(0x40, "It Works!");
+
+	asm("b .");
+	/*
 	DisplayControl(1, 0, 0);
 
 #if DEBUG
@@ -66,7 +71,7 @@ int main() {
 		}
 
 		if (GPIOA_IDR & IDR(4, 1)) { // Current is not limited
-			GPIOA_BSRR |= BR(4); 
+			GPIOA_BSRR |= BR(4);  //Wrong
 		} else { 
 			GPIOA_BSRR |= BS(4);
 		}
@@ -88,5 +93,5 @@ int main() {
 		DisplayPrint(0, line1Buffer);
 		DisplayPrint(0x40, line2Buffer);
 	}
-
+	*/
 }
