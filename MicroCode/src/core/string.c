@@ -6,7 +6,7 @@ uint32 strlen(const char* string) {
 
 	while (string[len++]);
 
-	return len;
+	return len-1;
 }
 
 char* chars = "0123456789ABCDEF";
