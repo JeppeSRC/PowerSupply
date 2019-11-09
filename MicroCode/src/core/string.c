@@ -9,9 +9,9 @@ uint32 strlen(const char* string) {
 	return len-1;
 }
 
-char* chars = "0123456789ABCDEF";
 
 uint32 uint32ToString(uint8 value, uint8 base, char* buffer) {
+	static const char* chars = "0123456789ABCDEF";
 	uint8 num = 0;
 
 	char tmp[32];

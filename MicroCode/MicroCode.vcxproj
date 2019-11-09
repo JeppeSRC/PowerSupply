@@ -48,6 +48,7 @@
     <ClCompile Include="src\sys\error.c" />
     <ClCompile Include="src\sys\memory.c" />
     <ClCompile Include="src\sys\setup.c" />
+    <ClCompile Include="src\sys\sys.c" />
     <ClCompile Include="src\sys\time.c" />
   </ItemGroup>
   <ItemGroup>
@@ -61,6 +62,7 @@
     <ClInclude Include="src\sys\registers\apb2.h" />
     <ClInclude Include="src\sys\registers\registers.h" />
     <ClInclude Include="src\sys\setup.h" />
+    <ClInclude Include="src\sys\sys.h" />
     <ClInclude Include="src\sys\time.h" />
   </ItemGroup>
   <ItemGroup>

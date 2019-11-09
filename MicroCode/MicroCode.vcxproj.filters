@@ -36,6 +36,9 @@
     <ClCompile Include="src\sys\error.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\sys\sys.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\core\driver\display.h">
@@ -69,6 +72,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\sys\memory.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sys\sys.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

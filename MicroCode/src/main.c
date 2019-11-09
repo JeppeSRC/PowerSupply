@@ -6,19 +6,29 @@
 
 #define DEBUG 1
 
-volatile uint16 vSet = 0; //Variable used by the encoders
-volatile uint16 cSet = 0; //Variable used by the encoders
+volatile uint16 vSet = 0; //Variable used by the encoder
+volatile uint16 cSet = 0; //Variable used by the encoder
 
-void EXTI0_Handler() { //Encoder 0 (Voltage)
-	vSet += (GPIOA_IDR & IDR(1, 1)) >> 1;
+void EXTI0_Handler() { //Encoder 0 (Voltage); Interrupt 6
+	//vSet += (GPIOA_IDR & IDR(1, 1)) >> 1;
 
 	if (vSet > 2000) vSet = 2000;
+
+	vSet = 1;
+	DisplayPrint(0, "EXTI0     ");
+
+	EXTI_PR |= 0x01;
 }
 
-void EXTI5_9_Handler() { //Encoder 1 (Current)
-	cSet += (GPIOB_IDR & IDR(7, 1)) >> 7;
+void EXTI5_9_Handler() { //Encoder 1 (Current); Interrupt 23
+	//cSet += (GPIOB_IDR & IDR(7, 1)) >> 7;
 
 	if (cSet > 400) cSet = 400;
+
+	vSet = 2;
+	DisplayPrint(0, "EXTI5_9         ");
+
+	EXTI_PR |= 0x40;
 }
 
 #define ATTRIB_OUTPUT 0x01
@@ -26,12 +36,18 @@ void EXTI5_9_Handler() { //Encoder 1 (Current)
 
 volatile uint8 attributes;
 
-void EXTI2TS_Handler() { // Switch (Encoder 0) output on off toggle
+void EXTI2TS_Handler() { // Switch (Encoder 0) output on off toggle; Interrupt 8
 	attributes ^= ATTRIB_OUTPUT;
+
+	vSet = 3;
+	DisplayPrint(0, "EXTI2TS     ");
+	EXTI_PR |= 0x4;
 }
 
-void EXTI3_Handler() { //Swicth (Encoder 1)
-
+void EXTI3_Handler() { //Swicth (Encoder 1); Interrupt 9
+	vSet = 4;
+	DisplayPrint(0, "EXTI3      ");
+	EXTI_PR |= 0x8;
 }
 
 char line1Buffer[17];
@@ -39,9 +55,9 @@ char line2Buffer[17];
 
 int main() {
 	Initialize();
-	
-	DisplayPrint(0, "Hello World!");
-	DisplayPrint(0x40, "It Works!");
+	DisplayPrint(0, "Testing!!!");
+
+
 
 	asm("b .");
 	/*
