@@ -14,6 +14,9 @@ void InitializeTimers() {
 
 	TIM7_PSC = 47999; // Setting clock to 1 khz (48 MHz / (47999 + 1)) to get one cycle every milliSecond
 	TIM18_PSC = 47; // Setting clock to 1MHz (48 MHz / (47+1)) to get one cycle every microSecond
+
+	DelayMicros(10);
+	DelayMillis(10);
 }
 
 void ResetTimers() {

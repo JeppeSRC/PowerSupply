@@ -1,5 +1,6 @@
 #include "setup.h"
 #include <core/driver/display.h>
+#include "sys.h"
 #include "time.h"
 
 void InitializeClock();
@@ -11,8 +12,6 @@ void InitializeEncoders();
 void Initialize() {
 	InitializeClock();
 	InitializeTimers();
-	DelayMicros(10);
-	DelayMillis(10);
 	InitializeGPIO();
 	InitializeDisplay();
 	InitializeDAC();
@@ -68,7 +67,7 @@ void InitializeGPIO() {
 	GPIOF_OSPEEDR = ~0;
 
 	//Pull up/pull down
-	GPIOA_PUPDR = PUPDR(4, 1);
+	GPIOA_PUPDR = PUPDR(4, 1) | PUPDR(3, 1) | PUPDR(2, 1);
 	GPIOB_PUPDR = 0;
 	GPIOE_PUPDR = 0;
 	GPIOE_PUPDR = 0;
@@ -89,45 +88,68 @@ void InitializeDAC() {
 void InitializeSDADC() {
 	PWR_CR = 0x600; // Enable SDADC1 and 2 power stuff
 
-	NOP;
+	DelayMicros(1);
 
 	RCC_APB2ENR |= SDADC1EN | SDADC2EN; // Enable SDADC1 and SDADC2 clock
 
-	NOP;
-	SDADC1_CR2 = 0x1080000; // Enable SDADC1, Fast mode and continuous mode, set channel to 8, Vref to external
-	SDADC2_CR2 = 0x1070000; // Enable SDADC2, Fast mode and continuous mode, set channel to 7, Vref to external
-	SDADC1_CONF0R = 0x0C000000; // Single ended zero voltage mode, x1 gain
-	SDADC2_CONF0R = 0x0C000000; // Single ended zero voltage mode, x1 gain
-	//SDADC_CONFCHR1 has CONF0R set as default
+	DelayMicros(1);
+
+	SDADC2_CR1 = 0;
+
+	DelayMillis(10);
+
+	SDADC2_CR2 |= 0x01; //ADON
+
+	while (SDADC2_ISR & 0x8000);
+
+	DisplayPrint(0, "Stabalized");
 	
-	SDADC1_CR2 |= 0x01;
-	SDADC2_CR2 |= 0x01;
-	
-	SDADC1_CR2 |= 0x10; //Start calibration
-
-	while ((SDADC1_ISR & 0x01) == 0) { //Wait for calibration to finish
-		GPIOA_ODR ^= ODR(15, 1);
-	}
-
-	SDADC2_CR2 |= 0x10; //Start calibration
-
-	while ((SDADC2_ISR & 0x01) == 0) {
-		GPIOB_ODR ^= ODR(3, 1);
-	}
+	SDADC2_CR1 |= 0x80000000;
 		
-	SDADC1_CLRISR = 1; // Clear EOCALF in SDADC_ISR
-	SDADC2_CLRISR = 1; // Clear EOCALF in SDADC_ISR
+	while ((SDADC2_ISR & 0x80000000) == 0);
 
-	SDADC1_CR2 |= 0xC00000; // Start conversion
-	SDADC2_CR2 |= 0xC00000;	// Start conversion
+	DisplayPrint(0, "Init mode    ");
+
+	SDADC2_CR2 = 0x80000; // Enable SDADC1, Fast mode and continuous mode, set channel to 8, Vref to external
+	SDADC2_CONF0R = 0xC000000; // Single ended zero voltage mode, x1 gain
+	SDADC2_CONFCHR2 = 0;
+
+	SDADC2_CR1 &= ~0x80000000;
+
+	while (SDADC2_ISR & 0x80000000);
+
+	DisplayPrint(0x40, "Deinit");
+
+	Delay(2);
+
+	DisplayClear();
+
+	SDADC2_CR2 |= 0x800000;
+
+	DelayMicros(1);
+
+	if (SDADC2_ISR & 0x4000) {
+		DisplayPrint(0, "Conv started");
+	}
+
+	while ((SDADC2_ISR & 0x8) == 0);
+
+	DisplayPrint(0x40, "Converted");
+
+	SDADC2_CLRISR = 0x1;
 }
 
 void InitializeEncoders() {
 	SYSCFG_EXTICR1 = 0; //Set EXTI0 interrupt to trigger on PA0, EXTI2 on PA2, EXTI3 on PA3
 	SYSCFG_EXTICR2 = 0x100; //Set EXTI6 interrupt to trigger on PB6
 	
-	EXTI_IMR |= 0x4D; // Enabled EXTI0, EXTI1, EXTI3 and EXTI6 interrupts
-	EXTI_RTSR |= 0x4D; //Set EXTI0, EXTI1, EXTI3 and EXTI6 interrupts to trigger on rising edge
+	EXTI_IMR |= 0x4D; // Enabled EXTI0, EXTI2, EXTI3 and EXTI6 interrupts
+	EXTI_FTSR |= 0x4D; //Set EXTI0, EXTI2, EXTI3 and EXTI6 interrupts to trigger on rising edge
+
+	EnableInterrupt(6);
+	EnableInterrupt(8);
+	EnableInterrupt(9);
+	EnableInterrupt(23);
 
 	// ISR handlers are implemented in main.c
 }

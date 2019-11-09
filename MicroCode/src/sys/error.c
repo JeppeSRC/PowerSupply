@@ -1,32 +1,28 @@
 #include <core/def.h>
 #include <sys/registers/registers.h>
 #include <sys/time.h>
+#include <core/driver/display.h>
 
 void Error(uint16 period) {
-	while (1) {
-		DelayMillis(period >> 1);
-		GPIOB_BSRR = BS(4);
-		DelayMillis(period >> 1);
-		GPIOB_BSRR = BR(4);
-	}
+	DisplayPrint(0x40, "FAIL!!!!");
 }
 
 void NMI_Handler() {
-	Error(500);
+	DisplayPrint(0x40, "NMI Error");
 }
 
 void HardFault_Handler() {
-	Error(1000);
+	DisplayPrint(0x40, "Hard Fault");
 }
 
 void MMFault_Handler() {
-	Error(1500);
+	DisplayPrint(0x40, "MM Fault");
 }
 
 void BusFault_Handler() {
-	Error(2000);
+	DisplayPrint(0x40, "Bus Fault");
 }
 
 void UsageFault_Handler() {
-	Error(2500);
+	DisplayPrint(0x40, "Usage Fault");
 }
