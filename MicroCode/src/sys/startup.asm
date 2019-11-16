@@ -1,7 +1,7 @@
 .syntax unified
 .thumb 
 
-.section .isr_vector,"x"
+.section .isr_vector,"ax"
 
 
 .global isr_vector
@@ -22,6 +22,7 @@
     .set  \handler, Default_Handler
 .endm
 
+.thumb
 isr_vector:
     .word 0x20004000 //intitial SP value top of memory (16K)
     .word Reset_Handler
@@ -124,6 +125,7 @@ isr_vector:
 
             .align 4
 TEXT_END:   .word _textend
+SI_START:	.word _sidatastart
 DATA_START: .word _datastart
 DATA_END:   .word _dataend
 BSS_START:  .word _bssstart
@@ -131,7 +133,10 @@ BSS_END:    .word _bssend
 
 .thumb_func
 Reset_Handler:
-    ldr r0, TEXT_END
+	ldr r0, =0x20004000
+	mov sp, r0
+
+    ldr r0, SI_START
     ldr r1, DATA_START
     ldr r2, DATA_END
     subs r2, r1
@@ -140,7 +145,7 @@ Reset_Handler:
 DataCopy:
     ldr r3, [r0], #4
     str r3, [r1], #4
-    subs r2, #1
+    subs r2, #4
     bne DataCopy
 
 DataZero:

@@ -12,15 +12,26 @@ SECTIONS {
     . = ALIGN(4);
     KEEP(*(.isr_vector))
     . = ALIGN(4);
+  } > FLASH
+
+  .text : {
+    . = ALIGN(4);
     *(.text)
     *(.text*)
-    *(.rodata)
-    *(.rodata*)
     *(.glue_7)
     *(.glue_7t)
     . = ALIGN(4);
     _textend = .;
   } > FLASH
+
+  .rodata : {
+    . = ALIGN(4);
+    *(.rodata)
+    *(.rodata*)
+    . = ALIGN(4);
+  } > FLASH
+
+  _sidatastart = LOADADDR(.data);
 
   .data : {
     . = ALIGN(4);

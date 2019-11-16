@@ -3,6 +3,7 @@
 #include <core/driver/display.h>
 #include <sys/memory.h>
 #include <core/string.h>
+#include <sys/sys.h>
 
 #define DEBUG 1
 
@@ -15,7 +16,6 @@ void EXTI0_Handler() { //Encoder 0 (Voltage); Interrupt 6
 	if (vSet > 2000) vSet = 2000;
 
 	vSet = 1;
-	DisplayPrint(0, "EXTI0     ");
 
 	EXTI_PR |= 0x01;
 }
@@ -26,7 +26,6 @@ void EXTI5_9_Handler() { //Encoder 1 (Current); Interrupt 23
 	if (cSet > 400) cSet = 400;
 
 	vSet = 2;
-	DisplayPrint(0, "EXTI5_9         ");
 
 	EXTI_PR |= 0x40;
 }
@@ -40,13 +39,11 @@ void EXTI2TS_Handler() { // Switch (Encoder 0) output on off toggle; Interrupt 8
 	attributes ^= ATTRIB_OUTPUT;
 
 	vSet = 3;
-	DisplayPrint(0, "EXTI2TS     ");
 	EXTI_PR |= 0x4;
 }
 
 void EXTI3_Handler() { //Swicth (Encoder 1); Interrupt 9
 	vSet = 4;
-	DisplayPrint(0, "EXTI3      ");
 	EXTI_PR |= 0x8;
 }
 
@@ -55,9 +52,27 @@ char line2Buffer[17];
 
 int main() {
 	Initialize();
-	DisplayPrint(0, "Testing!!!");
+	
+	//memzero(line1Buffer, 17);
+	
+//	sprintf(line1Buffer, 16, "Dank %u");
 
+	/*uint32ToString(1000, 10, line1Buffer, 0, 0);
 
+	DisplayPrint(0, line1Buffer);*/
+	DisplayPrint(0x40, "EXTI");
+	
+	while (1) {
+		if (vSet == 1) {
+			DisplayPrint(0x44, "0  ");
+		} else if (vSet == 2) {
+			DisplayPrint(0x44, "5_9");
+		} else if (vSet == 3) {
+			DisplayPrint(0x44, "2TS");
+		} else if (vSet == 4) {
+			DisplayPrint(0x44, "3  ");
+		}
+	}
 
 	asm("b .");
 	/*

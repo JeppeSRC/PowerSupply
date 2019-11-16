@@ -10,6 +10,7 @@ void InitializeSDADC();
 void InitializeEncoders();
 
 void Initialize() {
+	DISABLE_INTERRUPTS;
 	InitializeClock();
 	InitializeTimers();
 	InitializeGPIO();
@@ -17,6 +18,7 @@ void Initialize() {
 	InitializeDAC();
 	InitializeEncoders();
 	//InitializeSDADC();
+	ENABLE_INTERRUPTS;
 }
 
 void InitializeClock() {
@@ -143,8 +145,8 @@ void InitializeEncoders() {
 	SYSCFG_EXTICR1 = 0; //Set EXTI0 interrupt to trigger on PA0, EXTI2 on PA2, EXTI3 on PA3
 	SYSCFG_EXTICR2 = 0x100; //Set EXTI6 interrupt to trigger on PB6
 	
-	EXTI_IMR |= 0x4D; // Enabled EXTI0, EXTI2, EXTI3 and EXTI6 interrupts
-	EXTI_FTSR |= 0x4D; //Set EXTI0, EXTI2, EXTI3 and EXTI6 interrupts to trigger on rising edge
+	EXTI_IMR |= 0x0D; // Enabled EXTI0, EXTI2, EXTI3 and EXTI6 interrupts
+	EXTI_FTSR |= 0x0D; //Set EXTI0, EXTI2, EXTI3 and EXTI6 interrupts to trigger on rising edge
 
 	EnableInterrupt(6);
 	EnableInterrupt(8);
