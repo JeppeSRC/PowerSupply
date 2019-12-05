@@ -22,8 +22,7 @@ void HardFault_Handler() {
 		DisplayPrint(0x40, "VECTTBL");
 	} else if (HFSR & 0x40000000) {
 
-		char tmp[17] = { 0 };
-//		memset(tmp, 0, 17);
+		char tmp[17] = { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 };
 
 		if (CFSR & 0x2000000) { //Division by 0
 			DisplayPrint(0x40, "DIVBYZERO");
