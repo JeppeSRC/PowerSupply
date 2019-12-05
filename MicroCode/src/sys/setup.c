@@ -142,5 +142,17 @@ void InitializeSDADC() {
 }
 
 void InitializeEncoders() {
-a
+	//ENC0
+	TIM19_ARR = 2000;
+	TIM19_PSC = 0;
+	TIM19_SMCR = SMS(1);
+	TIM19_CCMR1 = CC1S(1) | CC2S(1);
+	TIM19_CR1 = CEN(1);
+
+	//ENC1
+	TIM4_ARR = 400;
+	TIM4_PSC = 0;
+	TIM4_SMCR = SMS(1);
+	TIM4_CCMR1 = CC1S(1) | CC2S(1);
+	TIM4_CR1 = CEN(1);
 }
