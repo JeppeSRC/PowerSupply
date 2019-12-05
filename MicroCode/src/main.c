@@ -22,11 +22,18 @@ void EXTI3_Handler() { //Swicth (Encoder 1); Interrupt 9
 	EXTI_PR |= 0x8;
 }
 
-char line1Buffer[17];
-char line2Buffer[17];
+char line1Buffer[17] = { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 };
+char line2Buffer[17] = { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 };
 
 int main() {
 	Initialize();
 
+	DisplayPrint(0x0, "ABCDEF");
 
+
+	sprintf(line1Buffer, 16, "Test %U");
+
+	DisplayPrint(0x40, line1Buffer);
+
+	asm("b .");
 }
