@@ -26,6 +26,86 @@
 #define TIM19_DCR (*(volatile uint32*)(TIM19+0x48))
 #define TIM19_DMAR (*(volatile uint32*)(TIM19+0x4C))
 
+//CR1
+#define CKD(data) ((data & 0x03) << 8)
+#define APRE(data) ((data & 0x01) << 7)
+#define CMS(data) ((data & 0x03) << 5)
+#define DIR(data) ((data & 0x01) << 4)
+#define OPM(data) ((data & 0x01) << 3)
+#define URS(data) ((data & 0x01) << 2)
+#define UDIS(data) ((data & 0x01) << 1)
+#define CEN(data) (data & 0x01)
+
+//CR2
+#define TI1S(data) ((data & 0x01) << 7)
+#define MMS(data) ((data & 0x07) << 4)
+#define CCDS(data) ((data & 0x01) << 3)
+
+//SMCR
+#define ETP(data) ((data & 0x01) << 15)
+#define ECE(data) ((data & 0x01) << 14)
+#define ETPS(data) ((data & 0x03) << 12)
+#define ETF(data) ((data & 0x0F) << 8)
+#define MSM(data) ((data & 0x01) << 7)
+#define TS(data) ((data & 0x07) << 4)
+#define SMS(data) (data & 0x07)
+
+//CCMR1
+#define CC2S(data) ((data & 0x03) << 8)
+#define CC1S(data) (data & 0x03)
+
+//Output
+#define OC2CE(data) ((data & 0x01) << 15)
+#define OC2M(data) ((data & 0x07) << 12)
+#define OC2PE(data) ((data & 0x01) << 11)
+#define OC2FE(data) ((data & 0x01) << 10)
+#define OC1CE(data) ((data & 0x01) << 7)
+#define OC1M(data) ((data & 0x07) << 4)
+#define OC1PE(data) ((data & 0x01) << 3)
+#define OC1FE(data) ((data & 0x01) << 2)
+
+//Input
+#define IC2F(data) ((data & 0x07) << 12)
+#define IC2PSC(data) ((data & 0x03) << 10)
+#define IC1F(data) ((data & 0x07) << 4)
+#define IC1PSC(data) ((data & 0x03) << 2)
+
+//CCMR2
+#define CC4S(data) ((data & 0x03) << 8)
+#define CC3S(data) (data & 0x03)
+
+//Output
+#define OC4CE(data) ((data & 0x01) << 15)
+#define OC4M(data) ((data & 0x07) << 12)
+#define OC4PE(data) ((data & 0x01) << 11)
+#define OC4FE(data) ((data & 0x01) << 10)
+#define OC3CE(data) ((data & 0x01) << 7)
+#define OC3M(data) ((data & 0x07) << 4)
+#define OC3PE(data) ((data & 0x01) << 3)
+#define OC3FE(data) ((data & 0x01) << 2)
+
+//Input
+#define IC4F(data) ((data & 0x07) << 12)
+#define IC4PSC(data) ((data & 0x03) << 10)
+#define IC3F(data) ((data & 0x07) << 4)
+#define IC3PSC(data) ((data & 0x03) << 2)
+
+//CCER
+#define CC4NP(data) ((data & 0x01) << 15)
+#define CC4P(data) ((data & 0x01) << 13)
+#define CC4E(data) ((data & 0x01) << 12)
+#define CC3NP(data) ((data & 0x01) << 11)
+#define CC3P(data) ((data & 0x01) << 9)
+#define CC3E(data) ((data & 0x01) << 8)
+#define CC2NP(data) ((data & 0x01) << 7)
+#define CC2P(data) ((data & 0x01) << 5)
+#define CC2E(data) ((data & 0x01) << 4)
+#define CC1NP(data) ((data & 0x01) << 3)
+#define CC1P(data) ((data & 0x01) << 1)
+#define CC1E(data) (data & 0x01)
+
+
+
 #pragma endregion
 
 #pragma region SDADC 
