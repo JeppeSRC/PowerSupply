@@ -8,7 +8,7 @@ void memset(void* dst, uint8 v, uint32 size) {
 
 void memcpy(void* dst, void* src, uint32 size) {
 	for (uint32 i = 0; i < size; i += 4) {
-		((volatile uint8*)dst)[i] = ((uint8*)src)[i];
+		((volatile uint8*)dst)[i] = ((volatile uint8*)src)[i];
 	}
 }
 
