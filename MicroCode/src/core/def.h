@@ -10,9 +10,9 @@ typedef signed char int8;
 typedef signed short int16;
 typedef signed int int32;
 typedef signed long long int64;
-
+/*
 #define va_list uint8*
 #define va_start(list, ap) list = ((va_list)&ap)+4
-#define va_arg(list, type) (*(type*)((list += sizeof(type)) - sizeof(type)))
+#define va_arg(list, type) (*(type*)((list += sizeof(type)) - sizeof(type)))*/
 
 #endif

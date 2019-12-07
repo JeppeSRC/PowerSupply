@@ -1,4 +1,5 @@
 #include "string.h"
+#include <stdarg.h>
 
 uint32 strlen(const char* string) {
 	if (string == 0) return 0;
@@ -28,7 +29,7 @@ uint8 maxChars[] = { 0, 0, 32, 0, 0, 0, 0, 0, 11, 0, 10, 0, 0, 0, 0, 0, 8 };
 uint32 uint32ToString(uint32 value, uint8 base, char* buffer, uint8 minChars, uint8 upper) {
 	uint8 num = 0;
 
-	char tmp[32];
+	char tmp[32] = { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 };
 
 	uint8 max = maxChars[base];
 
