@@ -30,7 +30,6 @@ int main() {
 
 	DisplayPrint(0x0, "ABCDEF");
 
-
 	sprintf(line1Buffer, 16, "Test %U");
 
 	DisplayPrint(0x40, line1Buffer);
