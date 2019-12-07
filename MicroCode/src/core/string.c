@@ -82,9 +82,9 @@ uint8 GetMinChars(const char* const string, uint32* i) {
 	return num;
 }
 
-uint32 sprintf_real(char* buffer, uint32 bufferSize, const char* format, uint32 dummy1, uint32 dummy2, ...) {
+uint32 sprintf(char* buffer, uint32 bufferSize, const char* format,...) {
 	va_list list;
-	va_start(list, dummy2);
+	va_start(list, format);
 
 	if (!buffer || !format) return ~0;
 
