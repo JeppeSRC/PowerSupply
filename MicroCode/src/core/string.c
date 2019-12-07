@@ -14,11 +14,7 @@ uint32 strlen(const char* string) {
 
 
 void append(char* dst, const char* string, uint32 start) {
-	uint32 len = strlen(string);
-
-	for (uint32 i = 0; i < len; i++) {
-		dst[i + start] = string[i];
-	}
+	memcpy(dst + start, string, strlen(string));
 }
 
 char chars[] = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f' };
