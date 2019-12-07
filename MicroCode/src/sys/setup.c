@@ -142,6 +142,9 @@ void InitializeSDADC() {
 }
 
 void InitializeEncoders() {
+	RCC_APB2ENR |= TIM19EN;
+	RCC_APB1ENR |= TIM4EN;
+
 	//ENC0
 	TIM19_ARR = 2000;
 	TIM19_PSC = 0;
