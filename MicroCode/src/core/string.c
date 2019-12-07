@@ -82,9 +82,9 @@ uint8 GetMinChars(const char* const string, uint32* i) {
 	return num;
 }
 
-uint32 sprintf(char* buffer, uint32 bufferSize, const char* format, ...) {
+uint32 sprintf_real(char* buffer, uint32 bufferSize, const char* format, uint32 dummy1, uint32 dummy2, ...) {
 	va_list list;
-	va_start(list, format);
+	va_start(list, dummy2);
 
 	if (!buffer || !format) return ~0;
 
@@ -110,18 +110,18 @@ uint32 sprintf(char* buffer, uint32 bufferSize, const char* format, ...) {
 
 			switch (format[i]) {
 				case 'c':
-					buffer[printed++] = va_arg(list, char);
+					buffer[printed++] = va_arg(list, uint32);
 					break;
 				case 'u':
 				case 'U':
-					num = uint32ToString(8192, 10, tmp, minChars, 0);
+					num = uint32ToString(va_arg(list, uint32), 10, tmp, minChars, 0);
 					append(buffer, tmp, printed);
 					printed += num;
 					break;
 				case 'h':
 					upper = 0;
 				case 'H':
-					num = uint32ToString(0xDEADBEEF, 16, tmp, minChars, upper);
+					num = uint32ToString(va_arg(list, uint32), 16, tmp, minChars, upper);
 					append(buffer, tmp, printed);
 					printed += num;
 					break;

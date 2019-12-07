@@ -22,6 +22,7 @@ void EXTI3_Handler() { //Swicth (Encoder 1); Interrupt 9
 	EXTI_PR |= 0x8;
 }
 
+
 char line1Buffer[17] = { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 };
 char line2Buffer[17] = { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 };
 
@@ -30,7 +31,7 @@ int main() {
 
 	DisplayPrint(0x0, "ABCDEF");
 
-	sprintf(line1Buffer, 16, "Test %U");
+	sprintf(line1Buffer, 16, "Test %c", 'A');
 
 	DisplayPrint(0x40, line1Buffer);
 
