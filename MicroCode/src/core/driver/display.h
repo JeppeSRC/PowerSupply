@@ -6,6 +6,7 @@
 void InitializeDisplay();
 void DisplayControl(uint8 displayOn, uint8 cursorOn, uint8 blinkOn);
 void DisplayPrint(uint8 address, const char* string);
+void DisplayPrintChar(address, const char c);
 void DisplayClear();
 
 #endif

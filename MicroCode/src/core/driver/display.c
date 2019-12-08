@@ -99,8 +99,7 @@ void Print(const char* string) {
 	uint32 len = strlen(string);
 	
 	for (uint32 i = 0; i < len; i++) {
-		ExecuteCommand(MAKE_INST(1, 0, string[i]));
-		DelayMicros(40);
+		DisplayPrintChar(0xFF, string[i]);
 	}
 }
 
@@ -140,4 +139,11 @@ void DisplayControl(uint8 displayOn, uint8 cursorOn, uint8 blinkOn) {
 void DisplayPrint(uint8 address, const char* string) {
 	SetDDRAMAddress(address);
 	Print(string);
+}
+
+void DisplayPrintChar(uint8 address, const char c) {
+	if (address != 0xFF) SetDDRAMAddress(address);
+
+	ExecuteCommand(MAKE_INST(1, 0, c));
+	DelayMicros(40);
 }
