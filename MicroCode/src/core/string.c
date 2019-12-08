@@ -80,6 +80,14 @@ uint32 sprintf(char* buffer, uint32 bufferSize, const char* format,...) {
 	va_list list;
 	va_start(list, format);
 
+	uint32 res = vsprintf(buffer, bufferSize, format, list);
+
+	va_end(list);
+
+	return res;
+}
+
+uint32 sprintf(char* buffer, uint32 bufferSize, const char* format, va_list args) {
 	if (!buffer || !format) return ~0;
 
 	uint32 len = strlen(format);
@@ -100,22 +108,22 @@ uint32 sprintf(char* buffer, uint32 bufferSize, const char* format,...) {
 
 			uint8 upper = 1;
 			uint32 num = 0;
-			char tmp[32] = { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+			char tmp[32] = { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 };
 
 			switch (format[i]) {
 				case 'c':
-					buffer[printed++] = va_arg(list, uint32);
+					buffer[printed++] = va_arg(args, uint32);
 					break;
 				case 'u':
 				case 'U':
-					num = uint32ToString(va_arg(list, uint32), 10, tmp, minChars, 0);
+					num = uint32ToString(va_arg(args, uint32), 10, tmp, minChars, 0);
 					APPEND(buffer, printed, tmp, num);
 					printed += num;
 					break;
 				case 'h':
 					upper = 0;
 				case 'H':
-					num = uint32ToString(va_arg(list, uint32), 16, tmp, minChars, upper);
+					num = uint32ToString(va_arg(args, uint32), 16, tmp, minChars, upper);
 					APPEND(buffer, printed, tmp, num);
 					printed += num;
 					break;
