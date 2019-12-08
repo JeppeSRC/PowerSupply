@@ -1,5 +1,4 @@
 #include "string.h"
-#include <stdarg.h>
 
 #define APPEND(dst, offset, string, length) memcpy(dst+offset, string, length)
 
@@ -87,7 +86,7 @@ uint32 sprintf(char* buffer, uint32 bufferSize, const char* format,...) {
 	return res;
 }
 
-uint32 sprintf(char* buffer, uint32 bufferSize, const char* format, va_list args) {
+uint32 vsprintf(char* buffer, uint32 bufferSize, const char* format, va_list args) {
 	if (!buffer || !format) return ~0;
 
 	uint32 len = strlen(format);

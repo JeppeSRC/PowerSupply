@@ -2,6 +2,7 @@
 #include <sys/time.h>
 #include <core/string.h>
 #include <sys/sys.h>
+#include <stdarg.h>
 
 /*	Device			Port			PhysicalPin
 	Display_RS		PA13			34
@@ -95,14 +96,6 @@ void SetDDRAMAddress(uint8 address) {
 	DelayMicros(40);
 }
 
-void Print(const char* string) {
-	uint32 len = strlen(string);
-	
-	for (uint32 i = 0; i < len; i++) {
-		DisplayPrintChar(0xFF, string[i]);
-	}
-}
-
 void InitializeDisplay() {
 	GPIOB_ODR &= ODRB_MASK;// Set D6 and D7 low
 	GPIOF_ODR &= ODRF_MASK;// Set RW and E low
@@ -137,13 +130,40 @@ void DisplayControl(uint8 displayOn, uint8 cursorOn, uint8 blinkOn) {
 }
 
 void DisplayPrint(uint8 address, const char* string) {
-	SetDDRAMAddress(address);
-	Print(string);
+	if (address != 0xFF) SetDDRAMAddress(address);
+	uint32 length = strlen(string);
+
+	for (uint32 i = 0; i < length; i++) {
+		DisplayPrintChar(0xFF, string[i]);
+	}
 }
+/*
+void DisplayPrint(uint8 address, const char* string, uint32 length) {
+	if (address != 0xFF) SetDDRAMAddress(address);
+
+	for (uint32 i = 0; i < length; i++) {
+		DisplayPrintChar(0xFF, string[i]);
+	}
+}*/
 
 void DisplayPrintChar(uint8 address, const char c) {
 	if (address != 0xFF) SetDDRAMAddress(address);
 
 	ExecuteCommand(MAKE_INST(1, 0, c));
 	DelayMicros(40);
+}
+
+char tmpBuffer[17];
+
+void DisplayPrintf(uint8 address, const char* format, ...) {
+	va_list list;
+	va_start(list, format);
+
+	memzero(tmpBuffer, sizeof(tmpBuffer));
+
+	uint8 num = vsprintf(tmpBuffer, 16, format, list);
+
+	va_end(list);
+
+	DisplayPrint(address, tmpBuffer);
 }
