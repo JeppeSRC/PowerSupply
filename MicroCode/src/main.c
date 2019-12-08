@@ -29,9 +29,7 @@ char line2Buffer[17] = { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 };
 int main() {
 	Initialize();
 
-	DisplayPrint(0x0, "ABCDEF");
-
-	sprintf(line1Buffer, 16, "Test %c", 'A');
+	sprintf(line1Buffer, 16, "Test 0x%4h", 0xDEADBEEF);
 
 	DisplayPrint(0x40, line1Buffer);
 
