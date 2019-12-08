@@ -1,6 +1,8 @@
 #include "string.h"
 #include <stdarg.h>
 
+#define APPEND(dst, offset, string, length) memcpy(dst+offset, string, length)
+
 uint32 strlen(const char* string) {
 	if (string == 0) return 0;
 	uint32 len = 0;
@@ -10,11 +12,6 @@ uint32 strlen(const char* string) {
 	}
 
 	return len;
-}
-
-
-void append(char* dst, const char* string, uint32 start) {
-	memcpy(dst + start, string, strlen(string));
 }
 
 char chars[] = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f' };
@@ -112,14 +109,14 @@ uint32 sprintf(char* buffer, uint32 bufferSize, const char* format,...) {
 				case 'u':
 				case 'U':
 					num = uint32ToString(va_arg(list, uint32), 10, tmp, minChars, 0);
-					append(buffer, tmp, printed);
+					APPEND(buffer, printed, tmp, num);
 					printed += num;
 					break;
 				case 'h':
 					upper = 0;
 				case 'H':
 					num = uint32ToString(va_arg(list, uint32), 16, tmp, minChars, upper);
-					append(buffer, tmp, printed);
+					APPEND(buffer, printed, tmp, num);
 					printed += num;
 					break;
 			}
