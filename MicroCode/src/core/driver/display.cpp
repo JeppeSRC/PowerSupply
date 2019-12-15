@@ -25,7 +25,7 @@
 	9	RS
 */
 
-void ExecuteCommand(uint32 instCode) {
+void Display::ExecuteCommand(uint32 instCode) {
 	//Set RS, RW and high nibble of instruction
 	GPIOA_BSRR = ((instCode & 0x200) << 4) | (((instCode & 0x200) ^ 0x200) << 20) | ((instCode & 0x30) << 10) | (((instCode & 0x30) ^ 0x30) << 26); //Set RS, D4 and D5
 	GPIOF_BSRR = ((instCode & 0x100) >> 2) | (((instCode & 0x100) ^ 0x100) << 14); //Set RS
@@ -46,7 +46,7 @@ void ExecuteCommand(uint32 instCode) {
 	GPIOF_BSRR = BR(7);
 }
 
-uint8 ReadResult() {
+uint8 Display::ReadResult() {
 	GPIOA_MODER &= 0x0FFFFFFF; // Set D4 and D5 to input
 	GPIOB_MODER &= 0xFFFFFC3F; // Set D6 and D7 to input
 
@@ -71,7 +71,7 @@ uint8 ReadResult() {
 	return res;
 }
 
-void WaitBusy() {
+void Display::WaitBusy() {
 	ExecuteCommand(MAKE_INST(0, 1, 0));
 	DelayMicros(10);
 
@@ -80,22 +80,17 @@ void WaitBusy() {
 	}
 }
 
-void DisplayClear() {
+void Display::Clear() {
 	ExecuteCommand(MAKE_INST(0, 0, 1));
 	DelayMillis(2);
 }
 
-void ReturnHome() {
-	ExecuteCommand(MAKE_INST(0, 0, 2));
-	DelayMillis(2);
-}
-
-void SetDDRAMAddress(uint8 address) {
+void Display::SetAddress(uint8 address) {
 	ExecuteCommand(MAKE_INST(0, 0, 0x80 | (address & 0x7F)));
 	DelayMicros(40);
 }
 
-void InitializeDisplay() {
+void Display::Initialize() {
 	GPIOB_ODR &= ODRB_MASK;// Set D6 and D7 low
 	GPIOF_ODR &= ODRF_MASK;// Set RW and E low
 
@@ -113,9 +108,9 @@ void InitializeDisplay() {
 	ExecuteCommand(MAKE_INST(0, 0, 0x2C)); // Function set: Set num lines to 2 and Fonts size 5x11
 	DelayMicros(100);
 
-	DisplayControl(1, 0, 0);
+	Control(1, 0, 0);
 
-	DisplayClear();
+	Clear();
 
 	ExecuteCommand(MAKE_INST(0, 0, 6)); // Entry mode: Set dram to increment without display shift
 	DelayMillis(50);
@@ -123,30 +118,30 @@ void InitializeDisplay() {
 	
 }
 
-void DisplayControl(uint8 displayOn, uint8 cursorOn, uint8 blinkOn) {
+void Display::Control(uint8 displayOn, uint8 cursorOn, uint8 blinkOn) {
 	ExecuteCommand(MAKE_INST(0, 0, 0x8 | ((displayOn & 0x1) << 2) | ((cursorOn & 0x1) << 1) | (blinkOn & 0x1)));
 	DelayMicros(100);
 }
 
-void DisplayPrint(uint8 address, const char* string) {
-	if (address != 0xFF) SetDDRAMAddress(address);
+void Display::Print(uint8 address, const char* const string) {
+	if (address != 0xFF) SetAddress(address);
 	uint32 length = strlen(string);
 
 	for (uint32 i = 0; i < length; i++) {
-		DisplayPrintChar(0xFF, string[i]);
+		Print(0xFF, string[i]);
 	}
 }
 
-void DisplayPrint(uint8 address, const char* string, uint32 length) {
-	if (address != 0xFF) SetDDRAMAddress(address);
+void Display::Print(uint8 address, const char* const string, uint8 length) {
+	if (address != 0xFF) SetAddress(address);
 
-	for (uint32 i = 0; i < length; i++) {
-		DisplayPrintChar(0xFF, string[i]);
+	for (uint8 i = 0; i < length; i++) {
+		Print(0xFF, string[i]);
 	}
 }
 
-void DisplayPrintChar(uint8 address, const char c) {
-	if (address != 0xFF) SetDDRAMAddress(address);
+void Display::Print(uint8 address, const char c) {
+	if (address != 0xFF) SetAddress(address);
 
 	ExecuteCommand(MAKE_INST(1, 0, c));
 	DelayMicros(40);
@@ -154,7 +149,7 @@ void DisplayPrintChar(uint8 address, const char c) {
 
 char tmpBuffer[17];
 
-void DisplayPrintf(uint8 address, const char* format, ...) {
+void Display::Printf(uint8 address, const char* const format, ...) {
 	va_list list;
 	va_start(list, format);
 	
@@ -162,5 +157,5 @@ void DisplayPrintf(uint8 address, const char* format, ...) {
 
 	va_end(list);
 
-	DisplayPrint(address, tmpBuffer, num);
+	Print(address, tmpBuffer, num);
 }
