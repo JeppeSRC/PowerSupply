@@ -11,9 +11,7 @@ char line2Buffer[17] = { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 };
 int main() {
 	Initialize();
 
-	sprintf(line1Buffer, 16, "Test 0x%4h", 0xDEADBEEF);
-
-	DisplayPrint(0x40, line1Buffer);
+	Display::Printf(0x40, "Test 0x%H", 0xdeadbeef);
 
 	asm("b .");
 }

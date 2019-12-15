@@ -14,7 +14,7 @@ void Initialize() {
 	InitializeClock();
 	InitializeTimers();
 	InitializeGPIO();
-	InitializeDisplay();
+	Display::Initialize();
 	InitializeDAC();
 	InitializeEncoders();
 	//InitializeSDADC();
@@ -107,13 +107,13 @@ void InitializeSDADC() {
 
 	while (SDADC2_ISR & 0x8000);
 
-	DisplayPrint(0, "Stabalized");
+	Display::Print(0, "Stabalized");
 	
 	SDADC2_CR1 |= 0x80000000;
 		
 	while ((SDADC2_ISR & 0x80000000) == 0);
 
-	DisplayPrint(0, "Init mode    ");
+	Display::Print(0, "Init mode    ");
 
 	SDADC2_CR2 = 0x80000; // Enable SDADC1, Fast mode and continuous mode, set channel to 8, Vref to external
 	SDADC2_CONF0R = 0xC000000; // Single ended zero voltage mode, x1 gain
@@ -123,23 +123,23 @@ void InitializeSDADC() {
 
 	while (SDADC2_ISR & 0x80000000);
 
-	DisplayPrint(0x40, "Deinit");
+	Display::Print(0x40, "Deinit");
 
 	Delay(2);
 
-	DisplayClear();
+	Display::Clear();
 
 	SDADC2_CR2 |= 0x800000;
 
 	DelayMicros(1);
 
 	if (SDADC2_ISR & 0x4000) {
-		DisplayPrint(0, "Conv started");
+		Display::Print(0, "Conv started");
 	}
 
 	while ((SDADC2_ISR & 0x8) == 0);
 
-	DisplayPrint(0x40, "Converted");
+	Display::Print(0x40, "Converted");
 
 	SDADC2_CLRISR = 0x1;
 }
