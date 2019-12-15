@@ -42,14 +42,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\core\driver\display.c" />
-    <ClCompile Include="src\core\string.c" />
-    <ClCompile Include="src\main.c" />
-    <ClCompile Include="src\sys\error.c" />
-    <ClCompile Include="src\sys\memory.c" />
-    <ClCompile Include="src\sys\setup.c" />
-    <ClCompile Include="src\sys\sys.c" />
-    <ClCompile Include="src\sys\time.c" />
+    <ClCompile Include="src\core\driver\display.cpp" />
+    <ClCompile Include="src\core\string.cpp" />
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\sys\error.cpp" />
+    <ClCompile Include="src\sys\memory.cpp" />
+    <ClCompile Include="src\sys\setup.cpp" />
+    <ClCompile Include="src\sys\sys.cpp" />
+    <ClCompile Include="src\sys\time.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\core\def.h" />
