@@ -136,14 +136,14 @@ void DisplayPrint(uint8 address, const char* string) {
 		DisplayPrintChar(0xFF, string[i]);
 	}
 }
-/*
+
 void DisplayPrint(uint8 address, const char* string, uint32 length) {
 	if (address != 0xFF) SetDDRAMAddress(address);
 
 	for (uint32 i = 0; i < length; i++) {
 		DisplayPrintChar(0xFF, string[i]);
 	}
-}*/
+}
 
 void DisplayPrintChar(uint8 address, const char c) {
 	if (address != 0xFF) SetDDRAMAddress(address);
@@ -157,12 +157,10 @@ char tmpBuffer[17];
 void DisplayPrintf(uint8 address, const char* format, ...) {
 	va_list list;
 	va_start(list, format);
-
-	memzero(tmpBuffer, sizeof(tmpBuffer));
-
+	
 	uint8 num = vsprintf(tmpBuffer, 16, format, list);
 
 	va_end(list);
 
-	DisplayPrint(address, tmpBuffer);
+	DisplayPrint(address, tmpBuffer, num);
 }
