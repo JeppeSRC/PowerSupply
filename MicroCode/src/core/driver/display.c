@@ -2,7 +2,6 @@
 #include <sys/time.h>
 #include <core/string.h>
 #include <sys/sys.h>
-#include <stdarg.h>
 
 /*	Device			Port			PhysicalPin
 	Display_RS		PA13			34
