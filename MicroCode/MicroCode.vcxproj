@@ -43,6 +43,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\core\driver\display.cpp" />
+    <ClCompile Include="src\core\driver\usart.cpp" />
     <ClCompile Include="src\core\string.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\sys\error.cpp" />
@@ -54,6 +55,7 @@
   <ItemGroup>
     <ClInclude Include="src\core\def.h" />
     <ClInclude Include="src\core\driver\display.h" />
+    <ClInclude Include="src\core\driver\usart.h" />
     <ClInclude Include="src\core\string.h" />
     <ClInclude Include="src\sys\memory.h" />
     <ClInclude Include="src\sys\registers\ahb1.h" />
