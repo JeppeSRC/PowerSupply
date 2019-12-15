@@ -1,10 +1,10 @@
 !FuckMake
 
-CC = arm-none-eabi-gcc
+CC = arm-none-eabi-g++
 LD =%(CC)
 AS = arm-none-eabi-as
 
-CFILES = GetFiles(src/,*.c,)
+CFILES = GetFiles(src/,*.cpp,)
 ASMFILES = GetFiles(src/,*.asm,)
 
 INC = -Isrc
@@ -13,7 +13,7 @@ OutDir = bin/
 ObjDir = %(OutDir)obj/
 
 AFLAGS = -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16
-CFLAGS = %(AFLAGS) -O3 -Wno-unknown-pragmas -Wno-nonnull-compare -Wall -Wno-builtin-declaration-mismatch
+CFLAGS = %(AFLAGS) -O3 -Wno-unknown-pragmas -Wno-nonnull-compare -Wall -Wno-builtin-declaration-mismatch -s -fno-exceptions
 LFLAGS = -nostartfiles -nodefaultlibs -nostdlib -Wl,--gc-sections --specs=nosys.specs -T"LinkerScript.ld"
 
 
