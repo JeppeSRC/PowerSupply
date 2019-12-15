@@ -10,6 +10,8 @@ void Error(uint16 period) {
 	DisplayPrint(0x40, "FAIL!!!!");
 }
 
+extern "C" {
+
 void NMI_Handler() {
 	DisplayPrint(0x40, "NMI Error");
 }
@@ -86,4 +88,6 @@ void BusFault_Handler() {
 
 void UsageFault_Handler() {
 	DisplayPrint(0x40, "Usage Fault");
+}
+
 }
