@@ -4,6 +4,7 @@
 #include <sys/memory.h>
 #include <core/string.h>
 #include <sys/sys.h>
+#include <core/driver/usart.h>
 
 char line1Buffer[17] = { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 };
 char line2Buffer[17] = { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 };
@@ -11,7 +12,13 @@ char line2Buffer[17] = { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 };
 int main() {
 	Initialize();
 
-	Display::Printf(0x40, "Test 0x%H", 0xdeadbeef);
+	USART::Initialize();
+
+	Display::Print(0x0, "Initialized");
+
+	USART::Send(0x10);
+	Display::Clear();
+	Display::Print(0x0, "Sent");
 
 	asm("b .");
 }
