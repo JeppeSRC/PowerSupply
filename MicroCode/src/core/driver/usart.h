@@ -1,7 +1,6 @@
 #pragma once
 
 #include <core/def.h>
-#include <sys/registers/apb2.h>
 
 class USART {
 private:
