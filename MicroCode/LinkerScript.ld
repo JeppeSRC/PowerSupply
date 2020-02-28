@@ -3,6 +3,7 @@ ENTRY(Reset_Handler)
 MEMORY {
   FLASH (rx)  : ORIGIN = 0x08000000, LENGTH = 0x10000 /*64K*/
   RAM (xrw)   : ORIGIN = 0x20000000, LENGTH = 0x04000 /*16K*/
+  FLASH2 (rx)  : ORIGIN = 0x08002000, LENGTH = 0x8000 /*64K*/
 }
 
 
@@ -15,21 +16,20 @@ SECTIONS {
   } > FLASH
 
   .text : {
-    . = ALIGN(4);
     *(.text)
     *(.text*)
     *(.glue_7)
     *(.glue_7t)
     . = ALIGN(4);
     _textend = .;
-  } > FLASH
+  } > FLASH2
 
   .rodata : {
     . = ALIGN(4);
     *(.rodata)
     *(.rodata*)
     . = ALIGN(4);
-  } > FLASH
+  } > FLASH2
 
   _sidatastart = LOADADDR(.data);
 
@@ -40,7 +40,7 @@ SECTIONS {
     *(.data*)
     . = ALIGN(4);
     _dataend = .;
-  } > RAM AT > FLASH
+  } > RAM AT > FLASH2
 
   .bss : {
     . = ALIGN(4);

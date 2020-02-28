@@ -50,7 +50,7 @@
 
 #include <sys/registers/registers.h>
 
-#define USE_HSE 1
+#define USE_HSE 0
 
 #define NOP asm("mov r1, r1")
 

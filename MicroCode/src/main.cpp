@@ -12,13 +12,17 @@ char line2Buffer[17] = { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 };
 int main() {
 	Initialize();
 
-	USART::Initialize();
+	/*USART::Initialize();
 
 	Display::Print(0x0, "Initialized");
 
 	USART::Send(0x10);
 	Display::Clear();
-	Display::Print(0x0, "Sent");
+	Display::Print(0x0, "Sent");*/
+
+	while (true) {
+		GPIOA_ODR ^= ODR(9, 1);
+	}
 
 	asm("b .");
 }

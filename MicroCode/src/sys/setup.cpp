@@ -10,15 +10,15 @@ void InitializeSDADC();
 void InitializeEncoders();
 
 void Initialize() {
-	DISABLE_INTERRUPTS;
+	//DISABLE_INTERRUPTS;
 	InitializeClock();
-	InitializeTimers();
+	//InitializeTimers();
 	InitializeGPIO();
-	Display::Initialize();
-	InitializeDAC();
-	InitializeEncoders();
+	//Display::Initialize();
+	//InitializeDAC();
+	//InitializeEncoders();
 	//InitializeSDADC();
-	ENABLE_INTERRUPTS;
+	//ENABLE_INTERRUPTS;
 }
 
 void InitializeClock() {
