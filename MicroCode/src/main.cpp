@@ -13,7 +13,7 @@ int main() {
 	Initialize();
 
 	while (true) {
-		GPIOA_ODR ^= ODR(9, 1);
+		
 	}
 
 	asm("b .");
