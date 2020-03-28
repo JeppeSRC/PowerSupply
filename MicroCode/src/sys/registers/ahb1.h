@@ -202,4 +202,12 @@
 
 #pragma endregion
 
+#pragma region FLASH
+
+#define FLASH 0x40022000
+
+#define FLASH_ACR (*(volatile uint32*)(FLASH))
+
+#pragma endregion
+
 #endif
