@@ -9,7 +9,7 @@ void InitializeTimers() {
 	RCC_APB1ENR |= TIM18EN | TIM2EN | TIM7EN;
 
 	TIM2_ARR = ~0;
-	TIM2_PSC = 23;
+	TIM2_PSC = 47;
 	TIM2_CR1 = 0x07;
 
 	TIM7_PSC = 47999; // Setting clock to 1 khz (48 MHz / (47999 + 1)) to get one cycle every milliSecond
