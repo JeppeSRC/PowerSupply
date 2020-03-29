@@ -1,5 +1,13 @@
 #include "sys.h"
 
+void EnableInterrupts() {
+	asm("cpsid i");
+}
+
+void DisableInterrupts() {
+	asm("cpsie i");
+}
+
 void EnableInterrupt(uint8 interrupt) {
 	*(volatile uint32*)(NVIC_ISER + ((interrupt >> 5) << 2)) = 1UL << (interrupt & 0x1F);
 }

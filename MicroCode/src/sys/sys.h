@@ -14,9 +14,8 @@
 #define BFAR (*(volatile uint32*)0xE000ED38)
 #define AFSR (*(volatile uint32*)0xE000ED3C)
 
-#define DISABLE_INTERRUPTS asm("cpsid i")
-#define ENABLE_INTERRUPTS asm("cpsie i")
-
+void EnableInterrupts();
+void DisableInterrupts();
 void EnableInterrupt(uint8 interrupt);
 void DisableInterrupt(uint8 interrupt);
 void SetPendingInterrupt(uint8 interrupt);
