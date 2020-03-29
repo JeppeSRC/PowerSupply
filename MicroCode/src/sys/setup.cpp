@@ -10,7 +10,6 @@ void InitializeSDADC();
 void InitializeEncoders();
 
 void Initialize() {
-	//DISABLE_INTERRUPTS;
 	InitializeClock();
 	InitializeTimers();
 	InitializeGPIO();
@@ -18,7 +17,6 @@ void Initialize() {
 	InitializeDAC();
 	InitializeEncoders();
 	InitializeSDADC();
-	//ENABLE_INTERRUPTS;
 }
 
 void InitializeClock() {
@@ -94,13 +92,17 @@ void InitializeDAC() {
 
 void InitializeSDADC() {
 	PWR_CR = 0x600; // Enable SDADC1 and 2 power stuff
-	RCC_APB2ENR |= SDADC1EN | SDADC2EN; // Enable SDADC1 and SDADC2 clock
-
-	NOP;
 
 	DelayMicros(1);
 
-	SDADC2_CR1 = 0;
+	RCC_APB2ENR |= SDADC1EN | SDADC2EN; // Enable SDADC1 and SDADC2 clock
+
+	DelayMicros(1);
+
+	SDADC1_CR1 = 0;
+
+	DelayMillis(5);
+
 	SDADC1_CR2 |= 1; //ADON
 	
 	while (SDADC1_ISR & 0x8000);
@@ -120,7 +122,6 @@ void InitializeSDADC() {
 	SDADC1_CR2 |= 0x10;
 
 	while (SDADC1_ISR & 0x1000);
-
 }
 
 void InitializeEncoders() {
