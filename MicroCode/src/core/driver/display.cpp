@@ -26,6 +26,7 @@
 */
 
 void Display::ExecuteCommand(uint32 instCode) {
+	DisableInterrupts();
 	//Set RS, RW and high nibble of instruction
 	GPIOA_BSRR = ((instCode & 0x200) << 4) | (((instCode & 0x200) ^ 0x200) << 20) | ((instCode & 0x30) << 10) | (((instCode & 0x30) ^ 0x30) << 26); //Set RS, D4 and D5
 	GPIOF_BSRR = ((instCode & 0x100) >> 2) | (((instCode & 0x100) ^ 0x100) << 14); //Set RS
@@ -44,9 +45,12 @@ void Display::ExecuteCommand(uint32 instCode) {
 	GPIOF_BSRR = BS(7);
 	DelayMicros(4);
 	GPIOF_BSRR = BR(7);
+
+	EnableInterrupts();
 }
 
 uint8 Display::ReadResult() {
+	DisableInterrupts();
 	GPIOA_MODER &= 0x0FFFFFFF; // Set D4 and D5 to input
 	GPIOB_MODER &= 0xFFFFFC3F; // Set D6 and D7 to input
 
@@ -67,6 +71,8 @@ uint8 Display::ReadResult() {
 
 	GPIOA_MODER |= 0x50000000; //Set D4 and D5 to output
 	GPIOB_MODER |= 0x140; //Set D6 and D7 to output
+
+	EnableInterrupts();
 
 	return res;
 }
@@ -91,6 +97,7 @@ void Display::SetAddress(uint8 address) {
 }
 
 void Display::Initialize() {
+	DisableInterrupts();
 	GPIOB_ODR &= ODRB_MASK;// Set D6 and D7 low
 	GPIOF_ODR &= ODRF_MASK;// Set RW and E low
 
@@ -115,7 +122,7 @@ void Display::Initialize() {
 	ExecuteCommand(MAKE_INST(0, 0, 6)); // Entry mode: Set dram to increment without display shift
 	DelayMillis(50);
 
-	
+	EnableInterrupts();
 }
 
 void Display::Control(uint8 displayOn, uint8 cursorOn, uint8 blinkOn) {
