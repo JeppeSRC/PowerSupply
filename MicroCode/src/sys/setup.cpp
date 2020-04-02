@@ -47,7 +47,6 @@ void InitializeClock() {
 }
 
 void InitializeGPIO() {
-
 	// CLock enable
 	RCC_AHBENR |= IOPAEN | IOPBEN | IOPEEN | IOPFEN;
 
@@ -91,37 +90,32 @@ void InitializeDAC() {
 }
 
 void InitializeSDADC() {
-	PWR_CR = 0x600; // Enable SDADC1 and 2 power stuff
-
-	DelayMicros(1);
-
 	RCC_APB2ENR |= SDADC1EN | SDADC2EN; // Enable SDADC1 and SDADC2 clock
-
-	DelayMicros(1);
+	PWR_CR = 0x600; // Enable SDADC1 and 2 power stuff
 
 	SDADC1_CR1 = 0;
 
 	DelayMillis(5);
 
-	SDADC1_CR2 |= 1; //ADON
+	SDADC1_CR2 = 1; //ADON
 	
-	while (SDADC1_ISR & 0x8000);
+	while (SDADC1_ISR & 0x8000); // Wait for stabilization
 	
-	SDADC1_CR1 |= 0x80000000;
+	SDADC1_CR1 |= 0x80000000; //Enter init mode
 
-	while ((SDADC1_ISR & 0x80000000) == 0);
+	while ((SDADC1_ISR & 0x80000000) == 0); //Wait
 
-	SDADC1_CR2 = 0x480000;
+	SDADC1_CR2 |= 0x480000; 
 	SDADC1_CONF0R = 0x4C000000;
 	SDADC1_CONFCHR2 = 0;
 	
-	SDADC1_CR1 ^= 0x80000000;
+	SDADC1_CR1 ^= 0x80000000; // Leave init mode
 
-	while (SDADC1_ISR & 0x80000000);
+	while (SDADC1_ISR & 0x80000000); //Wait
 	
-	SDADC1_CR2 |= 0x10;
+	SDADC1_CR2 |= 0x10; //Start calibration
 
-	while (SDADC1_ISR & 0x1000);
+	while (SDADC1_ISR & 0x1000); //Wait for calibration to finish
 }
 
 void InitializeEncoders() {
