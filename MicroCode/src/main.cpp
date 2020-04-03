@@ -11,11 +11,11 @@ volatile uint16 vSet;
 volatile uint16 iSet;
 
 void VsetCallback(int8 dir) {
-
+	vSet += dir;
 }
 
 void IsetCallback(int8 dir) {
-
+	iSet += dir;
 }
 
 int main() {
