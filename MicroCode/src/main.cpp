@@ -6,6 +6,7 @@
 #include <sys/sys.h>
 #include <core/driver/usart.h>
 
+
 int main() {
 	Initialize();
 
