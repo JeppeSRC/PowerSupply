@@ -23,7 +23,7 @@ void UI::Initialize() {
 	Display::Printf(0x40, "Version: %02H.%02H", MC_VERSION / 0x100, MC_VERSION % 0x100);
 	Delay(2);
 	Display::Clear();
-	Display::Printf(0x00, "SET %02U.%02UV %01U.%02UA", 0, 0);
+	Display::Printf(0x00, "SET %02U.%02UV %01U.%02UA", 0, 0, 0, 0);
 	Display::Print(0x40, "OUT 00.00V 0.00A");
 }
 
