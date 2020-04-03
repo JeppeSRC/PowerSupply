@@ -1,5 +1,4 @@
-#ifndef SYS_TIME_H_
-#define SYS_TIME_H_
+#pragma once
 
 #include <sys/registers/registers.h>
 
@@ -13,5 +12,3 @@ void DelayMicros(uint16 microSeconds);
 
 uint32 Millis();
 uint32 Micros();
-
-#endif
