@@ -18,7 +18,7 @@ void Initialize() {
 	Display::Initialize();
 	InitializeDAC();
 	InitializeEncoders();
-	InitializeSDADC();
+	//InitializeSDADC();
 }
 
 void InitializeClock() {
