@@ -46,6 +46,7 @@
     <ClCompile Include="src\core\driver\encoder.cpp" />
     <ClCompile Include="src\core\driver\usart.cpp" />
     <ClCompile Include="src\core\string.cpp" />
+    <ClCompile Include="src\core\ui.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\sys\error.cpp" />
     <ClCompile Include="src\sys\memory.cpp" />
@@ -59,6 +60,7 @@
     <ClInclude Include="src\core\driver\encoder.h" />
     <ClInclude Include="src\core\driver\usart.h" />
     <ClInclude Include="src\core\string.h" />
+    <ClInclude Include="src\core\ui.h" />
     <ClInclude Include="src\sys\memory.h" />
     <ClInclude Include="src\sys\registers\ahb1.h" />
     <ClInclude Include="src\sys\registers\ahb2.h" />

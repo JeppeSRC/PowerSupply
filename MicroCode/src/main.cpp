@@ -6,6 +6,7 @@
 #include <sys/sys.h>
 #include <core/driver/usart.h>
 #include <core/driver/encoder.h>
+#include <core/ui.h>
 
 volatile uint16 vSet;
 volatile uint16 iSet;
@@ -20,6 +21,12 @@ void IsetCallback(int8 dir) {
 
 int main() {
 	Initialize();
+
+	UI::Initialize();
+
+	while (true) {
+
+	}
 
 	asm("b .");
 }
