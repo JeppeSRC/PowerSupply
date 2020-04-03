@@ -42,3 +42,8 @@ void UI::UpdateVRead(uint16 vread) {
 void UI::UpdateIRead(uint16 iread) {
 	Display::Printf(IREAD_OFFSET, "%01U.%02U", iread / 100, iread % 100);
 }
+
+void UI::UpdateVISet(uint16 vset, uint16 iset) {
+	UpdateVSet(vset);
+	UpdateISet(iset);
+}

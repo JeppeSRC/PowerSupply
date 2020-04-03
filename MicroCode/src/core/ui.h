@@ -13,5 +13,6 @@ public:
 	static void UpdateVRead(uint16 vread);
 	static void UpdateIRead(uint16 iread);
 
+	static void UpdateVISet(uint16 vset, uint16 iset);
 };
 
