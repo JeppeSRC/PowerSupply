@@ -1,6 +1,7 @@
 #include "encoder.h"
 
 #include <sys/registers/registers.h>
+#include <sys/sys.h>
 
 void InitializeEncoders() {
 #ifdef USE_TIMERS
@@ -27,6 +28,9 @@ void InitializeEncoders() {
 	EXTI_IMR |= 0xC3;
 	EXTI_FTSR |= 0xC3;
 
+	EnableInterrupt(6);
+	EnableInterrupt(7);
+	EnableInterrupt(23);
 #endif
 }
 
