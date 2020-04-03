@@ -1,5 +1,7 @@
 #pragma once
 
+#define MC_VERSION 0x0001
+
 typedef unsigned char uint8;
 typedef unsigned short uint16;
 typedef unsigned int uint32;
