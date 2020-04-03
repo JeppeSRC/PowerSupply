@@ -2,16 +2,6 @@
 
 #include <core/def.h>
 
-/*
-void InitializeDisplay();
-void DisplayControl(uint8 displayOn, uint8 cursorOn, uint8 blinkOn);
-void Display::Print(uint8 address, const char* string);
-void Display::Print(uint8 address, const char* string, uint32 length);
-void Display::PrintChar(uint8 address, const char c);
-void Display::Printf(uint8 address, const char* format, ...);
-void DisplayClear();*/
-
-
 class Display {
 private:
 	static void  ExecuteCommand(uint32 instCode);
