@@ -4,6 +4,7 @@
 #include "time.h"
 
 void InitializeClock();
+void InitializeFPU();
 void InitializeGPIO();
 void InitializeDAC();
 void InitializeSDADC();
@@ -11,6 +12,7 @@ void InitializeEncoders();
 
 void Initialize() {
 	InitializeClock();
+	InitializeFPU();
 	InitializeTimers();
 	InitializeGPIO();
 	Display::Initialize();
@@ -44,6 +46,13 @@ void InitializeClock() {
 #if USE_HSE
 	RCC_CR &= ~HSION;
 #endif
+}
+
+void InitializeFPU() {
+	FPU_CPACR |= 0xF00000;
+
+	__asm ("dsb");
+	__asm ("isb");
 }
 
 void InitializeGPIO() {
