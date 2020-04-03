@@ -25,7 +25,12 @@ int main() {
 	UI::Initialize();
 
 	while (true) {
+		DelayMicros(1000);
 
+		DAC2_DHR12R1 = ((uint32)(vSet * 2.0475f) & 0xFFF);
+		DAC1_DHR12L2 = ((uint32)(iSet * 10.2375f) & 0xFFF);
+
+		UI::UpdateVISet(vSet, iSet);
 	}
 
 	asm("b .");
