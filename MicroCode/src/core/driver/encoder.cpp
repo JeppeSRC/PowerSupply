@@ -35,25 +35,54 @@ void InitializeEncoders() {
 #define ENC0_PINB 0x02
 #define ENC0_MASK (ENC0_PINA | ENC0_PINB)
 
-#define ENC1_PINA 0x01
-#define ENC1_PINB 0x02
+#define ENC1_PINA 0x04
+#define ENC1_PINB 0x08
 #define ENC1_MASK (ENC1_PINA | ENC1_PINB)
 
 volatile uint8 encoderStatus;
 
 void EXTI0_Handler() {
+	if (encoderStatus & ENC0_PINB) {
+		encoderStatus ^= ENC0_MASK;
 
-
+		VsetCallback(-1);
+	} else {
+		encoderStatus |= ENC0_PINA;
+	}
 
 	EXTI_PR |= 0x01;
 }
 
 void EXTI1_Handler() {
+	if (encoderStatus & ENC0_PINA) {
+		encoderStatus ^= ENC0_MASK;
+
+		VsetCallback(1);
+	} else {
+		encoderStatus |= ENC0_PINB;
+	}
 
 	EXTI_PR |= 0x02;
 }
 
 void EXTI5_9_Handler() {
+	if (EXTI_PR & 0x04) {
+		EXTI_PR |= 0x04;
+		if (encoderStatus & ENC1_PINB) {
+			encoderStatus ^= ENC1_MASK;
 
-	EXTI_PR |= 0x0C;
+			IsetCallback(-1);
+		} else {
+			encoderStatus |= ENC1_PINA;
+		}
+	} else if (EXTI_PR & 0x08) {
+		EXTI_PR |= 0x08;
+		if (encoderStatus & ENC1_PINA) {
+			encoderStatus ^= ENC1_MASK;
+
+			IsetCallback(1);
+		} else {
+			encoderStatus |= ENC1_PINB;
+		}
+	}
 }

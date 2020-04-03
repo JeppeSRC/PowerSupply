@@ -3,5 +3,5 @@
 #include <core/def.h>
 
 void InitializeEncoders();
-void EncoderVsetCallback(uint8 dir);
-void EncoderIsetCallback(uint8 dir);
+void VsetCallback(int8 dir);
+void IsetCallback(int8 dir);
