@@ -5,7 +5,7 @@ TODO for rev3:
 	- Increase current sense amplifier output capacitance
 	- Increase input capacitance
 	- Make more room between encoders
-	- Push button for selecting boot loader during reset
+	- Additional push button for selecting boot loader during reset
 *	- Connect Iread and Vread to SDADC and ADC
 	- C_LIMIT controlled by hardware?
 	- Fix Vset error amplifier output
