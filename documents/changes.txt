@@ -1,0 +1,13 @@
+This document documents the changes of each revision.
+
+Revision 2:
+    - External Crystal Oscillator
+    - Dedicated push button switch for MCU reset
+    - USART header
+    - Removed one 3v3 regulator
+    - Encoder debouncing
+    - Capacitor on USB_D+ pullup
+    - Removed some status LEDs
+    - Fixed encoder footprint
+    - 4 Bit interface with display
+    - Changed timers used for encoders
