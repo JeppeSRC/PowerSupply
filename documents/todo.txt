@@ -2,7 +2,7 @@ TODO for rev3:
 	- Fan controller
 *	- C_LIMIT and OUTPUT_ON LEDS to be driven by a nfet (2N7002NXAK) from VDD
 *	- Increase output capacitance
-	- Increase current sense amplifier output capacitance
+	- Fix current sense amplifier output capacitance
 *	- Increase input capacitance
 	- Make more room between encoders
 *	- Additional push button for selecting boot loader during reset
