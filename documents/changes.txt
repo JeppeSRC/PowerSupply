@@ -11,3 +11,6 @@ Revision 2:
     - Fixed encoder footprint
     - 4 Bit interface with display
     - Changed timers used for encoders
+
+Revision 3:
+    
