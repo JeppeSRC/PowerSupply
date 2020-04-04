@@ -1298,8 +1298,6 @@ $EndComp
 Text Label 6100 5600 0    50   ~ 0
 C_LIMIT
 NoConn ~ 4700 5400
-NoConn ~ 6100 4700
-NoConn ~ 6100 4800
 NoConn ~ 6100 4900
 NoConn ~ 6100 5200
 NoConn ~ 6100 5700
@@ -1448,4 +1446,8 @@ F 3 "~" H 9400 1150 50  0001 C CNN
 $EndComp
 Text Notes 9150 1600 0    50   ~ 0
 20V / 4mA = 5000Ω
+Text HLabel 6100 4800 2    50   Input ~ 0
+Vread
+Text HLabel 6100 4700 2    50   Input ~ 0
+Iread
 $EndSCHEMATC

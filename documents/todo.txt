@@ -6,7 +6,7 @@ TODO for rev3:
 	- Increase input capacitance
 	- Make more room between encoders
 	- Push button for selecting boot loader during reset
-	- Connect Iread and Vread to SDADC and ADC
+*	- Connect Iread and Vread to SDADC and ADC
 	- C_LIMIT controlled by hardware?
 	- Fix Vset error amplifier output
 	- Add minimum load to prevent output voltage from climbing when no load is connected
