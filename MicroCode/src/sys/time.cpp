@@ -29,14 +29,14 @@ void Delay(uint8 seconds) {
 }
 
 void DelayMillis(uint16 milliSeconds) {
-	TIM7_ARR = milliSeconds;
+	TIM7_ARR = milliSeconds - 1;
 	TIM7_CR1 = 0x0D;
 
 	while (TIM7_CR1 & 0x01);
 }
 
 void DelayMicros(uint16 microSeconds) {
-	TIM18_ARR = microSeconds;
+	TIM18_ARR = microSeconds - 1;
 	TIM18_CR1 = 0x0D;
 
 	while (TIM18_CR1 & 0x01);
