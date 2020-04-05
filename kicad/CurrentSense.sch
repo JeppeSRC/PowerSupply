@@ -364,8 +364,8 @@ F 4 "OPA4196IDR" H 5700 4850 50  0001 C CNN "MPN"
 	0    -1   1    0   
 $EndComp
 Wire Wire Line
-	5400 3500 4550 3500
-Text HLabel 4550 3500 0    50   Input ~ 0
+	5400 3500 5000 3500
+Text HLabel 4300 3500 0    50   Input ~ 0
 Vin
 Text HLabel 6750 3500 2    50   Output ~ 0
 Vout
@@ -460,4 +460,48 @@ F 3 "" H 5850 6100 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	4900 4500 4900 4600
+$Comp
+L Device:CP_Small C?
+U 1 1 5E976FEE
+P 5000 3600
+F 0 "C?" H 5088 3646 50  0000 L CNN
+F 1 "100µF" H 5088 3555 50  0000 L CNN
+F 2 "" H 5000 3600 50  0001 C CNN
+F 3 "~" H 5000 3600 50  0001 C CNN
+	1    5000 3600
+	1    0    0    -1  
+$EndComp
+Connection ~ 5000 3500
+Wire Wire Line
+	5000 3500 4550 3500
+$Comp
+L Device:CP_Small C?
+U 1 1 5E97898D
+P 4550 3600
+F 0 "C?" H 4638 3646 50  0000 L CNN
+F 1 "100µF" H 4638 3555 50  0000 L CNN
+F 2 "" H 4550 3600 50  0001 C CNN
+F 3 "~" H 4550 3600 50  0001 C CNN
+	1    4550 3600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5000 3700 4750 3700
+$Comp
+L power:GNDA #PWR?
+U 1 1 5E97B061
+P 4750 3700
+F 0 "#PWR?" H 4750 3450 50  0001 C CNN
+F 1 "GNDA" H 4755 3527 50  0000 C CNN
+F 2 "" H 4750 3700 50  0001 C CNN
+F 3 "" H 4750 3700 50  0001 C CNN
+	1    4750 3700
+	1    0    0    -1  
+$EndComp
+Connection ~ 4750 3700
+Wire Wire Line
+	4750 3700 4550 3700
+Connection ~ 4550 3500
+Wire Wire Line
+	4550 3500 4300 3500
 $EndSCHEMATC
