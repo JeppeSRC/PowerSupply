@@ -10,3 +10,4 @@ TODO for rev3:
 	- C_LIMIT controlled by hardware?
 	- Fix Vset error amplifier output
 	- Add minimum load to prevent output voltage from climbing when no load is connected
+	- SMD based current shunt
