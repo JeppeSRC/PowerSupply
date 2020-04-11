@@ -13,4 +13,5 @@ Revision 2:
     - Changed timers used for encoders
 
 Revision 3:
-    
+    - Constant current sources for LEDS
+    - Removed 2 resistors for LCD backlight

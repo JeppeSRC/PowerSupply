@@ -72,7 +72,7 @@ Wire Wire Line
 Wire Wire Line
 	4050 2750 4900 2750
 Wire Wire Line
-	6100 2750 5400 2750
+	6100 2750 5550 2750
 Wire Wire Line
 	4800 3250 5800 3250
 Wire Wire Line
@@ -134,6 +134,7 @@ F3 "Vread" I R 6750 3750 50
 F4 "Iread" I L 6100 3850 50 
 F5 "Iset" O L 6100 3750 50 
 F6 "Vset" O L 6100 3650 50 
+F7 "Vout" I L 6100 3950 50 
 $EndSheet
 Wire Wire Line
 	6700 2850 6900 2850
@@ -425,35 +426,6 @@ Wire Wire Line
 	1450 2250 1600 2250
 $Comp
 L symbols:OPA4196 U2
-U 4 1 5DB3F746
-P 3800 1000
-F 0 "U2" H 3900 1250 50  0000 L CNN
-F 1 "OPA4196" H 3900 1150 50  0000 L CNN
-F 2 "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm" H 3800 1000 50  0001 C CNN
-F 3 "http://www.ti.com/lit/ds/symlink/opa4196.pdf" H 3900 1300 50  0001 C CNN
-F 4 "OPA4196IDR" H 3800 1000 50  0001 C CNN "MPN"
-	4    3800 1000
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	4200 1000 4200 1300
-Wire Wire Line
-	4200 1300 3600 1300
-Wire Wire Line
-	3600 1300 3600 1100
-$Comp
-L power:GNDA #PWR0115
-U 1 1 5DB4712D
-P 3600 900
-F 0 "#PWR0115" H 3600 650 50  0001 C CNN
-F 1 "GNDA" H 3605 727 50  0000 C CNN
-F 2 "" H 3600 900 50  0001 C CNN
-F 3 "" H 3600 900 50  0001 C CNN
-	1    3600 900 
-	0    1    1    0   
-$EndComp
-$Comp
-L symbols:OPA4196 U2
 U 5 1 5DB4A324
 P 4900 1000
 F 0 "U2" H 5000 1250 50  0000 L CNN
@@ -481,4 +453,40 @@ F 3 "" H 4700 900 50  0001 C CNN
 	1    4700 900 
 	0    1    1    0   
 $EndComp
+$Comp
+L symbols:OPA4196 U?
+U 4 1 5E9434AD
+P 6050 1000
+F 0 "U?" H 6150 1250 50  0000 L CNN
+F 1 "OPA4196" H 6150 1150 50  0000 L CNN
+F 2 "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm" H 6050 1000 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/opa4196.pdf" H 6150 1300 50  0001 C CNN
+F 4 "OPA4196IDR" H 6050 1000 50  0001 C CNN "MPN"
+	4    6050 1000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6450 1000 6450 1300
+Wire Wire Line
+	6450 1300 5850 1300
+Wire Wire Line
+	5850 1300 5850 1100
+$Comp
+L power:GNDA #PWR?
+U 1 1 5E9434B6
+P 5850 900
+F 0 "#PWR?" H 5850 650 50  0001 C CNN
+F 1 "GNDA" H 5855 727 50  0000 C CNN
+F 2 "" H 5850 900 50  0001 C CNN
+F 3 "" H 5850 900 50  0001 C CNN
+	1    5850 900 
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	5550 2750 5550 3950
+Wire Wire Line
+	5550 3950 6100 3950
+Connection ~ 5550 2750
+Wire Wire Line
+	5550 2750 5400 2750
 $EndSCHEMATC
