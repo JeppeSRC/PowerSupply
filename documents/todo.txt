@@ -9,5 +9,5 @@ TODO for rev3:
 *	- Connect Iread and Vread to SDADC and ADC
 	- C_LIMIT controlled by hardware?
 	- Fix Vset error amplifier output
-	- Add minimum load to prevent output voltage from climbing when no load is connected
+*	- MOSFET that can be toggled to discharge caps when voltage changes
 	- SMD based current shunt
