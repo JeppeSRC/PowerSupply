@@ -380,24 +380,6 @@ Text HLabel 5650 5900 3    50   Output ~ 0
 Iread
 Wire Wire Line
 	6000 3500 6750 3500
-$Comp
-L symbols:OPA4196 U2
-U 2 1 5CA3CCA9
-P 6100 3800
-F 0 "U2" V 6250 4100 50  0000 R CNN
-F 1 "OPA4196" V 6350 4200 50  0000 R CNN
-F 2 "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm" H 6100 3800 50  0001 C CNN
-F 3 "http://www.ti.com/lit/ds/symlink/opa4196.pdf" H 6200 4100 50  0001 C CNN
-F 4 "OPA4196IDR" H 6100 3800 50  0001 C CNN "MPN"
-	2    6100 3800
-	0    -1   1    0   
-$EndComp
-Wire Wire Line
-	6000 3500 6000 3600
-Wire Wire Line
-	6200 3600 6350 3600
-Wire Wire Line
-	6350 3600 6350 4200
 Wire Wire Line
 	5400 3500 5400 4200
 Wire Wire Line
@@ -411,12 +393,7 @@ Wire Wire Line
 Wire Wire Line
 	5400 4500 5250 4500
 Connection ~ 5400 4500
-Wire Wire Line
-	6000 4200 6100 4200
 Connection ~ 5800 4650
-Connection ~ 6100 4200
-Wire Wire Line
-	6100 4200 6350 4200
 Text Notes 5400 2350 0    39   ~ 0
 Shunt resistors are at least 1/4W 1%
 Text Notes 4650 4850 0    39   ~ 0
@@ -504,4 +481,6 @@ Wire Wire Line
 Connection ~ 4550 3500
 Wire Wire Line
 	4550 3500 4300 3500
+Wire Wire Line
+	6000 3500 6000 4200
 $EndSCHEMATC

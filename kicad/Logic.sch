@@ -119,7 +119,7 @@ Text HLabel 6100 3500 2    50   Input ~ 0
 CLIM
 Text HLabel 4700 5100 0    50   Input ~ 0
 Vread
-Text HLabel 4700 5200 0    50   Input ~ 0
+Text HLabel 3350 5175 0    50   Input ~ 0
 Iread
 Text HLabel 6100 3600 2    50   Output ~ 0
 Iset
@@ -1583,4 +1583,28 @@ Wire Wire Line
 	9050 2900 9050 2850
 Text HLabel 9050 2850 1    50   Input ~ 0
 Vout
+$Comp
+L symbols:OPA4196 U2
+U 2 1 5E9BB01D
+P 3550 5275
+F 0 "U2" H 3650 5640 50  0000 C CNN
+F 1 "OPA4196" H 3650 5549 50  0000 C CNN
+F 2 "" H 3650 5275 50  0001 C CNN
+F 3 "" H 3650 5275 50  0001 C CNN
+	2    3550 5275
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3950 5275 4250 5275
+Wire Wire Line
+	4250 5275 4250 5200
+Wire Wire Line
+	4250 5200 4700 5200
+Wire Wire Line
+	3350 5375 3350 5500
+Wire Wire Line
+	3350 5500 3950 5500
+Wire Wire Line
+	3950 5500 3950 5275
+Connection ~ 3950 5275
 $EndSCHEMATC
