@@ -316,7 +316,7 @@ F 4 "CC0805KRX7R0BB103" H 850 2150 50  0001 C CNN "MPN"
 	1    850  2150
 	1    0    0    1   
 $EndComp
-Text Label 1750 750  0    50   ~ 0
+Text Label 2150 750  0    50   ~ 0
 VDDA
 Text Label 5600 2900 1    50   ~ 0
 VDDA
@@ -362,9 +362,9 @@ Wire Wire Line
 Connection ~ 1250 750 
 Wire Wire Line
 	1250 750  1650 750 
-Text Label 1700 1400 0    50   ~ 0
+Text Label 2150 1400 0    50   ~ 0
 VDDSD
-Text Label 1700 2050 0    50   ~ 0
+Text Label 2150 2050 0    50   ~ 0
 VREFSD
 $Comp
 L power:+3V3 #PWR030
@@ -475,7 +475,7 @@ Connection ~ 2050 2900
 Wire Wire Line
 	2450 2700 2750 2700
 Connection ~ 2450 2700
-Text Label 2550 2700 0    50   ~ 0
+Text Label 2950 2700 0    50   ~ 0
 VDD1
 $Comp
 L Device:Rotary_Encoder_Switch SW2
@@ -1609,4 +1609,48 @@ Text Label 4000 5275 0    50   ~ 0
 _Iread
 Text Label 6100 4700 0    50   ~ 0
 _Iread
+$Comp
+L Device:Net-Tie_2 NT?
+U 1 1 5EA49F5F
+P 2050 750
+F 0 "NT?" H 2050 839 50  0000 C CNN
+F 1 "Net-Tie_2" H 2050 840 50  0001 C CNN
+F 2 "" H 2050 750 50  0001 C CNN
+F 3 "~" H 2050 750 50  0001 C CNN
+	1    2050 750 
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:Net-Tie_2 NT?
+U 1 1 5EA4C1B6
+P 2050 1400
+F 0 "NT?" H 2050 1489 50  0000 C CNN
+F 1 "Net-Tie_2" H 2050 1490 50  0001 C CNN
+F 2 "" H 2050 1400 50  0001 C CNN
+F 3 "~" H 2050 1400 50  0001 C CNN
+	1    2050 1400
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:Net-Tie_2 NT?
+U 1 1 5EA500AD
+P 2050 2050
+F 0 "NT?" H 2050 2139 50  0000 C CNN
+F 1 "Net-Tie_2" H 2050 2140 50  0001 C CNN
+F 2 "" H 2050 2050 50  0001 C CNN
+F 3 "~" H 2050 2050 50  0001 C CNN
+	1    2050 2050
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:Net-Tie_2 NT?
+U 1 1 5EA5402C
+P 2850 2700
+F 0 "NT?" H 2850 2789 50  0000 C CNN
+F 1 "Net-Tie_2" H 2850 2790 50  0001 C CNN
+F 2 "" H 2850 2700 50  0001 C CNN
+F 3 "~" H 2850 2700 50  0001 C CNN
+	1    2850 2700
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
