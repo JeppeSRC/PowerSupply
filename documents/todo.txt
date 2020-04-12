@@ -3,5 +3,4 @@ TODO for rev3:
 	- Fix current sense amplifier oscillations
 	- Make more room between encoders
 	- C_LIMIT controlled by hardware?
-	- Fix Vset error amplifier output
 	- SMD based current shunt

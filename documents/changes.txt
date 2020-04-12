@@ -20,3 +20,5 @@ Revision 3:
 	- Increase input capacitance
 	- Additional push button for selecting boot loader during reset
 	- Connect Iread and Vread to SDADC and ADC
+    - Changed current limiting circuit
+    - Removed RC filter on VReg output
