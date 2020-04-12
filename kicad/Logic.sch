@@ -1401,8 +1401,6 @@ Text Notes 9150 1600 0    50   ~ 0
 20V / 4mA = 5000Ω
 Text HLabel 6100 4800 2    50   Input ~ 0
 Vread
-Text HLabel 6100 4700 2    50   Input ~ 0
-Iread
 $Comp
 L Switch:SW_Push SW?
 U 1 1 5E8FFF66
@@ -1607,4 +1605,8 @@ Wire Wire Line
 Wire Wire Line
 	3950 5500 3950 5275
 Connection ~ 3950 5275
+Text Label 4000 5275 0    50   ~ 0
+_Iread
+Text Label 6100 4700 0    50   ~ 0
+_Iread
 $EndSCHEMATC
