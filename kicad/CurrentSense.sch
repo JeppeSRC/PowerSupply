@@ -418,7 +418,7 @@ Connection ~ 6100 4200
 Wire Wire Line
 	6100 4200 6350 4200
 Text Notes 5400 2350 0    39   ~ 0
-Shunt resistors are at least 1/4W 1% THT
+Shunt resistors are at least 1/4W 1%
 Text Notes 4650 4850 0    39   ~ 0
 82.5 / 10 = gain of 8.25
 Text Notes 5400 2500 0    39   ~ 0

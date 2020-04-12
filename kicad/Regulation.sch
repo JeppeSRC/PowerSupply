@@ -62,15 +62,9 @@ Wire Wire Line
 Text HLabel 5800 4850 0    50   Input ~ 0
 Iread
 Wire Wire Line
-	6900 3800 7000 3800
-Wire Wire Line
 	5800 4850 5900 4850
 Text HLabel 8700 3800 2    50   Output ~ 0
 Vreg
-Wire Wire Line
-	7300 3800 7450 3800
-Wire Wire Line
-	7450 3800 7450 3900
 Wire Wire Line
 	4650 2850 4650 3150
 Wire Wire Line
@@ -108,9 +102,6 @@ Wire Wire Line
 	6150 3700 6300 3700
 Text Notes 5150 3050 0    39   ~ 0
 (9.88 / 59.88) * 20 = 3.3\n
-Wire Wire Line
-	7550 3800 7450 3800
-Connection ~ 7450 3800
 Wire Wire Line
 	7850 3800 8000 3800
 Connection ~ 8000 3800
@@ -207,30 +198,6 @@ F 2 "Package_TO_SOT_SMD:SOT-23" H 7450 5675 50  0001 L CIN
 F 3 "https://www.mouser.se/datasheet/2/916/MMBT3904-1599187.pdf" H 7250 5750 50  0001 L CNN
 F 4 "MMBT3904,215" H 7250 5750 50  0001 C CNN "MPN"
 	1    7250 5750
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:R R22
-U 1 1 5CA53939
-P 7150 3800
-F 0 "R22" V 6943 3800 50  0000 C CNN
-F 1 "1k" V 7034 3800 50  0000 C CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 7080 3800 50  0001 C CNN
-F 3 "https://www.mouser.se/datasheet/2/447/PYu-RT_1-to-0.01_RoHS_L_9-1222720.pdf" H 7150 3800 50  0001 C CNN
-F 4 "RT0805FRE071KL" H 7150 3800 50  0001 C CNN "MPN"
-	1    7150 3800
-	0    1    1    0   
-$EndComp
-$Comp
-L Device:C_Small C12
-U 1 1 5CA53E20
-P 7450 4000
-F 0 "C12" H 7542 4046 50  0000 L CNN
-F 1 "100nF" H 7542 3955 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 7450 4000 50  0001 C CNN
-F 3 "~" H 7450 4000 50  0001 C CNN
-F 4 "CC0805KRX7R9BB104" H 7450 4000 50  0001 C CNN "MPN"
-	1    7450 4000
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -398,19 +365,10 @@ F 3 "" H 6900 2900 50  0001 C CNN
 	1    6900 2900
 	1    0    0    -1  
 $EndComp
-$Comp
-L power:GNDA #PWR014
-U 1 1 5D8298B9
-P 7450 4100
-F 0 "#PWR014" H 7450 3850 50  0001 C CNN
-F 1 "GNDA" H 7455 3927 50  0000 C CNN
-F 2 "" H 7450 4100 50  0001 C CNN
-F 3 "" H 7450 4100 50  0001 C CNN
-	1    7450 4100
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	8000 3800 8550 3800
 Wire Wire Line
 	6150 2300 6150 2850
+Wire Wire Line
+	6900 3800 7550 3800
 $EndSCHEMATC
