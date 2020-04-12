@@ -22,3 +22,4 @@ Revision 3:
 	- Connect Iread and Vread to SDADC and ADC
     - Changed current limiting circuit
     - Removed RC filter on VReg output
+    - Moved buffer in current sense amplifier to before the ADC inputs
