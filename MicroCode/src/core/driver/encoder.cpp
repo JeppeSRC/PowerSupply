@@ -24,9 +24,4 @@ void InitializeEncoders() {
 	TIM4_SMCR = SMS(1);
 	TIM4_CCMR1 = CC1S(1) | CC2S(1);
 	TIM4_CR1 = CEN(1);
-
-
-
 }
-
-
