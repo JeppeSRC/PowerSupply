@@ -23,9 +23,9 @@ extern "C" void TIM19_Handler() {
 	uint32 dif = time - vLast;
 
 	if (TIM19_CR1 & 0x10) {
-		vSet -= 1 * FACTOR(dif, 320.0f);
+		vSet -= 1 * FACTOR(dif, 200);
 	} else {
-		vSet += 1 * FACTOR(dif, 320.0f);
+		vSet += 1 * FACTOR(dif, 200.0f);
 	}
 
 	ClearPendingInterrupt(78);
@@ -39,9 +39,9 @@ extern "C" void TIM4_Handler() {
 	uint32 dif = time - iLast;
 
 	if (TIM4_CR1 & 0x10) {
-		iSet -= 1 * FACTOR(dif, 280.0f);
+		iSet -= 1 * FACTOR(dif, 200.0f);
 	} else {
-		iSet += 1 * FACTOR(dif, 280.0f);
+		iSet += 1 * FACTOR(dif, 200.0f);
 	}
 
 	ClearPendingInterrupt(30);
