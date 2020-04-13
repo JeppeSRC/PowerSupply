@@ -1430,10 +1430,10 @@ Connection ~ 7625 4925
 Wire Wire Line
 	7625 4925 7850 4925
 Wire Wire Line
-	5575 7625 5575 7475
-Connection ~ 5575 7475
+	5575 8075 5575 7925
+Connection ~ 5575 7925
 Wire Wire Line
-	5575 7475 5625 7475
+	5575 7925 5625 7925
 $Comp
 L Device:R R?
 U 1 1 5EABE711
@@ -1479,15 +1479,15 @@ $EndComp
 $Comp
 L symbols:OPA4196 U?
 U 3 1 5EABE726
-P 5825 7375
+P 5825 7825
 AR Path="/5CA4C891/5EABE726" Ref="U?"  Part="3" 
 AR Path="/5EABE726" Ref="U1"  Part="3" 
-F 0 "U1" H 5950 7740 50  0000 C CNN
-F 1 "OPA4196" H 5950 7649 50  0000 C CNN
-F 2 "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm" H 5825 7375 50  0001 C CNN
-F 3 "http://www.ti.com/lit/ds/symlink/opa4196.pdf" H 5925 7675 50  0001 C CNN
-F 4 "OPA4196IDR" H 5825 7375 50  0001 C CNN "MPN"
-	3    5825 7375
+F 0 "U1" H 5950 8190 50  0000 C CNN
+F 1 "OPA4196" H 5950 8099 50  0000 C CNN
+F 2 "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm" H 5825 7825 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/opa4196.pdf" H 5925 8125 50  0001 C CNN
+F 4 "OPA4196IDR" H 5825 7825 50  0001 C CNN "MPN"
+	3    5825 7825
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -1503,20 +1503,6 @@ F 3 "http://www.ti.com/lit/ds/symlink/opa4196.pdf" H 4975 5875 50  0001 C CNN
 F 4 "OPA4196IDR" H 4875 5575 50  0001 C CNN "MPN"
 	5    4875 5575
 	1    0    0    -1  
-$EndComp
-$Comp
-L Device:R R?
-U 1 1 5EABE734
-P 5925 6525
-AR Path="/5CA4C891/5EABE734" Ref="R?"  Part="1" 
-AR Path="/5EABE734" Ref="R?"  Part="1" 
-F 0 "R?" V 5718 6525 50  0000 C CNN
-F 1 "1k" V 5809 6525 50  0000 C CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 5855 6525 50  0001 C CNN
-F 3 "https://www.mouser.se/datasheet/2/447/PYu-RT_1-to-0.01_RoHS_L_9-1222720.pdf" H 5925 6525 50  0001 C CNN
-F 4 "RT0805FRE071KL" H 5925 6525 50  0001 C CNN "MPN"
-	1    5925 6525
-	0    -1   1    0   
 $EndComp
 $Comp
 L Device:R R?
@@ -1630,14 +1616,14 @@ $EndComp
 $Comp
 L Connector:TestPoint TP?
 U 1 1 5EABE76F
-P 5575 7625
+P 5575 8075
 AR Path="/5CA4C891/5EABE76F" Ref="TP?"  Part="1" 
 AR Path="/5EABE76F" Ref="TP?"  Part="1" 
-F 0 "TP?" H 5517 7651 50  0000 R CNN
-F 1 "Iset" H 5517 7742 50  0000 R CNN
-F 2 "TestPoint:TestPoint_Pad_D1.0mm" H 5775 7625 50  0001 C CNN
-F 3 "~" H 5775 7625 50  0001 C CNN
-	1    5575 7625
+F 0 "TP?" H 5517 8101 50  0000 R CNN
+F 1 "Iset" H 5517 8192 50  0000 R CNN
+F 2 "TestPoint:TestPoint_Pad_D1.0mm" H 5775 8075 50  0001 C CNN
+F 3 "~" H 5775 8075 50  0001 C CNN
+	1    5575 8075
 	-1   0    0    1   
 $EndComp
 $Comp
@@ -1655,8 +1641,6 @@ F 3 "" H 7525 5625 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	6775 5025 6775 5575
-Wire Wire Line
-	6175 6525 6075 6525
 $Comp
 L Device:R R?
 U 1 1 5EABE781
@@ -1673,55 +1657,47 @@ $EndComp
 $Comp
 L Device:Q_NMOS_GSD Q?
 U 1 1 5EABE787
-P 6725 7025
+P 6950 7025
 AR Path="/5CA4C891/5EABE787" Ref="Q?"  Part="1" 
 AR Path="/5EABE787" Ref="Q?"  Part="1" 
-F 0 "Q?" H 6931 7071 50  0000 L CNN
-F 1 "Q_NMOS_GSD" H 6931 6980 50  0000 L CNN
-F 2 "" H 6925 7125 50  0001 C CNN
-F 3 "~" H 6725 7025 50  0001 C CNN
-	1    6725 7025
+F 0 "Q?" H 7156 7071 50  0000 L CNN
+F 1 "Q_NMOS_GSD" H 7156 6980 50  0000 L CNN
+F 2 "" H 7150 7125 50  0001 C CNN
+F 3 "~" H 6950 7025 50  0001 C CNN
+	1    6950 7025
 	1    0    0    -1  
 $EndComp
 $Comp
 L Device:R R?
 U 1 1 5EABE78F
-P 6475 7225
+P 6300 7225
 AR Path="/5CA4C891/5EABE78F" Ref="R?"  Part="1" 
 AR Path="/5EABE78F" Ref="R?"  Part="1" 
-F 0 "R?" H 6545 7271 50  0000 L CNN
-F 1 "100R" H 6545 7180 50  0000 L CNN
-F 2 "" V 6405 7225 50  0001 C CNN
-F 3 "~" H 6475 7225 50  0001 C CNN
-	1    6475 7225
+F 0 "R?" H 6370 7271 50  0000 L CNN
+F 1 "?" H 6370 7180 50  0000 L CNN
+F 2 "" V 6230 7225 50  0001 C CNN
+F 3 "~" H 6300 7225 50  0001 C CNN
+	1    6300 7225
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	6525 7025 6475 7025
-Wire Wire Line
-	6475 7025 6475 7075
-Wire Wire Line
-	6475 7375 6225 7375
-Wire Wire Line
-	6825 7225 6825 7375
+	7050 7225 7050 7375
 $Comp
 L power:GNDA #PWR?
 U 1 1 5EABE79A
-P 6825 7375
+P 7050 7375
 AR Path="/5CA4C891/5EABE79A" Ref="#PWR?"  Part="1" 
 AR Path="/5EABE79A" Ref="#PWR?"  Part="1" 
-F 0 "#PWR?" H 6825 7125 50  0001 C CNN
-F 1 "GNDA" H 6830 7202 50  0000 C CNN
-F 2 "" H 6825 7375 50  0001 C CNN
-F 3 "" H 6825 7375 50  0001 C CNN
-	1    6825 7375
+F 0 "#PWR?" H 7050 7125 50  0001 C CNN
+F 1 "GNDA" H 7055 7202 50  0000 C CNN
+F 2 "" H 7050 7375 50  0001 C CNN
+F 3 "" H 7050 7375 50  0001 C CNN
+	1    7050 7375
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
 	5650 6450 5650 6525
 Connection ~ 5650 6525
-Wire Wire Line
-	5650 6525 5775 6525
 $Comp
 L Connector:USB_A J?
 U 1 1 5EB445F8
@@ -3638,13 +3614,6 @@ Wire Wire Line
 Wire Wire Line
 	6775 5575 6775 6425
 Wire Wire Line
-	6775 6625 6825 6625
-Wire Wire Line
-	6825 6625 6825 6825
-Connection ~ 6825 6625
-Wire Wire Line
-	6825 6625 6875 6625
-Wire Wire Line
 	7275 6500 7275 6625
 Wire Wire Line
 	7275 6625 7175 6625
@@ -3657,8 +3626,8 @@ Wire Wire Line
 Wire Wire Line
 	4525 6525 5650 6525
 Wire Wire Line
-	5300 7475 5575 7475
-Text Label 5300 7475 0    50   ~ 0
+	5300 7925 5575 7925
+Text Label 5300 7925 0    50   ~ 0
 Iset
 Wire Wire Line
 	7275 6625 7500 6625
@@ -3673,7 +3642,7 @@ Iread
 Wire Wire Line
 	4375 6675 4375 4400
 Wire Wire Line
-	5625 6675 5625 7275
+	5625 6675 5625 7725
 Connection ~ 675  3650
 Text Label 7850 4925 2    50   ~ 0
 Vread
@@ -3859,4 +3828,57 @@ Wire Wire Line
 Connection ~ 2775 7225
 Wire Wire Line
 	2775 7225 2775 7725
+Wire Wire Line
+	6775 6625 6825 6625
+Wire Wire Line
+	7050 6825 6825 6825
+Wire Wire Line
+	6825 6825 6825 6625
+Connection ~ 6825 6625
+Wire Wire Line
+	6825 6625 6875 6625
+Wire Wire Line
+	6300 7025 6300 7075
+Wire Wire Line
+	6300 7025 6650 7025
+$Comp
+L Device:C_Small C?
+U 1 1 5FFC0F1E
+P 6650 7200
+F 0 "C?" H 6742 7246 50  0000 L CNN
+F 1 "?" H 6742 7155 50  0000 L CNN
+F 2 "" H 6650 7200 50  0001 C CNN
+F 3 "~" H 6650 7200 50  0001 C CNN
+	1    6650 7200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6650 7100 6650 7025
+Connection ~ 6650 7025
+Wire Wire Line
+	6650 7025 6750 7025
+Wire Wire Line
+	6650 7300 6650 7375
+Wire Wire Line
+	6650 7375 7050 7375
+Connection ~ 7050 7375
+$Comp
+L Device:R R?
+U 1 1 600595C9
+P 6300 7525
+AR Path="/5CA4C891/600595C9" Ref="R?"  Part="1" 
+AR Path="/600595C9" Ref="R?"  Part="1" 
+F 0 "R?" H 6370 7571 50  0000 L CNN
+F 1 "?" H 6370 7480 50  0000 L CNN
+F 2 "" V 6230 7525 50  0001 C CNN
+F 3 "~" H 6300 7525 50  0001 C CNN
+	1    6300 7525
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6300 7675 6300 7825
+Wire Wire Line
+	6300 7825 6225 7825
+Wire Wire Line
+	5650 6525 6175 6525
 $EndSCHEMATC
