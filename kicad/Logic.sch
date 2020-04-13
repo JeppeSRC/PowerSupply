@@ -2,10 +2,10 @@ EESchema Schematic File Version 4
 LIBS:PowerSupply-cache
 EELAYER 30 0
 EELAYER END
-$Descr A4 11693 8268
+$Descr A3 16535 11693
 encoding utf-8
 Sheet 5 5
-Title ""
+Title "PowerSupply"
 Date ""
 Rev ""
 Comp ""
