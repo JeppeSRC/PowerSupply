@@ -8,8 +8,8 @@
 #include <core/driver/encoder.h>
 #include <core/ui.h>
 
-volatile int16 vSet = 0;
-volatile int16 iSet = 0;
+volatile float vSet = 0;
+volatile float iSet = 0;
 
 volatile uint32 vLast = 0;
 volatile uint32 iLast = 0;
