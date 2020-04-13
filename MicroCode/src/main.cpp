@@ -62,7 +62,7 @@ int main() {
 		DelayMicros(1000);
 		
 		vSet = CLAMP(vSet, 50, 2000);
-		iSet = CLAMP(iSet, 6, 400);
+		iSet = CLAMP(iSet, 10, 400);
 
 		DAC2_DHR12R1 = ((uint32)(vSet * 2.0475f) & 0xFFF);
 		DAC1_DHR12R2 = ((uint32)(iSet * 10.26f) & 0xFFF);
