@@ -619,9 +619,9 @@ AR Path="/5EA892B1" Ref="R?"  Part="1"
 AR Path="/5CA3E8E1/5EA892B1" Ref="R?"  Part="1" 
 F 0 "R?" V 4475 2400 50  0000 C CNN
 F 1 "0R5" V 4475 2800 50  0000 C CNN
-F 2 "Resistor_THT:R_Axial_DIN0309_L9.0mm_D3.2mm_P12.70mm_Horizontal" V 4455 2600 50  0001 C CNN
-F 3 "https://www.mouser.se/datasheet/2/219/MF-MFS-RK-18760.pdf" H 4525 2600 50  0001 C CNN
-F 4 "" H 4525 2600 50  0001 C CNN "MPN"
+F 2 "Resistor_SMD:R_2512_6332Metric_Pad1.52x3.35mm_HandSolder" V 4455 2600 50  0001 C CNN
+F 3 "https://www.mouser.se/datasheet/2/414/LR-1528312.pdf" H 4525 2600 50  0001 C CNN
+F 4 "LRC-LR2512LF-01-R500-F" H 4525 2600 50  0001 C CNN "MPN"
 	1    4525 2600
 	0    1    1    0   
 $EndComp
