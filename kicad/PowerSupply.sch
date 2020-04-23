@@ -611,154 +611,6 @@ F 3 "" H 2775 6825 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Connection ~ 2775 6825
-Wire Wire Line
-	4675 1700 4850 1700
-Wire Wire Line
-	4375 1700 4225 1700
-$Comp
-L Device:R R?
-U 1 1 5EA89269
-P 4525 1800
-AR Path="/5EA89269" Ref="R?"  Part="1" 
-AR Path="/5CA3E8E1/5EA89269" Ref="R?"  Part="1" 
-F 0 "R?" V 4475 1600 50  0000 C CNN
-F 1 "4R99" V 4475 2000 50  0000 C CNN
-F 2 "Resistor_THT:R_Axial_DIN0309_L9.0mm_D3.2mm_P12.70mm_Horizontal" V 4455 1800 50  0001 C CNN
-F 3 "https://www.mouser.se/datasheet/2/219/MF-MFS-RK-18760.pdf" H 4525 1800 50  0001 C CNN
-F 4 "" H 4525 1800 50  0001 C CNN "MPN"
-	1    4525 1800
-	0    1    1    0   
-$EndComp
-Wire Wire Line
-	4675 1800 4850 1800
-Wire Wire Line
-	4375 1800 4225 1800
-$Comp
-L Device:R R?
-U 1 1 5EA89272
-P 4525 1900
-AR Path="/5EA89272" Ref="R?"  Part="1" 
-AR Path="/5CA3E8E1/5EA89272" Ref="R?"  Part="1" 
-F 0 "R?" V 4475 1700 50  0000 C CNN
-F 1 "4R99" V 4475 2100 50  0000 C CNN
-F 2 "Resistor_THT:R_Axial_DIN0309_L9.0mm_D3.2mm_P12.70mm_Horizontal" V 4455 1900 50  0001 C CNN
-F 3 "https://www.mouser.se/datasheet/2/219/MF-MFS-RK-18760.pdf" H 4525 1900 50  0001 C CNN
-F 4 "" H 4525 1900 50  0001 C CNN "MPN"
-	1    4525 1900
-	0    1    1    0   
-$EndComp
-Wire Wire Line
-	4675 1900 4850 1900
-Wire Wire Line
-	4375 1900 4225 1900
-$Comp
-L Device:R R?
-U 1 1 5EA8927B
-P 4525 2000
-AR Path="/5EA8927B" Ref="R?"  Part="1" 
-AR Path="/5CA3E8E1/5EA8927B" Ref="R?"  Part="1" 
-F 0 "R?" V 4475 1800 50  0000 C CNN
-F 1 "4R99" V 4475 2200 50  0000 C CNN
-F 2 "Resistor_THT:R_Axial_DIN0309_L9.0mm_D3.2mm_P12.70mm_Horizontal" V 4455 2000 50  0001 C CNN
-F 3 "https://www.mouser.se/datasheet/2/219/MF-MFS-RK-18760.pdf" H 4525 2000 50  0001 C CNN
-F 4 "" H 4525 2000 50  0001 C CNN "MPN"
-	1    4525 2000
-	0    1    1    0   
-$EndComp
-Wire Wire Line
-	4675 2000 4850 2000
-Wire Wire Line
-	4375 2000 4225 2000
-$Comp
-L Device:R R?
-U 1 1 5EA89284
-P 4525 2100
-AR Path="/5EA89284" Ref="R?"  Part="1" 
-AR Path="/5CA3E8E1/5EA89284" Ref="R?"  Part="1" 
-F 0 "R?" V 4475 1900 50  0000 C CNN
-F 1 "4R99" V 4475 2300 50  0000 C CNN
-F 2 "Resistor_THT:R_Axial_DIN0309_L9.0mm_D3.2mm_P12.70mm_Horizontal" V 4455 2100 50  0001 C CNN
-F 3 "https://www.mouser.se/datasheet/2/219/MF-MFS-RK-18760.pdf" H 4525 2100 50  0001 C CNN
-F 4 "" H 4525 2100 50  0001 C CNN "MPN"
-	1    4525 2100
-	0    1    1    0   
-$EndComp
-Wire Wire Line
-	4675 2100 4850 2100
-Wire Wire Line
-	4375 2100 4225 2100
-$Comp
-L Device:R R?
-U 1 1 5EA8928D
-P 4525 2200
-AR Path="/5EA8928D" Ref="R?"  Part="1" 
-AR Path="/5CA3E8E1/5EA8928D" Ref="R?"  Part="1" 
-F 0 "R?" V 4475 2000 50  0000 C CNN
-F 1 "4R99" V 4475 2400 50  0000 C CNN
-F 2 "Resistor_THT:R_Axial_DIN0309_L9.0mm_D3.2mm_P12.70mm_Horizontal" V 4455 2200 50  0001 C CNN
-F 3 "https://www.mouser.se/datasheet/2/219/MF-MFS-RK-18760.pdf" H 4525 2200 50  0001 C CNN
-F 4 "" H 4525 2200 50  0001 C CNN "MPN"
-	1    4525 2200
-	0    1    1    0   
-$EndComp
-Wire Wire Line
-	4675 2200 4850 2200
-Wire Wire Line
-	4375 2200 4225 2200
-$Comp
-L Device:R R?
-U 1 1 5EA89296
-P 4525 2300
-AR Path="/5EA89296" Ref="R?"  Part="1" 
-AR Path="/5CA3E8E1/5EA89296" Ref="R?"  Part="1" 
-F 0 "R?" V 4475 2100 50  0000 C CNN
-F 1 "4R99" V 4475 2500 50  0000 C CNN
-F 2 "Resistor_THT:R_Axial_DIN0309_L9.0mm_D3.2mm_P12.70mm_Horizontal" V 4455 2300 50  0001 C CNN
-F 3 "https://www.mouser.se/datasheet/2/219/MF-MFS-RK-18760.pdf" H 4525 2300 50  0001 C CNN
-F 4 "" H 4525 2300 50  0001 C CNN "MPN"
-	1    4525 2300
-	0    1    1    0   
-$EndComp
-Wire Wire Line
-	4675 2300 4850 2300
-Wire Wire Line
-	4375 2300 4225 2300
-$Comp
-L Device:R R?
-U 1 1 5EA8929F
-P 4525 2400
-AR Path="/5EA8929F" Ref="R?"  Part="1" 
-AR Path="/5CA3E8E1/5EA8929F" Ref="R?"  Part="1" 
-F 0 "R?" V 4475 2200 50  0000 C CNN
-F 1 "4R99" V 4475 2600 50  0000 C CNN
-F 2 "Resistor_THT:R_Axial_DIN0309_L9.0mm_D3.2mm_P12.70mm_Horizontal" V 4455 2400 50  0001 C CNN
-F 3 "https://www.mouser.se/datasheet/2/219/MF-MFS-RK-18760.pdf" H 4525 2400 50  0001 C CNN
-F 4 "" H 4525 2400 50  0001 C CNN "MPN"
-	1    4525 2400
-	0    1    1    0   
-$EndComp
-Wire Wire Line
-	4675 2400 4850 2400
-Wire Wire Line
-	4375 2400 4225 2400
-$Comp
-L Device:R R?
-U 1 1 5EA892A8
-P 4525 2500
-AR Path="/5EA892A8" Ref="R?"  Part="1" 
-AR Path="/5CA3E8E1/5EA892A8" Ref="R?"  Part="1" 
-F 0 "R?" V 4475 2300 50  0000 C CNN
-F 1 "4R99" V 4475 2700 50  0000 C CNN
-F 2 "Resistor_THT:R_Axial_DIN0309_L9.0mm_D3.2mm_P12.70mm_Horizontal" V 4455 2500 50  0001 C CNN
-F 3 "https://www.mouser.se/datasheet/2/219/MF-MFS-RK-18760.pdf" H 4525 2500 50  0001 C CNN
-F 4 "" H 4525 2500 50  0001 C CNN "MPN"
-	1    4525 2500
-	0    1    1    0   
-$EndComp
-Wire Wire Line
-	4675 2500 4850 2500
-Wire Wire Line
-	4375 2500 4225 2500
 $Comp
 L Device:R R?
 U 1 1 5EA892B1
@@ -766,7 +618,7 @@ P 4525 2600
 AR Path="/5EA892B1" Ref="R?"  Part="1" 
 AR Path="/5CA3E8E1/5EA892B1" Ref="R?"  Part="1" 
 F 0 "R?" V 4475 2400 50  0000 C CNN
-F 1 "4R99" V 4475 2800 50  0000 C CNN
+F 1 "0R5" V 4475 2800 50  0000 C CNN
 F 2 "Resistor_THT:R_Axial_DIN0309_L9.0mm_D3.2mm_P12.70mm_Horizontal" V 4455 2600 50  0001 C CNN
 F 3 "https://www.mouser.se/datasheet/2/219/MF-MFS-RK-18760.pdf" H 4525 2600 50  0001 C CNN
 F 4 "" H 4525 2600 50  0001 C CNN "MPN"
@@ -777,58 +629,6 @@ Wire Wire Line
 	4675 2600 4850 2600
 Wire Wire Line
 	4375 2600 4225 2600
-Wire Wire Line
-	4850 1700 4850 1800
-Connection ~ 4850 1800
-Wire Wire Line
-	4850 1800 4850 1900
-Connection ~ 4850 1900
-Wire Wire Line
-	4850 1900 4850 2000
-Connection ~ 4850 2000
-Wire Wire Line
-	4850 2000 4850 2100
-Connection ~ 4850 2100
-Wire Wire Line
-	4850 2100 4850 2200
-Connection ~ 4850 2200
-Wire Wire Line
-	4850 2200 4850 2300
-Connection ~ 4850 2300
-Wire Wire Line
-	4850 2300 4850 2400
-Connection ~ 4850 2400
-Wire Wire Line
-	4850 2400 4850 2500
-Connection ~ 4850 2500
-Wire Wire Line
-	4850 2500 4850 2600
-Wire Wire Line
-	4225 1700 4225 1800
-Connection ~ 4225 1800
-Wire Wire Line
-	4225 1800 4225 1900
-Connection ~ 4225 1900
-Wire Wire Line
-	4225 1900 4225 2000
-Connection ~ 4225 2000
-Wire Wire Line
-	4225 2000 4225 2100
-Connection ~ 4225 2100
-Wire Wire Line
-	4225 2100 4225 2200
-Connection ~ 4225 2200
-Wire Wire Line
-	4225 2200 4225 2300
-Connection ~ 4225 2300
-Wire Wire Line
-	4225 2300 4225 2400
-Connection ~ 4225 2400
-Wire Wire Line
-	4225 2400 4225 2500
-Connection ~ 4225 2500
-Wire Wire Line
-	4225 2500 4225 2600
 Connection ~ 4225 2600
 $Comp
 L Device:R R?
@@ -935,12 +735,10 @@ Wire Wire Line
 	4225 3100 4075 3100
 Connection ~ 4225 3100
 Connection ~ 4625 3250
-Text Notes 4000 1500 0    39   ~ 0
-Shunt resistors are at least 1/4W 1%
-Text Notes 3475 3475 0    39   ~ 0
-82.5 / 10 = gain of 8.25
-Text Notes 4225 1600 0    39   ~ 0
-4A * 0.499R = 2.044V\n
+Text Notes 4100 2350 0    39   ~ 0
+Shunt resistor is at least 2W 1%
+Text Notes 3500 3625 0    39   ~ 0
+16.5 / 10 = gain of 1.65\n\n2V * 1.65 = 3.3V
 $Comp
 L Connector:TestPoint TP?
 U 1 1 5EA8932B
@@ -3771,20 +3569,6 @@ F 4 "PCF0805R-82K5BT1" H 4825 3550 50  0001 C CNN "MPN"
 	1    4825 3550
 	1    0    0    -1  
 $EndComp
-$Comp
-L Device:R R?
-U 1 1 5EA89260
-P 4525 1700
-AR Path="/5EA89260" Ref="R?"  Part="1" 
-AR Path="/5CA3E8E1/5EA89260" Ref="R?"  Part="1" 
-F 0 "R?" V 4475 1500 50  0000 C CNN
-F 1 "4R99" V 4475 1900 50  0000 C CNN
-F 2 "Resistor_THT:R_Axial_DIN0309_L9.0mm_D3.2mm_P12.70mm_Horizontal" V 4455 1700 50  0001 C CNN
-F 3 "https://www.mouser.se/datasheet/2/219/MF-MFS-RK-18760.pdf" H 4525 1700 50  0001 C CNN
-F 4 "" H 4525 1700 50  0001 C CNN "MPN"
-	1    4525 1700
-	0    1    1    0   
-$EndComp
 Wire Wire Line
 	5025 2600 4850 2600
 Wire Wire Line
@@ -3865,4 +3649,6 @@ Wire Wire Line
 	5275 4975 3775 4975
 Wire Wire Line
 	3775 4975 3775 4300
+Text Notes 4275 2475 0    50   ~ 0
+4 * 0.5 = 2V
 $EndSCHEMATC
