@@ -23,3 +23,5 @@ Revision 3:
     - Changed current limiting circuit
     - Removed RC filter on VReg output
     - Moved buffer in current sense amplifier to before the ADC inputs
+    - Single 2W SMD shunt resistor
+    - Incrased shunt resistance to 500mΩ from 100mΩ
