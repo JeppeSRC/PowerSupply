@@ -5,7 +5,7 @@ Regulator spec:
     - Current Precision:    10mA
 
 Notes:
-    Input voltage: 20.5V-24V
+    Input voltage: 22.5V-24V
 
 Display Layout:
     SET 0.00V 0.00A
