@@ -4,7 +4,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A3 16535 11693
 encoding utf-8
-Sheet 1 1
+Sheet 1 5
 Title "PowerSupply"
 Date ""
 Rev "1.0"
@@ -721,63 +721,6 @@ Wire Wire Line
 	3575 2800 3375 2800
 Connection ~ 3375 2600
 $Comp
-L symbols:FQP17P10 U?
-U 1 1 5EAA86F0
-P 5775 2000
-AR Path="/5EAA86F0" Ref="U?"  Part="1" 
-AR Path="/5CA4A3FE/5EAA86F0" Ref="U?"  Part="1" 
-F 0 "U?" V 6018 2000 50  0000 C CNN
-F 1 "FQP17P10" V 5927 2000 50  0000 C CNN
-F 2 "Package_TO_SOT_THT:TO-220-3_Vertical" H 5725 2000 50  0001 C CNN
-F 3 "https://www.mouser.se/datasheet/2/308/FQP17P10-1296917.pdf" H 5725 2000 50  0001 C CNN
-F 4 "FQP17P10" H 5775 2000 50  0001 C CNN "MPN"
-	1    5775 2000
-	0    1    -1   0   
-$EndComp
-$Comp
-L symbols:FQP17P10 U?
-U 1 1 5EAA86F7
-P 5775 2600
-AR Path="/5EAA86F7" Ref="U?"  Part="1" 
-AR Path="/5CA4A3FE/5EAA86F7" Ref="U?"  Part="1" 
-F 0 "U?" V 6018 2600 50  0000 C CNN
-F 1 "FQP17P10" V 5927 2600 50  0000 C CNN
-F 2 "Package_TO_SOT_THT:TO-220-3_Vertical" H 5725 2600 50  0001 C CNN
-F 3 "https://www.mouser.se/datasheet/2/308/FQP17P10-1296917.pdf" H 5725 2600 50  0001 C CNN
-F 4 "FQP17P10" H 5775 2600 50  0001 C CNN "MPN"
-	1    5775 2600
-	0    1    -1   0   
-$EndComp
-$Comp
-L symbols:FQP17P10 U?
-U 1 1 5EAA86FE
-P 5775 3200
-AR Path="/5EAA86FE" Ref="U?"  Part="1" 
-AR Path="/5CA4A3FE/5EAA86FE" Ref="U?"  Part="1" 
-F 0 "U?" V 6018 3200 50  0000 C CNN
-F 1 "FQP17P10" V 5927 3200 50  0000 C CNN
-F 2 "Package_TO_SOT_THT:TO-220-3_Vertical" H 5725 3200 50  0001 C CNN
-F 3 "https://www.mouser.se/datasheet/2/308/FQP17P10-1296917.pdf" H 5725 3200 50  0001 C CNN
-F 4 "FQP17P10" H 5775 3200 50  0001 C CNN "MPN"
-	1    5775 3200
-	0    1    -1   0   
-$EndComp
-Wire Wire Line
-	5575 2000 5475 2000
-Wire Wire Line
-	5475 2600 5575 2600
-Wire Wire Line
-	5475 2600 5475 3200
-Wire Wire Line
-	5475 3200 5575 3200
-Connection ~ 5475 2600
-Wire Wire Line
-	5975 3200 6125 3200
-Wire Wire Line
-	5975 2000 6125 2000
-Wire Wire Line
-	5475 2000 5475 2600
-$Comp
 L Device:CP_Small C?
 U 1 1 5EAA8715
 P 5025 2700
@@ -807,86 +750,6 @@ F 4 "GRM21BR6YA106KE43L" H 6575 2700 50  0001 C CNN "MPN"
 $EndComp
 Connection ~ 6575 2600
 $Comp
-L Mechanical:Heatsink HS?
-U 1 1 5EAA8725
-P 5100 800
-AR Path="/5CA4A3FE/5EAA8725" Ref="HS?"  Part="1" 
-AR Path="/5EAA8725" Ref="HS?"  Part="1" 
-F 0 "HS?" H 5241 921 50  0000 L CNN
-F 1 "RA-T2X-xxE" H 5241 830 50  0000 L CNN
-F 2 "footprints:RA-T2X-xxE" H 5112 800 50  0001 C CNN
-F 3 "~" H 5112 800 50  0001 C CNN
-F 4 "RA-T2X-25E" H 5100 800 50  0001 C CNN "MPN"
-	1    5100 800 
-	1    0    0    -1  
-$EndComp
-$Comp
-L Mechanical:Heatsink HS?
-U 1 1 5EAA872C
-P 5900 800
-AR Path="/5CA4A3FE/5EAA872C" Ref="HS?"  Part="1" 
-AR Path="/5EAA872C" Ref="HS?"  Part="1" 
-F 0 "HS?" H 6041 921 50  0000 L CNN
-F 1 "RA-T2X-xxE" H 6041 830 50  0000 L CNN
-F 2 "footprints:RA-T2X-xxE" H 5912 800 50  0001 C CNN
-F 3 "~" H 5912 800 50  0001 C CNN
-F 4 "RA-T2X-25E" H 5900 800 50  0001 C CNN "MPN"
-	1    5900 800 
-	1    0    0    -1  
-$EndComp
-$Comp
-L Mechanical:Heatsink HS?
-U 1 1 5EAA8733
-P 6700 800
-AR Path="/5CA4A3FE/5EAA8733" Ref="HS?"  Part="1" 
-AR Path="/5EAA8733" Ref="HS?"  Part="1" 
-F 0 "HS?" H 6841 921 50  0000 L CNN
-F 1 "RA-T2X-xxE" H 6841 830 50  0000 L CNN
-F 2 "footprints:RA-T2X-xxE" H 6712 800 50  0001 C CNN
-F 3 "~" H 6712 800 50  0001 C CNN
-F 4 "RA-T2X-25E" H 6700 800 50  0001 C CNN "MPN"
-	1    6700 800 
-	1    0    0    -1  
-$EndComp
-$Comp
-L Mechanical:Heatsink HS?
-U 1 1 5EAA873A
-P 7500 800
-AR Path="/5CA4A3FE/5EAA873A" Ref="HS?"  Part="1" 
-AR Path="/5EAA873A" Ref="HS?"  Part="1" 
-F 0 "HS?" H 7641 921 50  0000 L CNN
-F 1 "RA-T2X-xxE" H 7641 830 50  0000 L CNN
-F 2 "footprints:RA-T2X-xxE" H 7512 800 50  0001 C CNN
-F 3 "~" H 7512 800 50  0001 C CNN
-F 4 "RA-T2X-25E" H 7500 800 50  0001 C CNN "MPN"
-	1    7500 800 
-	1    0    0    -1  
-$EndComp
-Connection ~ 6125 2000
-Wire Wire Line
-	6125 1400 6125 2000
-Wire Wire Line
-	5975 1400 6125 1400
-Connection ~ 5475 2000
-Wire Wire Line
-	5475 2000 5475 1400
-Wire Wire Line
-	5475 1400 5575 1400
-$Comp
-L symbols:FQP17P10 U?
-U 1 1 5EAA8747
-P 5775 1400
-AR Path="/5EAA8747" Ref="U?"  Part="1" 
-AR Path="/5CA4A3FE/5EAA8747" Ref="U?"  Part="1" 
-F 0 "U?" V 6018 1400 50  0000 C CNN
-F 1 "FQP17P10" V 5927 1400 50  0000 C CNN
-F 2 "Package_TO_SOT_THT:TO-220-3_Vertical" H 5725 1400 50  0001 C CNN
-F 3 "https://www.mouser.se/datasheet/2/308/FQP17P10-1296917.pdf" H 5725 1400 50  0001 C CNN
-F 4 "FQP17P10" H 5775 1400 50  0001 C CNN "MPN"
-	1    5775 1400
-	0    1    -1   0   
-$EndComp
-$Comp
 L power:GNDA #PWR?
 U 1 1 5EAA874D
 P 6575 2800
@@ -911,34 +774,6 @@ F 2 "" H 5025 2800 50  0001 C CNN
 F 3 "" H 5025 2800 50  0001 C CNN
 	1    5025 2800
 	1    0    0    -1  
-$EndComp
-$Comp
-L Device:R R?
-U 1 1 5EAA875A
-P 5775 3600
-AR Path="/5CA4A3FE/5EAA875A" Ref="R?"  Part="1" 
-AR Path="/5EAA875A" Ref="R?"  Part="1" 
-F 0 "R?" H 5705 3554 50  0000 R CNN
-F 1 "100R" H 5705 3645 50  0000 R CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 5705 3600 50  0001 C CNN
-F 3 "~" H 5775 3600 50  0001 C CNN
-F 4 "RT0805FRE07100RL" H 5775 3600 50  0001 C CNN "MPN"
-	1    5775 3600
-	1    0    0    1   
-$EndComp
-$Comp
-L Device:R R?
-U 1 1 5EAA8773
-P 6100 3600
-AR Path="/5CA4A3FE/5EAA8773" Ref="R?"  Part="1" 
-AR Path="/5EAA8773" Ref="R?"  Part="1" 
-F 0 "R?" H 6170 3646 50  0000 L CNN
-F 1 "100R" H 6170 3555 50  0000 L CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 6030 3600 50  0001 C CNN
-F 3 "~" H 6100 3600 50  0001 C CNN
-F 4 "RT0805FRE07100RL" H 6100 3600 50  0001 C CNN "MPN"
-	1    6100 3600
-	-1   0    0    -1  
 $EndComp
 $Comp
 L Device:CP_Small C?
@@ -1039,7 +874,6 @@ Wire Wire Line
 Connection ~ 7125 2400
 Wire Wire Line
 	7125 2400 7625 2400
-Connection ~ 5025 2600
 Wire Wire Line
 	7325 5575 7525 5575
 Wire Wire Line
@@ -3069,82 +2903,11 @@ F 3 "" H 3125 2600 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	3125 2600 3375 2600
-$Comp
-L Device:R R?
-U 1 1 5EE686F1
-P 6425 3600
-AR Path="/5CA4A3FE/5EE686F1" Ref="R?"  Part="1" 
-AR Path="/5EE686F1" Ref="R?"  Part="1" 
-F 0 "R?" H 6495 3646 50  0000 L CNN
-F 1 "100R" H 6495 3555 50  0000 L CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 6355 3600 50  0001 C CNN
-F 3 "~" H 6425 3600 50  0001 C CNN
-F 4 "RT0805FRE07100RL" H 6425 3600 50  0001 C CNN "MPN"
-	1    6425 3600
-	-1   0    0    -1  
-$EndComp
-$Comp
-L Device:R R?
-U 1 1 5EE68ED8
-P 6750 3600
-AR Path="/5CA4A3FE/5EE68ED8" Ref="R?"  Part="1" 
-AR Path="/5EE68ED8" Ref="R?"  Part="1" 
-F 0 "R?" H 6820 3646 50  0000 L CNN
-F 1 "100R" H 6820 3555 50  0000 L CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 6680 3600 50  0001 C CNN
-F 3 "~" H 6750 3600 50  0001 C CNN
-F 4 "RT0805FRE07100RL" H 6750 3600 50  0001 C CNN "MPN"
-	1    6750 3600
-	-1   0    0    -1  
-$EndComp
-Wire Wire Line
-	5775 3750 6100 3750
-Connection ~ 6100 3750
-Wire Wire Line
-	6100 3750 6425 3750
-Connection ~ 6425 3750
-Wire Wire Line
-	6425 3750 6750 3750
-Wire Wire Line
-	6100 3450 6200 3450
-Wire Wire Line
-	6200 3450 6200 2850
-Wire Wire Line
-	6200 2850 5775 2850
-Wire Wire Line
-	6425 3450 6250 3450
-Wire Wire Line
-	6250 3450 6250 2250
-Wire Wire Line
-	6250 2250 5775 2250
-Wire Wire Line
-	6750 3450 6750 3400
-Wire Wire Line
-	6750 3400 6300 3400
-Wire Wire Line
-	6300 3400 6300 1650
-Wire Wire Line
-	6300 1650 5775 1650
-Wire Wire Line
-	6125 2000 6125 3200
-Wire Wire Line
-	5975 2600 6400 2600
 Connection ~ 7475 4925
 Wire Wire Line
 	4375 4400 4675 4400
 Wire Wire Line
 	5500 5475 5500 5025
-Wire Wire Line
-	6500 5025 6500 3875
-Wire Wire Line
-	6500 3875 6875 3875
-Wire Wire Line
-	6875 3875 6875 3325
-Wire Wire Line
-	6875 3325 6400 3325
-Wire Wire Line
-	6400 3325 6400 2600
-Connection ~ 6400 2600
 Wire Wire Line
 	6400 2600 6575 2600
 Wire Wire Line
@@ -3156,9 +2919,7 @@ Wire Wire Line
 Wire Wire Line
 	5400 6525 5400 4950
 Wire Wire Line
-	5400 4950 6100 4950
-Wire Wire Line
-	6100 4950 6100 3750
+	5400 4950 6150 4950
 Wire Wire Line
 	5400 6525 5650 6525
 Wire Wire Line
@@ -3442,8 +3203,6 @@ F 4 "PCF0805R-82K5BT1" H 4825 3650 50  0001 C CNN "MPN"
 	1    4825 3650
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	5025 2600 5475 2600
 Text Label 8125 2600 2    50   ~ 0
 Vout
 $Comp
@@ -3508,8 +3267,6 @@ Connection ~ 6100 5575
 Connection ~ 6275 5575
 Wire Wire Line
 	6275 5575 6275 5725
-Wire Wire Line
-	5500 5025 6500 5025
 Wire Wire Line
 	6775 5575 6575 5575
 Wire Wire Line
@@ -3712,4 +3469,100 @@ F 3 "https://www.mouser.se/datasheet/2/308/SS13HE-D-1814993.pdf" H 1425 2675 50 
 	1    1425 2675
 	1    0    0    -1  
 $EndComp
+$Sheet
+S 5450 2075 575  250 
+U 5EE5D0E4
+F0 "PassFet2" 50
+F1 "passfet.sch" 50
+F2 "Gate" U R 6025 2250 50 
+F3 "Source" U R 6025 2150 50 
+F4 "Drain" U L 5450 2150 50 
+$EndSheet
+$Sheet
+S 5450 2525 575  250 
+U 5EF07313
+F0 "PassFet1" 50
+F1 "passfet.sch" 50
+F2 "Gate" U R 6025 2700 50 
+F3 "Source" U R 6025 2600 50 
+F4 "Drain" U L 5450 2600 50 
+$EndSheet
+Wire Wire Line
+	5025 2600 5325 2600
+Connection ~ 5025 2600
+$Sheet
+S 5450 1650 575  250 
+U 5EF37B1F
+F0 "PassFet3" 50
+F1 "passfet.sch" 50
+F2 "Gate" U R 6025 1825 50 
+F3 "Source" U R 6025 1725 50 
+F4 "Drain" U L 5450 1725 50 
+$EndSheet
+$Sheet
+S 5450 1225 575  250 
+U 5EF4F686
+F0 "PassFet4" 50
+F1 "passfet.sch" 50
+F2 "Gate" U R 6025 1400 50 
+F3 "Source" U R 6025 1300 50 
+F4 "Drain" U L 5450 1300 50 
+$EndSheet
+Wire Wire Line
+	5325 2600 5325 2150
+Wire Wire Line
+	5325 2150 5450 2150
+Connection ~ 5325 2600
+Wire Wire Line
+	5325 2600 5450 2600
+Wire Wire Line
+	5325 2150 5325 1725
+Wire Wire Line
+	5325 1725 5450 1725
+Connection ~ 5325 2150
+Wire Wire Line
+	5325 1725 5325 1300
+Wire Wire Line
+	5325 1300 5450 1300
+Connection ~ 5325 1725
+Wire Wire Line
+	6025 2600 6400 2600
+Connection ~ 6400 2600
+Wire Wire Line
+	6025 2150 6400 2150
+Wire Wire Line
+	6400 2150 6400 2600
+Wire Wire Line
+	6400 2150 6400 1725
+Wire Wire Line
+	6400 1725 6025 1725
+Connection ~ 6400 2150
+Wire Wire Line
+	6025 1300 6400 1300
+Wire Wire Line
+	6400 1300 6400 1725
+Connection ~ 6400 1725
+Wire Wire Line
+	6025 1400 6150 1400
+Wire Wire Line
+	6150 1400 6150 1825
+Wire Wire Line
+	6150 1825 6025 1825
+Wire Wire Line
+	6150 1825 6150 2250
+Wire Wire Line
+	6150 2250 6025 2250
+Connection ~ 6150 1825
+Wire Wire Line
+	6150 2250 6150 2700
+Wire Wire Line
+	6150 2700 6025 2700
+Connection ~ 6150 2250
+Connection ~ 6150 2700
+Wire Wire Line
+	6150 2700 6150 4950
+Wire Wire Line
+	5500 5025 6400 5025
+Wire Wire Line
+	6400 2600 6400 5025
 $EndSCHEMATC
