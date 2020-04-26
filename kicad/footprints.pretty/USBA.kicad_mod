@@ -1,4 +1,4 @@
-(module USBA (layer F.Cu) (tedit 5D693EE8)
+(module USBA (layer F.Cu) (tedit 5EA581C8)
   (descr "Pretty standard USBA footprint")
   (tags "USB USBA")
   (fp_text reference REF** (at 7 -0.25) (layer F.SilkS)
@@ -21,4 +21,9 @@
   (pad 2 thru_hole circle (at 12.99 -1) (size 1.5 1.5) (drill 1) (layers *.Cu *.Mask))
   (pad 3 thru_hole circle (at 12.99 1) (size 1.5 1.5) (drill 1) (layers *.Cu *.Mask))
   (pad 4 thru_hole circle (at 12.99 3.5) (size 1.5 1.5) (drill 1) (layers *.Cu *.Mask))
+  (model ${KIPRJMOD}/footprints.pretty/SS-52100-001.step
+    (offset (xyz 10.28 0 0))
+    (scale (xyz 1 1 1))
+    (rotate (xyz -90 0 90))
+  )
 )
