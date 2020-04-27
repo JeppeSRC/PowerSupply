@@ -55,11 +55,6 @@ Text Label 5925 1975 2    50   ~ 0
 VREFSD
 Text Label 5200 1300 0    50   ~ 0
 NRST
-Wire Wire Line
-	6525 1375 6625 1375
-Connection ~ 6625 1375
-Wire Wire Line
-	6625 1375 6725 1375
 Text Label 7325 3975 0    50   ~ 0
 OUTPUT_ON
 Wire Wire Line
@@ -226,7 +221,6 @@ F 3 "" H 6825 4475 50  0001 C CNN
 	1    6825 4475
 	1    0    0    -1  
 $EndComp
-Connection ~ 6825 4475
 Text Notes 4675 2525 0    50   ~ 0
 Crystal Load Capacitance = 15pF\nPCB, MCU ~10pF
 $Comp
@@ -279,8 +273,6 @@ Wire Wire Line
 	4250 1725 4250 1775
 Wire Wire Line
 	4250 1775 4350 1775
-Text Label 7325 4175 0    50   ~ 0
-CAP_DISCHARGE
 Text Label 5925 3675 2    50   ~ 0
 Iread
 Text Label 7325 3175 0    50   ~ 0
@@ -1743,85 +1735,6 @@ Wire Wire Line
 Wire Wire Line
 	10375 2225 10425 2225
 $Comp
-L Device:Q_NMOS_GSD Q?
-U 1 1 5F4582BA
-P 10175 2775
-AR Path="/5CA214F9/5F4582BA" Ref="Q?"  Part="1" 
-AR Path="/5F4582BA" Ref="Q?"  Part="1" 
-AR Path="/5F1751CC/5F4582BA" Ref="Q?"  Part="1" 
-F 0 "Q?" V 10518 2775 50  0000 C CNN
-F 1 "2N7002NXAK" V 10427 2775 50  0000 C CNN
-F 2 "Package_TO_SOT_SMD:SOT-23" H 10375 2875 50  0001 C CNN
-F 3 "https://assets.nexperia.com/documents/data-sheet/2N7002NXAK.pdf" H 10175 2775 50  0001 C CNN
-F 4 "2N7002NXAK" V 10175 2775 50  0001 C CNN "MPN"
-	1    10175 2775
-	0    -1   -1   0   
-$EndComp
-$Comp
-L Device:R R?
-U 1 1 5F4582C0
-P 10375 3025
-AR Path="/5CA214F9/5F4582C0" Ref="R?"  Part="1" 
-AR Path="/5F4582C0" Ref="R?"  Part="1" 
-AR Path="/5F1751CC/5F4582C0" Ref="R?"  Part="1" 
-F 0 "R?" V 10168 3025 50  0000 C CNN
-F 1 "1K" V 10259 3025 50  0000 C CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 10305 3025 50  0001 C CNN
-F 3 "~" H 10375 3025 50  0001 C CNN
-	1    10375 3025
-	0    1    1    0   
-$EndComp
-Wire Wire Line
-	10175 2975 10175 3025
-Wire Wire Line
-	10175 3025 10225 3025
-$Comp
-L power:GNDREF #PWR?
-U 1 1 5F4582C8
-P 10375 2675
-AR Path="/5CA214F9/5F4582C8" Ref="#PWR?"  Part="1" 
-AR Path="/5F4582C8" Ref="#PWR?"  Part="1" 
-AR Path="/5F1751CC/5F4582C8" Ref="#PWR0148"  Part="1" 
-F 0 "#PWR0148" H 10375 2425 50  0001 C CNN
-F 1 "GNDREF" V 10380 2547 50  0001 R CNN
-F 2 "" H 10375 2675 50  0001 C CNN
-F 3 "" H 10375 2675 50  0001 C CNN
-	1    10375 2675
-	0    -1   -1   0   
-$EndComp
-Text Label 10525 3025 0    50   ~ 0
-CAP_DISCHARGE
-$Comp
-L Device:R R?
-U 1 1 5F4582CF
-P 9775 2675
-AR Path="/5CA214F9/5F4582CF" Ref="R?"  Part="1" 
-AR Path="/5F4582CF" Ref="R?"  Part="1" 
-AR Path="/5F1751CC/5F4582CF" Ref="R?"  Part="1" 
-F 0 "R?" V 9568 2675 50  0000 C CNN
-F 1 "100R" V 9659 2675 50  0000 C CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 9705 2675 50  0001 C CNN
-F 3 "~" H 9775 2675 50  0001 C CNN
-	1    9775 2675
-	0    1    1    0   
-$EndComp
-$Comp
-L Device:R R?
-U 1 1 5F4582D5
-P 9475 2675
-AR Path="/5CA214F9/5F4582D5" Ref="R?"  Part="1" 
-AR Path="/5F4582D5" Ref="R?"  Part="1" 
-AR Path="/5F1751CC/5F4582D5" Ref="R?"  Part="1" 
-F 0 "R?" V 9268 2675 50  0000 C CNN
-F 1 "100R" V 9359 2675 50  0000 C CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 9405 2675 50  0001 C CNN
-F 3 "~" H 9475 2675 50  0001 C CNN
-	1    9475 2675
-	0    1    1    0   
-$EndComp
-Wire Wire Line
-	9925 2675 9975 2675
-$Comp
 L power:GND #PWR?
 U 1 1 5F49FACB
 P 2375 5650
@@ -2289,4 +2202,8 @@ F 3 "" H 1625 5650 50  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 Connection ~ 1625 5650
+Wire Wire Line
+	6625 1375 6725 1375
+Connection ~ 6825 4475
+NoConn ~ 7325 4175
 $EndSCHEMATC
