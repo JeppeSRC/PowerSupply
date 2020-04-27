@@ -1165,10 +1165,6 @@ F 3 "~" H 1700 4950 50  0001 C CNN
 	-1   0    0    1   
 $EndComp
 Wire Wire Line
-	1500 5050 1400 5050
-Wire Wire Line
-	1400 5050 1400 5325
-Wire Wire Line
 	775  4950 775  4850
 $Comp
 L power:+12V #PWR?
@@ -1200,49 +1196,41 @@ Connection ~ 775  4850
 Wire Wire Line
 	775  4850 775  4625
 Wire Wire Line
-	1500 4950 775  4950
-Wire Wire Line
-	1075 4850 1075 5000
-Connection ~ 1075 4850
-Wire Wire Line
 	1075 4850 1500 4850
 $Comp
 L Device:R R?
 U 1 1 5F2DCC1A
-P 1075 5150
+P 1325 5250
 AR Path="/5F2DCC1A" Ref="R?"  Part="1" 
 AR Path="/5F1751CC/5F2DCC1A" Ref="R?"  Part="1" 
-F 0 "R?" H 1000 5200 50  0000 R CNN
-F 1 "10K" H 1000 5100 50  0000 R CNN
-F 2 "" V 1005 5150 50  0001 C CNN
-F 3 "~" H 1075 5150 50  0001 C CNN
-	1    1075 5150
+F 0 "R?" H 1250 5300 50  0000 R CNN
+F 1 "10K" H 1250 5200 50  0000 R CNN
+F 2 "" V 1255 5250 50  0001 C CNN
+F 3 "~" H 1325 5250 50  0001 C CNN
+	1    1325 5250
 	1    0    0    -1  
 $EndComp
 $Comp
 L Device:R R?
 U 1 1 5F2DCC20
-P 1250 5325
+P 1475 5650
 AR Path="/5F2DCC20" Ref="R?"  Part="1" 
 AR Path="/5F1751CC/5F2DCC20" Ref="R?"  Part="1" 
-F 0 "R?" V 1075 5325 50  0000 C CNN
-F 1 "5K" V 1150 5325 50  0000 C CNN
-F 2 "" V 1180 5325 50  0001 C CNN
-F 3 "~" H 1250 5325 50  0001 C CNN
-	1    1250 5325
+F 0 "R?" V 1300 5650 50  0000 C CNN
+F 1 "5K" V 1375 5650 50  0000 C CNN
+F 2 "" V 1405 5650 50  0001 C CNN
+F 3 "~" H 1475 5650 50  0001 C CNN
+	1    1475 5650
 	0    1    1    0   
 $EndComp
-Connection ~ 1400 5325
 Wire Wire Line
-	1400 5325 1400 5600
+	1325 5650 1325 5425
 Wire Wire Line
-	1100 5325 1075 5325
+	1325 5425 1325 5400
 Wire Wire Line
-	1075 5325 1075 5300
-Wire Wire Line
-	1075 5325 650  5325
-Connection ~ 1075 5325
-Text Label 650  5325 0    50   ~ 0
+	1325 5425 900  5425
+Connection ~ 1325 5425
+Text Label 900  5425 0    50   ~ 0
 FAN_RPM
 $Comp
 L Device:Q_NMOS_GSD Q?
@@ -1835,19 +1823,6 @@ Wire Wire Line
 	9925 2675 9975 2675
 $Comp
 L power:GND #PWR?
-U 1 1 5F49ADD0
-P 1400 5600
-AR Path="/5F3D442D/5F49ADD0" Ref="#PWR?"  Part="1" 
-AR Path="/5F1751CC/5F49ADD0" Ref="#PWR0149"  Part="1" 
-F 0 "#PWR0149" H 1400 5350 50  0001 C CNN
-F 1 "GND" H 1405 5427 50  0000 C CNN
-F 2 "" H 1400 5600 50  0001 C CNN
-F 3 "" H 1400 5600 50  0001 C CNN
-	1    1400 5600
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR?
 U 1 1 5F49FACB
 P 2375 5650
 AR Path="/5F3D442D/5F49FACB" Ref="#PWR?"  Part="1" 
@@ -2267,4 +2242,51 @@ Wire Wire Line
 Connection ~ 5225 5275
 Text Label 7325 1975 0    50   ~ 0
 TEMP
+$Comp
+L Device:D_Schottky D?
+U 1 1 5EFEDF6E
+P 925 5050
+AR Path="/5EFEDF6E" Ref="D?"  Part="1" 
+AR Path="/5F3D442D/5EFEDF6E" Ref="D?"  Part="1" 
+AR Path="/5F1751CC/5EFEDF6E" Ref="D?"  Part="1" 
+F 0 "D?" H 925 5266 50  0000 C CNN
+F 1 "SS16HE" H 925 5175 50  0000 C CNN
+F 2 "Diode_SMD:D_SOD-323_HandSoldering" H 925 5050 50  0001 C CNN
+F 3 "https://www.mouser.se/datasheet/2/308/SS13HE-D-1814993.pdf" H 925 5050 50  0001 C CNN
+	1    925  5050
+	1    0    0    1   
+$EndComp
+Wire Wire Line
+	775  4950 1500 4950
+Wire Wire Line
+	1325 5050 1325 5100
+Wire Wire Line
+	1325 5050 1500 5050
+Wire Wire Line
+	775  5050 775  4950
+Connection ~ 775  4950
+Wire Wire Line
+	1075 5050 1325 5050
+Connection ~ 1325 5050
+Wire Wire Line
+	1500 5050 1500 5350
+Wire Wire Line
+	1500 5350 1625 5350
+Wire Wire Line
+	1625 5350 1625 5650
+Connection ~ 1500 5050
+$Comp
+L power:GND #PWR?
+U 1 1 5F04F8C3
+P 1625 5650
+AR Path="/5F3D442D/5F04F8C3" Ref="#PWR?"  Part="1" 
+AR Path="/5F1751CC/5F04F8C3" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 1625 5400 50  0001 C CNN
+F 1 "GND" H 1630 5477 50  0000 C CNN
+F 2 "" H 1625 5650 50  0001 C CNN
+F 3 "" H 1625 5650 50  0001 C CNN
+	1    1625 5650
+	0    -1   -1   0   
+$EndComp
+Connection ~ 1625 5650
 $EndSCHEMATC
