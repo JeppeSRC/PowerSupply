@@ -14,7 +14,6 @@ Revision 2:
 
 Revision 3:
     - Removed 2 resistors for LCD backlight
-	- MOSFET that can be toggled to discharge caps when voltage changes
 	- C_LIMIT and OUTPUT_ON LEDS to be driven by a nfet (2N7002NXAK) from VDD
 	- Increase output capacitance
 	- Increase input capacitance
@@ -24,4 +23,5 @@ Revision 3:
     - Removed RC filter on VReg output
     - Moved buffer in current sense amplifier to before the ADC inputs
     - Single 2W SMD shunt resistor
-    
+    - Added heatsink temperature sensor
+    - Caps will be discharged to set value + 0.5%
