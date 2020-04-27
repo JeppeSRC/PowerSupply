@@ -1,2 +1,2 @@
 # PowerSupply
-Software for a power supply
+Software, schematic and layout for kind of a PSU
