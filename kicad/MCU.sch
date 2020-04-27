@@ -308,7 +308,6 @@ Wire Wire Line
 Wire Wire Line
 	5775 1575 5925 1575
 Connection ~ 5400 1300
-NoConn ~ 7325 1975
 Text Label 7325 4275 0    50   ~ 0
 FAN_PWM
 Text Label 7325 3675 0    50   ~ 0
@@ -2176,4 +2175,96 @@ Text GLabel 7575 3275 2    50   UnSpc ~ 0
 Vread
 Text GLabel 7325 2275 2    50   UnSpc ~ 0
 CLIMIT
+$Comp
+L Sensor_Temperature:MCP9700AT-ETT U?
+U 1 1 5EDC7946
+P 4725 5275
+F 0 "U?" H 4875 5625 50  0000 R CNN
+F 1 "MCP9700A" H 5175 5525 50  0000 R CNN
+F 2 "Package_TO_SOT_THT:TO-92_Inline" H 4725 4875 50  0001 C CNN
+F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/21942e.pdf" H 4575 5525 50  0001 C CNN
+	1    4725 5275
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3V3 #PWR?
+U 1 1 5EDCB846
+P 4725 4975
+F 0 "#PWR?" H 4725 4825 50  0001 C CNN
+F 1 "+3V3" H 4740 5148 50  0000 C CNN
+F 2 "" H 4725 4975 50  0001 C CNN
+F 3 "" H 4725 4975 50  0001 C CNN
+	1    4725 4975
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C_Small C?
+U 1 1 5EDCEFC2
+P 4275 5275
+F 0 "C?" H 4184 5229 50  0000 R CNN
+F 1 "100nF" H 4184 5320 50  0000 R CNN
+F 2 "" H 4275 5275 50  0001 C CNN
+F 3 "~" H 4275 5275 50  0001 C CNN
+	1    4275 5275
+	1    0    0    1   
+$EndComp
+Wire Wire Line
+	4275 5175 4275 4975
+Wire Wire Line
+	4275 4975 4725 4975
+Connection ~ 4725 4975
+Wire Wire Line
+	4725 5575 4275 5575
+Wire Wire Line
+	4275 5575 4275 5375
+$Comp
+L power:GND #PWR?
+U 1 1 5EDDBA91
+P 4725 5575
+F 0 "#PWR?" H 4725 5325 50  0001 C CNN
+F 1 "GND" H 4730 5402 50  0000 C CNN
+F 2 "" H 4725 5575 50  0001 C CNN
+F 3 "" H 4725 5575 50  0001 C CNN
+	1    4725 5575
+	1    0    0    -1  
+$EndComp
+Connection ~ 4725 5575
+$Comp
+L Device:C_Small C?
+U 1 1 5EDE113A
+P 5225 5450
+F 0 "C?" H 5317 5496 50  0000 L CNN
+F 1 "10nF" H 5317 5405 50  0000 L CNN
+F 2 "" H 5225 5450 50  0001 C CNN
+F 3 "~" H 5225 5450 50  0001 C CNN
+	1    5225 5450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5225 5350 5225 5275
+Wire Wire Line
+	5225 5275 5125 5275
+Wire Wire Line
+	5225 5550 5225 5575
+Wire Wire Line
+	5225 5575 4725 5575
+Wire Notes Line width 10
+	3925 4750 3925 5800
+Wire Notes Line width 10
+	3925 5800 5525 5800
+Wire Notes Line width 10
+	5525 5800 5525 4750
+Text Notes 3925 4725 0    50   ~ 10
+Tempsensor
+Wire Notes Line width 10
+	3925 4750 5525 4750
+Text Notes 4625 4725 0    50   ~ 0
+Mount against heatsink
+Text Label 5225 5275 0    50   ~ 0
+TEMP
+Wire Wire Line
+	5225 5275 5400 5275
+Connection ~ 5225 5275
+Text Label 7325 1975 0    50   ~ 0
+TEMP
 $EndSCHEMATC
