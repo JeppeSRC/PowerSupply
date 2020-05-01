@@ -168,3 +168,7 @@
 #define USB_COUNT7_RX ((volatile uint32*)(USB_BTABLE_VALUE + 0x7C)
 #define USB_COUNT7_RX_1 USB_COUNT7_RX
 #define USB_COUNT7_TX_1 USB_COUNT7_RX
+
+#define BLSIZE 0x8000
+#define NUM_BLOCK(x) ((x & 0x1F) << 10)
+#define COUNT_RX(x) (x & 0x3F)
