@@ -88,7 +88,9 @@ void USB::HandleTransfers() {
 			HandleControlTransfers();
 			return;
 		}
-	}
+	} 
+
+
 }
 
 void USB::HandleControlTransfers() {
@@ -288,6 +290,12 @@ void USB::HandleSetAddress(USBSetupData* data) {
 	}
 
 	USB_DADDR |= data->Value & 0x7F;
+
+	USB_ENP1R = ENP1R_DEFAULT;
+
+	USB_ADDR1_RX = ADDR1_RX_OFFSET;
+	USB_ADDR1_TX = ADDR1_TX_OFFSET;
+	USB_COUNT1_RX = ADDR1_RX_SIZE << 9;
 }
 
 void USB::HandleSetConfiguration(USBSetupData* data) {
@@ -375,10 +383,8 @@ void USB::InitializationAfterReset() {
 	USB_DADDR = EF;
 
 	//Endpoint 0 reception buffer setup
-	// 32 Bytes allocated for reception at address 0x20
 	USB_ADDR0_TX = ADDR0_TX_OFFSET;
 	USB_COUNT0_TX = 0;
-	// 32 Bytes allocated for reception at address 0
 	USB_ADDR0_RX = ADDR0_RX_OFFSET;
 	USB_COUNT0_RX = BLSIZE;
 
