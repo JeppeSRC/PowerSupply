@@ -287,15 +287,16 @@ void USB::HandleSetAddress(USBSetupData* data) {
 		deviceState = USBState::Default;
 	} else {
 		deviceState = USBState::Addressed;
+
+		USB_ENP1R = ENP1R_DEFAULT;
+
+		USB_ADDR1_RX = ADDR1_RX_OFFSET;
+		USB_ADDR1_TX = ADDR1_TX_OFFSET;
+		USB_COUNT1_RX = ADDR1_RX_SIZE << 9;
 	}
 
+
 	USB_DADDR |= data->Value & 0x7F;
-
-	USB_ENP1R = ENP1R_DEFAULT;
-
-	USB_ADDR1_RX = ADDR1_RX_OFFSET;
-	USB_ADDR1_TX = ADDR1_TX_OFFSET;
-	USB_COUNT1_RX = ADDR1_RX_SIZE << 9;
 }
 
 void USB::HandleSetConfiguration(USBSetupData* data) {
