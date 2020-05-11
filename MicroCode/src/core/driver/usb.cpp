@@ -414,8 +414,8 @@ void USB::Initialize() {
 	desc.device.DeviceSubClass = 0;
 	desc.device.DeviceProtocol = 0;
 	desc.device.MaxPacketSize0 = 0x20;
-	desc.device.idVendor = 0xB00B;
-	desc.device.idProduct = 0xDEAD;
+	desc.device.idVendor = 0x1209;
+	desc.device.idProduct = 0x0001;
 	desc.device.DeviceVersion = 0x0001;
 	desc.device.Manufacturer = 0;
 	desc.device.Product = 0;
@@ -445,13 +445,13 @@ void USB::Initialize() {
 	desc.endpointOut.Type = DescriptorType::Endpoint;
 	desc.endpointOut.EndpointAddress = 0x01;
 	desc.endpointOut.Attributes = 0x03;
-	desc.endpointOut.MaxPacketSize = 0x80;
+	desc.endpointOut.MaxPacketSize = ADDR1_RX_SIZE;
 	desc.endpointOut.Interval = 10;
 
 	desc.endpointIn.Length = sizeof(USBEndpointDescriptor);
 	desc.endpointIn.Type = DescriptorType::Endpoint;
 	desc.endpointIn.EndpointAddress = 0x01;
 	desc.endpointIn.Attributes = 0x83;
-	desc.endpointIn.MaxPacketSize = 0x80;
+	desc.endpointIn.MaxPacketSize = ADDR1_TX_SIZE;
 	desc.endpointIn.Interval = 10;
 }
