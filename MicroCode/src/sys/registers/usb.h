@@ -201,7 +201,7 @@ enum class DescriptorType : uint8 {
 	InterfacePower = 8
 };
 
-struct USBDeviceDescriptor {
+struct USBDeviceDescriptor { // 18 Bytes
 	uint8 Length;
 	DescriptorType Type;
 	uint16 USBVersion;
@@ -218,7 +218,7 @@ struct USBDeviceDescriptor {
 	uint8 NumConfigurations;
 };
 
-struct USBConfigurationDescriptor {
+struct USBConfigurationDescriptor { //8 Bytes
 	uint8 Length;
 	DescriptorType Type;
 	uint16 TotalLength;
@@ -229,7 +229,7 @@ struct USBConfigurationDescriptor {
 	uint8 MaxPower;
 };
 
-struct USBInterfaceAssociationDescriptor {
+struct USBInterfaceAssociationDescriptor {// 8 Bytes
 	uint8 Length;
 	DescriptorType Type;
 	uint8 FirstInstance;
@@ -240,7 +240,7 @@ struct USBInterfaceAssociationDescriptor {
 	uint8 Function;
 };
 
-struct USBInterfaceDescriptor {
+struct USBInterfaceDescriptor { //9 Bytes
 	uint8 Length;
 	DescriptorType Type;
 	uint8 InterfaceNumber;
@@ -252,7 +252,7 @@ struct USBInterfaceDescriptor {
 	uint8 Interface;
 };
 
-struct USBEndpointDescriptor {
+struct USBEndpointDescriptor { //6 Bytes
 	uint8 Length;
 	DescriptorType Type;
 	uint8 EndpointAddress;

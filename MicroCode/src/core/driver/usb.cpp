@@ -4,7 +4,7 @@
 #include <sys/memory.h>
 
 #define ADDR0_RX_OFFSET 0x00
-#define ADDR0_RX_SIZE	0x40
+#define ADDR0_RX_SIZE	64
 
 #define ADDR0_TX_OFFSET (ADDR0_RX_OFFSET + ADDR0_RX_SIZE)
 #define ADDR0_TX_SIZE   100
@@ -414,7 +414,7 @@ void USB::Initialize() {
 	desc.device.DeviceClass = 0xFF;
 	desc.device.DeviceSubClass = 0;
 	desc.device.DeviceProtocol = 0;
-	desc.device.MaxPacketSize0 = 0x20;
+	desc.device.MaxPacketSize0 = ADDR0_RX_SIZE;
 	desc.device.idVendor = 0x1209;
 	desc.device.idProduct = 0x0001;
 	desc.device.DeviceVersion = 0x0001;
