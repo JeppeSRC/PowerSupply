@@ -2,6 +2,7 @@
 #include <core/driver/display.h>
 #include "sys.h"
 #include "time.h"
+#include <core/driver/usb.h>
 
 void InitializeClock();
 void InitializeFPU();
@@ -20,6 +21,7 @@ void Initialize() {
 	InitializeDAC();
 	InitializeEncoders();
 	//InitializeSDADC();
+	USB::Initialize();
 }
 
 void InitializeClock() {
