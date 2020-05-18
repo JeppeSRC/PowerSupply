@@ -31,7 +31,8 @@ struct USBOutData {
     uint16 iRead : 9;
     uint16 vReadADC : 12;
     uint16 iReadADC : 12;
-    uint8  FanRPM;
+    uint8  FanSpeed;
+    uint16 FanRPM;
     int8   Temperature;
     uint16 TemperatureADC : 12;
     uint16 Attributes;
@@ -46,7 +47,9 @@ struct USBOutData {
 
 `iReadADC`: The current `iRead` 12 bit ADC value.
 
-`FanRPM`: The current RPM of the fan.
+`FanSpeed`: The current speed of the fan.
+
+`FanRPM`: The current fan rpm.
 
 `Temperature`: The current heatsink temperature, ranging from -40 to 125.
 
