@@ -22,6 +22,7 @@ Revision 3:
     - Changed current limiting circuit
     - Removed RC filter on VReg output
     - Moved buffer in current sense amplifier to before the ADC inputs
-    - Single 2W SMD shunt resistor
+    - Single 3W SMD shunt resistor
     - Added heatsink temperature sensor
     - Caps will be discharged to set value + 0.5%
+    - Fan control

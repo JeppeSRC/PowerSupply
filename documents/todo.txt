@@ -1,3 +1,0 @@
-TODO for rev3:
-	- Fix current sense amplifier oscillations
-	- Make more room between encoders
