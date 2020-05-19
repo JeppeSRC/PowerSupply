@@ -1413,27 +1413,10 @@ F 4 "RT0805FRE071KL" H 3125 5100 50  0001 C CNN "MPN"
 $EndComp
 Wire Wire Line
 	2675 5250 3125 5250
-Wire Wire Line
-	2275 5650 2375 5650
 Text Label 2675 5350 0    50   ~ 0
 USB_D-
 Text Label 2675 5250 0    50   ~ 0
 USB_D+
-$Comp
-L Connector:USB_A J?
-U 1 1 5F2B97C1
-P 2375 5250
-AR Path="/5CA214F9/5F2B97C1" Ref="J?"  Part="1" 
-AR Path="/5F2B97C1" Ref="J?"  Part="1" 
-AR Path="/5F1751CC/5F2B97C1" Ref="J?"  Part="1" 
-F 0 "J?" H 2430 5717 50  0000 C CNN
-F 1 "USB_A" H 2430 5626 50  0000 C CNN
-F 2 "footprints:USBA" H 2525 5200 50  0001 C CNN
-F 3 "https://www.mouser.se/datasheet/2/643/bel_SS-52100-001-1216592.pdf" H 2525 5200 50  0001 C CNN
-F 4 "SS-52100-001" H 2375 5250 50  0001 C CNN "MPN"
-	1    2375 5250
-	1    0    0    -1  
-$EndComp
 Wire Notes Line width 10
 	525  5800 2000 5800
 Wire Notes Line width 10
@@ -2158,4 +2141,20 @@ Wire Notes Line width 10
 	11175 600  11175 2325
 Wire Wire Line
 	4750 1775 5925 1775
+$Comp
+L Connector:USB_A J?
+U 1 1 5F2B97C1
+P 2375 5250
+AR Path="/5CA214F9/5F2B97C1" Ref="J?"  Part="1" 
+AR Path="/5F2B97C1" Ref="J?"  Part="1" 
+AR Path="/5F1751CC/5F2B97C1" Ref="J?"  Part="1" 
+F 0 "J?" H 2430 5717 50  0000 C CNN
+F 1 "USB_A" H 2430 5626 50  0000 C CNN
+F 2 "footprints:USBA" H 2525 5200 50  0001 C CNN
+F 3 "https://www.mouser.se/datasheet/2/643/bel_SS-52100-001-1216592.pdf" H 2525 5200 50  0001 C CNN
+F 4 "SS-52100-001" H 2375 5250 50  0001 C CNN "MPN"
+	1    2375 5250
+	1    0    0    -1  
+$EndComp
+NoConn ~ 2275 5650
 $EndSCHEMATC
