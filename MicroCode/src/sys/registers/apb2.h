@@ -1,5 +1,4 @@
-#ifndef SYS_REGISTERS_APB2_H_
-#define SYS_REGISTERS_APB2_H_
+#pragma once
 
 #include <core/def.h>
 
@@ -210,5 +209,3 @@
 
 
 #pragma endregion
-
-#endif

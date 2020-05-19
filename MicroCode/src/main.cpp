@@ -5,30 +5,70 @@
 #include <core/string.h>
 #include <sys/sys.h>
 #include <core/driver/usart.h>
+#include <core/driver/encoder.h>
+#include <core/ui.h>
 
+volatile float vSet = 0;
+volatile float iSet = 0;
+
+volatile uint32 vLast = 0;
+volatile uint32 iLast = 0;
+
+#define CLAMP(x, min, max) ((x) < (min) ? (min) : (x) > (max) ? (max) : (x))
+#define CALC_FACTOR(dif, f) (f / (float)dif)
+#define FACTOR(dif, f) CLAMP(CALC_FACTOR(dif, f), 1.0f, 25.0f)
+
+extern "C" void TIM19_Handler() {
+	uint32 time = Millis();
+	uint32 dif = time - vLast;
+
+	if (TIM19_CR1 & 0x10) {
+		vSet -= 1 * FACTOR(dif, 200);
+	} else {
+		vSet += 1 * FACTOR(dif, 200.0f);
+	}
+
+	ClearPendingInterrupt(78);
+	TIM19_SR &= ~1;
+
+	vLast = time;
+}
+
+extern "C" void TIM4_Handler() {
+	uint32 time = Millis();
+	uint32 dif = time - iLast;
+
+	if (TIM4_CR1 & 0x10) {
+		iSet -= 1 * FACTOR(dif, 200.0f);
+	} else {
+		iSet += 1 * FACTOR(dif, 200.0f);
+	}
+
+	ClearPendingInterrupt(30);
+	TIM4_SR &= ~1;
+
+	iLast = time;
+}
 
 int main() {
 	Initialize();
 
-	uint16 vSet = 0;
-	uint16 iSet = 0;
+	UI::Initialize();
 
-	Display::Print(0x00, "SET 00.00V 0.00A");
-	Display::Print(0x40, "OUT 00.00V 0.00A");
+	EnableInterrupt(78);
+	EnableInterrupt(30);
 
 	while (true) {
-		if (vSet != TIM19_CNT) {
-			DAC2_DHR12R1 = vSet = TIM19_CNT;
+		DelayMicros(1000);
+		
+		vSet = CLAMP(vSet, 50, 2000);
+		iSet = CLAMP(iSet, 10, 400);
 
-			Display::Printf(0x04, "%02U.%02UV", vSet / 100, vSet % 100);
-		}
+		DAC2_DHR12R1 = ((uint32)(vSet * 2.0475f) & 0xFFF);
+		DAC1_DHR12R2 = ((uint32)(iSet * 10.26f) & 0xFFF);
 
-		if (iSet != TIM4_CNT) {
-			DAC1_DHR12R2 = iSet = TIM4_CNT;
-
-			Display::Printf(0x0B, "%01U.%02A", iSet / 100, iSet % 100);
-		}
+		UI::UpdateVISet(vSet, iSet);
 	}
 
-	asm("b .");
+	__asm ("b .");
 }

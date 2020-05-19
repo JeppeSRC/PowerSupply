@@ -1,5 +1,6 @@
-#ifndef CORE_DEF_H_
-#define CORE_DEF_H_
+#pragma once
+
+#define MC_VERSION 0x0001
 
 typedef unsigned char uint8;
 typedef unsigned short uint16;
@@ -15,5 +16,3 @@ typedef signed long long int64;
 #define va_start(list, ap) list = (((va_list)&ap)+sizeof(ap))
 #define va_end(list)
 #define va_arg(list, type) (*(type*)((list += sizeof(type)) - sizeof(type)))
-
-#endif

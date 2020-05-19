@@ -1,4 +1,5 @@
 #include "sys.h"
+#include <core/driver/display.h>
 
 void EnableInterrupts() {
 	asm("cpsid i");
@@ -27,4 +28,9 @@ void ClearPendingInterrupt(uint8 interrupt) {
 void SetInterruptPriority(uint8 interrupt, uint8 priority) {
 	volatile uint8* ip = (uint8*)NVIC_IPR + interrupt;
 	*ip = (*ip & 0) | (priority << 4);
+}
+
+extern "C" void C_Default_Handler() {
+	Display::Clear();
+	Display::Print(0x0, "Default_Handler");
 }

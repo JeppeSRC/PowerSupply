@@ -14,6 +14,11 @@
 #define BFAR (*(volatile uint32*)0xE000ED38)
 #define AFSR (*(volatile uint32*)0xE000ED3C)
 
+#define FPU_CPACR (*(volatile uint32*)0xE000ED88)
+#define FPU_FPCCR (*(volatile uint32*)0xE000EF34)
+#define FPU_FPCAR (*(volatile uint32*)0xE000EF38)
+#define FPU_FPDSCR (*(volatile uint32*)0xE000EF3C)
+
 void EnableInterrupts();
 void DisableInterrupts();
 void EnableInterrupt(uint8 interrupt);

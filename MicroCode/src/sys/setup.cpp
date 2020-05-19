@@ -2,21 +2,26 @@
 #include <core/driver/display.h>
 #include "sys.h"
 #include "time.h"
+#include <core/driver/usb.h>
 
 void InitializeClock();
+void InitializeFPU();
 void InitializeGPIO();
 void InitializeDAC();
 void InitializeSDADC();
 void InitializeEncoders();
+void InitializeUSB();
 
 void Initialize() {
 	InitializeClock();
+	InitializeFPU();
 	InitializeTimers();
 	InitializeGPIO();
 	Display::Initialize();
 	InitializeDAC();
 	InitializeEncoders();
-	InitializeSDADC();
+	//InitializeSDADC();
+	USB::Initialize();
 }
 
 void InitializeClock() {
@@ -44,6 +49,13 @@ void InitializeClock() {
 #if USE_HSE
 	RCC_CR &= ~HSION;
 #endif
+}
+
+void InitializeFPU() {
+	FPU_CPACR |= 0xF00000;
+
+	__asm ("dsb");
+	__asm ("isb");
 }
 
 void InitializeGPIO() {

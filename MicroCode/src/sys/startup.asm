@@ -14,6 +14,7 @@
 .extern _bssstart
 .extern _bssend
 .extern main
+.extern C_Default_Handler
 
 
 .macro IRQ handler
@@ -169,5 +170,6 @@ Main:
 
 .thumb_func
 Default_Handler:
+    bl C_Default_Handler
     b .
 

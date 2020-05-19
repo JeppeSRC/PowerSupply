@@ -1,17 +1,6 @@
-#ifndef CORE_DRIVER_DISPLAY_H_
-#define CORE_DITVER_DISPLAY_H_
+#pragma once
 
 #include <core/def.h>
-
-/*
-void InitializeDisplay();
-void DisplayControl(uint8 displayOn, uint8 cursorOn, uint8 blinkOn);
-void Display::Print(uint8 address, const char* string);
-void Display::Print(uint8 address, const char* string, uint32 length);
-void Display::PrintChar(uint8 address, const char c);
-void Display::Printf(uint8 address, const char* format, ...);
-void DisplayClear();*/
-
 
 class Display {
 private:
@@ -32,4 +21,3 @@ public:
 
 };
 
-#endif

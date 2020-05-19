@@ -1,5 +1,4 @@
-#ifndef SYS_REGISTERS_AHB2_H_
-#define SYS_REGISTERS_AHB2_H_
+#pragma once
 
 #include <core/def.h>
 
@@ -120,4 +119,3 @@
 #define AF14 0x0E
 #define AF15 0x0F
 
-#endif
