@@ -1323,99 +1323,71 @@ F 4 "RT0805FRE071KL" H 5875 7400 50  0001 C CNN "MPN"
 	1    5875 7400
 	0    -1   -1   0   
 $EndComp
-Connection ~ 3275 4650
 Wire Wire Line
-	3475 4650 3275 4650
+	3100 3975 3100 4175
 $Comp
 L Device:C_Small C?
 U 1 1 5F2B97F5
-P 3575 4650
+P 3100 3875
 AR Path="/5CA214F9/5F2B97F5" Ref="C?"  Part="1" 
 AR Path="/5F2B97F5" Ref="C?"  Part="1" 
 AR Path="/5F1751CC/5F2B97F5" Ref="C?"  Part="1" 
-F 0 "C?" V 3346 4650 50  0000 C CNN
-F 1 "10nF" V 3437 4650 50  0000 C CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 3575 4650 50  0001 C CNN
-F 3 "~" H 3575 4650 50  0001 C CNN
-F 4 "CC0805KRX7R0BB103" H 3575 4650 50  0001 C CNN "MPN"
-	1    3575 4650
-	0    1    1    0   
+F 0 "C?" H 2900 3900 50  0000 C CNN
+F 1 "100nF" H 2900 3825 50  0000 C CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 3100 3875 50  0001 C CNN
+F 3 "~" H 3100 3875 50  0001 C CNN
+F 4 "CC0805KRX7R0BB103" H 3100 3875 50  0001 C CNN "MPN"
+	1    3100 3875
+	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	3125 4650 3275 4650
-Connection ~ 3125 4650
-Wire Wire Line
-	2975 4650 3125 4650
-Wire Wire Line
-	3125 4950 2975 4950
-Connection ~ 3125 4950
-Wire Wire Line
-	3275 4950 3125 4950
 $Comp
 L Device:R R?
 U 1 1 5F2B97E8
-P 3275 4800
+P 3300 4250
 AR Path="/5CA214F9/5F2B97E8" Ref="R?"  Part="1" 
 AR Path="/5F2B97E8" Ref="R?"  Part="1" 
 AR Path="/5F1751CC/5F2B97E8" Ref="R?"  Part="1" 
-F 0 "R?" H 3345 4846 50  0000 L CNN
-F 1 "1k" H 3345 4755 50  0000 L CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 3205 4800 50  0001 C CNN
-F 3 "https://www.mouser.se/datasheet/2/447/PYu-RT_1-to-0.01_RoHS_L_9-1222720.pdf" H 3275 4800 50  0001 C CNN
-F 4 "RT0805FRE071KL" H 3275 4800 50  0001 C CNN "MPN"
-	1    3275 4800
-	1    0    0    -1  
+F 0 "R?" V 3225 4200 50  0000 L CNN
+F 1 "1k" V 3300 4200 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 3230 4250 50  0001 C CNN
+F 3 "https://www.mouser.se/datasheet/2/447/PYu-RT_1-to-0.01_RoHS_L_9-1222720.pdf" H 3300 4250 50  0001 C CNN
+F 4 "RT0805FRE071KL" H 3300 4250 50  0001 C CNN "MPN"
+	1    3300 4250
+	0    1    1    0   
 $EndComp
 $Comp
 L Device:R R?
 U 1 1 5F2B97E1
-P 2975 4800
+P 3300 4075
 AR Path="/5CA214F9/5F2B97E1" Ref="R?"  Part="1" 
 AR Path="/5F2B97E1" Ref="R?"  Part="1" 
 AR Path="/5F1751CC/5F2B97E1" Ref="R?"  Part="1" 
-F 0 "R?" H 3045 4846 50  0000 L CNN
-F 1 "1k" H 3045 4755 50  0000 L CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 2905 4800 50  0001 C CNN
-F 3 "https://www.mouser.se/datasheet/2/447/PYu-RT_1-to-0.01_RoHS_L_9-1222720.pdf" H 2975 4800 50  0001 C CNN
-F 4 "RT0805FRE071KL" H 2975 4800 50  0001 C CNN "MPN"
-	1    2975 4800
-	1    0    0    -1  
-$EndComp
-NoConn ~ 2675 5050
-$Comp
-L power:+3V3 #PWR?
-U 1 1 5F2B97D9
-P 3125 4650
-AR Path="/5CA214F9/5F2B97D9" Ref="#PWR?"  Part="1" 
-AR Path="/5F2B97D9" Ref="#PWR?"  Part="1" 
-AR Path="/5F1751CC/5F2B97D9" Ref="#PWR0142"  Part="1" 
-F 0 "#PWR0142" H 3125 4500 50  0001 C CNN
-F 1 "+3V3" H 3140 4823 50  0000 C CNN
-F 2 "" H 3125 4650 50  0001 C CNN
-F 3 "" H 3125 4650 50  0001 C CNN
-	1    3125 4650
-	1    0    0    -1  
+F 0 "R?" V 3225 4025 50  0000 L CNN
+F 1 "1k" V 3300 4025 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 3230 4075 50  0001 C CNN
+F 3 "https://www.mouser.se/datasheet/2/447/PYu-RT_1-to-0.01_RoHS_L_9-1222720.pdf" H 3300 4075 50  0001 C CNN
+F 4 "RT0805FRE071KL" H 3300 4075 50  0001 C CNN "MPN"
+	1    3300 4075
+	0    1    1    0   
 $EndComp
 $Comp
 L Device:R R?
 U 1 1 5F2B97D3
-P 3125 5100
+P 3550 4325
 AR Path="/5CA214F9/5F2B97D3" Ref="R?"  Part="1" 
 AR Path="/5F2B97D3" Ref="R?"  Part="1" 
 AR Path="/5F1751CC/5F2B97D3" Ref="R?"  Part="1" 
-F 0 "R?" H 3195 5146 50  0000 L CNN
-F 1 "1k" H 3195 5055 50  0000 L CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 3055 5100 50  0001 C CNN
-F 3 "https://www.mouser.se/datasheet/2/447/PYu-RT_1-to-0.01_RoHS_L_9-1222720.pdf" H 3125 5100 50  0001 C CNN
-F 4 "RT0805FRE071KL" H 3125 5100 50  0001 C CNN "MPN"
-	1    3125 5100
+F 0 "R?" H 3620 4371 50  0000 L CNN
+F 1 "1k" H 3620 4280 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 3480 4325 50  0001 C CNN
+F 3 "https://www.mouser.se/datasheet/2/447/PYu-RT_1-to-0.01_RoHS_L_9-1222720.pdf" H 3550 4325 50  0001 C CNN
+F 4 "RT0805FRE071KL" H 3550 4325 50  0001 C CNN "MPN"
+	1    3550 4325
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	2675 5250 3125 5250
-Text Label 2675 5350 0    50   ~ 0
+Text Label 4000 5475 3    50   ~ 0
 USB_D-
-Text Label 2675 5250 0    50   ~ 0
+Text Label 4000 4475 1    50   ~ 0
 USB_D+
 Wire Notes Line width 10
 	525  5800 2000 5800
@@ -1485,15 +1457,7 @@ Text Notes 525  3275 0    50   ~ 10
 USART Header
 Wire Notes Line width 10
 	525  3300 525  3825
-Wire Notes Line width 10
-	2100 5800 2100 4350
-Wire Notes Line width 10
-	2100 4350 3825 4350
-Wire Notes Line width 10
-	3825 4350 3825 5800
-Wire Notes Line width 10
-	3825 5800 2100 5800
-Text Notes 2075 4325 0    50   ~ 10
+Text Notes 2150 3550 0    50   ~ 10
 USB Connector
 $Comp
 L power:GNDREF #PWR?
@@ -1678,28 +1642,28 @@ Wire Wire Line
 $Comp
 L power:GND #PWR?
 U 1 1 5F49FACB
-P 2375 5650
+P 2900 5375
 AR Path="/5F3D442D/5F49FACB" Ref="#PWR?"  Part="1" 
 AR Path="/5F1751CC/5F49FACB" Ref="#PWR0150"  Part="1" 
-F 0 "#PWR0150" H 2375 5400 50  0001 C CNN
-F 1 "GND" H 2380 5477 50  0000 C CNN
-F 2 "" H 2375 5650 50  0001 C CNN
-F 3 "" H 2375 5650 50  0001 C CNN
-	1    2375 5650
+F 0 "#PWR0150" H 2900 5125 50  0001 C CNN
+F 1 "GND" H 2905 5202 50  0000 C CNN
+F 2 "" H 2900 5375 50  0001 C CNN
+F 3 "" H 2900 5375 50  0001 C CNN
+	1    2900 5375
 	1    0    0    -1  
 $EndComp
 $Comp
 L power:GND #PWR?
 U 1 1 5F4A460A
-P 3675 4650
+P 3100 3775
 AR Path="/5F3D442D/5F4A460A" Ref="#PWR?"  Part="1" 
 AR Path="/5F1751CC/5F4A460A" Ref="#PWR0151"  Part="1" 
-F 0 "#PWR0151" H 3675 4400 50  0001 C CNN
-F 1 "GND" H 3675 4525 50  0000 C CNN
-F 2 "" H 3675 4650 50  0001 C CNN
-F 3 "" H 3675 4650 50  0001 C CNN
-	1    3675 4650
-	0    -1   -1   0   
+F 0 "#PWR0151" H 3100 3525 50  0001 C CNN
+F 1 "GND" H 3100 3650 50  0000 C CNN
+F 2 "" H 3100 3775 50  0001 C CNN
+F 3 "" H 3100 3775 50  0001 C CNN
+	1    3100 3775
+	-1   0    0    1   
 $EndComp
 $Comp
 L power:GND #PWR?
@@ -1989,93 +1953,71 @@ CLIMIT
 $Comp
 L Sensor_Temperature:MCP9700AT-ETT U?
 U 1 1 5EDC7946
-P 4725 5275
-F 0 "U?" H 4875 5625 50  0000 R CNN
-F 1 "MCP9700A" H 5175 5525 50  0000 R CNN
-F 2 "Package_TO_SOT_THT:TO-92_Inline" H 4725 4875 50  0001 C CNN
-F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/21942e.pdf" H 4575 5525 50  0001 C CNN
-	1    4725 5275
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:+3V3 #PWR?
-U 1 1 5EDCB846
-P 4725 4975
-F 0 "#PWR?" H 4725 4825 50  0001 C CNN
-F 1 "+3V3" H 4740 5148 50  0000 C CNN
-F 2 "" H 4725 4975 50  0001 C CNN
-F 3 "" H 4725 4975 50  0001 C CNN
-	1    4725 4975
+P 5725 5275
+F 0 "U?" H 5875 5625 50  0000 R CNN
+F 1 "MCP9700A" H 6175 5525 50  0000 R CNN
+F 2 "Package_TO_SOT_THT:TO-92_Inline" H 5725 4875 50  0001 C CNN
+F 3 "https://www.mouser.se/datasheet/2/268/20001942G-1820450.pdf" H 5575 5525 50  0001 C CNN
+	1    5725 5275
 	1    0    0    -1  
 $EndComp
 $Comp
 L Device:C_Small C?
 U 1 1 5EDCEFC2
-P 4275 5275
-F 0 "C?" H 4184 5229 50  0000 R CNN
-F 1 "100nF" H 4184 5320 50  0000 R CNN
-F 2 "" H 4275 5275 50  0001 C CNN
-F 3 "~" H 4275 5275 50  0001 C CNN
-	1    4275 5275
+P 5275 5275
+F 0 "C?" H 5184 5229 50  0000 R CNN
+F 1 "100nF" H 5184 5320 50  0000 R CNN
+F 2 "" H 5275 5275 50  0001 C CNN
+F 3 "~" H 5275 5275 50  0001 C CNN
+	1    5275 5275
 	1    0    0    1   
 $EndComp
 Wire Wire Line
-	4275 5175 4275 4975
+	5275 5175 5275 4975
 Wire Wire Line
-	4275 4975 4725 4975
-Connection ~ 4725 4975
+	5275 4975 5725 4975
+Connection ~ 5725 4975
 Wire Wire Line
-	4725 5575 4275 5575
+	5725 5575 5275 5575
 Wire Wire Line
-	4275 5575 4275 5375
+	5275 5575 5275 5375
 $Comp
 L power:GND #PWR?
 U 1 1 5EDDBA91
-P 4725 5575
-F 0 "#PWR?" H 4725 5325 50  0001 C CNN
-F 1 "GND" H 4730 5402 50  0000 C CNN
-F 2 "" H 4725 5575 50  0001 C CNN
-F 3 "" H 4725 5575 50  0001 C CNN
-	1    4725 5575
+P 5725 5575
+F 0 "#PWR?" H 5725 5325 50  0001 C CNN
+F 1 "GND" H 5730 5402 50  0000 C CNN
+F 2 "" H 5725 5575 50  0001 C CNN
+F 3 "" H 5725 5575 50  0001 C CNN
+	1    5725 5575
 	1    0    0    -1  
 $EndComp
-Connection ~ 4725 5575
-$Comp
-L Device:C_Small C?
-U 1 1 5EDE113A
-P 5225 5450
-F 0 "C?" H 5317 5496 50  0000 L CNN
-F 1 "10nF" H 5317 5405 50  0000 L CNN
-F 2 "" H 5225 5450 50  0001 C CNN
-F 3 "~" H 5225 5450 50  0001 C CNN
-	1    5225 5450
-	1    0    0    -1  
-$EndComp
+Connection ~ 5725 5575
 Wire Wire Line
-	5225 5350 5225 5275
+	6225 5350 6225 5275
 Wire Wire Line
-	5225 5275 5125 5275
+	6225 5275 6125 5275
 Wire Wire Line
-	5225 5550 5225 5575
+	6225 5550 6225 5575
 Wire Wire Line
-	5225 5575 4725 5575
+	6225 5575 5725 5575
 Wire Notes Line width 10
-	3925 4750 3925 5800
+	4925 4750 4925 5800
 Wire Notes Line width 10
-	3925 5800 5525 5800
+	4925 5800 6525 5800
 Wire Notes Line width 10
-	5525 5800 5525 4750
-Text Notes 3925 4725 0    50   ~ 10
+	6525 5800 6525 4750
+Text Notes 4925 4725 0    50   ~ 10
 Tempsensor
 Wire Notes Line width 10
-	3925 4750 5525 4750
-Text Notes 4625 4725 0    50   ~ 0
+	4925 4750 6525 4750
+Text Notes 5625 4725 0    50   ~ 0
 Mount against heatsink
-Text Label 5225 5275 0    50   ~ 0
+Text Label 6225 5275 0    50   ~ 0
 TEMP
 Wire Wire Line
-	5225 5275 5400 5275
-Connection ~ 5225 5275
+	6225 5275 6400 5275
+Connection ~ 6225 5275
 Text Label 7325 1975 0    50   ~ 0
 TEMP
 $Comp
@@ -2144,17 +2086,175 @@ Wire Wire Line
 $Comp
 L Connector:USB_A J?
 U 1 1 5F2B97C1
-P 2375 5250
+P 2900 4925
 AR Path="/5CA214F9/5F2B97C1" Ref="J?"  Part="1" 
 AR Path="/5F2B97C1" Ref="J?"  Part="1" 
 AR Path="/5F1751CC/5F2B97C1" Ref="J?"  Part="1" 
-F 0 "J?" H 2430 5717 50  0000 C CNN
-F 1 "USB_A" H 2430 5626 50  0000 C CNN
-F 2 "footprints:USBA" H 2525 5200 50  0001 C CNN
-F 3 "https://www.mouser.se/datasheet/2/643/bel_SS-52100-001-1216592.pdf" H 2525 5200 50  0001 C CNN
-F 4 "SS-52100-001" H 2375 5250 50  0001 C CNN "MPN"
-	1    2375 5250
+F 0 "J?" H 2575 4975 50  0000 C CNN
+F 1 "USB_A" H 2575 4875 50  0000 C CNN
+F 2 "footprints:USBA" H 3050 4875 50  0001 C CNN
+F 3 "https://www.mouser.se/datasheet/2/643/bel_SS-52100-001-1216592.pdf" H 3050 4875 50  0001 C CNN
+F 4 "SS-52100-001" H 2900 4925 50  0001 C CNN "MPN"
+	1    2900 4925
 	1    0    0    -1  
 $EndComp
-NoConn ~ 2275 5650
+NoConn ~ 2800 5325
+Wire Wire Line
+	2900 5325 2900 5375
+$Comp
+L Power_Protection:USBLC6-2SC6 U?
+U 1 1 5EC689B1
+P 3900 4975
+F 0 "U?" V 4225 4650 50  0000 R CNN
+F 1 "USBLC6-2SC6" V 4125 4650 50  0000 R CNN
+F 2 "Package_TO_SOT_SMD:SOT-23-6" H 3150 5375 50  0001 C CNN
+F 3 "https://www.mouser.se/datasheet/2/389/cd00050750-1796222.pdf" H 4100 5325 50  0001 C CNN
+	1    3900 4975
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	3200 4925 3325 4925
+Wire Wire Line
+	3325 4925 3325 4475
+Wire Wire Line
+	3325 4475 3550 4475
+Wire Wire Line
+	3200 5025 3325 5025
+Wire Wire Line
+	3325 5025 3325 5475
+Wire Wire Line
+	3325 5475 3800 5475
+Wire Wire Line
+	3400 4975 3400 4725
+Wire Wire Line
+	3400 4725 3225 4725
+$Comp
+L power:GND #PWR?
+U 1 1 5ED55522
+P 4400 4975
+AR Path="/5F3D442D/5ED55522" Ref="#PWR?"  Part="1" 
+AR Path="/5F1751CC/5ED55522" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 4400 4725 50  0001 C CNN
+F 1 "GND" H 4405 4802 50  0000 C CNN
+F 2 "" H 4400 4975 50  0001 C CNN
+F 3 "" H 4400 4975 50  0001 C CNN
+	1    4400 4975
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 5ED84541
+P 3050 4425
+AR Path="/5CA214F9/5ED84541" Ref="R?"  Part="1" 
+AR Path="/5ED84541" Ref="R?"  Part="1" 
+AR Path="/5F1751CC/5ED84541" Ref="R?"  Part="1" 
+F 0 "R?" H 2900 4375 50  0000 L CNN
+F 1 "1k" H 2900 4475 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 2980 4425 50  0001 C CNN
+F 3 "https://www.mouser.se/datasheet/2/447/PYu-RT_1-to-0.01_RoHS_L_9-1222720.pdf" H 3050 4425 50  0001 C CNN
+F 4 "RT0805FRE071KL" H 3050 4425 50  0001 C CNN "MPN"
+	1    3050 4425
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 5EDCBBA7
+P 2900 4175
+AR Path="/5CA214F9/5EDCBBA7" Ref="R?"  Part="1" 
+AR Path="/5EDCBBA7" Ref="R?"  Part="1" 
+AR Path="/5F1751CC/5EDCBBA7" Ref="R?"  Part="1" 
+F 0 "R?" V 2975 4125 50  0000 L CNN
+F 1 "1k" V 2900 4125 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 2830 4175 50  0001 C CNN
+F 3 "https://www.mouser.se/datasheet/2/447/PYu-RT_1-to-0.01_RoHS_L_9-1222720.pdf" H 2900 4175 50  0001 C CNN
+F 4 "RT0805FRE071KL" H 2900 4175 50  0001 C CNN "MPN"
+	1    2900 4175
+	0    -1   -1   0   
+$EndComp
+Connection ~ 3550 4475
+Wire Wire Line
+	3550 4475 3800 4475
+Wire Wire Line
+	3150 4075 3150 4175
+Connection ~ 3150 4175
+Wire Wire Line
+	3150 4175 3150 4250
+Wire Wire Line
+	3050 4275 3050 4175
+Connection ~ 3050 4175
+Wire Wire Line
+	3050 4175 3100 4175
+Wire Wire Line
+	3050 4575 3225 4575
+Wire Wire Line
+	3225 4575 3225 4725
+Connection ~ 3225 4725
+Wire Wire Line
+	3225 4725 3200 4725
+Wire Wire Line
+	3450 4250 3450 4175
+Wire Wire Line
+	3450 4175 3550 4175
+Connection ~ 3450 4175
+Wire Wire Line
+	3450 4175 3450 4075
+$Comp
+L power:GND #PWR?
+U 1 1 5EE13181
+P 2450 4175
+F 0 "#PWR?" H 2450 3925 50  0001 C CNN
+F 1 "GND" V 2455 4047 50  0000 R CNN
+F 2 "" H 2450 4175 50  0001 C CNN
+F 3 "" H 2450 4175 50  0001 C CNN
+	1    2450 4175
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 5ED848F8
+P 2600 4175
+AR Path="/5CA214F9/5ED848F8" Ref="R?"  Part="1" 
+AR Path="/5ED848F8" Ref="R?"  Part="1" 
+AR Path="/5F1751CC/5ED848F8" Ref="R?"  Part="1" 
+F 0 "R?" V 2675 4125 50  0000 L CNN
+F 1 "1k" V 2600 4125 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 2530 4175 50  0001 C CNN
+F 3 "https://www.mouser.se/datasheet/2/447/PYu-RT_1-to-0.01_RoHS_L_9-1222720.pdf" H 2600 4175 50  0001 C CNN
+F 4 "RT0805FRE071KL" H 2600 4175 50  0001 C CNN "MPN"
+	1    2600 4175
+	0    -1   -1   0   
+$EndComp
+Connection ~ 3100 4175
+Wire Wire Line
+	3100 4175 3150 4175
+Wire Notes Line width 10
+	2150 3575 2150 5800
+Wire Notes Line width 10
+	2150 5800 4800 5800
+Wire Notes Line width 10
+	4800 5800 4800 3575
+Wire Notes Line width 10
+	4800 3575 2150 3575
+$Comp
+L Device:C_Small C?
+U 1 1 5EDE113A
+P 6225 5450
+F 0 "C?" H 6317 5496 50  0000 L CNN
+F 1 "10nF" H 6317 5405 50  0000 L CNN
+F 2 "" H 6225 5450 50  0001 C CNN
+F 3 "~" H 6225 5450 50  0001 C CNN
+	1    6225 5450
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3V3 #PWR?
+U 1 1 5EDCB846
+P 5725 4975
+F 0 "#PWR?" H 5725 4825 50  0001 C CNN
+F 1 "+3V3" H 5740 5148 50  0000 C CNN
+F 2 "" H 5725 4975 50  0001 C CNN
+F 3 "" H 5725 4975 50  0001 C CNN
+	1    5725 4975
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
