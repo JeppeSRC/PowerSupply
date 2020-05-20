@@ -126,6 +126,12 @@ uint32 vsprintf(char* buffer, uint32 bufferSize, const char* format, va_list arg
 					APPEND(buffer, printed, tmp, num);
 					printed += num;
 					break;
+				case 'b':
+				case 'B':
+					num = uint32ToString(va_arg(args, uint32), 2, tmp, minChars, 0);
+					APPEND(buffer, printed, tmp, num);
+					printed += num;
+					break;
 			}
 		}
 
