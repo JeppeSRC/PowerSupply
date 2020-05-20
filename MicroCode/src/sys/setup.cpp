@@ -77,10 +77,10 @@ void InitializeGPIO() {
 	GPIOF_MODER = MODER(6, 1) | MODER(7, 1);
 
 	//Speed
-	GPIOA_OSPEEDR = ~0;
-	GPIOB_OSPEEDR = ~0;
-	GPIOE_OSPEEDR = ~0;
-	GPIOF_OSPEEDR = ~0;
+	GPIOA_OSPEEDR = 0;
+	GPIOB_OSPEEDR = 0;
+	GPIOE_OSPEEDR = 0;
+	GPIOF_OSPEEDR = 0;
 
 	//Pull up/pull down
 	GPIOA_PUPDR = PUPDR(4, 1) | PUPDR(3, 1) | PUPDR(2, 1);
