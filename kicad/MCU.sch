@@ -205,7 +205,7 @@ F 3 "" H 6825 4475 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Text Notes 4675 2525 0    50   ~ 0
-Crystal Load Capacitance = 15pF\nPCB, MCU ~10pF
+Crystal Load Capacitance = 15pF\nPCB, MCU 10pF
 $Comp
 L Switch:SW_Push SW?
 U 1 1 5F1AFCB7
