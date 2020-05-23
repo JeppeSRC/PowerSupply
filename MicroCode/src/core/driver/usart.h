@@ -4,8 +4,9 @@
 
 class USART {
 private:
-	static char tmpBuffer[128];
+	static char dmaBuffer[256];
 	
+	static void SendDMA(uint16 num);
 public:
 	static void Initialize(uint32 baud);
 	static void Send(uint8 data);

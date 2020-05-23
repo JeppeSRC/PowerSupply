@@ -4,36 +4,46 @@
 #include <sys/setup.h>
 #include <core/string.h>
 
-char USART::tmpBuffer[128];
+char USART::dmaBuffer[256];
 
 void USART::Initialize(uint32 baud) {
 	RCC_APB2ENR |= USART1EN;
+	RCC_AHBENR |= DMA1EN;
 
 	USART1_BRR = 48000000 / baud;
-	USART1_CR1 |= 0x01; 
+	USART1_CR1 |= 0x09; 
+
+	DMA1_CCR4 = 0;
+	DMA1_CPAR4 = USART1 + 0x28;
+	DMA1_CMAR4 = (uint32)dmaBuffer;
+}
+
+void USART::SendDMA(uint16 num) {
+	USART1_CR3 |= 0x80;
+
+	DMA1_CCR4 = 0;
+	DMA1_CNDTR4 = DMA_CNDTR_NDT(num);
+
+	USART1_ICR = 0x40;
+
+	DMA1_CCR4 = DMA_CCR_PL(2) | DMA_CCR_PSIZE(2) | DMA_CCR_MINC | DMA_CCR_DIR | DMA_CCR_EN;
 }
 
 void USART::Send(uint8 data) {
-	USART1_CR1 |= 0x08;
+	while (!(USART1_ISR & 0x40));
 	while (!(USART1_ISR & 0x80));
 
-	USART1_TDR = data;
+	USART1_CR3 &= ~0x80;
 
-	while (!(USART1_ISR & 0x40));
-	USART1_CR1 &= ~0x08;
+	USART1_TDR = data;
 }
 
 void USART::Send(uint8* data, uint16 len) {
-	USART1_CR1 |= 0x08;
-
-	for (uint32 i = 0; i < len; i++) {
-		while (!(USART1_ISR & 0x80));
-
-		USART1_TDR = data[i];
-	}
-
 	while (!(USART1_ISR & 0x40));
-	USART1_CR1 &= ~0x08;
+
+	memcpy(dmaBuffer, data, len);
+
+	SendDMA(len);
 }
 
 void USART::Print(const char* string) {
@@ -45,10 +55,10 @@ void USART::Print(const char* string) {
 void USART::Printf(const char* fmt, ...) {
 	va_list list;
 	va_start(list, fmt);
-
-	uint16 len = vsprintf(tmpBuffer, sizeof(tmpBuffer), fmt, list);
+	while (!(USART1_ISR & 0x40));
+	uint16 len = vsprintf(dmaBuffer, sizeof(dmaBuffer), fmt, list);
 
 	va_end(list);
 
-	Send((uint8*)tmpBuffer, len);
+	SendDMA(len);
 }
