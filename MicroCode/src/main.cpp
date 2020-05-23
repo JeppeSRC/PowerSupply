@@ -7,6 +7,7 @@
 #include <core/driver/usart.h>
 #include <core/driver/encoder.h>
 #include <core/ui.h>
+#include <core/driver/usb.h>
 
 volatile float vSet = 0;
 volatile float iSet = 0;
@@ -54,9 +55,12 @@ int main() {
 	Initialize();
 
 	UI::Initialize();
+	USART::Initialize(2000000);
 
 	EnableInterrupt(78);
 	EnableInterrupt(30);
+
+	USB::Initialize();
 
 	while (true) {
 		DelayMicros(1000);

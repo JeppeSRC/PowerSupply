@@ -6,19 +6,23 @@
 #include <sys/setup.h>
 #include <core/driver/usart.h>
 
+
+
 #define ADDR0_RX_OFFSET 0x00
 #define ADDR0_RX_SIZE	64
 
 #define ADDR0_TX_OFFSET (ADDR0_RX_OFFSET + ADDR0_RX_SIZE)
-#define ADDR0_TX_SIZE   100
+#define ADDR0_TX_SIZE   96
 
 #define ADDR1_RX_OFFSET (ADDR0_TX_OFFSET + ADDR0_TX_SIZE)
-#define ADDR1_RX_SIZE	100
+#define ADDR1_RX_SIZE	96
 
 #define ADDR1_TX_OFFSET	(ADDR1_RX_OFFSET + ADDR1_RX_SIZE)
-#define ADDR1_TX_SIZE	100
+#define ADDR1_TX_SIZE	96
 
-#define SRAM_ADDR(x) ((void*)(USB_SRAM + (x << 2)))
+#define COUNT_SIZE(x) ((((x >> 5) & 0x1FF) << 10) | BLSIZE)
+
+#define SRAM_ADDR(x) ((void*)(USB_SRAM + (x << 1)))
 
 #define CTR_TX_CLEAR 0x870F
 #define CTR_RX_CLEAR 0x070F
@@ -29,11 +33,12 @@
 Data USB::desc;
 USBState USB::deviceState;
 bool USB::endpointHalted = false;
+uint8 USB::address = 0;
 
 void usb_copy_to_sram(void* dst, void* src, uint32 size) {
 	bool odd = size & 0x01;
 
-	size = (0xFFFFFFFE & size) >> 1;
+	size >>= 1;
 
 	for (uint32 i = 0; i < size; i++) {
 		((volatile uint16*)dst)[i << 1] = ((volatile uint16*)src)[i];
@@ -47,7 +52,7 @@ void usb_copy_to_sram(void* dst, void* src, uint32 size) {
 void usb_copy_from_sram(void* dst, void* src, uint32 size) {
 	bool odd = size & 0x01;
 
-	size = (0xFFFFFFFE & size) >> 1;
+	size >>= 1;
 
 	for (uint32 i = 0; i < size; i++) {
 		((volatile uint16*)dst)[i] = ((volatile uint16*)src)[i << 1];
@@ -55,7 +60,7 @@ void usb_copy_from_sram(void* dst, void* src, uint32 size) {
 
 	if (odd) {
 		uint16 tmp = ((volatile uint16*)src)[(size + 1) << 1];
-		((volatile uint8*)dst)[size * 2] = (uint8)tmp;
+		((volatile uint8*)dst)[size << 1] = (uint8)tmp;
 	}
 }
 
@@ -64,16 +69,24 @@ extern "C" void USB_LP_Handler() {
 }
 
 void USB::InterruptHandler() {
+	USART::Printf("ISTR <%16b> <%16b>", USB_ISTR, USB_ENP0R);
 	if (USB_ISTR & RESET) {
+		USART::Print("Reset");
 		USB_ISTR = ~RESET;
 		
 		InitializationAfterReset();
-	} else if (USB_ISTR & SUSP) {
+	} 
+	
+	if (USB_ISTR & SUSP) {
+		USART::Print("Suspend");
 		USB_ISTR = ~SUSP;
 		deviceState = USBState::Suspended;
 		
 		USB_CNTR |= FSUSP | LP_MODE;
-	} else if (USB_ISTR & WKUP) {
+	} 
+	
+	if (USB_ISTR & WKUP) {
+		USART::Print("Wakeup");
 		USB_ISTR = ~WKUP;
 		deviceState = USBState::Configured;
 		
@@ -81,15 +94,42 @@ void USB::InterruptHandler() {
 	}
 
 	if (USB_ISTR & CTR) {
+		USART::Print("Transfer");
 		HandleTransfers();
 	}
 }
 
 void USB::HandleTransfers() {
+	if ((USB_ISTR & EP_DIR) == 0) {
+		if (EP_ID(USB_ISTR) == 0) {
+
+			if (deviceState == USBState::Addressed && address != 0) {
+				USB_DADDR |= address & 0x7F;
+				address = 0;
+			}
+
+			USB_ENP0R = (ENP0R_DEFAULT ^ CTR_TX) | STAT_RX(NAK, VALID) | STAT_TX(NAK, VALID);
+		} else if (EP_ID(USB_ISTR) == 1) {
+			USB_ENP1R = ENP1R_DEFAULT ^ CTR_TX;
+		}
+	} 
+
+	USB_ENP0R = ENP0R_DEFAULT ^ CTR_RX;
+
 	if (EP_ID(USB_ISTR) == 0) {
 		if (USB_ENP0R & SETUP) {
 			HandleControlTransfers();
 			return;
+		} else {
+			uint16 recvCount = (USB_COUNT0_RX & 0x3FF);
+			USART::Printf("Recv <%1u>", recvCount);
+			if (recvCount != 0) {
+				uint8 tmp[96];
+
+				usb_copy_from_sram(&tmp, SRAM_ADDR(ADDR0_RX_OFFSET), recvCount);
+
+				USART::Send(tmp, recvCount);
+			}
 		}
 	} 
 
@@ -97,17 +137,12 @@ void USB::HandleTransfers() {
 }
 
 void USB::HandleControlTransfers() {
-	if ((USB_ISTR & EP_DIR) == 0) {
-		USB_ENP0R &= CTR_TX_CLEAR;
-
-		USB_ENP0R = ENP0R_DEFAULT | STAT_RX(VALID); // Enable reception again
-
-		if ((USB_ENP0R & CTR_RX) == 0) return; // Return if there's no unprocessed reception
-	}
-	
+	USB_ENP0R = ENP0R_DEFAULT ^ CTR_RX ^ CTR_TX;
 	USBSetupData data;
 	
 	usb_copy_from_sram(&data, SRAM_ADDR(ADDR0_RX_OFFSET), sizeof(USBSetupData));
+
+	USART::Printf("Recipient=%1u Type=%1u Dir=%1u Request=%1u Value=%1u Index=%1u Length=%1u", (uint32)data.Recipient, (uint32)data.Type, (uint32)data.Dir, (uint32)data.Request, (uint32)data.Value, (uint32)data.Index, (uint32)data.Length);
 
 	switch (data.Request) {
 		case ControlRequest::ClearFeature:
@@ -145,14 +180,16 @@ void USB::HandleControlTransfers() {
 			break;
 	}
 
-	USB_ENP0R = ENP0R_DEFAULT ^ CTR_RX ^ CTR_TX;
+	
 }
 
 void USB::HandleClearFeature(USBSetupData* data) {
+	USART::Printf("ClearFeature <Recipient=%1u Feature=%1u>", data->Recipient, data->Value);
 	switch (data->Recipient) {
 		case RecipientType::Device:
 			if (data->Value == Feature::DeviceRemoteWakeup && data->Index == 0 && data->Length == 0) {
 				desc.configuration.Attributes &= ~0x20;
+				
 			} else {
 				goto error;
 			}
@@ -164,7 +201,7 @@ void USB::HandleClearFeature(USBSetupData* data) {
 				if (deviceState == USBState::Addressed && data->Index == 0) {
 				} else if (deviceState == USBState::Configured && data->Index == 1) {
 					endpointHalted = false;
-					USB_ENP1R = ENP1R_DEFAULT | STAT_TX(VALID) | STAT_RX(VALID);
+					USB_ENP1R = ENP1R_DEFAULT | STAT_TX(STALL, VALID) | STAT_RX(STALL, VALID);
 				} else {
 					goto error;
 				}
@@ -176,7 +213,7 @@ void USB::HandleClearFeature(USBSetupData* data) {
 			goto error;
 	}
 
-	USB_ENP0R = ENP0R_DEFAULT | STAT_TX(VALID);
+	USB_ENP0R = ENP0R_DEFAULT | STAT_TX(NAK, VALID);
 
 	return;
 
@@ -192,14 +229,17 @@ void USB::HandleGetConfiguration(USBSetupData* data) {
 
 	uint16 tmp = deviceState == USBState::Addressed ? 0 : 1;
 
+	USART::Printf("GetConfiguration <%1u>", tmp);
+
 	usb_copy_to_sram(SRAM_ADDR(ADDR0_TX_OFFSET), &tmp, 2);
 
 	USB_COUNT0_TX = 0x01;
 
-	USB_ENP0R = ENP0R_DEFAULT | STAT_TX(VALID);
+	USB_ENP0R = ENP0R_DEFAULT | STAT_TX(NAK, VALID);
 }
 
 void USB::HandleGetDescriptor(USBSetupData* data) {
+	USART::Printf("GetDescriptor <DescriptorType=%1u>", data->Value >> 8);
 	if (data->Dir != TransferDir::DeviceToHost || data->Recipient != RecipientType::Device) {
 		RequestError(IN);
 		return;
@@ -212,7 +252,7 @@ void USB::HandleGetDescriptor(USBSetupData* data) {
 			usb_copy_to_sram(SRAM_ADDR(ADDR0_TX_OFFSET), &desc.device, size = desc.device.Length);
 			break;
 		case DescriptorType::Configuration:
-			usb_copy_to_sram(SRAM_ADDR(ADDR0_TX_OFFSET), &desc.configuration, size = sizeof(USBConfigurationDescriptor) + sizeof(USBInterfaceDescriptor) + sizeof(USBEndpointDescriptor) * 2);
+			usb_copy_to_sram(SRAM_ADDR(ADDR0_TX_OFFSET), &desc.configuration, size = desc.configuration.TotalLength);
 			break;
 		default:
 			RequestError(IN);
@@ -223,7 +263,7 @@ void USB::HandleGetDescriptor(USBSetupData* data) {
 
 	USB_COUNT0_TX = size;
 
-	USB_ENP0R = ENP0R_DEFAULT | STAT_TX(VALID);
+	USB_ENP0R = ENP0R_DEFAULT | STAT_TX(NAK, VALID);
 }
 
 void USB::HandleGetInterface(USBSetupData* data) {
@@ -234,11 +274,13 @@ void USB::HandleGetInterface(USBSetupData* data) {
 
 	uint16 tmp = desc.interface.AlternateSetting;
 
+	USART::Printf("GetInterface <%1u>", tmp);
+
 	usb_copy_to_sram(SRAM_ADDR(ADDR0_TX_OFFSET), &tmp, 2);
 
 	USB_COUNT0_TX = 1;
 
-	USB_ENP0R = ENP0R_DEFAULT | STAT_TX(VALID);
+	USB_ENP0R = ENP0R_DEFAULT | STAT_TX(NAK, VALID);
 }
 
 void USB::HandleGetStatus(USBSetupData* data) {
@@ -268,11 +310,13 @@ void USB::HandleGetStatus(USBSetupData* data) {
 			return;
 	}
 
+	USART::Printf("GetStatus <Recipient=%1u Value=%1u>", data->Recipient, tmp);
+
 	usb_copy_to_sram(SRAM_ADDR(ADDR0_TX_OFFSET), &tmp, 2);
 
 	USB_COUNT0_TX = 2;
 
-	USB_ENP0R = ENP0R_DEFAULT | STAT_TX(VALID);
+	USB_ENP0R = ENP0R_DEFAULT | STAT_TX(NAK, VALID);
 
 }
 
@@ -282,25 +326,23 @@ void USB::HandleSetAddress(USBSetupData* data) {
 		return;
 	}
 
-	USB_ENP0R = ENP0R_DEFAULT | STAT_TX(VALID);
+	USB_ENP0R = ENP0R_DEFAULT | STAT_TX(NAK,  VALID);
 
-	if (data->Value == 0) {
+	address = data->Value;
+
+	USART::Printf("SetAddress <0x%02H>", address);
+
+	if (address == 0) {
 		deviceState = USBState::Default;
 	} else {
 		deviceState = USBState::Addressed;
 
 		USB_ENP1R = ENP1R_DEFAULT;
-
-		USB_ADDR1_RX = ADDR1_RX_OFFSET;
-		USB_ADDR1_TX = ADDR1_TX_OFFSET;
-		USB_COUNT1_RX = ADDR1_RX_SIZE << 9;
 	}
-
-
-	USB_DADDR |= data->Value & 0x7F;
 }
 
 void USB::HandleSetConfiguration(USBSetupData* data) {
+	USART::Printf("SetConfiguration <%1u>", data->Value);
 	if (data->Dir != TransferDir::HostToDevice || data->Recipient != RecipientType::Device) {
 		RequestError(IN);
 		return;
@@ -314,14 +356,16 @@ void USB::HandleSetConfiguration(USBSetupData* data) {
 		RequestError(IN);
 	}
 
-	USB_ENP0R = ENP0R_DEFAULT | STAT_TX(VALID);
+	USB_ENP0R = ENP0R_DEFAULT | STAT_TX(NAK, VALID);
 }
 
 void USB::HandleSetDescriptor(USBSetupData* data) {
+	USART::Print("SetDescriptor <NotSupported>");
 	RequestError(IN);
 }
 
 void USB::HandleSetFeature(USBSetupData* data) {
+	USART::Printf("SetFeature <Recipient=%1u Value=%1u>", data->Recipient, data->Value);
 	if (data->Dir != TransferDir::HostToDevice) {
 		RequestError(IN);
 		return;
@@ -343,7 +387,8 @@ void USB::HandleSetFeature(USBSetupData* data) {
 				return;
 			} else if (data->Index == 1) {
 				endpointHalted = true;
-				USB_ENP1R = ENP1R_DEFAULT | STAT_TX(STALL) | STAT_RX(STALL);
+				uint16 tmp = USB_ENP1R;
+				USB_ENP1R = ENP1R_DEFAULT | STAT_TX(((tmp & STAT_TX(0, 3)) >> 4), STALL) | STAT_RX(((tmp & STAT_RX(0, 3)) >> 12), STALL);
 			}
 			break;
 		default:
@@ -352,11 +397,7 @@ void USB::HandleSetFeature(USBSetupData* data) {
 	}
 
 
-	USB_ENP0R = ENP0R_DEFAULT | STAT_TX(VALID);
-
-	DelayMillis(1);
-
-	USB_ENP0R = ENP0R_DEFAULT | STAT_TX(NAK) | STAT_RX(VALID);
+	USB_ENP0R = ENP0R_DEFAULT | STAT_TX(NAK, VALID);
 }
 
 void USB::HandleSetInterface(USBSetupData* data) {
@@ -368,10 +409,11 @@ void USB::HandleSynchFrame(USBSetupData* data) {
 }
 
 void USB::RequestError(uint8 dir) {
+	USART::Print("RequestError");
 	if (dir == IN) {
-		USB_ENP0R = ENP0R_DEFAULT | STAT_TX(STALL);
+		USB_ENP0R = ENP0R_DEFAULT | STAT_TX(NAK, STALL);
 	} else if (dir == OUT) {
-		USB_ENP0R = ENP0R_DEFAULT | STAT_RX(STALL);
+		USB_ENP0R = ENP0R_DEFAULT | STAT_RX(NAK, STALL);
 	}
 
 	DelayMicros(1000);
@@ -380,10 +422,15 @@ void USB::RequestError(uint8 dir) {
 void USB::InitializationAfterReset() {
 	deviceState = USBState::Default;
 	
+	USB_ADDR0_TX = ADDR0_TX_OFFSET;
+	USB_COUNT0_TX = 0;
+	USB_ADDR0_RX = ADDR0_RX_OFFSET;
+	USB_COUNT0_RX = COUNT_SIZE(ADDR0_RX_SIZE);
+
 	USB_DADDR = EF;
 	//Endpoint 0 reception buffer setup
 
-	USB_ENP0R = EA(0) | STAT_TX(VALID) | EP_TYPE(CONTROL) | STAT_RX(VALID) | CTR_RX | CTR_TX;
+	USB_ENP0R = EA(0) | STAT_TX(DISABLED, VALID) | EP_TYPE(CONTROL) | STAT_RX(DISABLED, VALID) | CTR_RX | CTR_TX;
 }
 
 void USB::Initialize() {
@@ -397,7 +444,7 @@ void USB::Initialize() {
 	desc.device.DeviceProtocol = 0;
 	desc.device.MaxPacketSize0 = ADDR0_RX_SIZE;
 	desc.device.idVendor = 0x1209;
-	desc.device.idProduct = 0x0001;
+	desc.device.idProduct = 0xCACE;
 	desc.device.DeviceVersion = 0x0001;
 	desc.device.Manufacturer = 0;
 	desc.device.Product = 0;
@@ -406,18 +453,18 @@ void USB::Initialize() {
 
 	desc.configuration.Length = sizeof(USBConfigurationDescriptor);
 	desc.configuration.Type = DescriptorType::Configuration;
-	desc.configuration.TotalLength = sizeof(USBConfigurationDescriptor) + sizeof(USBInterfaceDescriptor) + sizeof(USBEndpointDescriptor);
+	desc.configuration.TotalLength = sizeof(USBConfigurationDescriptor) + sizeof(USBInterfaceDescriptor) /*+ sizeof(USBEndpointDescriptor)*/;
 	desc.configuration.NumInterfaces = 1;
 	desc.configuration.ConfigurationValue = 1;
 	desc.configuration.Configuration = 0;
 	desc.configuration.Attributes = 0xC0;
-	desc.configuration.MaxPower = 5;
+	desc.configuration.MaxPower = 2;
 
 	desc.interface.Length = sizeof(USBInterfaceDescriptor);
 	desc.interface.Type = DescriptorType::Interface;
 	desc.interface.InterfaceNumber = 0;
 	desc.interface.AlternateSetting = 0;
-	desc.interface.NumEndpoints = 2;
+	desc.interface.NumEndpoints = 0;
 	desc.interface.InterfaceClass = 0xFF;
 	desc.interface.InterfaceSubClass = 0xFF;
 	desc.interface.InterfaceProtocol = 0xFF;
@@ -428,14 +475,14 @@ void USB::Initialize() {
 	desc.endpointOut.EndpointAddress = 0x01;
 	desc.endpointOut.Attributes = 0x03;
 	desc.endpointOut.MaxPacketSize = ADDR1_RX_SIZE;
-	desc.endpointOut.Interval = 10;
+	desc.endpointOut.Interval = 1;
 
 	desc.endpointIn.Length = sizeof(USBEndpointDescriptor);
 	desc.endpointIn.Type = DescriptorType::Endpoint;
-	desc.endpointIn.EndpointAddress = 0x01;
-	desc.endpointIn.Attributes = 0x83;
+	desc.endpointIn.EndpointAddress = 0x81;
+	desc.endpointIn.Attributes = 0x03;
 	desc.endpointIn.MaxPacketSize = ADDR1_TX_SIZE;
-	desc.endpointIn.Interval = 10;
+	desc.endpointIn.Interval = 1;
 
 	deviceState = USBState::Detached;
 
@@ -454,22 +501,17 @@ void USB::Initialize() {
 
 	USB_BTABLE = USB_BTABLE_VALUE;
 
-	USB_ADDR0_TX = ADDR0_TX_OFFSET;
-	USB_COUNT0_TX = 0;
-	USB_ADDR0_RX = ADDR0_RX_OFFSET;
-	USB_COUNT0_RX = ADDR0_RX_SIZE << 1;
-
 	USB_ADDR1_TX = ADDR1_TX_OFFSET;
 	USB_COUNT1_TX = 0;
 	USB_ADDR1_RX = ADDR1_RX_OFFSET;
-	USB_COUNT1_RX = ADDR1_RX_SIZE << 1;
+	USB_COUNT1_RX = COUNT_SIZE(ADDR1_RX_SIZE);
 
 	USB_CNTR = 0; // Clear USB reset
 	NOP;
 	NOP;
 	USB_ISTR = 0; // Clear interrupts
 	
-	USB_CNTR = RESETM | SUSPM | CTRM | WKUPM; // Enable interrupts
+	USB_CNTR = RESETM | CTRM | WKUPM | SUSPM; // Enable interrupts
 
 	EnableInterrupt(75);
 }

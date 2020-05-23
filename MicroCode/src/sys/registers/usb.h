@@ -60,13 +60,13 @@
 #define USB_ENP7R USB_ENPnR(7)
 
 #define EA(x) ((x & 0xF))
-#define STAT_TX(nxt) ((nxt & 0x03) << 4)
+#define STAT_TX(curr, nxt) (((curr ^ nxt) & 0x03) << 4)
 #define DTOG_TX 0x40
 #define CTR_TX 0x80
 #define EP_KIND 0x100
 #define EP_TYPE(x) ((x & 0x03) << 9)
 #define SETUP 0x800
-#define STAT_RX(nxt) ((nxt & 0x03) << 12)
+#define STAT_RX(curr, nxt) (((curr ^ nxt) & 0x03) << 12)
 #define DTOG_RX 0x4000
 #define CTR_RX 0x8000
 

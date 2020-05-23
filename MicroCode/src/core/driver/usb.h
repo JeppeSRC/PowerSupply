@@ -18,8 +18,8 @@ struct Data {
 	USBDeviceDescriptor device;
 	USBConfigurationDescriptor configuration;
 	USBInterfaceDescriptor interface;
-	USBEndpointDescriptor endpointOut;
 	USBEndpointDescriptor endpointIn;
+	USBEndpointDescriptor endpointOut;
 };
 
 #pragma pack(pop)
@@ -31,7 +31,7 @@ struct Data {
 class USB {
 private:
 	static Data desc;
-
+	static uint8 address;
 	static USBState deviceState;
 
 	static bool endpointHalted;
