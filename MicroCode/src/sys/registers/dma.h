@@ -25,6 +25,19 @@
 #define DMA2_CCR4 (*(volatile uint32*)(DMA2 + 0x08 + (0x14 * 3)))
 #define DMA2_CCR5 (*(volatile uint32*)(DMA2 + 0x08 + (0x14 * 4)))
 
+#define DMA_CCR_EN 0x01
+#define DMA_CCR_TCIE 0x02
+#define DMA_CCR_HTIE 0x04
+#define DMA_CCR_TEIE 0x08
+#define DMA_CCR_DIR 0x10
+#define DMA_CCR_CIRC 0x20
+#define DMA_CCR_PINC 0x40
+#define DMA_CCR_MINC 0x80
+#define DMA_CCR_PSIZE(x) ((x & 0x03) << 8)
+#define DMA_CCR_MSIZE(x) ((x & 0x03) << 10)
+#define DMA_CCR_PL(x) ((x & 0x03) << 12)
+#define DMA_CCR_MEM2MEM 0x4000
+
 #define DMA1_CNDTR1 (*(volatile uint32*)(DMA1 + 0x0C + (0x14 * 0)))
 #define DMA1_CNDTR2 (*(volatile uint32*)(DMA1 + 0x0C + (0x14 * 1)))
 #define DMA1_CNDTR3 (*(volatile uint32*)(DMA1 + 0x0C + (0x14 * 2)))
@@ -38,6 +51,8 @@
 #define DMA2_CNDTR3 (*(volatile uint32*)(DMA2 + 0x0C + (0x14 * 2)))
 #define DMA2_CNDTR4 (*(volatile uint32*)(DMA2 + 0x0C + (0x14 * 3)))
 #define DMA2_CNDTR5 (*(volatile uint32*)(DMA2 + 0x0C + (0x14 * 4)))
+
+#define DMA_CNDTR_NDT(x) (x & 0xFFFF)
 
 #define DMA1_CPAR1 (*(volatile uint32*)(DMA1 + 0x10 + (0x14 * 0)))
 #define DMA1_CPAR2 (*(volatile uint32*)(DMA1 + 0x10 + (0x14 * 1)))
