@@ -1,6 +1,7 @@
 #pragma once 
 
 #include "dac.h"
+#include "dma.h"
 #include "exti.h"
 #include "flash.h"
 #include "gpio.h"
