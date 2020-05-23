@@ -30,8 +30,6 @@ Data USB::desc;
 USBState USB::deviceState;
 bool USB::endpointHalted = false;
 
-uint32 USB::breh = 0xFFF;
-
 void usb_copy_to_sram(void* dst, void* src, uint32 size) {
 	bool odd = size & 0x01;
 
