@@ -122,6 +122,9 @@
     <ClInclude Include="src\sys\registers\flash.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="src\sys\registers\dma.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="src\sys\startup.asm">

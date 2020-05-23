@@ -64,6 +64,7 @@
     <ClInclude Include="src\core\string.h" />
     <ClInclude Include="src\core\ui.h" />
     <ClInclude Include="src\sys\memory.h" />
+    <ClInclude Include="src\sys\registers\dma.h" />
     <ClInclude Include="src\sys\registers\flash.h" />
     <ClInclude Include="src\sys\registers\gpio.h" />
     <ClInclude Include="src\sys\registers\dac.h" />
