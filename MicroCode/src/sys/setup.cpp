@@ -21,7 +21,6 @@ void Initialize() {
 	InitializeDAC();
 	InitializeEncoders();
 	//InitializeSDADC();
-	USB::Initialize();
 }
 
 void InitializeClock() {
@@ -65,19 +64,19 @@ void InitializeGPIO() {
 	NOP; //NOP instruction so GPIO peripherals aren't accessed right after being enabled
 
 	//Alternate functions
-	GPIOA_AFRH = 0x770;
+	GPIOA_AFRH = 0xEE770;
 	GPIOA_AFRL = 0xBB;
 
 	GPIOB_AFRL = 0x22000000;
 
 	//Mode
-	GPIOA_MODER = MODER(0, 2) | MODER(1, 2) | MODER(5, 3) | MODER(6, 3) | MODER(9, 2) | MODER(10, 2) | MODER(11, 3) | MODER(12, 3) | MODER(13, 1) | MODER(14, 1) | MODER(15, 1);
+	GPIOA_MODER = MODER(0, 2) | MODER(1, 2) | MODER(5, 3) | MODER(6, 3) | MODER(9, 2) | MODER(10, 2) | MODER(11, 2) | MODER(12, 2) | MODER(13, 1) | MODER(14, 1) | MODER(15, 1);
 	GPIOB_MODER = MODER(3, 1) | MODER(4, 1) | MODER(6, 2) | MODER(7, 2) | MODER(8, 1) | MODER(9, 1);
 	GPIOE_MODER = MODER(8, 3) | MODER(9, 3);
 	GPIOF_MODER = MODER(6, 1) | MODER(7, 1);
 
 	//Speed
-	GPIOA_OSPEEDR = 0;
+	GPIOA_OSPEEDR = OSPEEDR(11, 3) | OSPEEDR(12, 3);
 	GPIOB_OSPEEDR = 0;
 	GPIOE_OSPEEDR = 0;
 	GPIOF_OSPEEDR = 0;
