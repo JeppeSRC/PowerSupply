@@ -1,7 +1,13 @@
 #pragma once 
 
-#include "ahb2.h"
-#include "ahb1.h"
-#include "apb2.h"
-#include "apb1.h"
+#include "dac.h"
+#include "exti.h"
+#include "flash.h"
+#include "gpio.h"
+#include "pwr.h"
+#include "rcc.h"
+#include "sdadc.h"
+#include "syscfg.h"
+#include "timer.h"
+#include "usart.h"
 #include "usb.h"
