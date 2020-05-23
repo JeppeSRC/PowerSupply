@@ -2,6 +2,9 @@
 #include <sys/time.h>
 #include <sys/sys.h>
 #include <sys/memory.h>
+#include <core/driver/display.h>
+#include <sys/setup.h>
+#include <core/driver/usart.h>
 
 #define ADDR0_RX_OFFSET 0x00
 #define ADDR0_RX_SIZE	64
@@ -26,6 +29,8 @@
 Data USB::desc;
 USBState USB::deviceState;
 bool USB::endpointHalted = false;
+
+uint32 USB::breh = 0xFFF;
 
 void usb_copy_to_sram(void* dst, void* src, uint32 size) {
 	bool odd = size & 0x01;
@@ -62,18 +67,18 @@ extern "C" void USB_LP_Handler() {
 
 void USB::InterruptHandler() {
 	if (USB_ISTR & RESET) {
-		USB_ISTR &= ~RESET;
-
+		USB_ISTR = ~RESET;
+		
 		InitializationAfterReset();
 	} else if (USB_ISTR & SUSP) {
-		USB_ISTR &= ~SUSP;
+		USB_ISTR = ~SUSP;
 		deviceState = USBState::Suspended;
-
+		
 		USB_CNTR |= FSUSP | LP_MODE;
 	} else if (USB_ISTR & WKUP) {
-		USB_ISTR &= ~WKUP;
+		USB_ISTR = ~WKUP;
 		deviceState = USBState::Configured;
-
+		
 		USB_CNTR &= ~FSUSP;
 	}
 
@@ -97,15 +102,14 @@ void USB::HandleControlTransfers() {
 	if ((USB_ISTR & EP_DIR) == 0) {
 		USB_ENP0R &= CTR_TX_CLEAR;
 
-		USB_ENP0R = ENP0R_DEFAULT | STAT_RX(NAK, VALID); // Enable reception again
+		USB_ENP0R = ENP0R_DEFAULT | STAT_RX(VALID); // Enable reception again
 
 		if ((USB_ENP0R & CTR_RX) == 0) return; // Return if there's no unprocessed reception
 	}
-
+	
 	USBSetupData data;
 	
 	usb_copy_from_sram(&data, SRAM_ADDR(ADDR0_RX_OFFSET), sizeof(USBSetupData));
-
 
 	switch (data.Request) {
 		case ControlRequest::ClearFeature:
@@ -162,8 +166,7 @@ void USB::HandleClearFeature(USBSetupData* data) {
 				if (deviceState == USBState::Addressed && data->Index == 0) {
 				} else if (deviceState == USBState::Configured && data->Index == 1) {
 					endpointHalted = false;
-					uint32 rxtx = ((USB_ENP1R & STAT_RX(DISABLED, VALID)) & STAT_TX(DISABLED, VALID));
-					USB_ENP1R = ENP1R_DEFAULT | STAT_TX(rxtx >> 4, VALID) | STAT_RX(rxtx >> 12, VALID);
+					USB_ENP1R = ENP1R_DEFAULT | STAT_TX(VALID) | STAT_RX(VALID);
 				} else {
 					goto error;
 				}
@@ -175,7 +178,7 @@ void USB::HandleClearFeature(USBSetupData* data) {
 			goto error;
 	}
 
-	USB_ENP0R = ENP0R_DEFAULT | STAT_TX(NAK, VALID);
+	USB_ENP0R = ENP0R_DEFAULT | STAT_TX(VALID);
 
 	return;
 
@@ -195,7 +198,7 @@ void USB::HandleGetConfiguration(USBSetupData* data) {
 
 	USB_COUNT0_TX = 0x01;
 
-	USB_ENP0R = ENP0R_DEFAULT | STAT_TX(NAK, VALID);
+	USB_ENP0R = ENP0R_DEFAULT | STAT_TX(VALID);
 }
 
 void USB::HandleGetDescriptor(USBSetupData* data) {
@@ -203,7 +206,7 @@ void USB::HandleGetDescriptor(USBSetupData* data) {
 		RequestError(IN);
 		return;
 	}
-
+	
 	uint16 size = 0;
 
 	switch ((DescriptorType)(data->Value >> 8)) {
@@ -222,7 +225,7 @@ void USB::HandleGetDescriptor(USBSetupData* data) {
 
 	USB_COUNT0_TX = size;
 
-	USB_ENP0R = ENP0R_DEFAULT | STAT_TX(NAK, VALID);
+	USB_ENP0R = ENP0R_DEFAULT | STAT_TX(VALID);
 }
 
 void USB::HandleGetInterface(USBSetupData* data) {
@@ -237,7 +240,7 @@ void USB::HandleGetInterface(USBSetupData* data) {
 
 	USB_COUNT0_TX = 1;
 
-	USB_ENP0R = ENP0R_DEFAULT | STAT_TX(NAK, VALID);
+	USB_ENP0R = ENP0R_DEFAULT | STAT_TX(VALID);
 }
 
 void USB::HandleGetStatus(USBSetupData* data) {
@@ -247,7 +250,7 @@ void USB::HandleGetStatus(USBSetupData* data) {
 	}
 
 	uint16 tmp = 0;
-
+	
 	switch (data->Recipient) {
 		case RecipientType::Device:
 			tmp = ((desc.configuration.Attributes >> 6) & 0x01) | ((desc.configuration.Attributes >> 4) & 0x02);
@@ -271,7 +274,7 @@ void USB::HandleGetStatus(USBSetupData* data) {
 
 	USB_COUNT0_TX = 2;
 
-	USB_ENP0R = ENP0R_DEFAULT | STAT_TX(NAK, VALID);
+	USB_ENP0R = ENP0R_DEFAULT | STAT_TX(VALID);
 
 }
 
@@ -281,7 +284,7 @@ void USB::HandleSetAddress(USBSetupData* data) {
 		return;
 	}
 
-	USB_ENP0R = ENP0R_DEFAULT | STAT_TX(NAK, VALID);
+	USB_ENP0R = ENP0R_DEFAULT | STAT_TX(VALID);
 
 	if (data->Value == 0) {
 		deviceState = USBState::Default;
@@ -313,7 +316,7 @@ void USB::HandleSetConfiguration(USBSetupData* data) {
 		RequestError(IN);
 	}
 
-	USB_ENP0R = ENP0R_DEFAULT | STAT_TX(NAK, VALID);
+	USB_ENP0R = ENP0R_DEFAULT | STAT_TX(VALID);
 }
 
 void USB::HandleSetDescriptor(USBSetupData* data) {
@@ -342,8 +345,7 @@ void USB::HandleSetFeature(USBSetupData* data) {
 				return;
 			} else if (data->Index == 1) {
 				endpointHalted = true;
-				uint32 rxtx = ((USB_ENP1R & STAT_RX(DISABLED, VALID)) & STAT_TX(DISABLED, VALID));
-				USB_ENP1R = ENP1R_DEFAULT | STAT_TX(rxtx >> 4, STALL) | STAT_RX(rxtx >> 12, STALL);
+				USB_ENP1R = ENP1R_DEFAULT | STAT_TX(STALL) | STAT_RX(STALL);
 			}
 			break;
 		default:
@@ -352,11 +354,11 @@ void USB::HandleSetFeature(USBSetupData* data) {
 	}
 
 
-	USB_ENP0R = ENP0R_DEFAULT | STAT_TX(NAK, VALID);
+	USB_ENP0R = ENP0R_DEFAULT | STAT_TX(VALID);
 
 	DelayMillis(1);
 
-	USB_ENP0R = ENP0R_DEFAULT | STAT_TX(VALID, NAK) | STAT_RX(NAK, VALID);
+	USB_ENP0R = ENP0R_DEFAULT | STAT_TX(NAK) | STAT_RX(VALID);
 }
 
 void USB::HandleSetInterface(USBSetupData* data) {
@@ -369,44 +371,25 @@ void USB::HandleSynchFrame(USBSetupData* data) {
 
 void USB::RequestError(uint8 dir) {
 	if (dir == IN) {
-		USB_ENP0R = ENP0R_DEFAULT | STAT_TX(NAK, STALL);
+		USB_ENP0R = ENP0R_DEFAULT | STAT_TX(STALL);
 	} else if (dir == OUT) {
-		USB_ENP0R = ENP0R_DEFAULT | STAT_RX(NAK, STALL);
+		USB_ENP0R = ENP0R_DEFAULT | STAT_RX(STALL);
 	}
 
-	DelayMillis(1);
+	DelayMicros(1000);
 }
 
 void USB::InitializationAfterReset() {
 	deviceState = USBState::Default;
-
-	USB_BTABLE = USB_BTABLE_VALUE;
+	
 	USB_DADDR = EF;
-
 	//Endpoint 0 reception buffer setup
-	USB_ADDR0_TX = ADDR0_TX_OFFSET;
-	USB_COUNT0_TX = 0;
-	USB_ADDR0_RX = ADDR0_RX_OFFSET;
-	USB_COUNT0_RX = BLSIZE;
 
-	USB_ENP0R = EA(0) | STAT_TX(DISABLED, VALID) | EP_TYPE(CONTROL) | STAT_RX(DISABLED, VALID);
+	USB_ENP0R = EA(0) | STAT_TX(VALID) | EP_TYPE(CONTROL) | STAT_RX(VALID) | CTR_RX | CTR_TX;
 }
 
 void USB::Initialize() {
-	deviceState = USBState::Detached;
-
-	EnableInterrupt(75);
-
 	RCC_APB1ENR |= USBEN;
-
-	USB_CNTR ^= PDWN; // Enable transiver power
-
-	DelayMicros(1); // Wait for power to settle
-
-	USB_ISTR = 0; // Clear interrupts
-	USB_CNTR ^= FRES; // Clear USB reset
-
-	USB_CNTR |= RESETM | SUSPM | CTRM | WKUPM; // Enable interrupts
 
 	desc.device.Length = sizeof(USBDeviceDescriptor);
 	desc.device.Type = DescriptorType::Device;
@@ -455,4 +438,40 @@ void USB::Initialize() {
 	desc.endpointIn.Attributes = 0x83;
 	desc.endpointIn.MaxPacketSize = ADDR1_TX_SIZE;
 	desc.endpointIn.Interval = 10;
+
+	deviceState = USBState::Detached;
+
+	USB_CNTR = FRES; // Enable transiver power
+	
+	DelayMicros(2);
+
+	USB_ENP0R = EA(0);
+	USB_ENP1R = EA(1);
+	USB_ENP2R = EA(2);
+	USB_ENP3R = EA(3);
+	USB_ENP4R = EA(4);
+	USB_ENP5R = EA(5);
+	USB_ENP6R = EA(6);
+	USB_ENP7R = EA(7);
+
+	USB_BTABLE = USB_BTABLE_VALUE;
+
+	USB_ADDR0_TX = ADDR0_TX_OFFSET;
+	USB_COUNT0_TX = 0;
+	USB_ADDR0_RX = ADDR0_RX_OFFSET;
+	USB_COUNT0_RX = ADDR0_RX_SIZE << 1;
+
+	USB_ADDR1_TX = ADDR1_TX_OFFSET;
+	USB_COUNT1_TX = 0;
+	USB_ADDR1_RX = ADDR1_RX_OFFSET;
+	USB_COUNT1_RX = ADDR1_RX_SIZE << 1;
+
+	USB_CNTR = 0; // Clear USB reset
+	NOP;
+	NOP;
+	USB_ISTR = 0; // Clear interrupts
+	
+	USB_CNTR = RESETM | SUSPM | CTRM | WKUPM; // Enable interrupts
+
+	EnableInterrupt(75);
 }

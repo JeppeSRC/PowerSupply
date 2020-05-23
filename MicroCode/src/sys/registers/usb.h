@@ -5,7 +5,7 @@
 #define USB_ADDR 0x40005C00
 #define USB_SRAM 0x40006000
 
-#define USB_CNTR (*(volatile uint32*)(USB_ADDR + 0x40))
+#define USB_CNTR (*(volatile uint16*)(USB_ADDR + 0x40))
 
 #define FRES 0x01
 #define PDWN 0x02
@@ -21,7 +21,7 @@
 #define PMAOVRM 0x4000
 #define CTRM 0x8000
 
-#define USB_ISTR (*(volatile uint32*)(USB_ADDR + 0x44))
+#define USB_ISTR (*(volatile uint16*)(USB_ADDR + 0x44))
 
 #define EP_ID(x) (x & 0x0F)
 #define EP_DIR 0x10
@@ -34,7 +34,7 @@
 #define PMAOVR PMAOVRM
 #define CTR CTRM
 
-#define USB_FNR (*(volatile uint32*)(USB_ADDR + 0x48))
+#define USB_FNR (*(volatile uint16*)(USB_ADDR + 0x48))
 
 #define FN(x) (x & 0x7FF)
 #define LSOF(x) ((x & 0x02) << 11)
@@ -42,14 +42,14 @@
 #define RXDM(x) ((x & 0x01) << 14)
 #define RXDP(x) ((x & 0x01) << 15)
 
-#define USB_DADDR (*(volatile uint32*)(USB_ADDR + 0x4C))
+#define USB_DADDR (*(volatile uint16*)(USB_ADDR + 0x4C))
 
 #define ADD(x) (x & 0x7F)
 #define EF 0x80
 
-#define USB_BTABLE (*(volatile uint32*)(USB_ADDR + 0x50))
+#define USB_BTABLE (*(volatile uint16*)(USB_ADDR + 0x50))
 
-#define USB_ENPnR(n) (*(volatile uint32*)(USB_ADDR + 0x04 * n))
+#define USB_ENPnR(n) (*(volatile uint16*)(USB_ADDR + 0x04 * n))
 #define USB_ENP0R USB_ENPnR(0)
 #define USB_ENP1R USB_ENPnR(1)
 #define USB_ENP2R USB_ENPnR(2)
@@ -60,13 +60,13 @@
 #define USB_ENP7R USB_ENPnR(7)
 
 #define EA(x) ((x & 0xF))
-#define STAT_TX(curr, nxt) (((curr ^ nxt) & 0x03) << 4)
+#define STAT_TX(nxt) ((nxt & 0x03) << 4)
 #define DTOG_TX 0x40
 #define CTR_TX 0x80
 #define EP_KIND 0x100
 #define EP_TYPE(x) ((x & 0x03) << 9)
 #define SETUP 0x800
-#define STAT_RX(curr, nxt) (((curr ^ nxt) & 0x03) << 12)
+#define STAT_RX(nxt) ((nxt & 0x03) << 12)
 #define DTOG_RX 0x4000
 #define CTR_RX 0x8000
 

@@ -27,6 +27,7 @@ struct Data {
 #define IN 0
 #define OUT 1
 
+
 class USB {
 private:
 	static Data desc;
