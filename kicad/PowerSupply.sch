@@ -16,131 +16,45 @@ $EndDescr
 $Comp
 L power:VDD #PWR0101
 U 1 1 5CA02FAB
-P 1575 800
-F 0 "#PWR0101" H 1575 650 50  0001 C CNN
-F 1 "VDD" H 1592 973 50  0000 C CNN
-F 2 "" H 1575 800 50  0001 C CNN
-F 3 "" H 1575 800 50  0001 C CNN
-	1    1575 800 
+P 1800 775
+F 0 "#PWR0101" H 1800 625 50  0001 C CNN
+F 1 "VDD" H 1800 925 50  0000 C CNN
+F 2 "" H 1800 775 50  0001 C CNN
+F 3 "" H 1800 775 50  0001 C CNN
+	1    1800 775 
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	1075 1300 1575 1300
-Connection ~ 1575 800 
+	1300 1375 1800 1375
 Wire Wire Line
-	1075 800  1575 800 
+	1300 775  1800 775 
 Wire Wire Line
-	1075 1175 1075 1300
+	1300 1175 1300 1375
 Wire Wire Line
-	1075 800  1075 975 
-Connection ~ 3325 800 
-Wire Wire Line
-	2825 800  3325 800 
-Wire Wire Line
-	2825 1300 3325 1300
-$Comp
-L power:VDD #PWR0102
-U 1 1 5CA2E77F
-P 3325 800
-F 0 "#PWR0102" H 3325 650 50  0001 C CNN
-F 1 "VDD" H 3342 973 50  0000 C CNN
-F 2 "" H 3325 800 50  0001 C CNN
-F 3 "" H 3325 800 50  0001 C CNN
-	1    3325 800 
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	2825 800  2825 950 
-Wire Wire Line
-	2825 1300 2825 1150
-$Comp
-L Device:C_Small C?
-U 1 1 5CA2E78B
-P 2825 1050
-F 0 "C?" H 2917 1096 50  0000 L CNN
-F 1 "100nF" H 2917 1005 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 2825 1050 50  0001 C CNN
-F 3 "~" H 2825 1050 50  0001 C CNN
-F 4 "CC0805KRX7R9BB104" H 2825 1050 50  0001 C CNN "MPN"
-	1    2825 1050
-	1    0    0    -1  
-$EndComp
-$Comp
-L symbols:OPA4196 U?
-U 1 1 5CA2E794
-P 3275 1050
-F 0 "U?" H 3575 1100 50  0000 L CNN
-F 1 "OPA4196" H 3575 1000 50  0000 L CNN
-F 2 "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm" H 3275 1050 50  0001 C CNN
-F 3 "http://www.ti.com/lit/ds/symlink/opa4196.pdf" H 3375 1350 50  0001 C CNN
-F 4 "OPA4196IDR" H 3275 1050 50  0001 C CNN "MPN"
-	1    3275 1050
-	1    0    0    -1  
-$EndComp
+	1300 775  1300 975 
 $Comp
 L Device:C_Small C?
 U 1 1 5CA14E49
-P 1075 1075
-F 0 "C?" H 1167 1121 50  0000 L CNN
-F 1 "100nF" H 1167 1030 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 1075 1075 50  0001 C CNN
-F 3 "~" H 1075 1075 50  0001 C CNN
-F 4 "CC0805KRX7R9BB104" H 1075 1075 50  0001 C CNN "MPN"
-	1    1075 1075
+P 1300 1075
+F 0 "C?" H 1392 1121 50  0000 L CNN
+F 1 "100nF" H 1392 1030 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 1300 1075 50  0001 C CNN
+F 3 "~" H 1300 1075 50  0001 C CNN
+F 4 "CC0805KRX7R9BB104" H 1300 1075 50  0001 C CNN "MPN"
+	1    1300 1075
 	1    0    0    -1  
 $EndComp
-$Comp
-L symbols:OPA4196 U?
-U 1 1 5CA23A34
-P 1525 1050
-F 0 "U?" H 1825 1100 50  0000 L CNN
-F 1 "OPA4196" H 1825 1000 50  0000 L CNN
-F 2 "" H 1525 1050 50  0001 C CNN
-F 3 "" H 1625 1350 50  0001 C CNN
-F 4 "OPA4196IDR" H 1525 1050 50  0001 C CNN "MPN"
-	1    1525 1050
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GNDA #PWR0103
-U 1 1 5D80A7D5
-P 3325 1300
-F 0 "#PWR0103" H 3325 1050 50  0001 C CNN
-F 1 "GNDA" H 3330 1127 50  0000 C CNN
-F 2 "" H 3325 1300 50  0001 C CNN
-F 3 "" H 3325 1300 50  0001 C CNN
-	1    3325 1300
-	1    0    0    -1  
-$EndComp
-Connection ~ 3325 1300
 $Comp
 L power:GNDA #PWR0104
 U 1 1 5D80B3C5
-P 1575 1300
-F 0 "#PWR0104" H 1575 1050 50  0001 C CNN
-F 1 "GNDA" H 1580 1127 50  0000 C CNN
-F 2 "" H 1575 1300 50  0001 C CNN
-F 3 "" H 1575 1300 50  0001 C CNN
-	1    1575 1300
+P 1800 1375
+F 0 "#PWR0104" H 1800 1125 50  0001 C CNN
+F 1 "GNDA" H 1800 1250 50  0000 C CNN
+F 2 "" H 1800 1375 50  0001 C CNN
+F 3 "" H 1800 1375 50  0001 C CNN
+	1    1800 1375
 	1    0    0    -1  
 $EndComp
-Connection ~ 1575 1300
-$Comp
-L symbols:OPA4196 U?
-U 5 1 5DB4A324
-P 6450 1025
-F 0 "U?" H 6550 1275 50  0000 L CNN
-F 1 "OPA4196" H 6550 1175 50  0000 L CNN
-F 2 "" H 6450 1025 50  0001 C CNN
-F 3 "" H 6550 1325 50  0001 C CNN
-F 4 "OPA4196IDR" H 6450 1025 50  0001 C CNN "MPN"
-	5    6450 1025
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	6850 1025 6850 1325
-Wire Wire Line
-	6850 1325 6250 1325
 Wire Wire Line
 	6250 1325 6250 1125
 $Comp
@@ -153,18 +67,6 @@ F 2 "" H 6250 925 50  0001 C CNN
 F 3 "" H 6250 925 50  0001 C CNN
 	1    6250 925 
 	0    1    1    0   
-$EndComp
-$Comp
-L symbols:OPA4196 U?
-U 4 1 5E9434AD
-P 8825 2575
-F 0 "U?" H 8925 2825 50  0000 L CNN
-F 1 "OPA4196" H 8925 2725 50  0000 L CNN
-F 2 "" H 8825 2575 50  0001 C CNN
-F 3 "" H 8925 2875 50  0001 C CNN
-F 4 "OPA4196IDR" H 8825 2575 50  0001 C CNN "MPN"
-	4    8825 2575
-	-1   0    0    1   
 $EndComp
 $Comp
 L Device:R R?
@@ -246,20 +148,6 @@ F 4 "TMK212B7105KG-T" H 3950 4025 50  0001 C CNN "MPN"
 $EndComp
 Wire Wire Line
 	3950 3675 3950 3825
-$Comp
-L symbols:OPA4196 U?
-U 2 1 5EA89311
-P 3800 2975
-AR Path="/5EA89311" Ref="U?"  Part="2" 
-AR Path="/5CA3E8E1/5EA89311" Ref="U?"  Part="3" 
-F 0 "U?" V 3900 3325 50  0000 R CNN
-F 1 "OPA4196" V 4000 3425 50  0000 R CNN
-F 2 "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm" H 3800 2975 50  0001 C CNN
-F 3 "http://www.ti.com/lit/ds/symlink/opa4196.pdf" H 3900 3275 50  0001 C CNN
-F 4 "OPA4196IDR" H 3800 2975 50  0001 C CNN "MPN"
-	2    3800 2975
-	0    -1   1    0   
-$EndComp
 Connection ~ 3950 3825
 Wire Wire Line
 	3950 3825 3950 3925
@@ -272,7 +160,6 @@ Wire Wire Line
 Wire Wire Line
 	3500 2625 3350 2625
 Connection ~ 3500 2625
-Connection ~ 3900 2775
 Text Notes 3375 1775 0    39   ~ 0
 Shunt resistor is at least 2W 1%
 Text Notes 2775 3150 0    39   ~ 0
@@ -569,62 +456,6 @@ F 4 "TNPW08059K88BEEN" H 6450 5000 50  0001 C CNN "MPN"
 	0    1    1    0   
 $EndComp
 $Comp
-L symbols:OPA4196 U?
-U 4 1 5EABE718
-P 6350 4350
-AR Path="/5CA4C891/5EABE718" Ref="U?"  Part="4" 
-AR Path="/5EABE718" Ref="U?"  Part="4" 
-F 0 "U?" H 6475 3985 50  0000 C CNN
-F 1 "OPA4196" H 6475 4076 50  0000 C CNN
-F 2 "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm" H 6350 4350 50  0001 C CNN
-F 3 "http://www.ti.com/lit/ds/symlink/opa4196.pdf" H 6450 4650 50  0001 C CNN
-F 4 "OPA4196IDR" H 6350 4350 50  0001 C CNN "MPN"
-	4    6350 4350
-	1    0    0    1   
-$EndComp
-$Comp
-L symbols:OPA4196 U?
-U 2 1 5EABE71F
-P 5850 5950
-AR Path="/5CA4C891/5EABE71F" Ref="U?"  Part="2" 
-AR Path="/5EABE71F" Ref="U?"  Part="2" 
-F 0 "U?" H 5975 6315 50  0000 C CNN
-F 1 "OPA4196" H 5975 6224 50  0000 C CNN
-F 2 "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm" H 5850 5950 50  0001 C CNN
-F 3 "http://www.ti.com/lit/ds/symlink/opa4196.pdf" H 5950 6250 50  0001 C CNN
-F 4 "OPA4196IDR" H 5850 5950 50  0001 C CNN "MPN"
-	2    5850 5950
-	-1   0    0    -1  
-$EndComp
-$Comp
-L symbols:OPA4196 U?
-U 3 1 5EABE726
-P 4750 6675
-AR Path="/5CA4C891/5EABE726" Ref="U?"  Part="3" 
-AR Path="/5EABE726" Ref="U?"  Part="3" 
-F 0 "U?" H 4875 7040 50  0000 C CNN
-F 1 "OPA4196" H 4875 6949 50  0000 C CNN
-F 2 "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm" H 4750 6675 50  0001 C CNN
-F 3 "http://www.ti.com/lit/ds/symlink/opa4196.pdf" H 4850 6975 50  0001 C CNN
-F 4 "OPA4196IDR" H 4750 6675 50  0001 C CNN "MPN"
-	3    4750 6675
-	1    0    0    -1  
-$EndComp
-$Comp
-L symbols:OPA4196 U?
-U 5 1 5EABE72D
-P 4975 5000
-AR Path="/5CA4C891/5EABE72D" Ref="U?"  Part="5" 
-AR Path="/5EABE72D" Ref="U?"  Part="5" 
-F 0 "U?" H 5100 5365 50  0000 C CNN
-F 1 "OPA4196" H 5100 5274 50  0000 C CNN
-F 2 "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm" H 4975 5000 50  0001 C CNN
-F 3 "http://www.ti.com/lit/ds/symlink/opa4196.pdf" H 5075 5300 50  0001 C CNN
-F 4 "OPA4196IDR" H 4975 5000 50  0001 C CNN "MPN"
-	5    4975 5000
-	1    0    0    -1  
-$EndComp
-$Comp
 L Connector:TestPoint TP?
 U 1 1 5EABE75D
 P 6900 4250
@@ -735,26 +566,10 @@ $EndComp
 Wire Wire Line
 	4925 5875 4925 5950
 Connection ~ 4925 5950
-$Comp
-L symbols:OPA4196 U?
-U 3 1 5EB44970
-P 3450 3725
-AR Path="/5CA214F9/5EB44970" Ref="U?"  Part="2" 
-AR Path="/5EB44970" Ref="U?"  Part="3" 
-F 0 "U?" H 3550 4090 50  0000 C CNN
-F 1 "OPA4196" H 3550 3999 50  0000 C CNN
-F 2 "" H 3550 3725 50  0001 C CNN
-F 3 "" H 3550 3725 50  0001 C CNN
-	3    3450 3725
-	-1   0    0    1   
-$EndComp
-Wire Wire Line
-	3050 3725 2800 3725
 Wire Wire Line
 	3650 3500 3050 3500
 Wire Wire Line
 	3050 3500 3050 3725
-Connection ~ 3050 3725
 $Comp
 L power:VDD #PWR0115
 U 1 1 5EBC7CA4
@@ -768,9 +583,6 @@ F 3 "" H 2400 2025 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	2400 2025 2650 2025
-Connection ~ 6750 4350
-Wire Wire Line
-	3650 3825 3675 3825
 Wire Wire Line
 	4775 4900 4775 4450
 Wire Wire Line
@@ -912,7 +724,6 @@ Wire Wire Line
 	5550 4850 5550 5000
 Wire Wire Line
 	5375 5000 5550 5000
-Connection ~ 5375 5000
 Connection ~ 5550 5000
 Wire Wire Line
 	5550 5000 5550 5150
@@ -1103,47 +914,25 @@ VOUT
 $Comp
 L Device:C_Small C?
 U 1 1 5EAC8F58
-P 675 1075
-F 0 "C?" H 767 1121 50  0000 L CNN
-F 1 "100nF" H 767 1030 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 675 1075 50  0001 C CNN
-F 3 "~" H 675 1075 50  0001 C CNN
-F 4 "CC0805KRX7R9BB104" H 675 1075 50  0001 C CNN "MPN"
-	1    675  1075
+P 900 1075
+F 0 "C?" H 992 1121 50  0000 L CNN
+F 1 "100nF" H 992 1030 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 900 1075 50  0001 C CNN
+F 3 "~" H 900 1075 50  0001 C CNN
+F 4 "CC0805KRX7R9BB104" H 900 1075 50  0001 C CNN "MPN"
+	1    900  1075
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	675  975  675  800 
+	900  975  900  775 
 Wire Wire Line
-	675  800  1075 800 
-Connection ~ 1075 800 
+	900  775  1300 775 
+Connection ~ 1300 775 
 Wire Wire Line
-	1075 1300 675  1300
+	1300 1375 900  1375
 Wire Wire Line
-	675  1300 675  1175
-Connection ~ 1075 1300
-$Comp
-L Device:C_Small C?
-U 1 1 5EAD4370
-P 2425 1050
-F 0 "C?" H 2517 1096 50  0000 L CNN
-F 1 "100nF" H 2517 1005 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 2425 1050 50  0001 C CNN
-F 3 "~" H 2425 1050 50  0001 C CNN
-F 4 "CC0805KRX7R9BB104" H 2425 1050 50  0001 C CNN "MPN"
-	1    2425 1050
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	2825 1300 2425 1300
-Wire Wire Line
-	2425 1300 2425 1150
-Connection ~ 2825 1300
-Wire Wire Line
-	2425 950  2425 800 
-Wire Wire Line
-	2425 800  2825 800 
-Connection ~ 2825 800 
+	900  1375 900  1175
+Connection ~ 1300 1375
 Wire Notes Line width 10
 	550  575  550  1550
 Wire Notes Line width 10
@@ -1154,13 +943,6 @@ Text Notes 525  575  0    50   ~ 10
 OPAMP Power
 Wire Notes Line width 10
 	550  575  3950 575 
-Wire Wire Line
-	4550 4400 3675 4400
-Wire Wire Line
-	3675 4400 3675 3825
-Connection ~ 3675 3825
-Wire Wire Line
-	3675 3825 3950 3825
 Text GLabel 2800 3725 0    50   UnSpc ~ 0
 Iread
 Text GLabel 4425 6775 0    50   UnSpc ~ 0
@@ -1228,9 +1010,9 @@ P 1375 5800
 AR Path="/5EB5170E" Ref="U?"  Part="1" 
 AR Path="/5F3D442D/5EB5170E" Ref="U?"  Part="1" 
 F 0 "U?" H 1375 6065 50  0000 C CNN
-F 1 "LM317" H 1375 5974 50  0000 C CNN
-F 2 "Package_TO_SOT_THT:TO-220-3_Vertical" H 1375 6300 50  0001 C CNN
-F 3 "https://www.mouser.se/datasheet/2/308/LM317M-D-1810713.pdf" H 1375 5800 50  0001 C CNN
+F 1 "OPA4196xD" H 1375 5974 50  0000 C CNN
+F 2 "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm" H 1375 6300 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/opa4196.pdf" H 1375 5800 50  0001 C CNN
 	1    1375 5800
 	1    0    0    -1  
 $EndComp
@@ -1559,9 +1341,9 @@ P 1425 4550
 AR Path="/5EB5E93A" Ref="U?"  Part="1" 
 AR Path="/5F3D442D/5EB5E93A" Ref="U?"  Part="1" 
 F 0 "U?" H 1425 4815 50  0000 C CNN
-F 1 "LD1086D2T33" H 1425 4724 50  0000 C CNN
-F 2 "Package_TO_SOT_SMD:TO-263-3_TabPin2" H 1425 4550 50  0001 C CNN
-F 3 "https://www.mouser.se/datasheet/2/389/ld1086-974047.pdf" V 1425 4550 50  0001 C CNN
+F 1 "OPA4196xD" H 1425 4724 50  0000 C CNN
+F 2 "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm" H 1425 4550 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/opa4196.pdf" V 1425 4550 50  0001 C CNN
 F 4 "LD1086D2T33TR" H 1425 4550 50  0001 C CNN "MPN"
 	1    1425 4550
 	1    0    0    -1  
@@ -1752,12 +1534,6 @@ Wire Notes Line width 10
 	575  5125 3475 5125
 Wire Wire Line
 	4425 6775 4550 6775
-Connection ~ 4550 6775
-Wire Wire Line
-	5150 6575 5150 6675
-Wire Wire Line
-	5150 6675 5150 6900
-Connection ~ 5150 6675
 Wire Wire Line
 	5875 7550 6325 7550
 Connection ~ 6325 7550
@@ -1990,4 +1766,194 @@ F 3 "~" H 7350 2225 50  0001 C CNN
 	1    7350 2225
 	1    0    0    -1  
 $EndComp
+Wire Wire Line
+	5150 6575 5150 6675
+Connection ~ 1800 775 
+Wire Wire Line
+	6850 1325 6250 1325
+Wire Wire Line
+	6850 1025 6850 1325
+$Comp
+L Amplifier_Operational:OPA4196xD U?
+U 5 1 5ED12789
+P 1900 1075
+F 0 "U?" H 1858 1121 50  0000 L CNN
+F 1 "OPA4196xD" H 1858 1030 50  0000 L CNN
+F 2 "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm" H 1900 1075 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/opa4196.pdf" H 1900 1075 50  0001 C CNN
+	5    1900 1075
+	1    0    0    -1  
+$EndComp
+Connection ~ 1800 1375
+$Comp
+L power:VDD #PWR?
+U 1 1 5ED77F7B
+P 3350 775
+F 0 "#PWR?" H 3350 625 50  0001 C CNN
+F 1 "VDD" H 3350 925 50  0000 C CNN
+F 2 "" H 3350 775 50  0001 C CNN
+F 3 "" H 3350 775 50  0001 C CNN
+	1    3350 775 
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2850 1375 3350 1375
+Wire Wire Line
+	2850 775  3350 775 
+Wire Wire Line
+	2850 1175 2850 1375
+Wire Wire Line
+	2850 775  2850 975 
+$Comp
+L Device:C_Small C?
+U 1 1 5ED77F86
+P 2850 1075
+F 0 "C?" H 2942 1121 50  0000 L CNN
+F 1 "100nF" H 2942 1030 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 2850 1075 50  0001 C CNN
+F 3 "~" H 2850 1075 50  0001 C CNN
+F 4 "CC0805KRX7R9BB104" H 2850 1075 50  0001 C CNN "MPN"
+	1    2850 1075
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GNDA #PWR?
+U 1 1 5ED77F8C
+P 3350 1375
+F 0 "#PWR?" H 3350 1125 50  0001 C CNN
+F 1 "GNDA" H 3350 1250 50  0000 C CNN
+F 2 "" H 3350 1375 50  0001 C CNN
+F 3 "" H 3350 1375 50  0001 C CNN
+	1    3350 1375
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C_Small C?
+U 1 1 5ED77F93
+P 2450 1075
+F 0 "C?" H 2542 1121 50  0000 L CNN
+F 1 "100nF" H 2542 1030 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 2450 1075 50  0001 C CNN
+F 3 "~" H 2450 1075 50  0001 C CNN
+F 4 "CC0805KRX7R9BB104" H 2450 1075 50  0001 C CNN "MPN"
+	1    2450 1075
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2450 975  2450 775 
+Wire Wire Line
+	2450 775  2850 775 
+Connection ~ 2850 775 
+Wire Wire Line
+	2850 1375 2450 1375
+Wire Wire Line
+	2450 1375 2450 1175
+Connection ~ 2850 1375
+Connection ~ 3350 775 
+$Comp
+L Amplifier_Operational:OPA4196xD U?
+U 5 1 5ED77FA0
+P 3450 1075
+F 0 "U?" H 3408 1121 50  0000 L CNN
+F 1 "OPA4196xD" H 3408 1030 50  0000 L CNN
+F 2 "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm" H 3450 1075 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/opa4196.pdf" H 3450 1075 50  0001 C CNN
+	5    3450 1075
+	1    0    0    -1  
+$EndComp
+Connection ~ 3350 1375
+$Comp
+L Amplifier_Operational:OPA4196xD U?
+U 1 1 5ED868CB
+P 3800 3075
+F 0 "U?" V 3875 3350 50  0000 R CNN
+F 1 "OPA4196xD" V 3975 3550 50  0000 R CNN
+F 2 "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm" H 3800 3075 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/opa4196.pdf" H 3800 3075 50  0001 C CNN
+	1    3800 3075
+	0    -1   1    0   
+$EndComp
+Connection ~ 3900 2775
+$Comp
+L Amplifier_Operational:OPA4196xD U?
+U 2 1 5ED89030
+P 3350 3725
+F 0 "U?" V 3425 4000 50  0000 R CNN
+F 1 "OPA4196xD" V 3525 4200 50  0000 R CNN
+F 2 "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm" H 3350 3725 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/opa4196.pdf" H 3350 3725 50  0001 C CNN
+	2    3350 3725
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	3050 3725 2800 3725
+Connection ~ 3050 3725
+Wire Wire Line
+	3950 3825 3650 3825
+Wire Wire Line
+	3650 3825 3650 4400
+Wire Wire Line
+	3650 4400 4550 4400
+Connection ~ 3650 3825
+$Comp
+L Amplifier_Operational:OPA4196xD U?
+U 2 1 5EDFA28A
+P 5075 5000
+F 0 "U?" V 5150 5275 50  0000 R CNN
+F 1 "OPA4196xD" V 5250 5475 50  0000 R CNN
+F 2 "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm" H 5075 5000 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/opa4196.pdf" H 5075 5000 50  0001 C CNN
+	2    5075 5000
+	1    0    0    -1  
+$EndComp
+Connection ~ 5375 5000
+$Comp
+L Amplifier_Operational:OPA4196xD U?
+U 2 1 5EDFC3BA
+P 8725 2575
+F 0 "U?" V 8800 2850 50  0000 R CNN
+F 1 "OPA4196xD" V 8900 3050 50  0000 R CNN
+F 2 "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm" H 8725 2575 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/opa4196.pdf" H 8725 2575 50  0001 C CNN
+	2    8725 2575
+	-1   0    0    1   
+$EndComp
+$Comp
+L Amplifier_Operational:OPA4196xD U?
+U 2 1 5EE0C031
+P 6450 4350
+F 0 "U?" V 6525 4625 50  0000 R CNN
+F 1 "OPA4196xD" V 6625 4825 50  0000 R CNN
+F 2 "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm" H 6450 4350 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/opa4196.pdf" H 6450 4350 50  0001 C CNN
+	2    6450 4350
+	1    0    0    1   
+$EndComp
+Connection ~ 6750 4350
+$Comp
+L Amplifier_Operational:OPA4196xD U?
+U 2 1 5EE0D6EE
+P 5750 5950
+F 0 "U?" V 5825 6225 50  0000 R CNN
+F 1 "OPA4196xD" V 5925 6425 50  0000 R CNN
+F 2 "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm" H 5750 5950 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/opa4196.pdf" H 5750 5950 50  0001 C CNN
+	2    5750 5950
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Amplifier_Operational:OPA4196xD U?
+U 2 1 5EE0F260
+P 4850 6675
+F 0 "U?" V 4925 6950 50  0000 R CNN
+F 1 "OPA4196xD" V 5025 7150 50  0000 R CNN
+F 2 "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm" H 4850 6675 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/opa4196.pdf" H 4850 6675 50  0001 C CNN
+	2    4850 6675
+	1    0    0    -1  
+$EndComp
+Connection ~ 4550 6775
+Connection ~ 5150 6675
+Wire Wire Line
+	5150 6675 5150 6900
 $EndSCHEMATC
