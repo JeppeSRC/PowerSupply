@@ -1,5 +1,4 @@
 EESchema Schematic File Version 4
-LIBS:PowerSupply-cache
 EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
@@ -1370,9 +1369,9 @@ F 4 "RT0805FRE071KL" H 3550 4325 50  0001 C CNN "MPN"
 	1    3550 4325
 	1    0    0    -1  
 $EndComp
-Text Label 4000 5475 3    50   ~ 0
+Text Label 4000 5375 3    50   ~ 0
 USB_D-
-Text Label 4000 4475 1    50   ~ 0
+Text Label 4000 4575 1    50   ~ 0
 USB_D+
 Wire Notes Line width 10
 	525  5800 2000 5800
@@ -2090,6 +2089,8 @@ $Comp
 L Power_Protection:USBLC6-2SC6 U?
 U 1 1 5EC689B1
 P 3900 4975
+AR Path="/5EC689B1" Ref="U?"  Part="1" 
+AR Path="/5F1751CC/5EC689B1" Ref="U?"  Part="1" 
 F 0 "U?" V 4225 4650 50  0000 R CNN
 F 1 "USBLC6-2SC6" V 4125 4650 50  0000 R CNN
 F 2 "Package_TO_SOT_SMD:SOT-23-6" H 3150 5375 50  0001 C CNN
@@ -2116,14 +2117,14 @@ Wire Wire Line
 $Comp
 L power:GND #PWR?
 U 1 1 5ED55522
-P 4400 4975
+P 4300 4975
 AR Path="/5F3D442D/5ED55522" Ref="#PWR?"  Part="1" 
 AR Path="/5F1751CC/5ED55522" Ref="#PWR?"  Part="1" 
-F 0 "#PWR?" H 4400 4725 50  0001 C CNN
-F 1 "GND" H 4405 4802 50  0000 C CNN
-F 2 "" H 4400 4975 50  0001 C CNN
-F 3 "" H 4400 4975 50  0001 C CNN
-	1    4400 4975
+F 0 "#PWR?" H 4300 4725 50  0001 C CNN
+F 1 "GND" H 4305 4802 50  0000 C CNN
+F 2 "" H 4300 4975 50  0001 C CNN
+F 3 "" H 4300 4975 50  0001 C CNN
+	1    4300 4975
 	0    -1   -1   0   
 $EndComp
 $Comp
@@ -2272,4 +2273,10 @@ F 4 "CC0805KRX7R0BB103" H 1100 6325 50  0001 C CNN "MPN"
 	1    1100 6325
 	0    1    1    0   
 $EndComp
+Wire Wire Line
+	3800 4475 3800 4575
+Wire Wire Line
+	3800 5475 3800 5375
+Wire Wire Line
+	3400 4975 3500 4975
 $EndSCHEMATC
