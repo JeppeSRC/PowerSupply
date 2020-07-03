@@ -252,12 +252,12 @@ struct USBInterfaceDescriptor { //9 Bytes
 	uint8 Interface;
 };
 
-struct USBEndpointDescriptor { //6 Bytes
+struct USBEndpointDescriptor { //7 Bytes
 	uint8 Length;
 	DescriptorType Type;
 	uint8 EndpointAddress;
 	uint8 Attributes;
-	uint8 MaxPacketSize;
+	uint16 MaxPacketSize;
 	uint8 Interval;
 };
 
