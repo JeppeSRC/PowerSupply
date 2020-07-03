@@ -260,7 +260,7 @@ void USB::HandleGetDescriptor(USBSetupData* data) {
 	}
 
 	size = size > data->Length ? data->Length : size;
-
+	
 	USB_COUNT0_TX = size;
 
 	USB_ENP0R = ENP0R_DEFAULT | STAT_TX(NAK, VALID);
@@ -453,7 +453,7 @@ void USB::Initialize() {
 
 	desc.configuration.Length = sizeof(USBConfigurationDescriptor);
 	desc.configuration.Type = DescriptorType::Configuration;
-	desc.configuration.TotalLength = sizeof(USBConfigurationDescriptor) + sizeof(USBInterfaceDescriptor) /*+ sizeof(USBEndpointDescriptor)*/;
+	desc.configuration.TotalLength = sizeof(USBConfigurationDescriptor) + sizeof(USBInterfaceDescriptor) + sizeof(USBEndpointDescriptor);
 	desc.configuration.NumInterfaces = 1;
 	desc.configuration.ConfigurationValue = 1;
 	desc.configuration.Configuration = 0;
@@ -464,18 +464,11 @@ void USB::Initialize() {
 	desc.interface.Type = DescriptorType::Interface;
 	desc.interface.InterfaceNumber = 0;
 	desc.interface.AlternateSetting = 0;
-	desc.interface.NumEndpoints = 0;
+	desc.interface.NumEndpoints = 1;
 	desc.interface.InterfaceClass = 0xFF;
 	desc.interface.InterfaceSubClass = 0xFF;
 	desc.interface.InterfaceProtocol = 0xFF;
 	desc.interface.Interface = 0;
-
-	desc.endpointOut.Length = sizeof(USBEndpointDescriptor);
-	desc.endpointOut.Type = DescriptorType::Endpoint;
-	desc.endpointOut.EndpointAddress = 0x01;
-	desc.endpointOut.Attributes = 0x03;
-	desc.endpointOut.MaxPacketSize = ADDR1_RX_SIZE;
-	desc.endpointOut.Interval = 1;
 
 	desc.endpointIn.Length = sizeof(USBEndpointDescriptor);
 	desc.endpointIn.Type = DescriptorType::Endpoint;
@@ -483,6 +476,13 @@ void USB::Initialize() {
 	desc.endpointIn.Attributes = 0x03;
 	desc.endpointIn.MaxPacketSize = ADDR1_TX_SIZE;
 	desc.endpointIn.Interval = 1;
+
+	desc.endpointOut.Length = sizeof(USBEndpointDescriptor);
+	desc.endpointOut.Type = DescriptorType::Endpoint;
+	desc.endpointOut.EndpointAddress = 0x01;
+	desc.endpointOut.Attributes = 0x03;
+	desc.endpointOut.MaxPacketSize = ADDR1_RX_SIZE;
+	desc.endpointOut.Interval = 1;
 
 	deviceState = USBState::Detached;
 

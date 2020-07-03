@@ -218,7 +218,7 @@ struct USBDeviceDescriptor { // 18 Bytes
 	uint8 NumConfigurations;
 };
 
-struct USBConfigurationDescriptor { //8 Bytes
+struct USBConfigurationDescriptor { //9 Bytes
 	uint8 Length;
 	DescriptorType Type;
 	uint16 TotalLength;

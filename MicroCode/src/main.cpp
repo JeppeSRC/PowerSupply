@@ -54,8 +54,11 @@ extern "C" void TIM4_Handler() {
 int main() {
 	Initialize();
 
+	DelayMillis(100);
+
 	UI::Initialize();
 	USART::Initialize(2000000);
+	USART::Print("USART Initialized");
 
 	EnableInterrupt(78);
 	EnableInterrupt(30);
