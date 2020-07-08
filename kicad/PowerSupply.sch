@@ -1003,19 +1003,6 @@ F 3 "~" H 5600 7400 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	6325 7450 6325 7550
-$Comp
-L symbols:LM317 U?
-U 1 1 5EB5170E
-P 1375 5800
-AR Path="/5EB5170E" Ref="U?"  Part="1" 
-AR Path="/5F3D442D/5EB5170E" Ref="U?"  Part="1" 
-F 0 "U?" H 1375 6065 50  0000 C CNN
-F 1 "OPA4196xD" H 1375 5974 50  0000 C CNN
-F 2 "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm" H 1375 6300 50  0001 C CNN
-F 3 "http://www.ti.com/lit/ds/symlink/opa4196.pdf" H 1375 5800 50  0001 C CNN
-	1    1375 5800
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	1075 5800 800  5800
 Connection ~ 800  5800
@@ -1952,6 +1939,18 @@ F 2 "Package_TO_SOT_SMD:TO-263-2" H 1425 4550 50  0001 C CNN
 F 3 "E:/Dev/Projects/Electronics/PowerSupply/documents/datasheets/LD1086D2T33TR.pdf" H 1425 4550 50  0001 C CNN
 F 4 "LD1086D2T33TR" H 1425 4550 50  0001 C CNN "Field4"
 	1    1425 4550
+	1    0    0    -1  
+$EndComp
+$Comp
+L symbols:LM317 U?
+U 1 1 5F07C67D
+P 1375 5800
+F 0 "U?" H 1375 6065 50  0000 C CNN
+F 1 "LM317" H 1375 5974 50  0000 C CNN
+F 2 "Package_TO_SOT_THT:TO-220-3_Vertical" H 1375 6300 50  0001 C CNN
+F 3 "https://www.mouser.se/datasheet/2/308/LM317M-D-1810713.pdf" H 1375 5800 50  0001 C CNN
+F 4 "LM317MTG" H 1375 5800 50  0001 C CNN "MPN"
+	1    1375 5800
 	1    0    0    -1  
 $EndComp
 $EndSCHEMATC
