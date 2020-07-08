@@ -1335,20 +1335,6 @@ $EndComp
 Wire Wire Line
 	1425 4750 825  4750
 $Comp
-L symbols:LD1086 U?
-U 1 1 5EB5E93A
-P 1425 4550
-AR Path="/5EB5E93A" Ref="U?"  Part="1" 
-AR Path="/5F3D442D/5EB5E93A" Ref="U?"  Part="1" 
-F 0 "U?" H 1425 4815 50  0000 C CNN
-F 1 "OPA4196xD" H 1425 4724 50  0000 C CNN
-F 2 "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm" H 1425 4550 50  0001 C CNN
-F 3 "http://www.ti.com/lit/ds/symlink/opa4196.pdf" V 1425 4550 50  0001 C CNN
-F 4 "LD1086D2T33TR" H 1425 4550 50  0001 C CNN "MPN"
-	1    1425 4550
-	1    0    0    -1  
-$EndComp
-$Comp
 L Device:C_Small C?
 U 1 1 5EB5E941
 P 825 4650
@@ -1956,4 +1942,16 @@ Connection ~ 4550 6775
 Connection ~ 5150 6675
 Wire Wire Line
 	5150 6675 5150 6900
+$Comp
+L symbols:LD1086 U?
+U 1 1 5F078F3D
+P 1425 4550
+F 0 "U?" H 1425 4815 50  0000 C CNN
+F 1 "LD1086" H 1425 4724 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:TO-263-2" H 1425 4550 50  0001 C CNN
+F 3 "E:/Dev/Projects/Electronics/PowerSupply/documents/datasheets/LD1086D2T33TR.pdf" H 1425 4550 50  0001 C CNN
+F 4 "LD1086D2T33TR" H 1425 4550 50  0001 C CNN "Field4"
+	1    1425 4550
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
