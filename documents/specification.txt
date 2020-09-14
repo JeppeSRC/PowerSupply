@@ -1,12 +1,12 @@
 Regulator spec:
     - Voltage Range:        0 - 20V
-    - Current Range:        0 - 4A
-    - Voltage Precision:    10mV
-    - Current Precision:    10mA
+    - Current Range:        0 - 2A | 0 - 4A
+    - Voltage Precision:    20mV
+    - Current Precision:    TBD
 
 Notes:
     Input voltage: 22.5V-24V
 
 Display Layout:
-    SET 0.00V 0.00A
-    OUT 0.00V 0.00A
+    SET 00.00V 0.00A
+    OUT 00.00V 0.00A
