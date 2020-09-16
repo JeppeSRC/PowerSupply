@@ -186,7 +186,6 @@ NoConn ~ 5925 4175
 Text Label 7325 4075 0    50   ~ 0
 C_LIMIT_ON
 NoConn ~ 5925 3875
-NoConn ~ 7325 3375
 Wire Wire Line
 	6725 4475 6825 4475
 $Comp
@@ -2054,7 +2053,6 @@ Connection ~ 1625 5650
 Wire Wire Line
 	6625 1375 6725 1375
 Connection ~ 6825 4475
-NoConn ~ 7325 4175
 Wire Notes Line width 10
 	11175 2325 9075 2325
 Wire Notes Line width 10
@@ -2279,4 +2277,8 @@ Wire Wire Line
 	3800 5475 3800 5375
 Wire Wire Line
 	3400 4975 3500 4975
+Text GLabel 7325 3375 2    50   UnSpc ~ 0
+RANGE_1
+Text GLabel 7325 4175 2    50   UnSpc ~ 0
+RANGE_2
 $EndSCHEMATC

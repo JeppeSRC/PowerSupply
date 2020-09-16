@@ -158,8 +158,6 @@ Wire Wire Line
 Connection ~ 3500 2625
 Text Notes 3375 1775 0    39   ~ 0
 Shunt resistor is at least 2W 1%
-Text Notes 2775 3150 0    39   ~ 0
-165 / 20 = gain of 8.25\n\n0.4V * 8.25 = 3.3V
 $Comp
 L Connector:TestPoint TP?
 U 1 1 5EA8932B
@@ -588,8 +586,6 @@ Wire Wire Line
 Wire Wire Line
 	4675 5950 4675 4375
 Wire Wire Line
-	4675 4375 5425 4375
-Wire Wire Line
 	4675 5950 4925 5950
 Wire Wire Line
 	6550 6050 6775 6050
@@ -886,13 +882,6 @@ Wire Wire Line
 Wire Wire Line
 	5425 2125 5300 2125
 Connection ~ 5425 1675
-Connection ~ 5425 2125
-Wire Wire Line
-	5425 2125 5425 4375
-Wire Wire Line
-	4775 4450 5675 4450
-Wire Wire Line
-	5675 2025 5675 4450
 $Sheet
 S 575  2725 1050 900 
 U 5F1751CC
@@ -1964,7 +1953,7 @@ U 1 1 5F664116
 P 2375 2800
 AR Path="/5CA4C891/5F664116" Ref="Q?"  Part="1" 
 AR Path="/5F664116" Ref="Q?"  Part="1" 
-F 0 "Q?" H 2225 2900 50  0000 L CNN
+F 0 "Q?" H 2275 2600 50  0000 L CNN
 F 1 "2N7002NXAK" H 1900 2675 50  0000 L CNN
 F 2 "" H 2575 2900 50  0001 C CNN
 F 3 "~" H 2375 2800 50  0001 C CNN
@@ -2025,15 +2014,15 @@ $EndComp
 $Comp
 L Device:Q_NMOS_GSD Q?
 U 1 1 5F7280F7
-P 4725 3700
+P 5200 3775
 AR Path="/5CA4C891/5F7280F7" Ref="Q?"  Part="1" 
 AR Path="/5F7280F7" Ref="Q?"  Part="1" 
-F 0 "Q?" H 4600 3750 50  0000 L CNN
-F 1 "2N7002NXAK" H 4300 3475 50  0000 L CNN
-F 2 "" H 4925 3800 50  0001 C CNN
-F 3 "~" H 4725 3700 50  0001 C CNN
-	1    4725 3700
-	1    0    0    -1  
+F 0 "Q?" H 5075 3825 50  0000 L CNN
+F 1 "2N7002NXAK" H 4775 3550 50  0000 L CNN
+F 2 "" H 5400 3875 50  0001 C CNN
+F 3 "~" H 5200 3775 50  0001 C CNN
+	1    5200 3775
+	-1   0    0    -1  
 $EndComp
 $Comp
 L power:VDD #PWR?
@@ -2071,37 +2060,88 @@ F 3 "" H 4975 4000 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	4825 3500 4825 3275
-Connection ~ 4825 3275
-Wire Wire Line
 	4775 3275 4825 3275
 Wire Wire Line
 	4825 3275 4825 3175
 $Comp
 L Device:D_Zener D?
 U 1 1 5F937471
-P 5025 3325
-F 0 "D?" V 5000 3125 50  0000 C CNN
-F 1 "10V-16V" V 5075 3100 50  0000 C CNN
-F 2 "" H 5025 3325 50  0001 C CNN
-F 3 "~" H 5025 3325 50  0001 C CNN
-	1    5025 3325
+P 4825 3425
+F 0 "D?" V 4800 3225 50  0000 C CNN
+F 1 "10V-16V" V 4875 3200 50  0000 C CNN
+F 2 "" H 4825 3425 50  0001 C CNN
+F 3 "~" H 4825 3425 50  0001 C CNN
+	1    4825 3425
 	0    -1   1    0   
 $EndComp
-Wire Wire Line
-	5025 3175 4825 3175
 Connection ~ 4825 3175
-Wire Wire Line
-	4825 3900 4825 4000
-Wire Wire Line
-	4825 4000 4975 4000
-Wire Wire Line
-	4975 4000 5025 4000
-Wire Wire Line
-	5025 4000 5025 3475
-Connection ~ 4975 4000
 Wire Wire Line
 	3650 4400 3550 4400
 Connection ~ 3650 4400
 Connection ~ 6125 6450
+Text GLabel 2150 2475 1    50   UnSpc ~ 0
+RANGE_1
+Text GLabel 5450 3425 1    50   UnSpc ~ 0
+RANGE_2
+Connection ~ 4825 3275
+Wire Wire Line
+	5100 3575 5100 3175
+Wire Wire Line
+	4825 3175 5100 3175
+Wire Wire Line
+	5100 3975 4975 3975
+Wire Wire Line
+	4975 3975 4975 4000
+Wire Wire Line
+	4975 3975 4825 3975
+Wire Wire Line
+	4825 3975 4825 3575
+Connection ~ 4975 3975
+$Comp
+L Device:R R?
+U 1 1 5F74EB1C
+P 5450 3575
+F 0 "R?" H 5520 3621 50  0000 L CNN
+F 1 "10k" H 5520 3530 50  0000 L CNN
+F 2 "" V 5380 3575 50  0001 C CNN
+F 3 "~" H 5450 3575 50  0001 C CNN
+	1    5450 3575
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5450 3725 5450 3775
+Wire Wire Line
+	5450 3775 5400 3775
+Wire Wire Line
+	5725 4375 5725 3000
+Wire Wire Line
+	5725 3000 5425 3000
+Wire Wire Line
+	5425 3000 5425 2125
+Wire Wire Line
+	4675 4375 5725 4375
+Connection ~ 5425 2125
+Wire Wire Line
+	5800 4450 5800 2925
+Wire Wire Line
+	5800 2925 5675 2925
+Wire Wire Line
+	5675 2925 5675 2025
+Wire Wire Line
+	4775 4450 5800 4450
+$Comp
+L Device:R R?
+U 1 1 5F784F5F
+P 2150 2625
+F 0 "R?" H 2220 2671 50  0000 L CNN
+F 1 "10k" H 2220 2580 50  0000 L CNN
+F 2 "" V 2080 2625 50  0001 C CNN
+F 3 "~" H 2150 2625 50  0001 C CNN
+	1    2150 2625
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2175 2800 2150 2800
+Wire Wire Line
+	2150 2800 2150 2775
 $EndSCHEMATC
