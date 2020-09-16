@@ -1128,8 +1128,6 @@ $EndComp
 Connection ~ 775  4850
 Wire Wire Line
 	775  4850 775  4625
-Wire Wire Line
-	1075 4850 1500 4850
 $Comp
 L Device:R R?
 U 1 1 5F2DCC1A
@@ -2020,22 +2018,14 @@ $EndComp
 Wire Wire Line
 	775  4950 1500 4950
 Wire Wire Line
-	1325 5050 1325 5100
-Wire Wire Line
-	1325 5050 1500 5050
-Wire Wire Line
 	775  5050 775  4950
 Connection ~ 775  4950
-Wire Wire Line
-	1075 5050 1325 5050
-Connection ~ 1325 5050
 Wire Wire Line
 	1500 5050 1500 5350
 Wire Wire Line
 	1500 5350 1625 5350
 Wire Wire Line
 	1625 5350 1625 5650
-Connection ~ 1500 5050
 $Comp
 L power:GND #PWR?
 U 1 1 5F04F8C3
@@ -2281,4 +2271,14 @@ Text GLabel 7325 3375 2    50   UnSpc ~ 0
 RANGE_1
 Text GLabel 7325 4175 2    50   UnSpc ~ 0
 RANGE_2
+Wire Wire Line
+	1075 4850 1325 4850
+Wire Wire Line
+	1325 5100 1325 4850
+Connection ~ 1325 4850
+Wire Wire Line
+	1325 4850 1500 4850
+Wire Wire Line
+	1075 5050 1500 5050
+Connection ~ 1500 5050
 $EndSCHEMATC
