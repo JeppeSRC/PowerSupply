@@ -5,3 +5,7 @@ Transformer: TST 100/013
 Enclosure: 1598GBK
 Display: NHD-0216HZ-FSW-FBW-33V3C
 Fan: Any 120mm 4Pin PWM pc case fan or equivalent
+Binding Posts: (Deltron)
+    RED: 552-0500
+    BLACK: 552-0100
+    GREEN: 552-0400
