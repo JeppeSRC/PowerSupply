@@ -1,0 +1,7 @@
+Misc parts that wont be in the schematic BOM.
+
+Power Inlet: 161-R301B12-E
+Transformer: TST 100/013
+Enclosure: 1598GBK
+Display: NHD-0216HZ-FSW-FBW-33V3C
+Fan: Any 120mm 4Pin PWM pc case fan or equivalent
