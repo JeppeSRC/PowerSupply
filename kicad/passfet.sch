@@ -3,7 +3,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 3 6
+Sheet 2 6
 Title ""
 Date ""
 Rev ""
@@ -23,11 +23,11 @@ U 1 1 5EE616A3
 P 6075 3375
 AR Path="/5EE616A3" Ref="U?"  Part="1" 
 AR Path="/5CA4A3FE/5EE616A3" Ref="U?"  Part="1" 
-AR Path="/5EE5D0E4/5EE616A3" Ref="U?"  Part="1" 
-AR Path="/5EF07313/5EE616A3" Ref="U?"  Part="1" 
-AR Path="/5EF37B1F/5EE616A3" Ref="U?"  Part="1" 
-AR Path="/5EF4F686/5EE616A3" Ref="U?"  Part="1" 
-F 0 "U?" V 6318 3375 50  0000 C CNN
+AR Path="/5EE5D0E4/5EE616A3" Ref="U5"  Part="1" 
+AR Path="/5EF07313/5EE616A3" Ref="U6"  Part="1" 
+AR Path="/5EF37B1F/5EE616A3" Ref="U7"  Part="1" 
+AR Path="/5EF4F686/5EE616A3" Ref="U8"  Part="1" 
+F 0 "U8" V 6318 3375 50  0000 C CNN
 F 1 "FQP17P10" V 6227 3375 50  0000 C CNN
 F 2 "Package_TO_SOT_THT:TO-220-3_Vertical" H 6025 3375 50  0001 C CNN
 F 3 "https://www.mouser.se/datasheet/2/308/FQP17P10-1296917.pdf" H 6025 3375 50  0001 C CNN
@@ -41,11 +41,11 @@ U 1 1 5EE632D6
 P 6075 3775
 AR Path="/5CA4A3FE/5EE632D6" Ref="R?"  Part="1" 
 AR Path="/5EE632D6" Ref="R?"  Part="1" 
-AR Path="/5EE5D0E4/5EE632D6" Ref="R?"  Part="1" 
-AR Path="/5EF07313/5EE632D6" Ref="R?"  Part="1" 
-AR Path="/5EF37B1F/5EE632D6" Ref="R?"  Part="1" 
-AR Path="/5EF4F686/5EE632D6" Ref="R?"  Part="1" 
-F 0 "R?" H 6145 3821 50  0000 L CNN
+AR Path="/5EE5D0E4/5EE632D6" Ref="R35"  Part="1" 
+AR Path="/5EF07313/5EE632D6" Ref="R36"  Part="1" 
+AR Path="/5EF37B1F/5EE632D6" Ref="R37"  Part="1" 
+AR Path="/5EF4F686/5EE632D6" Ref="R38"  Part="1" 
+F 0 "R38" H 6145 3821 50  0000 L CNN
 F 1 "100R" H 6145 3730 50  0000 L CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 6005 3775 50  0001 C CNN
 F 3 "~" H 6075 3775 50  0001 C CNN
@@ -59,11 +59,11 @@ U 1 1 5EE65F01
 P 6050 2950
 AR Path="/5CA4A3FE/5EE65F01" Ref="HS?"  Part="1" 
 AR Path="/5EE65F01" Ref="HS?"  Part="1" 
-AR Path="/5EE5D0E4/5EE65F01" Ref="HS?"  Part="1" 
-AR Path="/5EF07313/5EE65F01" Ref="HS?"  Part="1" 
-AR Path="/5EF37B1F/5EE65F01" Ref="HS?"  Part="1" 
-AR Path="/5EF4F686/5EE65F01" Ref="HS?"  Part="1" 
-F 0 "HS?" H 6191 3071 50  0000 L CNN
+AR Path="/5EE5D0E4/5EE65F01" Ref="HS1"  Part="1" 
+AR Path="/5EF07313/5EE65F01" Ref="HS2"  Part="1" 
+AR Path="/5EF37B1F/5EE65F01" Ref="HS3"  Part="1" 
+AR Path="/5EF4F686/5EE65F01" Ref="HS4"  Part="1" 
+F 0 "HS4" H 6191 3071 50  0000 L CNN
 F 1 "RA-T2X-xxE" H 6191 2980 50  0000 L CNN
 F 2 "footprints:RA-T2X-xxE" H 6062 2950 50  0001 C CNN
 F 3 "~" H 6062 2950 50  0001 C CNN
