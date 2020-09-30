@@ -182,7 +182,7 @@ F 3 "~" H 2275 1525 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	2275 1425 2575 1425
+	2275 1425 2425 1425
 Connection ~ 2575 1425
 $Comp
 L power:GND #PWR?
@@ -479,4 +479,34 @@ Wire Wire Line
 	4100 1825 3375 1825
 Text Notes 1900 2200 0    50   ~ 0
 1MHz/100k
+$Comp
+L Connector:TestPoint TP?
+U 1 1 5F766860
+P 2425 1175
+F 0 "TP?" H 2483 1293 50  0000 L CNN
+F 1 "12V Vin" H 2483 1202 50  0000 L CNN
+F 2 "" H 2625 1175 50  0001 C CNN
+F 3 "~" H 2625 1175 50  0001 C CNN
+	1    2425 1175
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2425 1175 2425 1425
+Connection ~ 2425 1425
+Wire Wire Line
+	2425 1425 2575 1425
+$Comp
+L Connector:TestPoint TP?
+U 1 1 5F768C6F
+P 3975 1150
+F 0 "TP?" H 3917 1268 50  0000 R CNN
+F 1 "12V" H 3917 1177 50  0000 R CNN
+F 2 "" H 4175 1150 50  0001 C CNN
+F 3 "~" H 4175 1150 50  0001 C CNN
+	1    3975 1150
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	3975 1175 3975 1150
+Connection ~ 3975 1175
 $EndSCHEMATC
