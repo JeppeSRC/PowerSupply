@@ -14,21 +14,6 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L Connector:Screw_Terminal_01x03 J?
-U 1 1 5F7AF132
-P 625 1100
-AR Path="/5F7AF132" Ref="J?"  Part="1" 
-AR Path="/5F3D442D/5F7AF132" Ref="J?"  Part="1" 
-AR Path="/5F79B199/5F7AF132" Ref="J?"  Part="1" 
-F 0 "J?" H 543 1417 50  0000 C CNN
-F 1 "Terminal" H 543 1326 50  0000 C CNN
-F 2 "footprints:20020316-GXXXXXXLF" H 625 1100 50  0001 C CNN
-F 3 "https://www.mouser.se/datasheet/2/18/20020316-941859.pdf" H 625 1100 50  0001 C CNN
-F 4 "20020316-G031B01LF" H 625 1100 50  0001 C CNN "MPN"
-	1    625  1100
-	-1   0    0    -1  
-$EndComp
-$Comp
 L power:VDD #PWR?
 U 1 1 5F7AF138
 P 1075 875
@@ -509,4 +494,26 @@ $EndComp
 Wire Wire Line
 	3975 1175 3975 1150
 Connection ~ 3975 1175
+$Comp
+L Connector:Conn_01x01_Male J?
+U 1 1 5F76CCB9
+P 625 1000
+F 0 "J?" H 733 1181 50  0000 C CNN
+F 1 "L" H 733 1090 50  0000 C CNN
+F 2 "TestPoint:TestPoint_Pad_4.0x4.0mm" H 625 1000 50  0001 C CNN
+F 3 "~" H 625 1000 50  0001 C CNN
+	1    625  1000
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Conn_01x01_Male J?
+U 1 1 5F76D673
+P 625 1100
+F 0 "J?" H 775 1225 50  0000 R CNN
+F 1 "N" H 750 1150 50  0000 R CNN
+F 2 "TestPoint:TestPoint_Pad_4.0x4.0mm" H 625 1100 50  0001 C CNN
+F 3 "~" H 625 1100 50  0001 C CNN
+	1    625  1100
+	1    0    0    1   
+$EndComp
 $EndSCHEMATC
