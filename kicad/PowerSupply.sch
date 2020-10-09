@@ -511,7 +511,7 @@ P 8375 4850
 AR Path="/5CA4C891/5EABE78F" Ref="R?"  Part="1" 
 AR Path="/5EABE78F" Ref="R29"  Part="1" 
 F 0 "R29" V 8475 4750 50  0000 L CNN
-F 1 "?" V 8375 4825 50  0000 L CNN
+F 1 "10K" V 8375 4775 50  0000 L CNN
 F 2 "" V 8305 4850 50  0001 C CNN
 F 3 "~" H 8375 4850 50  0001 C CNN
 	1    8375 4850
@@ -600,7 +600,7 @@ $EndComp
 Connection ~ 7225 5175
 Wire Wire Line
 	7225 5325 7225 5175
-Text Notes 7575 3925 0    39   ~ 0
+Text Notes 8800 3750 0    39   ~ 0
 (10 / 52.05) * 20.48 = 3.3\n
 $Comp
 L Connector:TestPoint TP?
@@ -744,7 +744,7 @@ Wire Wire Line
 Text GLabel 10700 4175 3    50   UnSpc ~ 0
 VOUT-
 Wire Wire Line
-	9525 2125 10175 2125
+	9525 2125 10125 2125
 Wire Wire Line
 	7900 4275 7900 4350
 Connection ~ 7900 4350
@@ -1234,4 +1234,11 @@ F 3 "" H 5850 5850 50  0001 C CNN
 $EndComp
 Text Notes 4900 4525 0    50   ~ 0
 Gain = (100 / 10 + 1) = 11\n0.15Ω * 2A = 0.6V\n0.6V * 11 = 3V3
+Wire Wire Line
+	10700 2650 10125 2650
+Wire Wire Line
+	10125 2650 10125 2125
+Connection ~ 10125 2125
+Wire Wire Line
+	10125 2125 10175 2125
 $EndSCHEMATC
