@@ -13,72 +13,36 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-$Comp
-L power:VDD #PWR?
-U 1 1 5F7AF138
-P 1075 875
-AR Path="/5F3D442D/5F7AF138" Ref="#PWR?"  Part="1" 
-AR Path="/5F7AF138" Ref="#PWR?"  Part="1" 
-AR Path="/5F79B199/5F7AF138" Ref="#PWR?"  Part="1" 
-F 0 "#PWR?" H 1075 725 50  0001 C CNN
-F 1 "VDD" H 1092 1048 50  0000 C CNN
-F 2 "" H 1075 875 50  0001 C CNN
-F 3 "" H 1075 875 50  0001 C CNN
-	1    1075 875 
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
-	825  1000 1075 1000
-Wire Wire Line
-	1075 1000 1075 875 
-Wire Wire Line
-	825  1100 1225 1100
-Wire Wire Line
-	1225 1100 1225 1175
-$Comp
-L power:GND #PWR?
-U 1 1 5F7AF142
-P 1225 1175
-AR Path="/5F3D442D/5F7AF142" Ref="#PWR?"  Part="1" 
-AR Path="/5F7AF142" Ref="#PWR?"  Part="1" 
-AR Path="/5F79B199/5F7AF142" Ref="#PWR?"  Part="1" 
-F 0 "#PWR?" H 1225 925 50  0001 C CNN
-F 1 "GND" H 1230 1002 50  0000 C CNN
-F 2 "" H 1225 1175 50  0001 C CNN
-F 3 "" H 1225 1175 50  0001 C CNN
-	1    1225 1175
-	1    0    0    -1  
-$EndComp
+	825  1100 1200 1100
 $Comp
 L power:PWR_FLAG #FLG?
 U 1 1 5F7AF148
-P 1075 1000
+P 1200 1000
 AR Path="/5F3D442D/5F7AF148" Ref="#FLG?"  Part="1" 
 AR Path="/5F7AF148" Ref="#FLG?"  Part="1" 
 AR Path="/5F79B199/5F7AF148" Ref="#FLG?"  Part="1" 
-F 0 "#FLG?" H 1075 1075 50  0001 C CNN
-F 1 "PWR_FLAG" V 1075 1128 50  0000 L CNN
-F 2 "" H 1075 1000 50  0001 C CNN
-F 3 "~" H 1075 1000 50  0001 C CNN
-	1    1075 1000
+F 0 "#FLG?" H 1200 1075 50  0001 C CNN
+F 1 "PWR_FLAG" V 1200 1128 50  0000 L CNN
+F 2 "" H 1200 1000 50  0001 C CNN
+F 3 "~" H 1200 1000 50  0001 C CNN
+	1    1200 1000
 	0    1    1    0   
 $EndComp
-Connection ~ 1075 1000
 $Comp
 L power:PWR_FLAG #FLG?
 U 1 1 5F7AF14F
-P 1225 1100
+P 1200 1100
 AR Path="/5F3D442D/5F7AF14F" Ref="#FLG?"  Part="1" 
 AR Path="/5F7AF14F" Ref="#FLG?"  Part="1" 
 AR Path="/5F79B199/5F7AF14F" Ref="#FLG?"  Part="1" 
-F 0 "#FLG?" H 1225 1175 50  0001 C CNN
-F 1 "PWR_FLAG" V 1225 1228 50  0000 L CNN
-F 2 "" H 1225 1100 50  0001 C CNN
-F 3 "~" H 1225 1100 50  0001 C CNN
-	1    1225 1100
+F 0 "#FLG?" H 1200 1175 50  0001 C CNN
+F 1 "PWR_FLAG" V 1200 1228 50  0000 L CNN
+F 2 "" H 1200 1100 50  0001 C CNN
+F 3 "~" H 1200 1100 50  0001 C CNN
+	1    1200 1100
 	0    1    1    0   
 $EndComp
-Connection ~ 1225 1100
 Wire Notes Line width 10
 	1750 625  1750 1425
 Wire Notes Line width 10
@@ -515,5 +479,76 @@ F 2 "TestPoint:TestPoint_Pad_4.0x4.0mm" H 625 1100 50  0001 C CNN
 F 3 "~" H 625 1100 50  0001 C CNN
 	1    625  1100
 	1    0    0    1   
+$EndComp
+Wire Wire Line
+	825  1000 1200 1000
+Text Label 875  1000 0    50   ~ 0
+Line
+Text Label 875  1100 0    50   ~ 0
+Neutral
+Wire Wire Line
+	7000 1675 7000 1600
+Text Label 7000 1600 0    50   ~ 0
+Line
+Wire Wire Line
+	7000 1600 7150 1600
+Wire Wire Line
+	7000 2275 7000 2375
+Text Label 7000 2375 0    50   ~ 0
+Neutral
+Wire Wire Line
+	7000 2375 7275 2375
+$Comp
+L power:GND #PWR?
+U 1 1 5F77ED46
+P 6575 2075
+F 0 "#PWR?" H 6575 1825 50  0001 C CNN
+F 1 "GND" H 6580 1902 50  0000 C CNN
+F 2 "" H 6575 2075 50  0001 C CNN
+F 3 "" H 6575 2075 50  0001 C CNN
+	1    6575 2075
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6700 1975 6575 1975
+Wire Wire Line
+	6575 1975 6575 2075
+Wire Wire Line
+	7300 1975 7475 1975
+$Comp
+L power:VDD #PWR?
+U 1 1 5F780DF2
+P 8275 1975
+F 0 "#PWR?" H 8275 1825 50  0001 C CNN
+F 1 "VDD" H 8290 2148 50  0000 C CNN
+F 2 "" H 8275 1975 50  0001 C CNN
+F 3 "" H 8275 1975 50  0001 C CNN
+	1    8275 1975
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:CP_Small C?
+U 1 1 5F78214D
+P 7475 2075
+F 0 "C?" H 7563 2121 50  0000 L CNN
+F 1 "CP_Small" H 7563 2030 50  0000 L CNN
+F 2 "" H 7475 2075 50  0001 C CNN
+F 3 "~" H 7475 2075 50  0001 C CNN
+	1    7475 2075
+	1    0    0    -1  
+$EndComp
+Connection ~ 7475 1975
+Wire Wire Line
+	7475 1975 8275 1975
+$Comp
+L Diode_Bridge:GBU6M D?
+U 1 1 5F783487
+P 7000 1975
+F 0 "D?" H 7100 2150 50  0000 L CNN
+F 1 "GBU6M" H 7075 1775 50  0000 L CNN
+F 2 "Diode_THT:Diode_Bridge_Vishay_GBU" H 7150 2100 50  0001 L CNN
+F 3 "http://www.vishay.com/docs/88656/gbu6a.pdf" H 7000 1975 50  0001 C CNN
+	1    7000 1975
+	1    0    0    -1  
 $EndComp
 $EndSCHEMATC
