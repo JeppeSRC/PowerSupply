@@ -1,11 +1,11 @@
 Regulator spec:
-    - Voltage Range:        0 - 20V
-    - Current Range:        0 - 2A | 0 - 4A
+    - Voltage Range:        0 - 20.48V
+    - Current Range:        0 - 2.048A
     - Voltage Precision:    20mV
     - Current Precision:    TBD
 
 Notes:
-    Input voltage: 22.5V-24V
+    230V Mains
 
 Display Layout:
     SET 00.00V 0.00A
