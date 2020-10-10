@@ -3,7 +3,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 1 7
+Sheet 1 3
 Title "PowerSupply"
 Date ""
 Rev "1.0"
@@ -25,91 +25,6 @@ Wire Notes Line width 10
 	550  575  550  1550
 Text GLabel 10175 2125 2    50   UnSpc ~ 0
 VOUT+
-Wire Wire Line
-	8050 2225 7925 2225
-Wire Wire Line
-	8050 1775 8050 2225
-Wire Wire Line
-	8050 1775 7925 1775
-Connection ~ 8050 1775
-Wire Wire Line
-	8050 1350 8050 1775
-Wire Wire Line
-	8050 1350 7925 1350
-Connection ~ 8050 1350
-Wire Wire Line
-	8050 925  8050 1350
-Wire Wire Line
-	7925 925  8050 925 
-Wire Wire Line
-	7925 825  8300 825 
-Wire Wire Line
-	8300 825  8300 1250
-Connection ~ 8300 1250
-Wire Wire Line
-	8300 1250 7925 1250
-Wire Wire Line
-	8300 1675 8300 1250
-Connection ~ 8300 1675
-Wire Wire Line
-	7925 1675 8300 1675
-Wire Wire Line
-	8300 1675 8300 2125
-Connection ~ 8300 2125
-Wire Wire Line
-	7925 2125 8300 2125
-Wire Wire Line
-	7225 825  7350 825 
-Wire Wire Line
-	7225 1250 7225 825 
-Wire Wire Line
-	7225 1250 7350 1250
-Connection ~ 7225 1250
-Wire Wire Line
-	7225 1675 7225 1250
-Wire Wire Line
-	7225 1675 7350 1675
-Connection ~ 7225 1675
-Wire Wire Line
-	7225 2125 7350 2125
-Wire Wire Line
-	7225 2125 7225 1675
-$Sheet
-S 7350 750  575  250 
-U 5EF4F686
-F0 "PassFet4" 50
-F1 "passfet.sch" 50
-F2 "Gate" U R 7925 925 50 
-F3 "Source" U R 7925 825 50 
-F4 "Drain" U L 7350 825 50 
-$EndSheet
-$Sheet
-S 7350 1175 575  250 
-U 5EF37B1F
-F0 "PassFet3" 50
-F1 "passfet.sch" 50
-F2 "Gate" U R 7925 1350 50 
-F3 "Source" U R 7925 1250 50 
-F4 "Drain" U L 7350 1250 50 
-$EndSheet
-$Sheet
-S 7350 2050 575  250 
-U 5EF07313
-F0 "PassFet1" 50
-F1 "passfet.sch" 50
-F2 "Gate" U R 7925 2225 50 
-F3 "Source" U R 7925 2125 50 
-F4 "Drain" U L 7350 2125 50 
-$EndSheet
-$Sheet
-S 7350 1600 575  250 
-U 5EE5D0E4
-F0 "PassFet2" 50
-F1 "passfet.sch" 50
-F2 "Gate" U R 7925 1775 50 
-F3 "Source" U R 7925 1675 50 
-F4 "Drain" U L 7350 1675 50 
-$EndSheet
 $Comp
 L Device:CP_Small C?
 U 1 1 5EAA87AA
@@ -220,8 +135,6 @@ F 3 "" H 8475 2325 50  0001 C CNN
 	1    8475 2325
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	8300 2125 8475 2125
 Wire Wire Line
 	8475 2125 9025 2125
 Connection ~ 8475 2125
@@ -568,19 +481,6 @@ F 3 "~" H 8100 4275 50  0001 C CNN
 	-1   0    0    -1  
 $EndComp
 $Comp
-L Connector:TestPoint TP?
-U 1 1 5EABE75D
-P 9550 2725
-AR Path="/5CA4C891/5EABE75D" Ref="TP?"  Part="1" 
-AR Path="/5EABE75D" Ref="TP1"  Part="1" 
-F 0 "TP1" H 9608 2843 50  0000 L CNN
-F 1 "Vread" H 9608 2752 50  0000 L CNN
-F 2 "TestPoint:TestPoint_Pad_D1.0mm" H 9750 2725 50  0001 C CNN
-F 3 "~" H 9750 2725 50  0001 C CNN
-	1    9550 2725
-	1    0    0    -1  
-$EndComp
-$Comp
 L Device:R R?
 U 1 1 5EABE711
 P 8575 3500
@@ -748,12 +648,9 @@ Connection ~ 7900 4350
 Wire Wire Line
 	7900 4350 7550 4350
 Wire Wire Line
-	7550 4350 7550 2550
+	7550 4350 7550 2675
 Wire Wire Line
-	7550 2550 8050 2550
-Wire Wire Line
-	8050 2550 8050 2225
-Connection ~ 8050 2225
+	7550 2675 8050 2675
 Wire Wire Line
 	8725 3500 8725 4250
 Wire Wire Line
@@ -863,8 +760,6 @@ F 4 "	OPA4196IDR" H 9150 2725 50  0001 C CNN "MPN"
 	1    0    0    1   
 $EndComp
 Wire Wire Line
-	9825 2725 9550 2725
-Wire Wire Line
 	8850 2625 8850 2450
 Wire Wire Line
 	8850 2450 9475 2450
@@ -873,9 +768,6 @@ Wire Wire Line
 Connection ~ 9475 2725
 Wire Wire Line
 	9475 2725 9450 2725
-Connection ~ 9550 2725
-Wire Wire Line
-	9550 2725 9475 2725
 Wire Wire Line
 	8725 2825 8850 2825
 $Comp
@@ -1145,9 +1037,63 @@ Wire Wire Line
 Connection ~ 10125 2125
 Wire Wire Line
 	10125 2125 10175 2125
-Text GLabel 7050 2125 0    50   UnSpc ~ 0
+Text GLabel 7525 2125 0    50   UnSpc ~ 0
 SVOUT
+$Comp
+L symbols:FQP17P10 Q?
+U 1 1 5F89BA81
+P 8050 2125
+F 0 "Q?" V 8293 2125 50  0000 C CNN
+F 1 "FQP17P10" V 8202 2125 50  0000 C CNN
+F 2 "Package_TO_SOT_THT:TO-220-3_Vertical" H 8100 2575 50  0001 C CNN
+F 3 "https://www.mouser.se/datasheet/2/308/FQP17P10-1296917.pdf" H 8050 2125 50  0001 C CNN
+	1    8050 2125
+	0    1    -1   0   
+$EndComp
 Wire Wire Line
-	7225 2125 7050 2125
-Connection ~ 7225 2125
+	8250 2125 8475 2125
+Wire Wire Line
+	7850 2125 7525 2125
+$Comp
+L Device:R R?
+U 1 1 5F8ACC10
+P 8050 2525
+F 0 "R?" H 8120 2571 50  0000 L CNN
+F 1 "100R" H 8120 2480 50  0000 L CNN
+F 2 "" V 7980 2525 50  0001 C CNN
+F 3 "~" H 8050 2525 50  0001 C CNN
+	1    8050 2525
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:Heatsink HS?
+U 1 1 5F8B1D99
+P 8050 1650
+F 0 "HS?" H 8191 1771 50  0000 L CNN
+F 1 "RA-T2X-25E" H 8191 1680 50  0000 L CNN
+F 2 "" H 8062 1650 50  0001 C CNN
+F 3 "~" H 8062 1650 50  0001 C CNN
+	1    8050 1650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9550 2725 9475 2725
+Connection ~ 9550 2725
+Wire Wire Line
+	9825 2725 9550 2725
+$Comp
+L Connector:TestPoint TP?
+U 1 1 5EABE75D
+P 9550 2675
+AR Path="/5CA4C891/5EABE75D" Ref="TP?"  Part="1" 
+AR Path="/5EABE75D" Ref="TP1"  Part="1" 
+F 0 "TP1" H 9608 2793 50  0000 L CNN
+F 1 "Vread" H 9608 2702 50  0000 L CNN
+F 2 "TestPoint:TestPoint_Pad_D1.0mm" H 9750 2675 50  0001 C CNN
+F 3 "~" H 9750 2675 50  0001 C CNN
+	1    9550 2675
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9550 2725 9550 2675
 $EndSCHEMATC
