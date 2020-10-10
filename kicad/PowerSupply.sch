@@ -72,7 +72,6 @@ Wire Wire Line
 Connection ~ 7225 1675
 Wire Wire Line
 	7225 2125 7350 2125
-Connection ~ 7225 2125
 Wire Wire Line
 	7225 2125 7225 1675
 $Sheet
@@ -241,8 +240,6 @@ F 4 "" H 8475 2225 50  0001 C CNN "MPN"
 	1    8475 2225
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	6925 2125 7225 2125
 Wire Wire Line
 	7825 5075 7825 5300
 $Comp
@@ -761,99 +758,6 @@ Wire Wire Line
 	8725 3500 8725 4250
 Wire Wire Line
 	8725 2825 8725 3500
-$Comp
-L power:VDD #PWR0112
-U 1 1 5EBC7CA4
-P 5800 2125
-F 0 "#PWR0112" H 5800 1975 50  0001 C CNN
-F 1 "VDD" H 5817 2298 50  0000 C CNN
-F 2 "" H 5800 2125 50  0001 C CNN
-F 3 "" H 5800 2125 50  0001 C CNN
-	1    5800 2125
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GNDA #PWR?
-U 1 1 5EAA8753
-P 6925 2325
-AR Path="/5CA4A3FE/5EAA8753" Ref="#PWR?"  Part="1" 
-AR Path="/5EAA8753" Ref="#PWR0108"  Part="1" 
-F 0 "#PWR0108" H 6925 2075 50  0001 C CNN
-F 1 "GNDA" H 6930 2152 50  0000 C CNN
-F 2 "" H 6925 2325 50  0001 C CNN
-F 3 "" H 6925 2325 50  0001 C CNN
-	1    6925 2325
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:CP_Small C?
-U 1 1 5EAA8715
-P 6925 2225
-AR Path="/5CA4A3FE/5EAA8715" Ref="C?"  Part="1" 
-AR Path="/5EAA8715" Ref="C10"  Part="1" 
-F 0 "C10" H 7017 2271 50  0000 L CNN
-F 1 "22µF" H 7017 2180 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 6925 2225 50  0001 C CNN
-F 3 "~" H 6925 2225 50  0001 C CNN
-F 4 "860010672010" H 6925 2225 50  0001 C CNN "MPN"
-	1    6925 2225
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	6250 2325 6050 2325
-$Comp
-L power:GNDA #PWR?
-U 1 1 5EA8934E
-P 6250 2325
-AR Path="/5CA3E8E1/5EA8934E" Ref="#PWR?"  Part="1" 
-AR Path="/5EA8934E" Ref="#PWR0106"  Part="1" 
-F 0 "#PWR0106" H 6250 2075 50  0001 C CNN
-F 1 "GNDA" H 6100 2225 50  0000 C CNN
-F 2 "" H 6250 2325 50  0001 C CNN
-F 3 "" H 6250 2325 50  0001 C CNN
-	1    6250 2325
-	1    0    0    -1  
-$EndComp
-Connection ~ 6250 2325
-Wire Wire Line
-	6500 2325 6250 2325
-Wire Wire Line
-	5800 2125 6050 2125
-Connection ~ 6050 2125
-$Comp
-L Device:CP_Small C?
-U 1 1 5EA89347
-P 6050 2225
-AR Path="/5CA3E8E1/5EA89347" Ref="C?"  Part="1" 
-AR Path="/5EA89347" Ref="C8"  Part="1" 
-F 0 "C8" H 6138 2271 50  0000 L CNN
-F 1 "100µF" H 6138 2180 50  0000 L CNN
-F 2 "" H 6050 2225 50  0001 C CNN
-F 3 "~" H 6050 2225 50  0001 C CNN
-F 4 "REA101M1HBK-0811P" H 6050 2225 50  0001 C CNN "MPN"
-	1    6050 2225
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	6500 2125 6050 2125
-$Comp
-L Device:CP_Small C?
-U 1 1 5EA8933F
-P 6500 2225
-AR Path="/5CA3E8E1/5EA8933F" Ref="C?"  Part="1" 
-AR Path="/5EA8933F" Ref="C9"  Part="1" 
-F 0 "C9" H 6588 2271 50  0000 L CNN
-F 1 "100µF" H 6588 2180 50  0000 L CNN
-F 2 "" H 6500 2225 50  0001 C CNN
-F 3 "~" H 6500 2225 50  0001 C CNN
-F 4 "REA101M1HBK-0811P" H 6500 2225 50  0001 C CNN "MPN"
-	1    6500 2225
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	6500 2125 6925 2125
-Connection ~ 6500 2125
-Connection ~ 6925 2125
 Wire Wire Line
 	9725 3350 9725 3500
 $Comp
@@ -1241,4 +1145,9 @@ Wire Wire Line
 Connection ~ 10125 2125
 Wire Wire Line
 	10125 2125 10175 2125
+Text GLabel 7050 2125 0    50   UnSpc ~ 0
+SVOUT
+Wire Wire Line
+	7225 2125 7050 2125
+Connection ~ 7225 2125
 $EndSCHEMATC
