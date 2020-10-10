@@ -3,7 +3,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 7 3
+Sheet 3 3
 Title "MCU Connections"
 Date ""
 Rev ""
@@ -1490,20 +1490,6 @@ F 4 "APTD3216LVBCD" H 9825 1900 50  0001 C CNN "MPN"
 	1    9825 1900
 	-1   0    0    1   
 $EndComp
-$Comp
-L power:VDD #PWR?
-U 1 1 5F433E29
-P 9175 950
-AR Path="/5CA214F9/5F433E29" Ref="#PWR?"  Part="1" 
-AR Path="/5F433E29" Ref="#PWR?"  Part="1" 
-AR Path="/5F1751CC/5F433E29" Ref="#PWR0147"  Part="1" 
-F 0 "#PWR0147" H 9175 800 50  0001 C CNN
-F 1 "VDD" H 9192 1123 50  0000 C CNN
-F 2 "" H 9175 950 50  0001 C CNN
-F 3 "" H 9175 950 50  0001 C CNN
-	1    9175 950 
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	9175 950  9375 950 
 $Comp
@@ -1536,20 +1522,6 @@ F 2 "" H 10575 1900 50  0001 C CNN
 F 3 "" H 10575 1900 50  0001 C CNN
 	1    10575 1900
 	0    -1   -1   0   
-$EndComp
-$Comp
-L power:VDD #PWR?
-U 1 1 5F433E3E
-P 9175 1900
-AR Path="/5CA214F9/5F433E3E" Ref="#PWR?"  Part="1" 
-AR Path="/5F433E3E" Ref="#PWR?"  Part="1" 
-AR Path="/5F1751CC/5F433E3E" Ref="#PWR0149"  Part="1" 
-F 0 "#PWR0149" H 9175 1750 50  0001 C CNN
-F 1 "VDD" H 9192 2073 50  0000 C CNN
-F 2 "" H 9175 1900 50  0001 C CNN
-F 3 "" H 9175 1900 50  0001 C CNN
-	1    9175 1900
-	1    0    0    -1  
 $EndComp
 Wire Wire Line
 	9175 1900 9375 1900
@@ -2293,4 +2265,26 @@ Wire Wire Line
 Wire Wire Line
 	1075 5050 1500 5050
 Connection ~ 1500 5050
+$Comp
+L power:+12V #PWR?
+U 1 1 5F8D2A64
+P 9175 950
+F 0 "#PWR?" H 9175 800 50  0001 C CNN
+F 1 "+12V" H 9190 1123 50  0000 C CNN
+F 2 "" H 9175 950 50  0001 C CNN
+F 3 "" H 9175 950 50  0001 C CNN
+	1    9175 950 
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+12V #PWR?
+U 1 1 5F8D3C90
+P 9175 1900
+F 0 "#PWR?" H 9175 1750 50  0001 C CNN
+F 1 "+12V" H 9190 2073 50  0000 C CNN
+F 2 "" H 9175 1900 50  0001 C CNN
+F 3 "" H 9175 1900 50  0001 C CNN
+	1    9175 1900
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
