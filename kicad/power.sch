@@ -867,28 +867,10 @@ Text GLabel 4550 3675 2    50   UnSpc ~ 0
 SVOUT
 Wire Wire Line
 	4500 3675 4550 3675
-$Comp
-L power:GND #PWR?
-U 1 1 5F84CEEC
-P 3875 4625
-F 0 "#PWR?" H 3875 4375 50  0001 C CNN
-F 1 "GND" H 3880 4452 50  0000 C CNN
-F 2 "" H 3875 4625 50  0001 C CNN
-F 3 "" H 3875 4625 50  0001 C CNN
-	1    3875 4625
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	4050 4325 3875 4325
-Wire Wire Line
-	3875 4325 3875 4425
-Wire Wire Line
-	3875 4325 3600 4325
 Wire Wire Line
 	3500 4325 3500 4150
 Wire Wire Line
 	3500 4150 3350 4150
-Connection ~ 3875 4325
 $Comp
 L Connector:TestPoint TP?
 U 1 1 5F864205
@@ -959,17 +941,6 @@ Wire Wire Line
 Connection ~ 2325 3750
 Wire Wire Line
 	2325 3750 2550 3750
-$Comp
-L Device:R_Small R?
-U 1 1 5F84C2D2
-P 3875 4525
-F 0 "R?" H 3934 4571 50  0000 L CNN
-F 1 "10K" H 3934 4480 50  0000 L CNN
-F 2 "" H 3875 4525 50  0001 C CNN
-F 3 "~" H 3875 4525 50  0001 C CNN
-	1    3875 4525
-	1    0    0    -1  
-$EndComp
 $Comp
 L Device:CP_Small C?
 U 1 1 5F83854B
@@ -1088,4 +1059,6 @@ Wire Wire Line
 	8300 1250 8750 1250
 Text GLabel 4050 4325 2    50   UnSpc ~ 0
 SVOUT_FB
+Wire Wire Line
+	3600 4325 4050 4325
 $EndSCHEMATC
