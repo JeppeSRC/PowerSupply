@@ -884,7 +884,6 @@ F 4 "CC0805KRX7R9BB104" H 1850 2875 50  0001 C CNN "MPN"
 $EndComp
 Wire Wire Line
 	650  2775 1050 2775
-Connection ~ 650  2775
 Connection ~ 1050 2775
 Wire Wire Line
 	1050 2775 1450 2775
@@ -1011,8 +1010,6 @@ F 3 "" H 650 1025 50  0001 C CNN
 	1    650  1025
 	1    0    0    -1  
 $EndComp
-Connection ~ 650  2125
-Connection ~ 650  1475
 Wire Wire Line
 	1050 1025 650  1025
 Connection ~ 1050 1025
@@ -1073,7 +1070,6 @@ F 3 "~" H 2650 2775 50  0001 C CNN
 	1    2650 2775
 	1    0    0    -1  
 $EndComp
-Connection ~ 650  825 
 Wire Notes Line width 10
 	5150 7725 5150 5950
 Wire Notes Line width 10
