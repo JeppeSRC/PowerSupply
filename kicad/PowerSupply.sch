@@ -869,7 +869,7 @@ L Device:R R?
 U 1 1 5F9328FB
 P 3125 5675
 F 0 "R?" V 2918 5675 50  0000 C CNN
-F 1 "0R15" V 3009 5675 50  0000 C CNN
+F 1 "0R15" V 3125 5675 50  0000 C CNN
 F 2 "Resistor_SMD:R_2512_6332Metric_Pad1.40x3.35mm_HandSolder" V 3055 5675 50  0001 C CNN
 F 3 "~" H 3125 5675 50  0001 C CNN
 	1    3125 5675
@@ -1012,7 +1012,7 @@ F 3 "" H 4175 5625 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Text Notes 3225 4300 0    50   ~ 0
-Gain = (100 / 10 + 1) = 11\n0.15Ω * 2A = 0.6V\n0.6V * 11 = 3V3
+Gain = (100 / 10 + 1) = 11\n0.15Ω * 2A = 0.3V\n0.6V * 11 = 3V3
 Wire Wire Line
 	9025 2425 8450 2425
 Wire Wire Line
