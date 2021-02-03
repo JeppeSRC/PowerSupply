@@ -1012,7 +1012,7 @@ F 3 "" H 4175 5625 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Text Notes 3225 4300 0    50   ~ 0
-Gain = (100 / 10 + 1) = 11\n0.15Ω * 2A = 0.3V\n0.6V * 11 = 3V3
+Gain = (100 / 10 + 1) = 11\n0.15Ω * 2A = 0.3V\n0.3V * 11 = 3V3
 Wire Wire Line
 	9025 2425 8450 2425
 Wire Wire Line
