@@ -481,7 +481,7 @@ Connection ~ 5550 4950
 Wire Wire Line
 	5550 5100 5550 4950
 Text Notes 7125 3525 0    39   ~ 0
-(10 / 52.05) * 20.48 = 3.3\n
+(10 / 62.05) * 20.48 = 3.3\n
 $Comp
 L Connector:TestPoint TP?
 U 1 1 5EA8932B
