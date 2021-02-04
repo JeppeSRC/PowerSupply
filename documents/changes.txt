@@ -20,9 +20,12 @@ Revision 3:
 	- Additional push button for selecting boot loader during reset
 	- Connect Iread and Vread to SDADC and ADC
     - Changed current limiting circuit
-    - Removed RC filter on VReg output
+    - Improved voltage regulation
     - Moved buffer in current sense amplifier to before the ADC inputs
     - Single 3W SMD shunt resistor
     - Added heatsink temperature sensor
-    - Caps will be discharged to set value + 0.5%
     - Fan control
+    - Mains transformer
+    - Buck pre regulator
+    - 12V buck regulator
+
