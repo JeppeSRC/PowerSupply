@@ -1020,7 +1020,7 @@ Wire Wire Line
 Connection ~ 8450 1900
 Wire Wire Line
 	8450 1900 8500 1900
-Text GLabel 5850 1900 0    50   UnSpc ~ 0
+Text GLabel 5650 1900 0    50   UnSpc ~ 0
 SVOUT
 $Comp
 L symbols:FQP17P10 Q?
@@ -1034,9 +1034,7 @@ F 3 "https://www.mouser.se/datasheet/2/308/FQP17P10-1296917.pdf" H 6375 1900 50 
 	0    1    -1   0   
 $EndComp
 Wire Wire Line
-	6575 1900 6800 1900
-Wire Wire Line
-	6175 1900 6000 1900
+	6575 1900 6650 1900
 $Comp
 L Device:R R?
 U 1 1 5F8ACC10
@@ -1051,12 +1049,12 @@ $EndComp
 $Comp
 L Mechanical:Heatsink HS?
 U 1 1 5F8B1D99
-P 6375 1425
-F 0 "HS?" H 6516 1546 50  0000 L CNN
-F 1 "RA-T2X-25E" H 6516 1455 50  0000 L CNN
-F 2 "" H 6387 1425 50  0001 C CNN
-F 3 "~" H 6387 1425 50  0001 C CNN
-	1    6375 1425
+P 7800 900
+F 0 "HS?" H 7941 1021 50  0000 L CNN
+F 1 "RA-T2X-25E" H 7941 930 50  0000 L CNN
+F 2 "" H 7812 900 50  0001 C CNN
+F 3 "../documents/datasheets/RA-T2X-25E.pdf" H 7812 900 50  0001 C CNN
+	1    7800 900 
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
@@ -1079,112 +1077,10 @@ F 3 "~" H 8075 2450 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	7875 2500 7875 2450
-$Comp
-L Device:Q_PMOS_GSD Q?
-U 1 1 5F8699F7
-P 5650 2375
-AR Path="/5F79B199/5F8699F7" Ref="Q?"  Part="1" 
-AR Path="/5F8699F7" Ref="Q?"  Part="1" 
-F 0 "Q?" V 5992 2375 50  0000 C CNN
-F 1 "BSS84AK" V 5901 2375 50  0000 C CNN
-F 2 "" H 5850 2475 50  0001 C CNN
-F 3 "https://www.mouser.se/datasheet/2/916/BSS84AK-1598662.pdf" H 5650 2375 50  0001 C CNN
-	1    5650 2375
-	0    -1   -1   0   
-$EndComp
-Text GLabel 5650 2875 3    50   UnSpc ~ 0
-VOUT+
-Wire Wire Line
-	5850 2275 6000 2275
-Wire Wire Line
-	6000 2275 6000 1900
-Connection ~ 6000 1900
-Wire Wire Line
-	6000 1900 5850 1900
-$Comp
-L Device:R R?
-U 1 1 5F88939A
-P 5650 2725
-F 0 "R?" H 5725 2725 50  0000 L CNN
-F 1 "10K" V 5650 2650 50  0000 L CNN
-F 2 "" V 5580 2725 50  0001 C CNN
-F 3 "~" H 5650 2725 50  0001 C CNN
-	1    5650 2725
-	1    0    0    -1  
-$EndComp
-Text GLabel 3825 2275 1    50   UnSpc ~ 0
-SVOUT_FB
-Wire Wire Line
-	5975 3375 5975 3300
 Wire Wire Line
 	6375 2350 6375 2150
-$Comp
-L Jumper:SolderJumper_2_Open JP?
-U 1 1 5F890B6C
-P 5975 2950
-F 0 "JP?" V 5929 3018 50  0000 L CNN
-F 1 "VReg_FET" V 6020 3018 50  0000 L CNN
-F 2 "" H 5975 2950 50  0001 C CNN
-F 3 "~" H 5975 2950 50  0001 C CNN
-	1    5975 2950
-	0    1    1    0   
-$EndComp
-Wire Wire Line
-	5975 2800 5975 2350
-Connection ~ 5975 3300
-Wire Wire Line
-	5975 3300 5975 3100
-$Comp
-L Jumper:SolderJumper_2_Open JP?
-U 1 1 5F89C79E
-P 4875 2950
-F 0 "JP?" V 4829 3018 50  0000 L CNN
-F 1 "VReg_SVOUT" V 4920 3018 50  0000 L CNN
-F 2 "" H 4875 2950 50  0001 C CNN
-F 3 "~" H 4875 2950 50  0001 C CNN
-	1    4875 2950
-	0    1    1    0   
-$EndComp
-Wire Wire Line
-	3825 2275 4225 2275
-Wire Wire Line
-	4875 3300 4875 3100
-Wire Wire Line
-	4875 3300 5975 3300
-Wire Wire Line
-	4875 2800 4875 2275
-Connection ~ 4875 2275
-Wire Wire Line
-	4875 2275 5075 2275
 Wire Wire Line
 	5275 4700 5275 4750
-$Comp
-L Device:R R?
-U 1 1 5F8BA9F0
-P 4225 2550
-F 0 "R?" H 4275 2525 50  0000 L CNN
-F 1 "10k" V 4225 2475 50  0000 L CNN
-F 2 "" V 4155 2550 50  0001 C CNN
-F 3 "~" H 4225 2550 50  0001 C CNN
-	1    4225 2550
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	4225 2400 4225 2275
-Connection ~ 4225 2275
-Wire Wire Line
-	4225 2275 4875 2275
-$Comp
-L power:GND #PWR?
-U 1 1 5F8C0453
-P 4225 2700
-F 0 "#PWR?" H 4225 2450 50  0001 C CNN
-F 1 "GND" H 4230 2527 50  0000 C CNN
-F 2 "" H 4225 2700 50  0001 C CNN
-F 3 "" H 4225 2700 50  0001 C CNN
-	1    4225 2700
-	1    0    0    -1  
-$EndComp
 $Comp
 L Device:R R?
 U 1 1 5F8C1DB2
@@ -1210,16 +1106,44 @@ F 3 "" H 6375 2650 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:R R?
-U 1 1 5F8F89A9
-P 5225 2275
-F 0 "R?" V 5125 2275 50  0000 C CNN
-F 1 "10k" V 5225 2275 50  0000 C CNN
-F 2 "" V 5155 2275 50  0001 C CNN
-F 3 "~" H 5225 2275 50  0001 C CNN
-	1    5225 2275
-	0    1    1    0   
+L Mechanical:Heatsink HS?
+U 1 1 601D5619
+P 7000 900
+F 0 "HS?" H 7141 1021 50  0000 L CNN
+F 1 "RA-T2X-25E" H 7141 930 50  0000 L CNN
+F 2 "" H 7012 900 50  0001 C CNN
+F 3 "../documents/datasheets/RA-T2X-25E.pdf" H 7012 900 50  0001 C CNN
+	1    7000 900 
+	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	5375 2275 5450 2275
+	5975 2350 5975 3375
+$Comp
+L symbols:FQP17P10 Q?
+U 1 1 601E761E
+P 5975 1425
+F 0 "Q?" V 6218 1425 50  0000 C CNN
+F 1 "FQP17P10" V 6127 1425 50  0000 C CNN
+F 2 "Package_TO_SOT_THT:TO-220-3_Vertical" H 6025 1875 50  0001 C CNN
+F 3 "https://www.mouser.se/datasheet/2/308/FQP17P10-1296917.pdf" H 5975 1425 50  0001 C CNN
+	1    5975 1425
+	0    1    -1   0   
+$EndComp
+Wire Wire Line
+	6175 1425 6650 1425
+Wire Wire Line
+	6650 1425 6650 1900
+Connection ~ 6650 1900
+Wire Wire Line
+	6650 1900 6800 1900
+Wire Wire Line
+	5975 2350 5975 1675
+Connection ~ 5975 2350
+Wire Wire Line
+	6175 1900 5775 1900
+Wire Wire Line
+	5775 1900 5775 1425
+Wire Wire Line
+	5775 1900 5650 1900
+Connection ~ 5775 1900
 $EndSCHEMATC
