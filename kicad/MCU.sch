@@ -1488,21 +1488,6 @@ F 4 "APTD3216LVBCD" H 9825 1900 50  0001 C CNN "MPN"
 $EndComp
 Wire Wire Line
 	9175 950  9375 950 
-$Comp
-L Device:Q_NMOS_GSD Q?
-U 1 1 5F433E31
-P 10375 1050
-AR Path="/5CA214F9/5F433E31" Ref="Q?"  Part="1" 
-AR Path="/5F433E31" Ref="Q?"  Part="1" 
-AR Path="/5F1751CC/5F433E31" Ref="Q7"  Part="1" 
-F 0 "Q7" V 10718 1050 50  0000 C CNN
-F 1 "2N7002NXAK" V 10627 1050 50  0000 C CNN
-F 2 "Package_TO_SOT_SMD:SOT-23" H 10575 1150 50  0001 C CNN
-F 3 "https://assets.nexperia.com/documents/data-sheet/2N7002NXAK.pdf" H 10375 1050 50  0001 C CNN
-F 4 "2N7002NXAK" V 10375 1050 50  0001 C CNN "MPN"
-	1    10375 1050
-	0    -1   -1   0   
-$EndComp
 Wire Wire Line
 	10175 950  9975 950 
 $Comp
@@ -1540,21 +1525,6 @@ F 4 "CRCW080510K0FKEAC" H 9525 1825 50  0001 C CNN "MPN"
 $EndComp
 Text Notes 9275 1400 0    50   ~ 0
 20V / 4mA = 5000Ω
-$Comp
-L Device:Q_NMOS_GSD Q?
-U 1 1 5F433E54
-P 10375 2000
-AR Path="/5CA214F9/5F433E54" Ref="Q?"  Part="1" 
-AR Path="/5F433E54" Ref="Q?"  Part="1" 
-AR Path="/5F1751CC/5F433E54" Ref="Q8"  Part="1" 
-F 0 "Q8" V 10718 2000 50  0000 C CNN
-F 1 "2N7002NXAK" V 10627 2000 50  0000 C CNN
-F 2 "Package_TO_SOT_SMD:SOT-23" H 10575 2100 50  0001 C CNN
-F 3 "https://assets.nexperia.com/documents/data-sheet/2N7002NXAK.pdf" H 10375 2000 50  0001 C CNN
-F 4 "2N7002NXAK" V 10375 2000 50  0001 C CNN "MPN"
-	1    10375 2000
-	0    -1   -1   0   
-$EndComp
 $Comp
 L Device:R R?
 U 1 1 5F433E5A
@@ -2282,5 +2252,27 @@ F 2 "" H 9175 1900 50  0001 C CNN
 F 3 "" H 9175 1900 50  0001 C CNN
 	1    9175 1900
 	1    0    0    -1  
+$EndComp
+$Comp
+L Transistor_FET:2N7002K Q?
+U 1 1 605A3AC5
+P 10375 2000
+F 0 "Q?" V 10717 2000 50  0000 C CNN
+F 1 "2N7002K" V 10626 2000 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 10575 1925 50  0001 L CIN
+F 3 "https://www.diodes.com/assets/Datasheets/ds30896.pdf" H 10375 2000 50  0001 L CNN
+	1    10375 2000
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Transistor_FET:2N7002K Q?
+U 1 1 605A719E
+P 10375 1050
+F 0 "Q?" V 10717 1050 50  0000 C CNN
+F 1 "2N7002K" V 10626 1050 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 10575 975 50  0001 L CIN
+F 3 "https://www.diodes.com/assets/Datasheets/ds30896.pdf" H 10375 1050 50  0001 L CNN
+	1    10375 1050
+	0    -1   -1   0   
 $EndComp
 $EndSCHEMATC
