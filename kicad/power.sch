@@ -806,7 +806,7 @@ L Device:R R?
 U 1 1 6030CC7C
 P 4275 5025
 F 0 "R?" V 4175 5025 50  0000 C CNN
-F 1 "1k" V 4275 5025 50  0000 C CNN
+F 1 "10k" V 4275 5025 50  0000 C CNN
 F 2 "" V 4205 5025 50  0001 C CNN
 F 3 "~" H 4275 5025 50  0001 C CNN
 	1    4275 5025
@@ -815,17 +815,6 @@ $EndComp
 Connection ~ 4125 5025
 Wire Wire Line
 	4125 5025 4125 5125
-$Comp
-L Device:R R?
-U 1 1 6030D3ED
-P 4575 5025
-F 0 "R?" V 4475 5025 50  0000 C CNN
-F 1 "1k" V 4575 5025 50  0000 C CNN
-F 2 "" V 4505 5025 50  0001 C CNN
-F 3 "~" H 4575 5025 50  0001 C CNN
-	1    4575 5025
-	0    1    1    0   
-$EndComp
 Wire Wire Line
 	4725 4450 4725 5025
 $Comp
@@ -1403,4 +1392,6 @@ Wire Notes Line width 10
 Wire Notes Line width 10
 	5100 3775 525  3775
 Connection ~ 1525 2250
+Wire Wire Line
+	4725 5025 4425 5025
 $EndSCHEMATC
