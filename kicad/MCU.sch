@@ -13,21 +13,6 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-$Comp
-L MCU_ST_STM32F3:STM32F373C8Tx U?
-U 1 1 5F1AFC27
-P 6625 2875
-AR Path="/5CA214F9/5F1AFC27" Ref="U?"  Part="1" 
-AR Path="/5F1AFC27" Ref="U?"  Part="1" 
-AR Path="/5F1751CC/5F1AFC27" Ref="U9"  Part="1" 
-F 0 "U9" H 6625 3025 50  0000 C CNN
-F 1 "STM32F373C8Tx" H 6625 2875 50  0000 C CNN
-F 2 "Package_QFP:LQFP-48_7x7mm_P0.5mm" H 6025 1375 50  0001 R CNN
-F 3 "http://www.st.com/st-web-ui/static/active/en/resource/technical/document/datasheet/DM00046749.pdf" H 6625 2875 50  0001 C CNN
-F 4 "STM32F373C8T6" H 6625 2875 50  0001 C CNN "MPN"
-	1    6625 2875
-	1    0    0    -1  
-$EndComp
 Text Label 7325 2675 0    50   ~ 0
 USB_D+
 Text Label 7325 2575 0    50   ~ 0
@@ -1510,23 +1495,6 @@ Wire Wire Line
 	10175 1900 9975 1900
 $Comp
 L Device:R R?
-U 1 1 5F433E46
-P 9525 1825
-AR Path="/5CA214F9/5F433E46" Ref="R?"  Part="1" 
-AR Path="/5F433E46" Ref="R?"  Part="1" 
-AR Path="/5F1751CC/5F433E46" Ref="R43"  Part="1" 
-F 0 "R43" V 9318 1825 50  0000 C CNN
-F 1 "10K" V 9409 1825 50  0000 C CNN
-F 2 "" V 9455 1825 50  0001 C CNN
-F 3 "~" H 9525 1825 50  0001 C CNN
-F 4 "CRCW080510K0FKEAC" H 9525 1825 50  0001 C CNN "MPN"
-	1    9525 1825
-	0    1    1    0   
-$EndComp
-Text Notes 9275 1400 0    50   ~ 0
-20V / 4mA = 5000Ω
-$Comp
-L Device:R R?
 U 1 1 5F433E5A
 P 10575 1300
 AR Path="/5CA214F9/5F433E5A" Ref="R?"  Part="1" 
@@ -1805,68 +1773,33 @@ $EndComp
 $Comp
 L Device:R R?
 U 1 1 5EA65641
-P 9525 1975
+P 9525 1900
 AR Path="/5CA214F9/5EA65641" Ref="R?"  Part="1" 
 AR Path="/5EA65641" Ref="R?"  Part="1" 
 AR Path="/5F1751CC/5EA65641" Ref="R44"  Part="1" 
-F 0 "R44" V 9318 1975 50  0000 C CNN
-F 1 "10K" V 9409 1975 50  0000 C CNN
-F 2 "" V 9455 1975 50  0001 C CNN
-F 3 "~" H 9525 1975 50  0001 C CNN
-F 4 "CRCW080510K0FKEAC" H 9525 1975 50  0001 C CNN "MPN"
-	1    9525 1975
+F 0 "R44" V 9318 1900 50  0000 C CNN
+F 1 "4k7" V 9409 1900 50  0000 C CNN
+F 2 "" V 9455 1900 50  0001 C CNN
+F 3 "~" H 9525 1900 50  0001 C CNN
+F 4 "CRCW080510K0FKEAC" H 9525 1900 50  0001 C CNN "MPN"
+	1    9525 1900
 	0    1    -1   0   
-$EndComp
-Wire Wire Line
-	9675 1825 9675 1900
-Connection ~ 9675 1900
-Wire Wire Line
-	9675 1900 9675 1975
-Wire Wire Line
-	9375 1825 9375 1900
-Connection ~ 9375 1900
-Wire Wire Line
-	9375 1900 9375 1975
-$Comp
-L Device:R R?
-U 1 1 5EA73971
-P 9525 875
-AR Path="/5CA214F9/5EA73971" Ref="R?"  Part="1" 
-AR Path="/5EA73971" Ref="R?"  Part="1" 
-AR Path="/5F1751CC/5EA73971" Ref="R39"  Part="1" 
-F 0 "R39" V 9318 875 50  0000 C CNN
-F 1 "10K" V 9409 875 50  0000 C CNN
-F 2 "" V 9455 875 50  0001 C CNN
-F 3 "~" H 9525 875 50  0001 C CNN
-F 4 "CRCW080510K0FKEAC" H 9525 875 50  0001 C CNN "MPN"
-	1    9525 875 
-	0    1    1    0   
 $EndComp
 $Comp
 L Device:R R?
 U 1 1 5EA73977
-P 9525 1025
+P 9525 950
 AR Path="/5CA214F9/5EA73977" Ref="R?"  Part="1" 
 AR Path="/5EA73977" Ref="R?"  Part="1" 
 AR Path="/5F1751CC/5EA73977" Ref="R40"  Part="1" 
-F 0 "R40" V 9318 1025 50  0000 C CNN
-F 1 "10K" V 9409 1025 50  0000 C CNN
-F 2 "" V 9455 1025 50  0001 C CNN
-F 3 "~" H 9525 1025 50  0001 C CNN
-F 4 "CRCW080510K0FKEAC" H 9525 1025 50  0001 C CNN "MPN"
-	1    9525 1025
+F 0 "R40" V 9318 950 50  0000 C CNN
+F 1 "4k7" V 9409 950 50  0000 C CNN
+F 2 "" V 9455 950 50  0001 C CNN
+F 3 "~" H 9525 950 50  0001 C CNN
+F 4 "CRCW080510K0FKEAC" H 9525 950 50  0001 C CNN "MPN"
+	1    9525 950 
 	0    1    -1   0   
 $EndComp
-Wire Wire Line
-	9675 875  9675 950 
-Connection ~ 9675 950 
-Wire Wire Line
-	9675 950  9675 1025
-Wire Wire Line
-	9375 875  9375 950 
-Connection ~ 9375 950 
-Wire Wire Line
-	9375 950  9375 1025
 Wire Wire Line
 	7325 3175 7575 3175
 Wire Wire Line
@@ -1990,7 +1923,6 @@ $EndComp
 Connection ~ 1625 5650
 Wire Wire Line
 	6625 1375 6725 1375
-Connection ~ 6825 4475
 Wire Notes Line width 10
 	11175 2325 9075 2325
 Wire Notes Line width 10
@@ -2218,9 +2150,7 @@ Wire Wire Line
 Wire Wire Line
 	3400 4975 3500 4975
 Text GLabel 7325 3375 2    50   UnSpc ~ 0
-RANGE_1
-Text GLabel 7325 4175 2    50   UnSpc ~ 0
-RANGE_2
+SVOUT_RANGE
 Wire Wire Line
 	1075 4850 1325 4850
 Wire Wire Line
@@ -2275,4 +2205,21 @@ F 3 "https://www.diodes.com/assets/Datasheets/ds30896.pdf" H 10375 1050 50  0001
 	1    10375 1050
 	0    -1   -1   0   
 $EndComp
+Connection ~ 6825 4475
+$Comp
+L MCU_ST_STM32F3:STM32F373C8Tx U?
+U 1 1 5F1AFC27
+P 6625 2875
+AR Path="/5CA214F9/5F1AFC27" Ref="U?"  Part="1" 
+AR Path="/5F1AFC27" Ref="U?"  Part="1" 
+AR Path="/5F1751CC/5F1AFC27" Ref="U9"  Part="1" 
+F 0 "U9" H 6625 3025 50  0000 C CNN
+F 1 "STM32F373C8Tx" H 6625 2875 50  0000 C CNN
+F 2 "Package_QFP:LQFP-48_7x7mm_P0.5mm" H 6025 1375 50  0001 R CNN
+F 3 "http://www.st.com/st-web-ui/static/active/en/resource/technical/document/datasheet/DM00046749.pdf" H 6625 2875 50  0001 C CNN
+F 4 "STM32F373C8T6" H 6625 2875 50  0001 C CNN "MPN"
+	1    6625 2875
+	1    0    0    -1  
+$EndComp
+NoConn ~ 7325 4175
 $EndSCHEMATC
