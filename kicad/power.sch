@@ -167,7 +167,7 @@ Connection ~ 7675 1975
 Wire Wire Line
 	7675 1975 7875 1975
 Text Notes 550  3875 0    50   ~ 10
-Pre regulator 21V @ 2.5A Max
+Pre regulator 21V/11V @ 2.5A Max
 Wire Notes Line
 	3825 5700 3825 5675
 $Comp
