@@ -35,32 +35,33 @@ USBState USB::deviceState;
 bool USB::endpointHalted = false;
 uint8 USB::address = 0;
 
-void usb_copy_to_sram(void* dst, void* src, uint32 size) {
+void usb_copy_to_sram(volatile void* dst, volatile void* src, uint32 size) {
 	bool odd = size & 0x01;
 
 	size >>= 1;
 
-	for (uint32 i = 0; i < size; i++) {
+	for (uint32 i = 0; i < size; ++i) {
 		((volatile uint16*)dst)[i << 1] = ((volatile uint16*)src)[i];
 	}
 
 	if (odd) {
-		((volatile uint16*)dst)[size << 1] = ((volatile uint8*)src)[size << 1];
+		uint16 tmp = ((volatile uint8*)src)[size << 1];
+		((volatile uint16*)dst)[size << 1] = tmp;
 	}
 }
 
-void usb_copy_from_sram(void* dst, void* src, uint32 size) {
+void usb_copy_from_sram(volatile void* dst, volatile void* src, uint32 size) {
 	bool odd = size & 0x01;
 
 	size >>= 1;
 
 	for (uint32 i = 0; i < size; i++) {
-		((volatile uint16*)dst)[i] = ((volatile uint16*)src)[i << 1];
+		((volatile uint16*)dst)[i] = (((volatile uint16*)src)[i << 1]);
 	}
 
 	if (odd) {
-		uint16 tmp = ((volatile uint16*)src)[(size + 1) << 1];
-		((volatile uint8*)dst)[size << 1] = (uint8)tmp;
+		uint16 tmp = ((volatile uint16*)src)[size << 1];
+		((volatile uint8*)dst)[size << 1] = tmp;
 	}
 }
 
