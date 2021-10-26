@@ -25,6 +25,44 @@ struct Data {
 	USBEndpointDescriptor endpointOut2;
 };
 
+
+
+struct USBInData1 {
+	uint16 vReadADC;
+	uint16 vRead;
+	uint16 vSet;
+	uint16 iReadADC;
+	uint16 iRead;
+	uint16 iSet;
+};
+
+struct USBOutData1 {
+	uint16 vSetDAC;
+	uint16 vSet;
+	uint16 iSetDAC;
+	uint16 iSet;
+};
+
+struct USBInData2 {
+	uint16 Version;
+	uint8  FanSpeed;
+	uint16 FanRPM;
+	int8   Temperature;
+	uint16 TemperatureADC;
+	float  vSetCal;
+	float  iSetCal;
+	float  DefaultVSetCal;
+	float  DefaultISetCal;
+	uint32 Attributes;
+};
+
+struct USBOutData2 {
+	uint8  FanSpeed;
+	float  vSetCal;
+	float  iSetCal;
+	uint32 Attributes;
+};
+
 #pragma pack(pop)
 
 #define IN 0
