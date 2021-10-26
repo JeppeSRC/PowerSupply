@@ -3,6 +3,7 @@
 #include "sys.h"
 #include "time.h"
 #include <core/driver/usb.h>
+#include <sys/registers/registers.h>
 
 void InitializeClock();
 void InitializeFPU();
@@ -25,7 +26,7 @@ void Initialize() {
 
 void InitializeClock() {
 	RCC_CR &= ~PLLON; // Disable PLL
-	
+
 	while ((RCC_CR & PLLRDY) != 0); // Wait for PLL ready
 
 	RCC_CFGR = SDPRE(0b10011) | USBPRE | PLLMUL(0b1010) | PPRE1(0b100);
@@ -36,9 +37,9 @@ void InitializeClock() {
 
 	while ((RCC_CR & HSERDY) == 0); //Wait for HSE
 #endif
-	
+
 	RCC_CR |= PLLON; // Enable PLL
-	
+
 	while (RCC_CR & PLLRDY); // Wait for PLL ready
 
 	FLASH_ACR |= 1;
@@ -90,12 +91,12 @@ void InitializeGPIO() {
 
 void InitializeDAC() {
 	RCC_APB1ENR |= DAC1EN | DAC2EN;
-	
+
 	NOP;
 
 	DAC1_CR = 0x10000; //Enable only channel 2
 	DAC2_CR = 1;
-	
+
 	DAC1_DHR12R2 = 0;
 	DAC2_DHR12R1 = 0;
 }
@@ -109,21 +110,21 @@ void InitializeSDADC() {
 	DelayMillis(5);
 
 	SDADC1_CR2 = 1; //ADON
-	
+
 	while (SDADC1_ISR & 0x8000); // Wait for stabilization
-	
+
 	SDADC1_CR1 |= 0x80000000; //Enter init mode
 
 	while ((SDADC1_ISR & 0x80000000) == 0); //Wait
 
-	SDADC1_CR2 |= 0x480000; 
+	SDADC1_CR2 |= 0x480000;
 	SDADC1_CONF0R = 0x4C000000;
 	SDADC1_CONFCHR2 = 0;
-	
+
 	SDADC1_CR1 ^= 0x80000000; // Leave init mode
 
 	while (SDADC1_ISR & 0x80000000); //Wait
-	
+
 	SDADC1_CR2 |= 0x10; //Start calibration
 
 	while (SDADC1_ISR & 0x1000); //Wait for calibration to finish
