@@ -64,6 +64,10 @@ struct USBInData2 {
     uint16 FanRPM;
     int8   Temperature;
     uint16 TemperatureADC;
+    float  vSetCal;
+    float  iSetCal;
+    float  DefaultVSetCal;
+    float  DefaultISetCal;
     uint32 Attributes;
 }
 
@@ -78,28 +82,42 @@ struct USBInData2 {
 
 `TemperatureADC`: The current `Temperature` 12 bit ADC value.
 
-`Attributes`:  See [Attributes](#attributes)
+`vSetCal`: calibration values for `vSet`.
+
+`iSetCal`: calibration values for `iSet`.
+
+`Attributes`:  See [Attributes](#attributes).
 
 ### OUT (Host To Device)
 
 ```
 struct USBInData2 {
     uint8  FanSpeed;
+    float  vSetCal;
+    float  iSetCal;
     uint32 Attributes;
 }
 ```
 
 `FanSpeed`: Sets the fan speed. 0-255.
 
-`Attributes`: See [Attributes](#attributes)
+`vSetCal`: calibration values for `vSet`.
+
+`iSetCal`: calibration values for `iSet`.
+
+`Attributes`: See [Attributes](#attributes).
 
 ## Attributes
 
 List of Attributes:
 
-Bit(s) | 31-4     | 3     | 2     | 1    | 0      |
--------|----------|-------|-------|------|--------|
-Attrib | Reserved | SDADC | MFAN  | MDAC | EXCLPC |
+Bit(s) | 31    | 30    | 29-4     | 3     | 2     | 1    | 0      |
+-------|-------|-------|----------|-------|-------|------|--------|
+Attrib | ICALI | VCALI | Reserved | SDADC | MFAN  | MDAC | EXCLPC |
+
+`ICALI`: Only used in combination with `iSetCal` in `USBOutData2`. If set, the value in `iSetCal` will override the current `iSetCal` value.
+
+`VCALI`: Only used in combination with `vSetCal` in `USBOutData2`. If set, the value in `vSetCal` will override the current `vSetCal` value.
 
 `SDADC`: If this bit is set the 16 bit SDADC will be used.
 
