@@ -133,3 +133,6 @@ Attrib | ICALI | VCALI | CICALI | CVCALI | Reserved | SDADC | MFAN  | MDAC | EXC
 `MDAC`: If this bit is set it allows the PC software to set the raw 12 bit DAC values.
 
 `EXCLPC`: If this bit is set it gives the PC software full control. Physical encoders and switches will no longer do anything.
+
+#### Notes
+> If `xCALI` and `CxCALI` are set at the same time `CxCALI` takes precedence.
