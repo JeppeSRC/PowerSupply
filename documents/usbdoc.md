@@ -118,9 +118,9 @@ Bit(s) | 31    | 30    | 29-4     | 3     | 2     | 1    | 0      |
 -------|-------|-------|----------|-------|-------|------|--------|
 Attrib | ICALI | VCALI | Reserved | SDADC | MFAN  | MDAC | EXCLPC |
 
-`ICALI`: Only used in combination with `iSetCal` in `USBOutData2`. If set, the value in `iSetCal` will override the current `iSetCal` value.
+`ICALI`: If set in `USBOutData2`, `iSetCal` will be the new `iSetCal` value. When returned in `USBInData2` it will be set if `iSetCal`has been modified, ie it no longer has the defualt calibration.
 
-`VCALI`: Only used in combination with `vSetCal` in `USBOutData2`. If set, the value in `vSetCal` will override the current `vSetCal` value.
+`VCALI`: If set in `USBOutData2`, `vSetCal` will be the new `vSetCal` value. When returned in `USBInData2` it will be set if `vSetCal`has been modified, ie it no longer has the defualt calibration.
 
 `SDADC`: If this bit is set the 16 bit SDADC will be used.
 
