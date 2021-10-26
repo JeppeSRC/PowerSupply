@@ -60,7 +60,6 @@ extern "C" void TIM4_Handler() {
 int main() {
 	Initialize();
 
-	UI::Initialize();
 	USART::Initialize(2000000);
 	USART::Print("USART Initialized");
 
@@ -68,7 +67,7 @@ int main() {
 	EnableInterrupt(30);
 
 	USB::Initialize();
-
+	UI::Initialize();
 
 	while (true) {
 		DelayMillis(10);
