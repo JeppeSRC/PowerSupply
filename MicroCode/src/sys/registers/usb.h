@@ -23,7 +23,7 @@
 
 #define USB_ISTR (*(volatile uint16*)(USB_ADDR + 0x44))
 
-#define EP_ID(x) (x & 0x0F)
+#define EP_ID(x) ((x) & 0x0F)
 #define EP_DIR 0x10
 #define ESOF ESOFM
 #define SOF SOFM
@@ -85,104 +85,20 @@
 #define USB_BTABLE_VALUE2 (USB_SRAM + (USB_BTABLE_VALUE << 1))
 
 #define USB_ADDR0_TX (*(volatile uint16*)(USB_BTABLE_VALUE2 + 0x0))
-#define USB_ADDR0_TX_0 USB_ADDR0_TX
-#define USB_ADDR0_RX_0 USB_ADDR0_TX
 #define USB_ADDR1_TX (*(volatile uint16*)(USB_BTABLE_VALUE2 + 0x10))
-#define USB_ADDR1_TX_0 USB_ADDR1_TX
-#define USB_ADDR1_RX_0 USB_ADDR1_TX
 #define USB_ADDR2_TX (*(volatile uint16*)(USB_BTABLE_VALUE2 + 0x20))
-#define USB_ADDR2_TX_0 USB_ADDR2_TX
-#define USB_ADDR2_RX_0 USB_ADDR2_TX
-#define USB_ADDR3_TX (*(volatile uint16*)(USB_BTABLE_VALUE2 + 0x30))
-#define USB_ADDR3_TX_0 USB_ADDR3_TX
-#define USB_ADDR3_RX_0 USB_ADDR3_TX
-#define USB_ADDR4_TX (*(volatile uint16*)(USB_BTABLE_VALUE2 + 0x40))
-#define USB_ADDR4_TX_0 USB_ADDR4_TX
-#define USB_ADDR4_RX_0 USB_ADDR4_TX
-#define USB_ADDR5_TX (*(volatile uint16*)(USB_BTABLE_VALUE2 + 0x50))
-#define USB_ADDR5_TX_0 USB_ADDR5_TX
-#define USB_ADDR5_RX_0 USB_ADDR5_TX
-#define USB_ADDR6_TX (*(volatile uint16*)(USB_BTABLE_VALUE2 + 0x60))
-#define USB_ADDR6_TX_0 USB_ADDR6_TX
-#define USB_ADDR6_RX_0 USB_ADDR6_TX
-#define USB_ADDR7_TX (*(volatile uint16*)(USB_BTABLE_VALUE2 + 0x70))
-#define USB_ADDR7_TX_0 USB_ADDR7_TX
-#define USB_ADDR7_RX_0 USB_ADDR7_TX
 
 #define USB_COUNT0_TX (*(volatile uint16*)(USB_BTABLE_VALUE2 + 0x04))
-#define USB_COUNT0_TX_0 USB_COUNT0_TX
-#define USB_COUNT0_RX_0 USB_COUNT0_TX
 #define USB_COUNT1_TX (*(volatile uint16*)(USB_BTABLE_VALUE2 + 0x14))
-#define USB_COUNT1_TX_0 USB_COUNT1_TX
-#define USB_COUNT1_RX_0 USB_COUNT1_TX
 #define USB_COUNT2_TX (*(volatile uint16*)(USB_BTABLE_VALUE2 + 0x24))
-#define USB_COUNT2_TX_0 USB_COUNT2_TX
-#define USB_COUNT2_RX_0 USB_COUNT2_TX
-#define USB_COUNT3_TX (*(volatile uint16*)(USB_BTABLE_VALUE2 + 0x34))
-#define USB_COUNT3_TX_0 USB_COUNT3_TX
-#define USB_COUNT3_RX_0 USB_COUNT3_TX
-#define USB_COUNT4_TX (*(volatile uint16*)(USB_BTABLE_VALUE2 + 0x44))
-#define USB_COUNT4_TX_0 USB_COUNT4_TX
-#define USB_COUNT4_RX_0 USB_COUNT4_TX
-#define USB_COUNT5_TX (*(volatile uint16*)(USB_BTABLE_VALUE2 + 0x54))
-#define USB_COUNT5_TX_0 USB_COUNT5_TX
-#define USB_COUNT5_RX_0 USB_COUNT5_TX
-#define USB_COUNT6_TX (*(volatile uint16*)(USB_BTABLE_VALUE2 + 0x64))
-#define USB_COUNT6_TX_0 USB_COUNT6_TX
-#define USB_COUNT6_RX_0 USB_COUNT6_TX
-#define USB_COUNT7_TX (*(volatile uint16*)(USB_BTABLE_VALUE2 + 0x74))
-#define USB_COUNT7_TX_0 USB_COUNT7_TX
-#define USB_COUNT7_RX_0 USB_COUNT7_TX
 
 #define USB_ADDR0_RX (*(volatile uint16*)(USB_BTABLE_VALUE2 + 0x08))
-#define USB_ADDR0_RX_1 USB_ADDR0_RX
-#define USB_ADDR0_TX_1 USB_ADDR0_RX
 #define USB_ADDR1_RX (*(volatile uint16*)(USB_BTABLE_VALUE2 + 0x18))
-#define USB_ADDR1_RX_1 USB_ADDR1_RX
-#define USB_ADDR1_TX_1 USB_ADDR1_RX
 #define USB_ADDR2_RX (*(volatile uint16*)(USB_BTABLE_VALUE2 + 0x28))
-#define USB_ADDR2_RX_1 USB_ADDR2_RX
-#define USB_ADDR2_TX_1 USB_ADDR2_RX
-#define USB_ADDR3_RX (*(volatile uint16*)(USB_BTABLE_VALUE2 + 0x38))
-#define USB_ADDR3_RX_1 USB_ADDR3_RX
-#define USB_ADDR3_TX_1 USB_ADDR3_RX
-#define USB_ADDR4_RX (*(volatile uint16*)(USB_BTABLE_VALUE2 + 0x48))
-#define USB_ADDR4_RX_1 USB_ADDR4_RX
-#define USB_ADDR4_TX_1 USB_ADDR4_RX
-#define USB_ADDR5_RX (*(volatile uint16*)(USB_BTABLE_VALUE2 + 0x58))
-#define USB_ADDR5_RX_1 USB_ADDR5_RX
-#define USB_ADDR5_TX_1 USB_ADDR5_RX
-#define USB_ADDR6_RX (*(volatile uint16*)(USB_BTABLE_VALUE2 + 0x68))
-#define USB_ADDR6_RX_1 USB_ADDR6_RX
-#define USB_ADDR6_TX_1 USB_ADDR6_RX
-#define USB_ADDR7_RX (*(volatile uint16*)(USB_BTABLE_VALUE2 + 0x78))
-#define USB_ADDR7_RX_1 USB_ADDR7_RX
-#define USB_ADDR7_TX_1 USB_ADDR7_RX
 
 #define USB_COUNT0_RX (*(volatile uint16*)(USB_BTABLE_VALUE2 + 0x0C))
-#define USB_COUNT0_RX_1 USB_COUNT0_RX
-#define USB_COUNT0_TX_1 USB_COUNT0_RX
 #define USB_COUNT1_RX (*(volatile uint16*)(USB_BTABLE_VALUE2 + 0x1C))
-#define USB_COUNT1_RX_1 USB_COUNT1_RX
-#define USB_COUNT1_TX_1 USB_COUNT1_RX
 #define USB_COUNT2_RX (*(volatile uint16*)(USB_BTABLE_VALUE2 + 0x2C))
-#define USB_COUNT2_RX_1 USB_COUNT2_RX
-#define USB_COUNT2_TX_1 USB_COUNT2_RX
-#define USB_COUNT3_RX (*(volatile uint16*)(USB_BTABLE_VALUE2 + 0x3C))
-#define USB_COUNT3_RX_1 USB_COUNT3_RX
-#define USB_COUNT3_TX_1 USB_COUNT3_RX
-#define USB_COUNT4_RX (*(volatile uint16*)(USB_BTABLE_VALUE2 + 0x4C))
-#define USB_COUNT4_RX_1 USB_COUNT4_RX
-#define USB_COUNT4_TX_1 USB_COUNT4_RX
-#define USB_COUNT5_RX (*(volatile uint16*)(USB_BTABLE_VALUE2 + 0x5C))
-#define USB_COUNT5_RX_1 USB_COUNT5_RX
-#define USB_COUNT5_TX_1 USB_COUNT5_RX
-#define USB_COUNT6_RX (*(volatile uint16*)(USB_BTABLE_VALUE2 + 0x6C))
-#define USB_COUNT6_RX_1 USB_COUNT6_RX
-#define USB_COUNT6_TX_1 USB_COUNT6_RX
-#define USB_COUNT7_RX (*(volatile uint16*)(USB_BTABLE_VALUE2 + 0x7C))
-#define USB_COUNT7_RX_1 USB_COUNT7_RX
-#define USB_COUNT7_TX_1 USB_COUNT7_RX
 
 #define BLSIZE 0x8000
 #define NUM_BLOCK(x) ((x & 0x1F) << 10)
@@ -218,6 +134,18 @@ struct USBDeviceDescriptor { // 18 Bytes
 	uint8 NumConfigurations;
 };
 
+struct USBDeviceQualifierDescriptor { // 18 Bytes
+	uint8 Length;
+	DescriptorType Type;
+	uint16 USBVersion;
+	uint8 DeviceClass;
+	uint8 DeviceSubClass;
+	uint8 DeviceProtocol;
+	uint8 MaxPacketSize0;
+	uint8 NumConfigurations;
+	uint8 Reserved;
+};
+
 struct USBConfigurationDescriptor { //9 Bytes
 	uint8 Length;
 	DescriptorType Type;
@@ -227,17 +155,6 @@ struct USBConfigurationDescriptor { //9 Bytes
 	uint8 Configuration;
 	uint8 Attributes;
 	uint8 MaxPower;
-};
-
-struct USBInterfaceAssociationDescriptor {// 8 Bytes
-	uint8 Length;
-	DescriptorType Type;
-	uint8 FirstInstance;
-	uint8 InterfaceCount;
-	uint8 FunctionClass;
-	uint8 FunctionSubClass;
-	uint8 FunctionProtocol;
-	uint8 Function;
 };
 
 struct USBInterfaceDescriptor { //9 Bytes
@@ -265,7 +182,6 @@ struct USBStringDescriptor {
 	uint8 Length;
 	DescriptorType Type;
 };
-
 
 enum class ControlRequest : uint8 {
 	GetStatus = 0,
@@ -314,6 +230,26 @@ struct USBSetupData {
 	uint16 Value;
 	uint16 Index;
 	uint16 Length;
+};
+
+struct MicrosoftOSStringDescriptor {
+	uint8 Length;
+	uint8 Type;
+	uint16 String[7];
+	uint8 Padding;
+};
+
+struct MicrosoftIDFeatureDescriptor {
+	uint32 Length;
+	uint16 Version;
+	uint16 CompatibilityID;
+	uint8 NumberOfSections;
+	uint8 Reserved0[7];
+	uint8 Interface;
+	uint8 Reserved1;
+	uint8 CompatibleID[8];
+	uint8 SubCompatibleID[8];
+	uint8 Reserved2[6];
 };
 
 #pragma pop

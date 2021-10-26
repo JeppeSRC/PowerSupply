@@ -16,10 +16,13 @@ enum class USBState {
 
 struct Data {
 	USBDeviceDescriptor device;
+	USBDeviceQualifierDescriptor qualifier;
 	USBConfigurationDescriptor configuration;
 	USBInterfaceDescriptor interface;
-	USBEndpointDescriptor endpointIn;
-	USBEndpointDescriptor endpointOut;
+	USBEndpointDescriptor endpointIn1;
+	USBEndpointDescriptor endpointOut1;
+	USBEndpointDescriptor endpointIn2;
+	USBEndpointDescriptor endpointOut2;
 };
 
 #pragma pack(pop)
@@ -27,36 +30,32 @@ struct Data {
 #define IN 0
 #define OUT 1
 
+#define EP0 USB::endpoints[0]
+#define EP1 USB::endpoints[1]
+#define EP2 USB::endpoints[2]
+
+class Endpoint {
+public:
+	volatile uint16* address;
+	uint16 base;
+
+	void operator=(uint16 data);
+	uint16 operator&(uint16 data);
+};
 
 class USB {
 private:
+
 	static Data desc;
 	static uint8 address;
 	static USBState deviceState;
 
-	static bool endpointHalted;
+	static Endpoint endpoints[3];
 
-	static void HandleTransfers();
-	static void HandleControlTransfers();
-
-	static void HandleClearFeature(USBSetupData* data);
-	static void HandleGetConfiguration(USBSetupData* data);
-	static void HandleGetDescriptor(USBSetupData* data);
-	static void HandleGetInterface(USBSetupData* data);
-	static void HandleGetStatus(USBSetupData* data);
-	static void HandleSetAddress(USBSetupData* data);
-	static void HandleSetConfiguration(USBSetupData* data);
-	static void HandleSetDescriptor(USBSetupData* data);
-	static void HandleSetFeature(USBSetupData* data);
-	static void HandleSetInterface(USBSetupData* data);
-	static void HandleSynchFrame(USBSetupData* data);
-
-	static void RequestError(uint8 dir);
-
+	static void SetupTransfer();
+	static void DataTransfer(uint16 ep, uint16 dir);
 	static void InitializationAfterReset();
 public:
 	static void InterruptHandler();
 	static void Initialize();
-
-	static inline USBState GetDeviceState() { return deviceState; }
 };

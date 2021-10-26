@@ -44,8 +44,10 @@
   <ItemGroup>
     <ClCompile Include="src\core\driver\display.cpp" />
     <ClCompile Include="src\core\driver\encoder.cpp" />
+    <ClCompile Include="src\core\driver\endpoint.cpp" />
     <ClCompile Include="src\core\driver\usart.cpp" />
     <ClCompile Include="src\core\driver\usb.cpp" />
+    <ClCompile Include="src\core\psu.cpp" />
     <ClCompile Include="src\core\string.cpp" />
     <ClCompile Include="src\core\ui.cpp" />
     <ClCompile Include="src\main.cpp" />
@@ -61,6 +63,7 @@
     <ClInclude Include="src\core\driver\encoder.h" />
     <ClInclude Include="src\core\driver\usart.h" />
     <ClInclude Include="src\core\driver\usb.h" />
+    <ClInclude Include="src\core\psu.h" />
     <ClInclude Include="src\core\string.h" />
     <ClInclude Include="src\core\ui.h" />
     <ClInclude Include="src\sys\memory.h" />
