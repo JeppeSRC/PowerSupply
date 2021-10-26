@@ -1,6 +1,7 @@
 #include "ui.h"
 #include <core/driver/display.h>
 #include <sys/time.h>
+#include <core/psu.h>
 
 /* Display Format 2x16
 
@@ -20,7 +21,7 @@ uint8 UI::uiState;
 void UI::Initialize() {
 	Display::Clear();
 	Display::Print(0x00, "-------PSU------");
-	Display::Printf(0x40, "Version: %02H.%02H", MC_VERSION / 0x100, MC_VERSION % 0x100);
+	Display::Printf(0x40, "Version: %02H.%02H", PSU::Version / 0x100, PSU::Version % 0x100);
 	Delay(2);
 	Display::Clear();
 	Display::Printf(0x00, "SET %02U.%02UV %01U.%02UA", 0, 0, 0, 0);

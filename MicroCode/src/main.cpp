@@ -8,9 +8,7 @@
 #include <core/driver/encoder.h>
 #include <core/ui.h>
 #include <core/driver/usb.h>
-
-volatile float vSet = 0;
-volatile float iSet = 0;
+#include <core/psu.h>
 
 volatile uint32 vLast = 0;
 volatile uint32 iLast = 0;
@@ -24,9 +22,9 @@ extern "C" void TIM19_Handler() {
 	uint32 dif = time - vLast;
 
 	if (TIM19_CR1 & 0x10) {
-		vSet -= 1 * FACTOR(dif, 200);
+		PSU::vSet -= 1 * FACTOR(dif, 200);
 	} else {
-		vSet += 1 * FACTOR(dif, 200.0f);
+		PSU::vSet += 1 * FACTOR(dif, 200.0f);
 	}
 
 	ClearPendingInterrupt(78);
@@ -40,9 +38,9 @@ extern "C" void TIM4_Handler() {
 	uint32 dif = time - iLast;
 
 	if (TIM4_CR1 & 0x10) {
-		iSet -= 1 * FACTOR(dif, 200.0f);
+		PSU::iSet -= 1 * FACTOR(dif, 200.0f);
 	} else {
-		iSet += 1 * FACTOR(dif, 200.0f);
+		PSU::iSet += 1 * FACTOR(dif, 200.0f);
 	}
 
 	ClearPendingInterrupt(30);
@@ -67,14 +65,14 @@ int main() {
 
 	while (true) {
 		DelayMicros(1000);
-		
-		vSet = CLAMP(vSet, 50, 2000);
-		iSet = CLAMP(iSet, 10, 400);
 
-		DAC2_DHR12R1 = ((uint32)(vSet * 2.0475f) & 0xFFF);
-		DAC1_DHR12R2 = ((uint32)(iSet * 10.26f) & 0xFFF);
+		PSU::vSet = CLAMP(PSU::vSet, 50, 2000);
+		PSU::iSet = CLAMP(PSU::iSet, 10, 400);
 
-		UI::UpdateVISet(vSet, iSet);
+		DAC2_DHR12R1 = ((uint32)(PSU::vSet * 2.0475f) & 0xFFF);
+		DAC1_DHR12R2 = ((uint32)(PSU::iSet * 10.26f) & 0xFFF);
+
+		UI::UpdateVISet(PSU::vSet, PSU::iSet);
 	}
 
 	__asm ("b .");
