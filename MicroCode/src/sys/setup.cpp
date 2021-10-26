@@ -18,6 +18,7 @@ void Initialize() {
 	InitializeFPU();
 	InitializeTimers();
 	InitializeGPIO();
+	DelayMillis(200);
 	Display::Initialize();
 	InitializeDAC();
 	InitializeEncoders();
