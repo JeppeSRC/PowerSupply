@@ -6,13 +6,13 @@
 /* Display Format 2x16
 
 	------------------
-	|SET 00.00V 0.00A|
-	|OUT 00.00V 0.00A|
+	|S  00.00V 0.000A|
+	|O  00.00V 0.000A|
 	------------------
 */
 
-#define VSET_OFFSET 0x04
-#define ISET_OFFSET 0x0B
+#define VSET_OFFSET 0x03
+#define ISET_OFFSET 0x0A
 #define VREAD_OFFSET (0x40 + VSET_OFFSET)
 #define IREAD_OFFSET (0x40 + ISET_OFFSET)
 
@@ -24,8 +24,8 @@ void UI::Initialize() {
 	Display::Printf(0x40, "Version: %02H.%02H", PSU::Version / 0x100, PSU::Version % 0x100);
 	Delay(2);
 	Display::Clear();
-	Display::Printf(0x00, "SET %02U.%02UV %01U.%02UA", 0, 0, 0, 0);
-	Display::Print(0x40, "OUT 00.00V 0.00A");
+	Display::Printf(0x00, "S  %02U.%02UV %01U.%03UA", 0, 0, 0, 0);
+	Display::Print(0x40,  "O  00.00V 0.000A");
 }
 
 void UI::UpdateVSet(uint16 vset) {
@@ -33,7 +33,7 @@ void UI::UpdateVSet(uint16 vset) {
 }
 
 void UI::UpdateISet(uint16 iset) {
-	Display::Printf(ISET_OFFSET, "%01U.%02U", iset / 100, iset % 100);
+	Display::Printf(ISET_OFFSET, "%01U.%03U", iset / 1000, iset % 1000);
 }
 
 void UI::UpdateVRead(uint16 vread) {
@@ -41,7 +41,7 @@ void UI::UpdateVRead(uint16 vread) {
 }
 
 void UI::UpdateIRead(uint16 iread) {
-	Display::Printf(IREAD_OFFSET, "%01U.%02U", iread / 100, iread % 100);
+	Display::Printf(IREAD_OFFSET, "%01U.%03U", iread / 1000, iread % 1000);
 }
 
 void UI::UpdateVISet(uint16 vset, uint16 iset) {
