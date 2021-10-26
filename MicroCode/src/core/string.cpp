@@ -31,7 +31,7 @@ uint32 uint32ToString(uint32 value, uint8 base, char* buffer, uint8 minChars, ui
 		num++;
 		value /= base;
 	}
-	
+
 	if (num < minChars) {
 		uint8 range = minChars - num;
 

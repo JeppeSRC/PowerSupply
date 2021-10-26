@@ -11,7 +11,7 @@ void USART::Initialize(uint32 baud) {
 	RCC_AHBENR |= DMA1EN;
 
 	USART1_BRR = 48000000 / baud;
-	USART1_CR1 |= 0x09; 
+	USART1_CR1 |= 0x09;
 
 	DMA1_CCR4 = 0;
 	DMA1_CPAR4 = USART1 + 0x28;

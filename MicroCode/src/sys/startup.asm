@@ -1,5 +1,5 @@
 .syntax unified
-.thumb 
+.thumb
 
 .section .isr_vector,"ax"
 
@@ -154,7 +154,7 @@ DataZero:
     ldr r1, BSS_END
     subs r1, r0
     beq Main
-	
+
     eor r2, r2
 
 BssZero:
