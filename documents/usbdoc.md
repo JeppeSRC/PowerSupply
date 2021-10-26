@@ -6,7 +6,10 @@ The device has 3 endpoints:
 - Endpoint 1 is an interrupt endpoint which is used for reading/setting Voltage/Current settings.
 - Endpoint 2 is a bulk endpoint used settings.
 
+Sending a 0 size OUT packet to a endpoint will preload data for the next IN packet. This is only necessary if a significant time has passed (or if the polling interval is slow) since the last IN packet. Because the data for a IN packet is loaded on the previous IN packet.
+
 ## Data structures used on endpoint 1
+
 ### IN (Device To Host)
 ```
 struct USBInData1 { 
