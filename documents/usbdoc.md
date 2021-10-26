@@ -94,7 +94,7 @@ struct USBInData2 {
 ### OUT (Host To Device)
 
 ```
-struct USBInData2 {
+struct USBOutData2 {
     uint8  FanSpeed;
     float  vSetCal;
     float  iSetCal;
