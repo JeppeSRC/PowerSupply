@@ -114,13 +114,17 @@ struct USBOutData2 {
 
 List of Attributes:
 
-Bit(s) | 31    | 30    | 29-4     | 3     | 2     | 1    | 0      |
--------|-------|-------|----------|-------|-------|------|--------|
-Attrib | ICALI | VCALI | Reserved | SDADC | MFAN  | MDAC | EXCLPC |
+Bit(s) | 31    | 30    | 29     | 28     | 27-4     | 3     | 2     | 1    | 0      |
+-------|-------|-------|--------|--------|----------|-------|-------|------|--------|
+Attrib | ICALI | VCALI | CICALI | CVCALI | Reserved | SDADC | MFAN  | MDAC | EXCLPC |
 
 `ICALI`: If set in `USBOutData2`, `iSetCal` will be the new `iSetCal` value. When returned in `USBInData2` it will be set if `iSetCal`has been modified, ie it no longer has the defualt calibration.
 
 `VCALI`: If set in `USBOutData2`, `vSetCal` will be the new `vSetCal` value. When returned in `USBInData2` it will be set if `vSetCal`has been modified, ie it no longer has the defualt calibration.
+
+`CICALI`: Clears `ICALI` in `USBInData2` and resets `iSetCal` to default.
+
+`CVCALI`: Clears `VCALI` in `USBInData2` and resets `vSetCal` to default.
 
 `SDADC`: If this bit is set the 16 bit SDADC will be used.
 
