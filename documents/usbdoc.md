@@ -1,58 +1,110 @@
 # USB 
 This is a document exmplaning how to communicate with the device over USB
 
-The device has two endpoints:
-- Endpoint 0 which is the default control pipe for control transfers.
-- Endpoint 1 is a interrupt endpoint which is used for all data transfers.
+The device has 3 endpoints:
+- Endpoint 0 which is the default control pipe for control transfers (unused after enumeration).
+- Endpoint 1 is an interrupt endpoint which is used for reading/setting Voltage/Current settings.
+- Endpoint 2 is a bulk endpoint used settings.
 
 ## Data structures used on endpoint 1
-### Input
+### IN (Device To Host)
 ```
-struct USBInData {
-    uint16 vSet : 13;
-    uint16 iSet : 13;
-    uint16 FanSpeed : 9;
-    uint16 Attributes;
+struct USBInData1 { 
+    uint16 vReadADC;
+    uint16 vRead;
+    uint16 vSet;
+    uint16 iReadADC;
+    uint16 iRead;
+    uint16 iSet;
 }
 ```
 
-`vSet`: Is used to set the wanted output voltage. Bits 0:11 are used for the value and bit 12 is used to select what kind of value. If bit 12 is set to 1 the value in bits 0:11 is the actually 12 bit DAC value. If bit 12 is cleared the value in bits 0:11 is the actual voltage ranging from 0 to 2000, where each unit is 10mV. So a value of 1200 would result in a voltage of 12.00V.
+`vReadADC`: The current `vRead` (12/16) bit ADC value.
 
-`iSet`: Is used to set the wanted current limit. Bits 0:11 are used for the value and bit 12 is used to select what kind of value. If bit 12 is set to 1 the value in bits 0:11 is the actually 12 bit DAC value. If bit 12 is cleared the value in bits 0:11 is the actual current limit ranging from 0 to 400, where each unit is 10mA. So a value of 100 would result in a current limit of 1.00A.
+`vRead`: Is the measured voltage on the output. 
 
-`Attributes`: TBD
+`vSet`: Is the set voltage.
 
-`FanSpeed`: Is used to set the fan mode and speed. Bits 0:7 is value used for the fan speed. Bit 8 is used to set the fan in manual or auto. If bit 8 is set the fan is in auto, if cleared the fan speed will be set by the value in bits 0:7.
+`iReadADC`: The current `iRead` (12/16) bit ADC value.
 
-### Output
+`iRead`: Is the measured current.
+
+`iSet`: Is the set current.
+
+All parameters except the ADC ones are encoded the same way. Where the high byte is the value before the decimal point and the low byte is after the decimal point.
+So 12.35V is 0x0C23 in hex.
+
+### OUT (Host To Device)
 ```
-struct USBOutData {
-    uint16 vRead : 11;
-    uint16 iRead : 9;
-    uint16 vReadADC : 12;
-    uint16 iReadADC : 12;
+struct USBOutData1 {
+    uint16 vSetDAC;
+    uint16 vSet;
+    uint16 iSetDAC;
+    uint16 iSet;
+}
+```
+`vSetDAC`: Sets the raw `vSet` 12 bit DAC value
+
+`vSet`: Is the voltage to be set.
+
+`iSetDAC`: Sets the raw `iSet` 12 bit DAC value.
+
+`iSet`: Is the current to be set.
+
+They use the same encoding as above. Except if the MSB is set it's ignored. The [`MDAC`](#attributes) bit needs to be set to be able to set the DAC values.
+If the MSB is cleared in all parameters. `vSet` and `iSet` takes priority.
+
+## Data structures used on endpoint 2
+### IN (Device To Host)
+
+```
+struct USBInData2 {
+    uint16 Version;
     uint8  FanSpeed;
     uint16 FanRPM;
     int8   Temperature;
-    uint16 TemperatureADC : 12;
-    uint16 Attributes;
+    uint16 TemperatureADC;
+    uint32 Attributes;
 }
+
 ```
+`Version`: The current FW version.
 
-`vRead`: The current read output voltage.
-
-`iRead`: The current read current.
-
-`vReadADC`: The current `vRead` 12 bit ADC value.
-
-`iReadADC`: The current `iRead` 12 bit ADC value.
-
-`FanSpeed`: The current speed of the fan.
+`FanSpeed`: The current speed of the fan. Where 0 is nothing and 255 is full speed
 
 `FanRPM`: The current fan rpm.
 
-`Temperature`: The current heatsink temperature, ranging from -40 to 125.
+`Temperature`: The current heatsink temperature, ranging from -40C to 125C.
 
 `TemperatureADC`: The current `Temperature` 12 bit ADC value.
 
-`Attributes`: TBD
+`Attributes`:  See [Attributes](#attributes)
+
+### OUT (Host To Device)
+
+```
+struct USBInData2 {
+    uint8  FanSpeed;
+    uint32 Attributes;
+}
+```
+
+`FanSpeed`: Sets the fan speed. 0-255.
+
+`Attributes`: See [Attributes](#attributes)
+
+## Attributes
+
+List of Attributes:
+
+Bit(s) | 31-4     | 3     | 2     | 1    | 0      |
+-------|----------|-------|-------|------|--------|
+Attrib | Reserved | SDADC | MFAN  | MDAC | EXCLPC |
+
+`SDADC`: If this bit is set the 16 bit SDADC will be used.
+
+`MFAN`: If this bit is set it allows the PC software to control the fan speed.
+
+`MDAC`: If this bit is set it allows the PC software to set the raw 12 bit DAC values.
+
+`EXCLPC`: If this bit is set it gives the PC software full control. Physical encoders and switches will no longer do anything.
