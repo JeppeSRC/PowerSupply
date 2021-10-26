@@ -21,11 +21,15 @@ extern "C" void TIM19_Handler() {
 	uint32 time = Millis();
 	uint32 dif = time - vLast;
 
+	uint16 vSet = PSU::vSet;
+
 	if (TIM19_CR1 & 0x10) {
-		PSU::vSet -= 1 * FACTOR(dif, 200);
+		vSet -= (uint16)(1.0f * FACTOR(dif, 200.0f));
 	} else {
-		PSU::vSet += 1 * FACTOR(dif, 200.0f);
+		vSet += (uint16)(1.0f * FACTOR(dif, 200.0f));
 	}
+
+	PSU::SetVSet(vSet);
 
 	ClearPendingInterrupt(78);
 	TIM19_SR &= ~1;
@@ -37,11 +41,15 @@ extern "C" void TIM4_Handler() {
 	uint32 time = Millis();
 	uint32 dif = time - iLast;
 
+	uint16 iSet = PSU::iSet;
+
 	if (TIM4_CR1 & 0x10) {
-		PSU::iSet -= 1 * FACTOR(dif, 200.0f);
+		iSet -= (uint16)(1.0f * FACTOR(dif, 200.0f));
 	} else {
-		PSU::iSet += 1 * FACTOR(dif, 200.0f);
+		iSet += (uint16)(1.0f * FACTOR(dif, 200.0f));
 	}
+
+	PSU::SetISet(iSet);
 
 	ClearPendingInterrupt(30);
 	TIM4_SR &= ~1;
@@ -63,14 +71,9 @@ int main() {
 
 	USB::Initialize();
 
+
 	while (true) {
-		DelayMicros(1000);
-
-		PSU::vSet = CLAMP(PSU::vSet, 50, 2000);
-		PSU::iSet = CLAMP(PSU::iSet, 10, 400);
-
-		DAC2_DHR12R1 = ((uint32)(PSU::vSet * 2.0475f) & 0xFFF);
-		DAC1_DHR12R2 = ((uint32)(PSU::iSet * 10.26f) & 0xFFF);
+		DelayMillis(10);
 
 		UI::UpdateVISet(PSU::vSet, PSU::iSet);
 	}
