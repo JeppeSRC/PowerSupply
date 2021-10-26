@@ -13,7 +13,7 @@
 volatile uint32 vLast = 0;
 volatile uint32 iLast = 0;
 
-#define CLAMP(x, min, max) ((x) < (min) ? (min) : (x) > (max) ? (max) : (x))
+
 #define CALC_FACTOR(dif, f) (f / (float)dif)
 #define FACTOR(dif, f) CLAMP(CALC_FACTOR(dif, f), 1.0f, 25.0f)
 
