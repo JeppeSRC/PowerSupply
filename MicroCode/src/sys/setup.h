@@ -38,7 +38,7 @@
  // AHB		48 Mhz
  // APB2	48 Mhz
  // APB1	24 Mhz
- // SDADC	6  Mhz
+ // SDADC	4  Mhz
 
  /* Display Format 2x16
 
