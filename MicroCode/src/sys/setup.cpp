@@ -6,6 +6,7 @@
 #include <sys/registers/registers.h>
 #include <core/driver/usart.h>
 #include <core/ui.h>
+#include <core/driver/sdadc.h>
 
 void InitializeClock();
 void InitializeFPU();
@@ -59,6 +60,8 @@ void InitializeClock() {
 #if USE_HSE
 	RCC_CR &= ~HSION;
 #endif
+
+	RCC_AHBENR |= DMA1EN | DMA2EN;
 }
 
 void InitializeFPU() {
@@ -120,22 +123,8 @@ void InitializeSDADC() {
 	PWR_CR = 0x600; // Enable SDADC1 and 2 power stuff
 	NOP;
 
-	SDADC1_CR2 = 1; //ADON
 
-	while (SDADC1_ISR & 0x8000); // Wait for stabilization
+	SDADC::Initialize();
 
-	SDADC1_CR1 = 0x80000000; //INIT mode
-
-	while ((SDADC1_ISR & 0x80000000) == 0);
-
-	SDADC1_CONF0R = 0x0C000000;
-
-	SDADC1_CR1 = 0; //Leave INIT mode
-
-	while ((SDADC1_ISR & 0x80000000) == 1);
-
-	SDADC1_CR2 |= 0x10;
-	while ((SDADC1_ISR & 0x01) == 0);
-
-	SDADC1_CLRISR = 0x1;
+	USART::Print("SDADCs Initialized");
 }

@@ -15,6 +15,8 @@ volatile uint16 PSU::vSet = 0;
 volatile uint16 PSU::iSet = 0;
 volatile uint16 PSU::vRead = 0;
 volatile uint16 PSU::iRead = 0;
+volatile uint16 PSU::vReadADC = 0;
+volatile uint16 PSU::iReadADC = 0;
 
 volatile float  PSU::vSetCal = PSU::DefaultVSetCal; //TODO: move into flash, for non-volatile storage
 volatile float  PSU::iSetCal = PSU::DefaultISetCal;  //TODO: move into flash, for non-volatile storage

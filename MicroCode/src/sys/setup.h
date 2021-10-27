@@ -11,8 +11,8 @@
 	Iset			PA5				15 DAC1_CH2
 	Vset			PA6				16 DAC2_CH1
 	----------------------------------
-	Iread			PE9				22 SDADC2
-	Vread			PE8				21 SDADC1
+	Iread			PE9				22 SDADC2_AIN7P
+	Vread			PE8				21 SDADC1_AIN8P
 	----------------------------------
 	CLIM			PA4				14
 	.---------------------------------

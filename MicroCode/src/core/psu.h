@@ -31,10 +31,12 @@ public:
     static volatile uint16 vRead;
     static volatile uint16 iRead;
 
-    static volatile float  vSetCal;
+    alignas (4) static volatile float  vSetCal;
     static volatile float  iSetCal;
     static volatile uint32 vSetDAC;
     static volatile uint32 iSetDAC;
+    static volatile uint16 vReadADC; // These two must be here becuse they rely on the 4 byte alignment
+    static volatile uint16 iReadADC; // These two must be here becuse they rely on the 4 byte alignment
 
 
     static void SetVSet(uint16 value);
