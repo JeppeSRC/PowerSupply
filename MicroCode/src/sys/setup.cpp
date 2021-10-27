@@ -29,7 +29,7 @@ void InitializeClock() {
 
 	while ((RCC_CR & PLLRDY) != 0); // Wait for PLL ready
 
-	RCC_CFGR = SDPRE(0b10100) | USBPRE | PLLMUL(0b1010) | PPRE1(0b100);
+	RCC_CFGR = SDPRE(0b10011) | USBPRE | PLLMUL(0b1010) | PPRE1(0b100);
 
 #if USE_HSE
 	RCC_CR |= HSEON; //Enable HSE
