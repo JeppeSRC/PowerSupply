@@ -11,7 +11,6 @@ void InitializeGPIO();
 void InitializeDAC();
 void InitializeSDADC();
 void InitializeEncoders();
-void InitializeUSB();
 
 void Initialize() {
 	InitializeClock();
