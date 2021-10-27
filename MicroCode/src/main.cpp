@@ -21,7 +21,7 @@ extern "C" void TIM19_Handler() {
 	uint32 time = Millis();
 	uint32 dif = time - vLast;
 
-	uint16 vSet = PSU::vSet;
+	uint16 vSet = PSU::Data.vSet;
 
 	if (TIM19_CR1 & 0x10) {
 		vSet -= (uint16)(1.0f * FACTOR(dif, 200.0f));
@@ -41,7 +41,7 @@ extern "C" void TIM4_Handler() {
 	uint32 time = Millis();
 	uint32 dif = time - iLast;
 
-	uint16 iSet = PSU::iSet;
+	uint16 iSet = PSU::Data.iSet;
 
 	if (TIM4_CR1 & 0x10) {
 		iSet -= (uint16)(1.0f * FACTOR(dif, 200.0f));
@@ -59,7 +59,7 @@ extern "C" void TIM4_Handler() {
 
 int main() {
 	Initialize();
-
+	memset(&PSU::Data, 0, 12);
 	EnableInterrupt(78); // TIM19
 	EnableInterrupt(30); // TIM4
 
@@ -68,7 +68,7 @@ int main() {
 	while (true) {
 		DelayMillis(10);
 
-		UI::UpdateVISet(PSU::vSet, PSU::iSet);
+		UI::UpdateVISet(PSU::Data.vSet, PSU::Data.iSet);
 	}
 
 	__asm ("b .");

@@ -27,11 +27,11 @@ struct Data {
 
 
 
-struct USBInData1 {
+struct alignas (4) USBInData1 {
 	uint16 vReadADC;
+	uint16 iReadADC;
 	uint16 vRead;
 	uint16 vSet;
-	uint16 iReadADC;
 	uint16 iRead;
 	uint16 iSet;
 };

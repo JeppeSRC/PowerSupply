@@ -14,10 +14,10 @@ Sending a 0 size OUT packet to a endpoint will preload data for the next IN pack
 ```
 struct USBInData1 { 
     uint16 vReadADC;
-    uint16 vRead;
-    uint16 vSet;
     uint16 iReadADC;
+    uint16 vRead;
     uint16 iRead;
+    uint16 vSet;
     uint16 iSet;
 }
 ```
@@ -41,8 +41,8 @@ So 12.35V is 0x0C23 in hex.
 ```
 struct USBOutData1 {
     uint16 vSetDAC;
-    uint16 vSet;
     uint16 iSetDAC;
+    uint16 vSet;
     uint16 iSet;
 }
 ```

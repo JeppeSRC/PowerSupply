@@ -303,16 +303,8 @@ void USB::DataTransfer(uint16 ep, uint16 dir) {
 				}
 			} else if (size == 0) {
 				const uint32 size = sizeof(USBInData1);
-				volatile USBInData1 data;
 
-				data.vReadADC = 0;
-				data.vRead = PSU::vRead;
-				data.vSet = PSU::vSet;
-				data.iReadADC = 0;
-				data.iRead = PSU::iRead;
-				data.iSet = PSU::iSet;
-
-				usb_copy_to_sram(SRAM_ADDR(ADDR1_TX_OFFSET), &data, size);
+				usb_copy_to_sram(SRAM_ADDR(ADDR1_TX_OFFSET), &PSU::Data, size);
 
 				USB_COUNT1_TX = size;
 			}
@@ -320,16 +312,8 @@ void USB::DataTransfer(uint16 ep, uint16 dir) {
 			EP1 = CTR_RX | STAT_RX(NAK, VALID);
 		} else {
 			const uint32 size = sizeof(USBInData1);
-			volatile USBInData1 data;
 
-			data.vReadADC = 0;
-			data.vRead = PSU::vRead;
-			data.vSet = PSU::vSet;
-			data.iReadADC = 0;
-			data.iRead = PSU::iRead;
-			data.iSet = PSU::iSet;
-
-			usb_copy_to_sram(SRAM_ADDR(ADDR1_TX_OFFSET), &data, size);
+			usb_copy_to_sram(SRAM_ADDR(ADDR1_TX_OFFSET), &PSU::Data, size);
 
 			USB_COUNT1_TX = size;
 

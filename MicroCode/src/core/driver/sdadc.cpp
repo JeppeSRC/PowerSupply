@@ -6,7 +6,7 @@
 
 void SDADC::Initialize() {
 	DMA2_CPAR3 = SDADC1 + 0x74;
-	DMA2_CMAR3 = (uint32)&PSU::vReadADC;
+	DMA2_CMAR3 = (uint32)&PSU::Data;;
 	DMA2_CNDTR3 = 1; // One 4 byte transfer
 	DMA2_CCR3 = DMA_CCR_PL(2) | DMA_CCR_MSIZE(2) | DMA_CCR_PSIZE(2) | DMA_CCR_CIRC | DMA_CCR_EN;
 
