@@ -8,7 +8,6 @@ char USART::dmaBuffer[256];
 
 void USART::Initialize(uint32 baud) {
 	RCC_APB2ENR |= USART1EN;
-	RCC_AHBENR |= DMA1EN;
 
 	NOP;
 
@@ -28,7 +27,7 @@ void USART::SendDMA(uint16 num) {
 
 	USART1_ICR = 0x40;
 
-	DMA1_CCR4 = DMA_CCR_PL(2) | DMA_CCR_PSIZE(2) | DMA_CCR_MINC | DMA_CCR_DIR | DMA_CCR_EN;
+	DMA1_CCR4 = DMA_CCR_PL(1) | DMA_CCR_PSIZE(2) | DMA_CCR_MINC | DMA_CCR_DIR | DMA_CCR_EN;
 }
 
 void USART::Send(uint8 data) {
