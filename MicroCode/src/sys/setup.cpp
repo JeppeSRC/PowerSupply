@@ -21,7 +21,7 @@ void Initialize() {
 	Display::Initialize();
 	InitializeDAC();
 	InitializeEncoders();
-	//InitializeSDADC();
+	InitializeSDADC();
 }
 
 void InitializeClock() {
@@ -102,30 +102,28 @@ void InitializeDAC() {
 }
 
 void InitializeSDADC() {
+	RCC_APB1ENR |= PWREN;
+	NOP;
 	RCC_APB2ENR |= SDADC1EN | SDADC2EN; // Enable SDADC1 and SDADC2 clock
 	PWR_CR = 0x600; // Enable SDADC1 and 2 power stuff
-
-	SDADC1_CR1 = 0;
-
-	DelayMillis(5);
+	NOP;
 
 	SDADC1_CR2 = 1; //ADON
 
 	while (SDADC1_ISR & 0x8000); // Wait for stabilization
 
-	SDADC1_CR1 |= 0x80000000; //Enter init mode
+	SDADC1_CR1 = 0x80000000; //INIT mode
 
-	while ((SDADC1_ISR & 0x80000000) == 0); //Wait
+	while ((SDADC1_ISR & 0x80000000) == 0);
 
-	SDADC1_CR2 |= 0x480000;
-	SDADC1_CONF0R = 0x4C000000;
-	SDADC1_CONFCHR2 = 0;
+	SDADC1_CONF0R = 0x0C000000;
 
-	SDADC1_CR1 ^= 0x80000000; // Leave init mode
+	SDADC1_CR1 = 0; //Leave INIT mode
 
-	while (SDADC1_ISR & 0x80000000); //Wait
+	while ((SDADC1_ISR & 0x80000000) == 1);
 
-	SDADC1_CR2 |= 0x10; //Start calibration
+	SDADC1_CR2 |= 0x10;
+	while ((SDADC1_ISR & 0x01) == 0);
 
-	while (SDADC1_ISR & 0x1000); //Wait for calibration to finish
+	SDADC1_CLRISR = 0x1;
 }
