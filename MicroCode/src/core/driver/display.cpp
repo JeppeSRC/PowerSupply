@@ -2,6 +2,7 @@
 #include <sys/time.h>
 #include <core/string.h>
 #include <sys/sys.h>
+#include <core/driver/usart.h>
 
 /*	Device			Port			PhysicalPin
 	Display_RS		PA13			34
@@ -15,7 +16,7 @@
 
 #define MAKE_INST(rs, rw, data) ((rs << 9) | (rw << 8) | data)
 
-#define ODRA_MASK 0x1FFFFFFF 
+#define ODRA_MASK 0x1FFFFFFF
 #define ODRB_MASK 0xFFFFFFE7
 #define ODRF_MASK 0xFFFFFF3F
 
@@ -123,6 +124,8 @@ void Display::Initialize() {
 	DelayMillis(50);
 
 	EnableInterrupts();
+
+	USART::Print("Display Initialized");
 }
 
 void Display::Control(uint8 displayOn, uint8 cursorOn, uint8 blinkOn) {
@@ -159,7 +162,7 @@ char tmpBuffer[17];
 void Display::Printf(uint8 address, const char* const format, ...) {
 	va_list list;
 	va_start(list, format);
-	
+
 	uint8 num = vsprintf(tmpBuffer, 16, format, list);
 
 	va_end(list);

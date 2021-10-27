@@ -523,4 +523,6 @@ void USB::Initialize() {
 	USB_CNTR = RESETM | CTRM | SUSPM; // Enable interrupts
 
 	EnableInterrupt(75);
+
+	USART::Print("USB Initialized");
 }

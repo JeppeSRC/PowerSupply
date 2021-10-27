@@ -3,6 +3,7 @@
 #include <sys/registers/registers.h>
 #include <sys/sys.h>
 #include <core/driver/display.h>
+#include <core/driver/usart.h>
 
 void InitializeEncoders() {
 	RCC_APB2ENR |= TIM19EN;
@@ -24,4 +25,6 @@ void InitializeEncoders() {
 	TIM4_SMCR = SMS(1);
 	TIM4_CCMR1 = CC1S(1) | CC2S(1);
 	TIM4_CR1 = CEN(1);
+
+	USART::Print("Encoders Initialized");
 }

@@ -2,6 +2,7 @@
 #include <core/driver/display.h>
 #include <sys/time.h>
 #include <core/psu.h>
+#include <core/driver/usart.h>
 
 /* Display Format 2x16
 
@@ -26,6 +27,8 @@ void UI::Initialize() {
 	Display::Clear();
 	Display::Printf(0x00, "S  %02U.%02UV %01U.%03UA", 0, 0, 0, 0);
 	Display::Print(0x40,  "O  00.00V 0.000A");
+
+	USART::Print("UI Initialized");
 }
 
 void UI::UpdateVSet(uint16 vset) {

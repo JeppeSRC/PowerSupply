@@ -4,6 +4,8 @@
 #include "time.h"
 #include <core/driver/usb.h>
 #include <sys/registers/registers.h>
+#include <core/driver/usart.h>
+#include <core/ui.h>
 
 void InitializeClock();
 void InitializeFPU();
@@ -17,11 +19,19 @@ void Initialize() {
 	InitializeFPU();
 	InitializeTimers();
 	InitializeGPIO();
+
 	DelayMillis(200);
+
+	USART::Initialize(2000000);
+	USART::Print("USART Initialized");
+
 	Display::Initialize();
 	InitializeDAC();
 	InitializeEncoders();
 	InitializeSDADC();
+
+	USB::Initialize();
+	UI::Initialize();
 }
 
 void InitializeClock() {
@@ -99,6 +109,8 @@ void InitializeDAC() {
 
 	DAC1_DHR12R2 = 0;
 	DAC2_DHR12R1 = 0;
+
+	USART::Print("DACs Initialized");
 }
 
 void InitializeSDADC() {
