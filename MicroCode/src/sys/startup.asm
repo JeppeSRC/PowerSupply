@@ -137,6 +137,15 @@ Reset_Handler:
 	ldr r0, =0x20004000
 	mov sp, r0
 
+# Enable FPU
+    ldr r0, =0xE000ED88
+    ldr r1, =0x00F00000
+    ldr r2, [r0]
+    orr  r2, r1
+    str r2, [r0]
+    dsb
+    isb
+
     ldr r0, SI_START
     ldr r1, DATA_START
     ldr r2, DATA_END

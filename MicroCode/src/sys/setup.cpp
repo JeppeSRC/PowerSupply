@@ -9,7 +9,6 @@
 #include <core/driver/sdadc.h>
 
 void InitializeClock();
-void InitializeFPU();
 void InitializeGPIO();
 void InitializeDAC();
 void InitializeSDADC();
@@ -17,7 +16,6 @@ void InitializeEncoders();
 
 void Initialize() {
 	InitializeClock();
-	InitializeFPU();
 	InitializeTimers();
 	InitializeGPIO();
 
@@ -62,13 +60,6 @@ void InitializeClock() {
 #endif
 
 	RCC_AHBENR |= DMA1EN | DMA2EN;
-}
-
-void InitializeFPU() {
-	FPU_CPACR |= 0xF00000;
-
-	__asm ("dsb");
-	__asm ("isb");
 }
 
 void InitializeGPIO() {
