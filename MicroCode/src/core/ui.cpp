@@ -25,7 +25,7 @@ void UI::Initialize() {
 	Display::Printf(0x40, "Version: %02H.%02H", PSU::Version / 0x100, PSU::Version % 0x100);
 	Delay(2);
 	Display::Clear();
-	Display::Printf(0x00, "S  %02U.%02UV %01U.%03UA", 0, 0, 0, 0);
+	Display::Print(0x00, "S  00.00V 0.000A");
 	Display::Print(0x40,  "O  00.00V 0.000A");
 
 	USART::Print("UI Initialized");
