@@ -29,7 +29,7 @@ void SDADC::Initialize() {
 	SDADC1_CLRISR = 0x1;
 	SDADC2_CLRISR = 0x1;
 
-	SDADC1_CR2 = 0x00C80001; // Continous mode on chanel 8, start conversion
-	SDADC2_CR2 = 0x00070001; // channel 7
+	SDADC2_CR2 = 0x00470001; // RCONT, channel 7
+	SDADC1_CR2 = 0x00C80001; // RCONT, channel 8, start conversion
 
 }
