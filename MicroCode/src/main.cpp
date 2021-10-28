@@ -68,6 +68,10 @@ int main() {
 	while (true) {
 		DelayMillis(10);
 
+		uint16 vRead = uint16(float((PSU::Data.vReadADC ^ 0x8000) >> 4) * 0.95f / 2.0f);
+		//uint16 vRead = (PSU::Data.vReadADC ^ 0x8000) >> 5;
+
+		UI::UpdateVRead(vRead);
 		UI::UpdateVISet(PSU::Data.vSet, PSU::Data.iSet);
 	}
 
