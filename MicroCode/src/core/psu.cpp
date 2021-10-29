@@ -3,7 +3,7 @@
 #include <sys/registers/dac.h>
 
 const uint16 PSU::vSetMin = 50;
-const uint16 PSU::iSetMin = 100;
+const uint16 PSU::iSetMin = 1;
 const uint16 PSU::iSetMax = 2048;
 const uint16 PSU::vSetMax = 2048;
 const float PSU::DefaultVSetCal = 2.0475f;

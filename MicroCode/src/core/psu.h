@@ -4,6 +4,9 @@
 
 #include <core/driver/usb.h>
 
+// Temporary while using v2 board
+#define RANGE_4A
+
 enum _Attribs {
     Attrib_EXCLPC = 0x01,
     Attrib_MDAC = 0x02,
