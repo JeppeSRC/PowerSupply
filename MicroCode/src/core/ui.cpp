@@ -29,7 +29,7 @@ void UI::Initialize() {
 	Display::Clear();
 
 #ifdef RANGE_4A
-	Display::Print(0x00, "S  00.00V 0.00A");
+	Display::Print(0x00,  "S  00.00V 0.00A");
 	Display::Print(0x40,  "O  00.00V 0.00A");
 #else
 	Display::Print(0x00, "S  00.00V 0.000A");
