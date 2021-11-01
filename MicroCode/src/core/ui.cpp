@@ -24,7 +24,7 @@ uint8 UI::uiState;
 void UI::Initialize() {
 	Display::Clear();
 	Display::Print(0x00, "-------PSU------");
-	Display::Printf(0x40, "Version: %02H.%02H", PSU::Version / 0x100, PSU::Version % 0x100);
+	Display::Printf(0x40, "Version: %02H.%02H", PSU::Data2.Version / 0x100, PSU::Data2.Version % 0x100);
 	Delay(2);
 	Display::Clear();
 

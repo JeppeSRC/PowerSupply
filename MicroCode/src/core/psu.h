@@ -27,6 +27,7 @@ public:
     static const float DefaultVSetCal;
     static const float DefaultISetCal;
 public:
+
     // Must be aligned on 4 bytes when using DMA
     static volatile USBInData1 Data1;
     static volatile USBInData2 Data2;

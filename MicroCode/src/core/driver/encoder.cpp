@@ -72,8 +72,6 @@ extern "C" void TIM4_Handler() {
 		iSet += (uint16)(1.0f * FACTOR(dif, 200.0f));
 	}
 
-
-
 	PSU::SetISet(iSet);
 
 	ClearPendingInterrupt(30);

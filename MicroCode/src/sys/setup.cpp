@@ -7,12 +7,14 @@
 #include <core/driver/usart.h>
 #include <core/ui.h>
 #include <core/driver/sdadc.h>
+#include <core/psu.h>
 
 void InitializeClock();
 void InitializeGPIO();
 void InitializeDAC();
 void InitializeSDADC();
 void InitializeEncoders();
+void InitializeStructs();
 
 void Initialize() {
 	InitializeClock();
@@ -28,6 +30,10 @@ void Initialize() {
 	InitializeDAC();
 	InitializeEncoders();
 	InitializeSDADC();
+
+
+	// Must be called after DAC initialization
+	InitializeStructs();
 
 	USB::Initialize();
 	UI::Initialize();
@@ -118,4 +124,16 @@ void InitializeSDADC() {
 	SDADC::Initialize();
 
 	USART::Print("SDADCs Initialized");
+}
+
+void InitializeStructs() {
+	PSU::Data2.Version = 0x0001;
+	PSU::Data2.vSetCal = PSU::DefaultVSetCal;
+	PSU::Data2.iSetCal = PSU::DefaultISetCal;
+	PSU::Data2.DefaultVSetCal = PSU::DefaultVSetCal;
+	PSU::Data2.DefaultISetCal = PSU::DefaultISetCal;
+	PSU::Data2.Attributes = 0; // Store in flash
+
+	PSU::SetVSet(500); // Store in flash
+	PSU::SetISet(100); // Store in flash
 }

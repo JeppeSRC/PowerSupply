@@ -14,7 +14,6 @@
 
 int main() {
 	Initialize();
-	memset(&PSU::Data1, 0, 12);
 
 	PSU::SetVSet(330);
 	PSU::SetISet(50);
@@ -35,7 +34,6 @@ int main() {
 			PSU::Data1.vRead = uint16(float(PSU::Data1.vReadADC >> 4) * 0.95f / 2.0f);
 			PSU::Data1.iRead = uint16(float(PSU::Data1.iReadADC >> 4) * 0.10f);
 
-			if ((now - last2) >= 100000) {
 			if ((now - last2) >= 100000) { // 10 Hz
 				last2 = now;
 				UI::UpdateVIRead(PSU::Data1.vRead, PSU::Data1.iRead);
