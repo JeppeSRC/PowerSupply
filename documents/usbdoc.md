@@ -13,28 +13,34 @@ Sending a 0 size OUT packet to a endpoint will preload data for the next IN pack
 ### IN (Device To Host)
 ```
 struct USBInData1 { 
-    uint16 vReadADC;
-    uint16 iReadADC;
-    uint16 vRead;
-    uint16 iRead;
-    uint16 vSet;
-    uint16 iSet;
+	uint16 vReadADC;
+	uint16 iReadADC;
+	uint16 vRead;
+	uint16 iRead;
+	uint16 vSetDAC;
+	uint16 iSetDAC;
+	uint16 vSet;
+	uint16 iSet;
 }
 ```
 
 `vReadADC`: The current `vRead` (12/16) bit ADC value.
 
-`vRead`: Is the measured voltage on the output. 
-
-`vSet`: Is the set voltage.
-
 `iReadADC`: The current `iRead` (12/16) bit ADC value.
+
+`vRead`: Is the measured voltage on the output. 
 
 `iRead`: Is the measured current.
 
+`vSetDAC`: The current `vSet` 12 bit DAC value
+
+`iSetDAC`: The current `iSet` 12 bit DAC value.
+
+`vSet`: Is the set voltage.
+
 `iSet`: Is the set current.
 
-All parameters except the ADC ones are encoded the same way. Where the high byte is the value before the decimal point and the low byte is after the decimal point.
+All parameters except the ADC and DAC ones are encoded the same way. Where the high byte is the value before the decimal point and the low byte is after the decimal point.
 So 12.35V is 0x0C23 in hex.
 
 ### OUT (Host To Device)

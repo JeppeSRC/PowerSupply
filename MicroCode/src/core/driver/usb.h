@@ -14,7 +14,7 @@ enum class USBState {
 
 #pragma pack(push, 1)
 
-struct Data {
+struct Data1 {
 	USBDeviceDescriptor device;
 	USBDeviceQualifierDescriptor qualifier;
 	USBConfigurationDescriptor configuration;
@@ -27,19 +27,21 @@ struct Data {
 
 
 
-struct alignas (4) USBInData1 {
+struct USBInData1 {
 	uint16 vReadADC;
 	uint16 iReadADC;
 	uint16 vRead;
-	uint16 vSet;
 	uint16 iRead;
+	uint16 vSetDAC;
+	uint16 iSetDAC;
+	uint16 vSet;
 	uint16 iSet;
 };
 
 struct USBOutData1 {
 	uint16 vSetDAC;
-	uint16 vSet;
 	uint16 iSetDAC;
+	uint16 vSet;
 	uint16 iSet;
 };
 
@@ -84,7 +86,7 @@ public:
 class USB {
 private:
 
-	static Data desc;
+	static Data1 desc;
 	static uint8 address;
 	static USBState deviceState;
 

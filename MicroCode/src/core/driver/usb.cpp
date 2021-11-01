@@ -30,7 +30,7 @@
 
 #define SRAM_ADDR(x) ((void*)(USB_SRAM + ((x) << 1)))
 
-Data USB::desc;
+Data1 USB::desc;
 USBState USB::deviceState;
 uint8 USB::address;
 Endpoint USB::endpoints[3];
@@ -292,19 +292,19 @@ void USB::DataTransfer(uint16 ep, uint16 dir) {
 
 				if ((data.vSet & 0x8000) == 0) {
 					PSU::SetVSet(data.vSet);
-				} else if ((PSU::Attributes & Attrib_MDAC) && (data.vSetDAC & 0x8000)) {
+				} else if ((PSU::Data2.Attributes & Attrib_MDAC) && (data.vSetDAC & 0x8000)) {
 					PSU::SetVSetDAC(data.vSetDAC);
 				}
 
 				if ((data.iSet & 0x8000) == 0) {
 					PSU::SetISet(data.iSet);
-				} else if ((PSU::Attributes & Attrib_MDAC) && (data.iSetDAC & 0x8000)) {
+				} else if ((PSU::Data2.Attributes & Attrib_MDAC) && (data.iSetDAC & 0x8000)) {
 					PSU::SetISetDAC(data.iSetDAC);
 				}
 			} else if (size == 0) {
 				const uint32 size = sizeof(USBInData1);
 
-				usb_copy_to_sram(SRAM_ADDR(ADDR1_TX_OFFSET), &PSU::Data, size);
+				usb_copy_to_sram(SRAM_ADDR(ADDR1_TX_OFFSET), &PSU::Data1, size);
 
 				USB_COUNT1_TX = size;
 			}
@@ -313,7 +313,7 @@ void USB::DataTransfer(uint16 ep, uint16 dir) {
 		} else {
 			const uint32 size = sizeof(USBInData1);
 
-			usb_copy_to_sram(SRAM_ADDR(ADDR1_TX_OFFSET), &PSU::Data, size);
+			usb_copy_to_sram(SRAM_ADDR(ADDR1_TX_OFFSET), &PSU::Data1, size);
 
 			USB_COUNT1_TX = size;
 
@@ -328,48 +328,36 @@ void USB::DataTransfer(uint16 ep, uint16 dir) {
 
 				usb_copy_from_sram(&data, SRAM_ADDR(ADDR2_RX_OFFSET), size);
 
-				PSU::Attributes = data.Attributes & ~(Attrib_VCALI | Attrib_ICALI | Attrib_CVCALI | Attrib_CICALI);
+				PSU::Data2.Attributes = data.Attributes & ~(Attrib_VCALI | Attrib_ICALI | Attrib_CVCALI | Attrib_CICALI);
 
-				if (PSU::Attributes & Attrib_MFAN) {
+				if (PSU::Data2.Attributes & Attrib_MFAN) {
 					// TODO: set fan speed when supported
 				}
 
 				if (data.Attributes & Attrib_VCALI) {
-					PSU::vSetCal = data.vSetCal;
-					PSU::Attributes |= Attrib_VCALI;
+					PSU::Data2.vSetCal = data.vSetCal;
+					PSU::Data2.Attributes |= Attrib_VCALI;
 				}
 
 				if (data.Attributes & Attrib_ICALI) {
-					PSU::iSetCal = data.iSetCal;
-					PSU::Attributes |= Attrib_ICALI;
+					PSU::Data2.iSetCal = data.iSetCal;
+					PSU::Data2.Attributes |= Attrib_ICALI;
 				}
 
 				if (data.Attributes & Attrib_CVCALI) {
-					PSU::vSetCal = PSU::DefaultVSetCal;
-					PSU::Attributes &= ~Attrib_VCALI;
+					PSU::Data2.vSetCal = PSU::DefaultVSetCal;
+					PSU::Data2.Attributes &= ~Attrib_VCALI;
 				}
 
 				if (data.Attributes & Attrib_CICALI) {
-					PSU::iSetCal = PSU::DefaultISetCal;
-					PSU::Attributes &= ~Attrib_ICALI;
+					PSU::Data2.iSetCal = PSU::DefaultISetCal;
+					PSU::Data2.Attributes &= ~Attrib_ICALI;
 				}
 
 			} else if (size == 0) {
 				const uint16 size = sizeof(USBInData2);
-				volatile USBInData2 data;
 
-				data.Version = PSU::Version;
-				data.FanSpeed = 0xDE;
-				data.FanRPM = 0xBEAD;
-				data.Temperature = 0xEF;
-				data.TemperatureADC = 0xEDDE;
-				data.vSetCal = PSU::vSetCal;
-				data.iSetCal = PSU::iSetCal;
-				data.DefaultVSetCal = PSU::DefaultVSetCal;
-				data.DefaultISetCal = PSU::DefaultISetCal;
-				data.Attributes = PSU::Attributes;
-
-				usb_copy_to_sram(SRAM_ADDR(ADDR2_TX_OFFSET), &data, size);
+				usb_copy_to_sram(SRAM_ADDR(ADDR2_TX_OFFSET), &PSU::Data2, size);
 
 				USB_COUNT2_TX = size;
 			}
@@ -377,20 +365,8 @@ void USB::DataTransfer(uint16 ep, uint16 dir) {
 			EP2 = CTR_RX | STAT_RX(NAK, VALID);
 		} else {
 			const uint16 size = sizeof(USBInData2);
-			volatile USBInData2 data;
 
-			data.Version = PSU::Version;
-			data.FanSpeed = 0xDE;
-			data.FanRPM = 0xBEAD;
-			data.Temperature = 0xEF;
-			data.TemperatureADC = 0xDEED;
-			data.vSetCal = PSU::vSetCal;
-			data.iSetCal = PSU::iSetCal;
-			data.DefaultVSetCal = PSU::DefaultVSetCal;
-			data.DefaultISetCal = PSU::DefaultISetCal;
-			data.Attributes = PSU::Attributes;
-
-			usb_copy_to_sram(SRAM_ADDR(ADDR2_TX_OFFSET), &data, size);
+			usb_copy_to_sram(SRAM_ADDR(ADDR2_TX_OFFSET), &PSU::Data2, size);
 
 			USB_COUNT2_TX = size;
 

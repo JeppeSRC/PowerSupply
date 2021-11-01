@@ -4,44 +4,38 @@
 
 const uint16 PSU::vSetMin = 50;
 const uint16 PSU::iSetMin = 1;
-const uint16 PSU::iSetMax = 2048;
-const uint16 PSU::vSetMax = 2048;
+const uint16 PSU::iSetMax = 400;
+const uint16 PSU::vSetMax = 800;// 2048;
 const float PSU::DefaultVSetCal = 2.0475f;
 const float PSU::DefaultISetCal = 10.26f;
 
-uint16 PSU::Version = 0x0001;
-volatile uint32 PSU::Attributes = 0;
-volatile USBInData1 PSU::Data;
-
-volatile float  PSU::vSetCal = PSU::DefaultVSetCal; //TODO: move into flash, for non-volatile storage
-volatile float  PSU::iSetCal = PSU::DefaultISetCal;  //TODO: move into flash, for non-volatile storage
-volatile uint32 PSU::vSetDAC = 0;
-volatile uint32 PSU::iSetDAC = 0;
+volatile USBInData1 PSU::Data1;
+volatile USBInData2 PSU::Data2;
 
 void PSU::SetVSet(uint16 value) {
-    Data.vSet = CLAMP(value, vSetMin, vSetMax);
-    vSetDAC = ((uint32)(float(Data.vSet) * vSetCal) & 0xFFF);
+    Data1.vSet = CLAMP(value, vSetMin, vSetMax);
+    Data1.vSetDAC = ((uint32)(float(Data1.vSet) * Data2.vSetCal) & 0xFFF);
 
-    DAC2_DHR12R1 = vSetDAC;
+    DAC2_DHR12R1 = Data1.vSetDAC;
 }
 
 void PSU::SetVSetDAC(uint16 value) {
-    vSetDAC = value;
-    Data.vSet = CLAMP(uint16(float(value) / vSetCal) & 0xFFF, vSetMin, vSetMax);
+    Data1.vSetDAC = value;
+    Data1.vSet = CLAMP(uint16(float(value) / Data2.vSetCal) & 0xFFF, vSetMin, vSetMax);
 
     DAC2_DHR12R1 = value;
 }
 
 void PSU::SetISet(uint16 value) {
-    Data.iSet = CLAMP(value, iSetMin, iSetMax);;
-    iSetDAC = ((uint32)(float(Data.iSet) * iSetCal) & 0xFFF);
+    Data1.iSet = CLAMP(value, iSetMin, iSetMax);;
+    Data1.iSetDAC = ((uint32)(float(Data1.iSet) * Data2.iSetCal) & 0xFFF);
 
-    DAC1_DHR12R2 = iSetDAC;
+    DAC1_DHR12R2 = Data1.iSetDAC;
 }
 
 void PSU::SetISetDAC(uint16 value) {
-    iSetDAC = value;
-    Data.iSet = CLAMP(uint16(float(value) / iSetCal) & 0xFFF, iSetMin, iSetMax);
+    Data1.iSetDAC = value;
+    Data1.iSet = CLAMP(uint16(float(value) / Data2.iSetCal) & 0xFFF, iSetMin, iSetMax);
 
     DAC1_DHR12R2 = value;
 }

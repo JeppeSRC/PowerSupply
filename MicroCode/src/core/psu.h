@@ -27,17 +27,9 @@ public:
     static const float DefaultVSetCal;
     static const float DefaultISetCal;
 public:
-    static uint16 Version;
-
-    static volatile uint32 Attributes;
-
-    alignas(4) static volatile USBInData1 Data;
-
-    static volatile float  vSetCal;
-    static volatile float  iSetCal;
-    static volatile uint32 vSetDAC;
-    static volatile uint32 iSetDAC;
-
+    // Must be aligned on 4 bytes when using DMA
+    static volatile USBInData1 Data1;
+    static volatile USBInData2 Data2;
 
     static void SetVSet(uint16 value);
     static void SetVSetDAC(uint16 value);
