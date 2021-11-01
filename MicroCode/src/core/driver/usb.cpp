@@ -30,7 +30,7 @@
 
 #define SRAM_ADDR(x) ((void*)(USB_SRAM + ((x) << 1)))
 
-Data1 USB::desc;
+Data USB::desc;
 USBState USB::deviceState;
 uint8 USB::address;
 Endpoint USB::endpoints[3];

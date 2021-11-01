@@ -14,7 +14,7 @@ enum class USBState {
 
 #pragma pack(push, 1)
 
-struct Data1 {
+struct Data {
 	USBDeviceDescriptor device;
 	USBDeviceQualifierDescriptor qualifier;
 	USBConfigurationDescriptor configuration;
@@ -86,7 +86,7 @@ public:
 class USB {
 private:
 
-	static Data1 desc;
+	static Data desc;
 	static uint8 address;
 	static USBState deviceState;
 
