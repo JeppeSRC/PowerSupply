@@ -9,22 +9,38 @@
 #include <core/ui.h>
 #include <core/driver/usb.h>
 #include <core/psu.h>
+#include <core/driver/sdadc.h>
 
 
 int main() {
 	Initialize();
-	memset(&PSU::Data, 0, 12);
+	memset(&PSU::Data1, 0, 12);
+
+	PSU::SetVSet(330);
+	PSU::SetISet(50);
 
 	USART::Print("Done!");
 
+	uint32 last = Micros();
+	uint32 last2 = Micros();
+
 	while (true) {
-		DelayMillis(10);
+		uint32 now = Micros();
 
-		uint16 vRead = uint16(float((PSU::Data.vReadADC ^ 0x8000) >> 4) * 0.95f / 2.0f);
-		//uint16 vRead = (PSU::Data.vReadADC ^ 0x8000) >> 5;
+		if ((now - last) >= 1000) { //Update at 1KHz
+			last = now;
 
-		UI::UpdateVRead(vRead);
-		UI::UpdateVISet(PSU::Data.vSet, PSU::Data.iSet);
+			SDADC::Read(&PSU::Data1.vReadADC, &PSU::Data1.iReadADC);
+
+			PSU::Data1.vRead = uint16(float(PSU::Data1.vReadADC >> 4) * 0.95f / 2.0f);
+			PSU::Data1.iRead = uint16(float(PSU::Data1.iReadADC >> 4) * 0.10f);
+
+			if ((now - last2) >= 100000) {
+				last2 = now;
+				UI::UpdateVIRead(PSU::Data1.vRead, PSU::Data1.iRead);
+				UI::UpdateVISet(PSU::Data1.vSet, PSU::Data1.iSet);
+			}
+		}
 	}
 
 	__asm ("b .");

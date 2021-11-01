@@ -55,3 +55,5 @@
 #define SDADC2_RDATAR (*(volatile uint32*)(SDADC2+0x64))
 #define SDADC3_RDATAR (*(volatile uint32*)(SDADC3+0x64))
 
+#define SDADC1_RDATA12R (*(volatile uint32*)(SDADC1+0x74))
+

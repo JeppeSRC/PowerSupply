@@ -79,3 +79,8 @@ void UI::UpdateVISet(uint16 vset, uint16 iset) {
 	UpdateVSet(vset);
 	UpdateISet(iset);
 }
+
+void UI::UpdateVIRead(uint16 vread, uint16 iread) {
+	UpdateVRead(vread);
+	UpdateIRead(iread);
+}

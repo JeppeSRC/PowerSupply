@@ -5,14 +5,14 @@
 // DMA Channel 3 on DMA2
 
 void SDADC::Initialize() {
-	DMA2_CPAR3 = SDADC1 + 0x74;
-	DMA2_CMAR3 = (uint32)&PSU::Data;;
-	DMA2_CNDTR3 = 1; // One 4 byte transfer
-	DMA2_CCR3 = DMA_CCR_PL(2) | DMA_CCR_MSIZE(2) | DMA_CCR_PSIZE(2) | DMA_CCR_CIRC | DMA_CCR_EN;
+	//DMA2_CPAR3 = SDADC1 + 0x74;
+	//DMA2_CMAR3 = (uint32)&PSU::Data;;
+	//DMA2_CNDTR3 = 1; // One 4 byte transfer
+	//DMA2_CCR3 = DMA_CCR_PL(2) | DMA_CCR_MSIZE(2) | DMA_CCR_PSIZE(2) | DMA_CCR_CIRC | DMA_CCR_EN;
 
 	SDADC1_CONF0R = 0x0C000000;
 	SDADC2_CONF0R = 0x0C000000;
-	SDADC1_CR1 = 0x20000; // RDMAEN
+	//SDADC1_CR1 = 0x20000; // RDMAEN
 	SDADC2_CR1 = 0x08000; // RSYNC
 	SDADC1_CR2 = 1; //ADON
 	SDADC2_CR2 = 1; //ADON
@@ -29,7 +29,20 @@ void SDADC::Initialize() {
 	SDADC1_CLRISR = 0x1;
 	SDADC2_CLRISR = 0x1;
 
-	SDADC2_CR2 = 0x00470001; // RCONT, channel 7
-	SDADC1_CR2 = 0x00C80001; // RCONT, channel 8, start conversion
+	//SDADC2_CR2 = 0x00470001; // RCONT, channel 7
+	//SDADC1_CR2 = 0x00C80001; // RCONT, channel 8, start conversion
+	SDADC2_CR2 = 0x00070001; // channel 7
+	SDADC1_CR2 = 0x00080001; // channel 8
 
+}
+
+void SDADC::Read(volatile uint16* vRead, volatile uint16* iRead) {
+	SDADC1_CR2 = 0x00880001; //Start CONV
+
+	while ((SDADC1_ISR & 0x08) == 0);
+
+	uint32 viRead = SDADC1_RDATA12R ^ 0x80008000;
+
+	*vRead = uint16(viRead & 0xFFFF);
+	*iRead = uint16(viRead >> 16);
 }
