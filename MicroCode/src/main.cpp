@@ -36,6 +36,7 @@ int main() {
 			PSU::Data1.iRead = uint16(float(PSU::Data1.iReadADC >> 4) * 0.10f);
 
 			if ((now - last2) >= 100000) {
+			if ((now - last2) >= 100000) { // 10 Hz
 				last2 = now;
 				UI::UpdateVIRead(PSU::Data1.vRead, PSU::Data1.iRead);
 				UI::UpdateVISet(PSU::Data1.vSet, PSU::Data1.iSet);
