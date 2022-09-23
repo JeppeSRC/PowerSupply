@@ -2,7 +2,9 @@
 
 extern "C" {
 
-void memset(volatile void* dst, uint8 v, uint32 size) {
+
+// Attribute required for -flto
+void __attribute__((used)) memset(volatile void* dst, uint8 v, uint32 size) {
 	for (uint32 i = 0; i < size; i++) {
 		*((volatile uint8*)dst + i) = v;
 	}
