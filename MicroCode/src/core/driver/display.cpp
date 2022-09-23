@@ -4,6 +4,8 @@
 #include <sys/sys.h>
 #include <core/driver/usart.h>
 
+
+
 /*	Device			Port			PhysicalPin
 	Display_RS		PA13			34
 	Display_RW		PF6				35
@@ -157,9 +159,9 @@ void Display::Print(uint8 address, const char c) {
 	DelayMicros(40);
 }
 
-char tmpBuffer[17];
 
 void Display::Printf(uint8 address, const char* const format, ...) {
+	char tmpBuffer[17];
 	va_list list;
 	va_start(list, format);
 
