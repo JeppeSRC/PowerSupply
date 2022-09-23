@@ -14,11 +14,11 @@ Revision 2:
 
 Revision 3:
     - Removed 2 resistors for LCD backlight
-	- C_LIMIT and OUTPUT_ON LEDS to be driven by a nfet (2N7002NXAK) from VDD
-	- Increase output capacitance
-	- Increase input capacitance
-	- Additional push button for selecting boot loader during reset
-	- Connect Iread and Vread to SDADC and ADC
+    - C_LIMIT and OUTPUT_ON LEDS to be driven by a nfet (2N7002NXAK) from VDD
+    - Increase output capacitance
+    - Increase input capacitance
+    - Additional push button for selecting boot loader during reset
+    - Connect Iread and Vread to SDADC and ADC
     - Changed current limiting circuit
     - Improved voltage regulation
     - Moved buffer in current sense amplifier to before the ADC inputs
