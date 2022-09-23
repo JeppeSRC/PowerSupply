@@ -30,6 +30,7 @@
     <NMakeIncludeSearchPath>src</NMakeIncludeSearchPath>
     <NMakeCleanCommandLine>tools\FuckMake.exe clean</NMakeCleanCommandLine>
     <TargetName />
+    <NMakeReBuildCommandLine>tools\FuckMake.exe rebuild</NMakeReBuildCommandLine>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
     <BuildLog>

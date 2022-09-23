@@ -44,4 +44,8 @@ build:
     Execute(ConvertToDFU, %(OutDir)MicroCode.elf, %(OutDir)MicroCode.dfu)
 
 clean:
-    DeleteFiles(GetFiles(%(ObjDir),*.obj,) bin/MicroCode.elf)
+    DeleteFiles(GetFiles(%(ObjDir),*.obj,)|bin/MicroCode.elf)
+
+rebuild:
+    ExecuteTarget(clean)
+    ExecuteTarget(build)
