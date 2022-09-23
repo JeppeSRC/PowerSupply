@@ -3,7 +3,6 @@
 // timer clock speed 48 Mhz
 // TIM18/7 reserved for delay functions
 // TIM2 reserved for time tracking
-#include <memory.h>
 
 void InitializeTimers() {
 	RCC_APB1ENR |= TIM18EN | TIM2EN | TIM7EN;

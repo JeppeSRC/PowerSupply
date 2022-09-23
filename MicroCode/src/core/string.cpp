@@ -1,6 +1,8 @@
 #include "string.h"
+#include <sys/memory.h>
 
 #define APPEND(dst, offset, string, length) memcpy(dst+offset, string, length)
+
 
 uint32 strlen(const char* string) {
 	if (string == 0) return 0;

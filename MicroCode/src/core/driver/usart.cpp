@@ -3,6 +3,7 @@
 #include <sys/time.h>
 #include <sys/setup.h>
 #include <core/string.h>
+#include <sys/memory.h>
 
 char USART::dmaBuffer[256];
 
