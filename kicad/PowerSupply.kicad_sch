@@ -3245,6 +3245,9 @@
     (path "/00000000-0000-0000-0000-00005f79b199/90d25e00-9d82-4377-b00a-064534816aa9"
       (reference "#PWR?") (unit 1) (value "VDDA") (footprint "")
     )
+    (path "/00000000-0000-0000-0000-00005f1751cc/adcd01a4-652e-4edd-b7b6-90528f570698"
+      (reference "#PWR?") (unit 1) (value "+3V3") (footprint "")
+    )
     (path "/af6c3e98-b53f-4dab-ac87-73d434a1652c"
       (reference "#PWR?") (unit 1) (value "GNDA") (footprint "")
     )
@@ -3418,6 +3421,9 @@
     )
     (path "/00000000-0000-0000-0000-00005f1751cc/00000000-0000-0000-0000-00005f1e7b38"
       (reference "J6") (unit 1) (value "Display") (footprint "Connector_PinHeader_2.54mm:PinHeader_1x11_P2.54mm_Vertical")
+    )
+    (path "/00000000-0000-0000-0000-00005f1751cc/1e41f14f-4178-4f63-8020-dab169c4397d"
+      (reference "JP?") (unit 1) (value "Jumper_2_Open") (footprint "")
     )
     (path "/00000000-0000-0000-0000-00005f1751cc/6bd76359-ac2b-405b-a4ec-dd25e7418cdb"
       (reference "NT?") (unit 1) (value "NetTie_2") (footprint "")
