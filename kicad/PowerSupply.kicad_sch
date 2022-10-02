@@ -3050,6 +3050,9 @@
     (path "/00000000-0000-0000-0000-00005f79b199/3bd0d243-631c-4b51-8249-40649031abce"
       (reference "#FLG0101") (unit 1) (value "PWR_FLAG") (footprint "")
     )
+    (path "/00000000-0000-0000-0000-00005f79b199/85aec317-bc46-4a25-9066-3ee499d0ec5b"
+      (reference "#FLG?") (unit 1) (value "PWR_FLAG") (footprint "")
+    )
     (path "/00000000-0000-0000-0000-00005ed77f8c"
       (reference "#PWR02") (unit 1) (value "GNDA") (footprint "")
     )
@@ -3239,11 +3242,20 @@
     (path "/00000000-0000-0000-0000-00005f1751cc/00000000-0000-0000-0000-00005f433e38"
       (reference "#PWR094") (unit 1) (value "GNDREF") (footprint "")
     )
+    (path "/00000000-0000-0000-0000-00005f79b199/2894126f-d43c-49f6-ad0d-d7597b40a600"
+      (reference "#PWR?") (unit 1) (value "GND") (footprint "")
+    )
     (path "/3dbb9c07-5fd3-4fe2-a7b9-9bd61e44f05b"
       (reference "#PWR?") (unit 1) (value "VDDA") (footprint "")
     )
+    (path "/00000000-0000-0000-0000-00005f79b199/64a81a2d-bda4-4a3b-bebf-293ecfc7dd82"
+      (reference "#PWR?") (unit 1) (value "VDD") (footprint "")
+    )
     (path "/00000000-0000-0000-0000-00005f79b199/90d25e00-9d82-4377-b00a-064534816aa9"
       (reference "#PWR?") (unit 1) (value "VDDA") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-00005f79b199/98a1e05c-7023-4079-a363-3e40d866a388"
+      (reference "#PWR?") (unit 1) (value "+12V") (footprint "")
     )
     (path "/00000000-0000-0000-0000-00005f1751cc/adcd01a4-652e-4edd-b7b6-90528f570698"
       (reference "#PWR?") (unit 1) (value "+3V3") (footprint "")
@@ -3377,6 +3389,12 @@
     (path "/00000000-0000-0000-0000-00005f1751cc/00000000-0000-0000-0000-00005ede113a"
       (reference "C81") (unit 1) (value "?") (footprint "")
     )
+    (path "/00000000-0000-0000-0000-00005f79b199/e3cc538b-c2d8-47bb-9412-b6840edee45a"
+      (reference "C?") (unit 1) (value "100n") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-00005f79b199/f652e0f6-661f-482e-a2c0-7182e20f4bf0"
+      (reference "C?") (unit 1) (value "1u") (footprint "")
+    )
     (path "/00000000-0000-0000-0000-00005eb3b310"
       (reference "D1") (unit 1) (value "10V-16V") (footprint "")
     )
@@ -3394,6 +3412,9 @@
     )
     (path "/00000000-0000-0000-0000-00005f1751cc/00000000-0000-0000-0000-00005f433e23"
       (reference "D6") (unit 1) (value "BLUE") (footprint "LED_SMD:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder")
+    )
+    (path "/00000000-0000-0000-0000-00005f79b199/37294bd0-cfe4-427c-9af3-f16b02c1b107"
+      (reference "D?") (unit 1) (value "D") (footprint "")
     )
     (path "/00000000-0000-0000-0000-0000601d5619"
       (reference "HS1") (unit 1) (value "RA-T2X-25E") (footprint "")
@@ -3545,9 +3566,6 @@
     (path "/00000000-0000-0000-0000-00005f79b199/00000000-0000-0000-0000-0000606500e7"
       (reference "R59") (unit 1) (value "50k") (footprint "")
     )
-    (path "/00000000-0000-0000-0000-00005f1751cc/00000000-0000-0000-0000-00005f2dcc0e"
-      (reference "R60") (unit 1) (value "10K") (footprint "")
-    )
     (path "/00000000-0000-0000-0000-00005f1751cc/00000000-0000-0000-0000-00005f1e7bdd"
       (reference "R61") (unit 1) (value "10K") (footprint "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder")
     )
@@ -3560,11 +3578,8 @@
     (path "/00000000-0000-0000-0000-00005f1751cc/00000000-0000-0000-0000-00005f1e7bcf"
       (reference "R64") (unit 1) (value "10K") (footprint "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder")
     )
-    (path "/00000000-0000-0000-0000-00005f1751cc/00000000-0000-0000-0000-00005f2dcc1a"
-      (reference "R65") (unit 1) (value "10K") (footprint "")
-    )
     (path "/00000000-0000-0000-0000-00005f1751cc/00000000-0000-0000-0000-00005f2dcc20"
-      (reference "R66") (unit 1) (value "5K") (footprint "")
+      (reference "R66") (unit 1) (value "10K") (footprint "")
     )
     (path "/00000000-0000-0000-0000-00005f1751cc/00000000-0000-0000-0000-00005f1e7be6"
       (reference "R67") (unit 1) (value "1K") (footprint "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder")
@@ -3626,6 +3641,21 @@
     (path "/00000000-0000-0000-0000-00005f1751cc/00000000-0000-0000-0000-00005f433e62"
       (reference "R86") (unit 1) (value "10K") (footprint "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder")
     )
+    (path "/00000000-0000-0000-0000-00005f1751cc/4b82d5b8-224b-49e7-9e35-ef44d2cf402c"
+      (reference "R?") (unit 1) (value "10K") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-00005f1751cc/770abf83-332f-4522-8246-98aa06701138"
+      (reference "R?") (unit 1) (value "10K") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-00005f1751cc/99657108-40e7-4a76-902c-54f164c012bc"
+      (reference "R?") (unit 1) (value "10K") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-00005f79b199/cb5715c8-1104-428b-8b76-077b2064fc40"
+      (reference "R?") (unit 1) (value "2K") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-00005f79b199/dcf6056f-0e32-4e8b-ab55-cfe82be8568e"
+      (reference "R?") (unit 1) (value "240R") (footprint "")
+    )
     (path "/00000000-0000-0000-0000-00005f1751cc/00000000-0000-0000-0000-00005f1e7bfb"
       (reference "SW1") (unit 1) (value "ENC0 (Voltage)") (footprint "footprints:PEC12R-2xxxf-Sxxxx")
     )
@@ -3682,6 +3712,9 @@
     )
     (path "/00000000-0000-0000-0000-00005f1751cc/00000000-0000-0000-0000-00005f1afc27"
       (reference "U8") (unit 1) (value "STM32F373C8Tx") (footprint "Package_QFP:LQFP-48_7x7mm_P0.5mm")
+    )
+    (path "/00000000-0000-0000-0000-00005f79b199/4befdead-2cf7-4554-88c6-b7cc11d5ba83"
+      (reference "U?") (unit 1) (value "LM317") (footprint "Package_TO_SOT_THT:TO-220-3_Vertical")
     )
     (path "/00000000-0000-0000-0000-00005f1751cc/00000000-0000-0000-0000-00005f1afc53"
       (reference "Y1") (unit 1) (value "Crystal") (footprint "Crystal:Crystal_HC49-U_Vertical")
