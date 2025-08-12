@@ -26,6 +26,4 @@ Revision 3:
     - Added heatsink temperature sensor
     - Fan control
     - Mains transformer
-    - Buck pre regulator
-    - 12V buck regulator
 
