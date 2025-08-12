@@ -8541,7 +8541,7 @@
 		)
 		(uuid "3b6dda98-f455-4961-854e-3c4cceecffcc")
 	)
-	(label "VDD1"
+	(label "VDD"
 		(at 168.91 22.86 270)
 		(effects
 			(font
@@ -8661,7 +8661,7 @@
 		)
 		(uuid "7de6564c-7ad6-4d57-a54c-8d2835ff5cdc")
 	)
-	(label "VDD1"
+	(label "VDD"
 		(at 102.87 40.64 0)
 		(effects
 			(font
@@ -8711,7 +8711,7 @@
 		)
 		(uuid "9a595c4c-9ac1-4ae3-8ff3-1b7f2281a894")
 	)
-	(label "VDD1"
+	(label "VDD"
 		(at 16.51 68.58 0)
 		(effects
 			(font
