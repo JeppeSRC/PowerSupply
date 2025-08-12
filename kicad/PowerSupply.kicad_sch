@@ -2596,6 +2596,12 @@
 		(uuid "0e016dec-7515-4633-9f0b-161f007df200")
 	)
 	(junction
+		(at 36.83 35.56)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "1479cc5d-5da0-4736-b488-56d5bd628e25")
+	)
+	(junction
 		(at 168.91 48.26)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2644,12 +2650,6 @@
 		(uuid "40ff8d78-8db4-4024-ab3c-2b52e6f4c15b")
 	)
 	(junction
-		(at 39.37 35.56)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "511d1794-24fa-45c3-8985-b2e5ab2617e6")
-	)
-	(junction
 		(at 181.61 118.11)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2672,12 +2672,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "6199bec7-e7eb-4ae0-b9ec-c563e157d635")
-	)
-	(junction
-		(at 39.37 20.32)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "65e82aef-35e4-4671-9964-dde87be67947")
 	)
 	(junction
 		(at 172.72 53.34)
@@ -2876,6 +2870,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "fcbd910f-2dad-430c-b2ae-cb5182df9951")
+	)
+	(junction
+		(at 36.83 20.32)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "ff8ebf6a-2ced-4c62-b785-dcfd4a43cd13")
 	)
 	(wire
 		(pts
@@ -3196,6 +3196,16 @@
 			(type default)
 		)
 		(uuid "49f63a32-2dec-4299-8e5a-70e1920725a7")
+	)
+	(wire
+		(pts
+			(xy 36.83 20.32) (xy 26.67 20.32)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4a11d47c-39a3-470d-9704-aae1194008b8")
 	)
 	(wire
 		(pts
@@ -3999,7 +4009,7 @@
 	)
 	(wire
 		(pts
-			(xy 26.67 35.56) (xy 39.37 35.56)
+			(xy 26.67 35.56) (xy 36.83 35.56)
 		)
 		(stroke
 			(width 0)
@@ -4089,7 +4099,7 @@
 	)
 	(wire
 		(pts
-			(xy 39.37 20.32) (xy 26.67 20.32)
+			(xy 39.37 20.32) (xy 36.83 20.32)
 		)
 		(stroke
 			(width 0)
@@ -4136,6 +4146,16 @@
 			(type default)
 		)
 		(uuid "ea6b0a78-4211-4fdc-b1b6-5065a97b1077")
+	)
+	(wire
+		(pts
+			(xy 36.83 35.56) (xy 43.18 35.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "eaf3b75a-3bc5-4e98-9140-9aba6888b081")
 	)
 	(wire
 		(pts
@@ -6298,7 +6318,7 @@
 	)
 	(symbol
 		(lib_id "power:GNDA")
-		(at 39.37 35.56 0)
+		(at 43.18 35.56 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -6306,7 +6326,7 @@
 		(dnp no)
 		(uuid "00000000-0000-0000-0000-00005ed77f8c")
 		(property "Reference" "#PWR02"
-			(at 39.37 41.91 0)
+			(at 43.18 41.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6315,7 +6335,7 @@
 			)
 		)
 		(property "Value" "GNDA"
-			(at 39.37 38.735 0)
+			(at 43.18 38.735 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6323,7 +6343,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 39.37 35.56 0)
+			(at 43.18 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6332,7 +6352,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 39.37 35.56 0)
+			(at 43.18 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6341,7 +6361,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GNDA\" , analog ground"
-			(at 39.37 35.56 0)
+			(at 43.18 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6441,7 +6461,7 @@
 	)
 	(symbol
 		(lib_id "Device:Opamp_Quad")
-		(at 41.91 27.94 0)
+		(at 39.37 27.94 0)
 		(unit 5)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -6449,7 +6469,7 @@
 		(dnp no)
 		(uuid "00000000-0000-0000-0000-00005ed77fa0")
 		(property "Reference" "U1"
-			(at 40.8432 26.7716 0)
+			(at 38.3032 26.7716 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6458,7 +6478,7 @@
 			)
 		)
 		(property "Value" "AS324"
-			(at 40.8432 29.083 0)
+			(at 38.3032 29.083 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6467,7 +6487,7 @@
 			)
 		)
 		(property "Footprint" "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm"
-			(at 41.91 27.94 0)
+			(at 39.37 27.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6476,7 +6496,7 @@
 			)
 		)
 		(property "Datasheet" "kicad-embed://AS324.pdf"
-			(at 41.91 27.94 0)
+			(at 39.37 27.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6485,7 +6505,7 @@
 			)
 		)
 		(property "Description" "Quad operational amplifier"
-			(at 41.91 27.94 0)
+			(at 39.37 27.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6494,7 +6514,7 @@
 			)
 		)
 		(property "MPN" "	OPA4196IDR"
-			(at 41.91 27.94 0)
+			(at 39.37 27.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6503,7 +6523,7 @@
 			)
 		)
 		(property "Sim.Library" "${KICAD9_SYMBOL_DIR}/Simulation_SPICE.sp"
-			(at 41.91 27.94 0)
+			(at 39.37 27.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6512,7 +6532,7 @@
 			)
 		)
 		(property "Sim.Name" "kicad_builtin_opamp_quad"
-			(at 41.91 27.94 0)
+			(at 39.37 27.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6521,7 +6541,7 @@
 			)
 		)
 		(property "Sim.Device" "SUBCKT"
-			(at 41.91 27.94 0)
+			(at 39.37 27.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6530,7 +6550,7 @@
 			)
 		)
 		(property "Sim.Pins" "1=out1 2=in1- 3=in1+ 4=vcc 5=in2+ 6=in2- 7=out2 8=out3 9=in3- 10=in3+ 11=vee 12=in4+ 13=in4- 14=out4"
-			(at 41.91 27.94 0)
+			(at 39.37 27.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
