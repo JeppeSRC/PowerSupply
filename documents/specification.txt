@@ -1,8 +1,8 @@
 Regulator spec:
     - Voltage Range:        0 - 20.48V
     - Current Range:        0 - 2.048A
-    - Voltage Precision:    20mV
-    - Current Precision:    TBD
+    - Voltage Precision:    10/20mV
+    - Current Precision:    1/2mA
 
 Notes:
     230V Mains
