@@ -2645,6 +2645,12 @@
 		(uuid "8fbd00f0-2834-4d2c-91b1-d93956ee2924")
 	)
 	(junction
+		(at 229.87 156.21)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "910baf34-67ca-4e28-811a-b17dff0feb64")
+	)
+	(junction
 		(at 229.87 72.39)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2978,7 +2984,17 @@
 	)
 	(wire
 		(pts
-			(xy 74.93 152.4) (xy 229.87 152.4)
+			(xy 229.87 156.21) (xy 234.95 156.21)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "359388c8-1f15-45e9-967d-bc30a2a96e3c")
+	)
+	(wire
+		(pts
+			(xy 74.93 156.21) (xy 229.87 156.21)
 		)
 		(stroke
 			(width 0)
@@ -3048,7 +3064,7 @@
 	)
 	(wire
 		(pts
-			(xy 74.93 143.51) (xy 74.93 152.4)
+			(xy 74.93 143.51) (xy 74.93 156.21)
 		)
 		(stroke
 			(width 0)
@@ -3468,7 +3484,7 @@
 	)
 	(wire
 		(pts
-			(xy 229.87 100.33) (xy 229.87 152.4)
+			(xy 229.87 100.33) (xy 229.87 156.21)
 		)
 		(stroke
 			(width 0)
@@ -4123,6 +4139,28 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "VOUT-"
+		(shape passive)
+		(at 234.95 156.21 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "382f306b-0729-4cde-8367-3fff082d3f00")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 242.6181 156.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 				(hide yes)
 			)
 		)
