@@ -1,0 +1,6 @@
+
+Vripple = Iload / (2 * f * C)
+
+C = Iload / (2 * f * Vripple)
+
+Vdc = 1.4142 * Vrms
