@@ -6082,12 +6082,6 @@
 		(uuid "aead157e-cda1-4592-b608-0c4a116a7149")
 	)
 	(junction
-		(at 158.75 134.62)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "b0c7e3b5-236b-4d39-b4d3-df6beecf2325")
-	)
-	(junction
 		(at 26.67 59.69)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -6625,16 +6619,6 @@
 	)
 	(wire
 		(pts
-			(xy 158.75 142.24) (xy 158.75 140.97)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "34882ece-2a1e-48bb-8f27-c52843355484")
-	)
-	(wire
-		(pts
 			(xy 31.75 162.56) (xy 31.75 161.29)
 		)
 		(stroke
@@ -6715,7 +6699,7 @@
 	)
 	(wire
 		(pts
-			(xy 158.75 134.62) (xy 163.83 134.62)
+			(xy 156.21 134.62) (xy 163.83 134.62)
 		)
 		(stroke
 			(width 0)
@@ -6832,16 +6816,6 @@
 			(type default)
 		)
 		(uuid "4557d3f0-61ff-48e9-b9d7-4630bfecdff0")
-	)
-	(wire
-		(pts
-			(xy 156.21 134.62) (xy 158.75 134.62)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "4663e132-eadc-4fc7-9d5f-45459899ee38")
 	)
 	(wire
 		(pts
@@ -7252,16 +7226,6 @@
 			(type dash)
 		)
 		(uuid "810d1828-323c-409a-960d-456fda8be10a")
-	)
-	(wire
-		(pts
-			(xy 158.75 134.62) (xy 158.75 135.89)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8133e724-686d-40c9-ba35-82aec040457a")
 	)
 	(wire
 		(pts
@@ -8092,16 +8056,6 @@
 			(type dash)
 		)
 		(uuid "f321809c-ab7a-4356-9b11-4c0d46c421ba")
-	)
-	(wire
-		(pts
-			(xy 146.05 142.24) (xy 158.75 142.24)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f414b793-de52-41f9-804d-149570583250")
 	)
 	(wire
 		(pts
@@ -10288,75 +10242,6 @@
 			(project ""
 				(path "/9538e4ed-27e6-4c37-b989-9859dc0d49e8/00000000-0000-0000-0000-00005f1751cc"
 					(reference "#PWR063")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:C_Small")
-		(at 158.75 138.43 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "00000000-0000-0000-0000-00005ede113a")
-		(property "Reference" "C42"
-			(at 161.0868 137.2616 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "?"
-			(at 161.0868 139.573 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
-			(at 158.75 138.43 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 158.75 138.43 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Unpolarized capacitor, small symbol"
-			(at 158.75 138.43 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "c0b3c327-1d1d-4798-9f03-3287dd95c050")
-		)
-		(pin "2"
-			(uuid "7585e4ed-726c-4095-acb8-251e5828b73b")
-		)
-		(instances
-			(project ""
-				(path "/9538e4ed-27e6-4c37-b989-9859dc0d49e8/00000000-0000-0000-0000-00005f1751cc"
-					(reference "C42")
 					(unit 1)
 				)
 			)

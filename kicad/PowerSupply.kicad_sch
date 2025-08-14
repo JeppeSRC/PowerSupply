@@ -2555,6 +2555,12 @@
 		(uuid "47b44ef8-7e9c-40a0-91a5-350c5aba9e06")
 	)
 	(junction
+		(at 212.09 83.82)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "4af3ccc5-a5d0-4c2b-95e7-81782f0fa55c")
+	)
+	(junction
 		(at 181.61 118.11)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2675,6 +2681,12 @@
 		(uuid "9d984d1b-8097-407f-92f3-3ef68867dcfa")
 	)
 	(junction
+		(at 214.63 83.82)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "a33e55b5-70ef-476b-9404-dcb9fa87a71d")
+	)
+	(junction
 		(at 186.69 53.34)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2693,22 +2705,16 @@
 		(uuid "b15536db-5dd2-484e-a299-9ea7aba0e904")
 	)
 	(junction
+		(at 229.87 92.71)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "b7f20703-5555-46c5-8d7c-b4f36dbb4ca9")
+	)
+	(junction
 		(at 175.26 146.05)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "b87de213-9c4a-4fe6-9ae6-12a4f1113d34")
-	)
-	(junction
-		(at 212.09 82.55)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "be42f169-2383-4ae4-8af0-4ccff8bc03e9")
-	)
-	(junction
-		(at 214.63 82.55)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "bee07c3b-f15c-401f-b8f9-6d274638dad9")
 	)
 	(junction
 		(at 175.26 138.43)
@@ -2765,12 +2771,6 @@
 		(uuid "f9abf07c-e063-4be7-aa86-faa529b46b76")
 	)
 	(junction
-		(at 229.87 91.44)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "faba5ee8-856b-4de4-a27a-c833aff34056")
-	)
-	(junction
 		(at 187.96 83.82)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2814,7 +2814,7 @@
 	)
 	(wire
 		(pts
-			(xy 229.87 72.39) (xy 229.87 80.01)
+			(xy 229.87 72.39) (xy 229.87 81.28)
 		)
 		(stroke
 			(width 0)
@@ -2854,7 +2854,7 @@
 	)
 	(wire
 		(pts
-			(xy 212.09 82.55) (xy 214.63 82.55)
+			(xy 212.09 83.82) (xy 214.63 83.82)
 		)
 		(stroke
 			(width 0)
@@ -2874,13 +2874,13 @@
 	)
 	(wire
 		(pts
-			(xy 212.09 81.28) (xy 212.09 82.55)
+			(xy 212.09 83.82) (xy 212.09 86.36)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "1492405c-45b3-4d15-b597-48a60d5539c6")
+		(uuid "158c4f91-07c9-42b7-8ad2-e24d313b0a97")
 	)
 	(wire
 		(pts
@@ -2944,7 +2944,7 @@
 	)
 	(wire
 		(pts
-			(xy 204.47 83.82) (xy 204.47 87.63)
+			(xy 204.47 83.82) (xy 204.47 86.36)
 		)
 		(stroke
 			(width 0)
@@ -3044,7 +3044,7 @@
 	)
 	(wire
 		(pts
-			(xy 227.33 91.44) (xy 229.87 91.44)
+			(xy 227.33 92.71) (xy 229.87 92.71)
 		)
 		(stroke
 			(width 0)
@@ -3184,16 +3184,6 @@
 	)
 	(wire
 		(pts
-			(xy 212.09 82.55) (xy 212.09 87.63)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "4d552196-fec5-4057-b781-f8a2d9793954")
-	)
-	(wire
-		(pts
 			(xy 167.64 48.26) (xy 168.91 48.26)
 		)
 		(stroke
@@ -3204,7 +3194,7 @@
 	)
 	(wire
 		(pts
-			(xy 219.71 91.44) (xy 214.63 91.44)
+			(xy 219.71 92.71) (xy 214.63 92.71)
 		)
 		(stroke
 			(width 0)
@@ -3294,7 +3284,7 @@
 	)
 	(wire
 		(pts
-			(xy 229.87 91.44) (xy 229.87 92.71)
+			(xy 229.87 86.36) (xy 229.87 92.71)
 		)
 		(stroke
 			(width 0)
@@ -3351,6 +3341,16 @@
 			(type default)
 		)
 		(uuid "7a1bd4a6-2842-455f-91d6-a74b6ebb5257")
+	)
+	(wire
+		(pts
+			(xy 212.09 81.28) (xy 212.09 83.82)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7a2a432d-893d-4139-8490-2fb221146c2c")
 	)
 	(wire
 		(pts
@@ -3834,7 +3834,7 @@
 	)
 	(wire
 		(pts
-			(xy 214.63 91.44) (xy 214.63 82.55)
+			(xy 214.63 92.71) (xy 214.63 83.82)
 		)
 		(stroke
 			(width 0)
@@ -4101,16 +4101,6 @@
 			(type default)
 		)
 		(uuid "fbc55b8d-6e20-4c82-81a1-e2d24987f1c0")
-	)
-	(wire
-		(pts
-			(xy 229.87 85.09) (xy 229.87 91.44)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ff1f9437-9ed9-4354-b5e4-4692eb49e5fb")
 	)
 	(wire
 		(pts
@@ -6560,7 +6550,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 223.52 91.44 270)
+		(at 223.52 92.71 270)
 		(mirror x)
 		(unit 1)
 		(exclude_from_sim no)
@@ -6569,7 +6559,7 @@
 		(dnp no)
 		(uuid "00000000-0000-0000-0000-00005f87fd6c")
 		(property "Reference" "R20"
-			(at 223.52 88.9 90)
+			(at 223.52 90.17 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6577,7 +6567,7 @@
 			)
 		)
 		(property "Value" "100K"
-			(at 223.52 91.44 90)
+			(at 223.52 92.71 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6585,7 +6575,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
-			(at 223.52 93.218 90)
+			(at 223.52 94.488 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6594,7 +6584,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 223.52 91.44 0)
+			(at 223.52 92.71 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6603,7 +6593,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 223.52 91.44 0)
+			(at 223.52 92.71 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7698,7 +7688,7 @@
 	)
 	(symbol
 		(lib_id "Device:Opamp_Quad")
-		(at 222.25 82.55 0)
+		(at 222.25 83.82 0)
 		(mirror y)
 		(unit 3)
 		(exclude_from_sim no)
@@ -7707,7 +7697,7 @@
 		(dnp no)
 		(uuid "00000000-0000-0000-0000-00005f8e6f07")
 		(property "Reference" "U1"
-			(at 217.805 79.375 0)
+			(at 217.805 80.645 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7716,7 +7706,7 @@
 			)
 		)
 		(property "Value" "OPA4196"
-			(at 215.9 76.835 0)
+			(at 215.9 78.105 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7725,7 +7715,7 @@
 			)
 		)
 		(property "Footprint" "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm"
-			(at 222.25 82.55 0)
+			(at 222.25 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7734,7 +7724,7 @@
 			)
 		)
 		(property "Datasheet" "kicad-embed://OPA4196IDR.pdf"
-			(at 222.25 82.55 0)
+			(at 222.25 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7743,7 +7733,7 @@
 			)
 		)
 		(property "Description" "Quad operational amplifier"
-			(at 222.25 82.55 0)
+			(at 222.25 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7752,7 +7742,7 @@
 			)
 		)
 		(property "MPN" "	OPA4196IDR"
-			(at 222.25 82.55 0)
+			(at 222.25 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7761,7 +7751,7 @@
 			)
 		)
 		(property "Sim.Library" "${KICAD9_SYMBOL_DIR}/Simulation_SPICE.sp"
-			(at 222.25 82.55 0)
+			(at 222.25 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7770,7 +7760,7 @@
 			)
 		)
 		(property "Sim.Name" "kicad_builtin_opamp_quad"
-			(at 222.25 82.55 0)
+			(at 222.25 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7779,7 +7769,7 @@
 			)
 		)
 		(property "Sim.Device" "SUBCKT"
-			(at 222.25 82.55 0)
+			(at 222.25 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7788,7 +7778,7 @@
 			)
 		)
 		(property "Sim.Pins" "1=out1 2=in1- 3=in1+ 4=vcc 5=in2+ 6=in2- 7=out2 8=out3 9=in3- 10=in3+ 11=vee 12=in4+ 13=in4- 14=out4"
-			(at 222.25 82.55 0)
+			(at 222.25 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8558,7 +8548,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GNDA"
+		(property "Value" "GND"
 			(at 160.7058 114.427 0)
 			(effects
 				(font
@@ -8683,7 +8673,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 208.28 87.63 270)
+		(at 208.28 86.36 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -8691,7 +8681,7 @@
 		(dnp no)
 		(uuid "00000000-0000-0000-0000-00006028d9fc")
 		(property "Reference" "R19"
-			(at 208.28 85.09 90)
+			(at 208.28 83.82 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8699,7 +8689,7 @@
 			)
 		)
 		(property "Value" "100K"
-			(at 208.28 87.63 90)
+			(at 208.28 86.36 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8707,7 +8697,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
-			(at 208.28 85.852 90)
+			(at 208.28 84.582 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8716,7 +8706,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 208.28 87.63 0)
+			(at 208.28 86.36 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8725,7 +8715,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 208.28 87.63 0)
+			(at 208.28 86.36 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8734,7 +8724,7 @@
 			)
 		)
 		(property "MPN" "CRGCQ0805F100K"
-			(at 208.28 87.63 0)
+			(at 208.28 86.36 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8911,7 +8901,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "VDDA"
+		(property "Value" "VDD"
 			(at 39.37 16.764 0)
 			(effects
 				(font
@@ -9206,7 +9196,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GNDA"
+		(property "Value" "GND"
 			(at 124.587 132.6642 0)
 			(effects
 				(font
