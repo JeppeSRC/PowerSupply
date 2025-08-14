@@ -5896,6 +5896,12 @@
 		(uuid "0838da7c-7474-4942-8aa0-894c88449cf6")
 	)
 	(junction
+		(at 166.37 111.76)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "0f57c347-9e99-45ea-8406-658dd767f1e2")
+	)
+	(junction
 		(at 26.67 68.58)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -6106,12 +6112,6 @@
 		(uuid "bb316421-14df-4664-b55e-cc38242e1739")
 	)
 	(junction
-		(at 171.45 111.76)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "bbb51a43-42a0-4a6f-8788-45756cca82f8")
-	)
-	(junction
 		(at 26.67 26.67)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -6152,6 +6152,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "d31aeb02-9384-4e74-afdb-8a376335eb52")
+	)
+	(junction
+		(at 168.91 111.76)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "d39ab333-e1c0-4879-8f50-5824c4c21622")
 	)
 	(junction
 		(at 16.51 43.18)
@@ -6699,6 +6705,16 @@
 	)
 	(wire
 		(pts
+			(xy 166.37 111.76) (xy 168.91 111.76)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3ae100cb-b351-46c7-8804-9658b9dd9d3f")
+	)
+	(wire
+		(pts
 			(xy 158.75 134.62) (xy 163.83 134.62)
 		)
 		(stroke
@@ -6826,16 +6842,6 @@
 			(type default)
 		)
 		(uuid "4663e132-eadc-4fc7-9d5f-45459899ee38")
-	)
-	(wire
-		(pts
-			(xy 171.45 111.76) (xy 173.99 111.76)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "486cc2d3-088d-4759-8c16-615838e0a84f")
 	)
 	(wire
 		(pts
@@ -7376,16 +7382,6 @@
 			(type default)
 		)
 		(uuid "8e8d9e35-a27c-4d58-a202-d814e0176a90")
-	)
-	(wire
-		(pts
-			(xy 173.99 111.76) (xy 173.99 114.3)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8fef0c35-fa33-43db-ace5-aa908330a680")
 	)
 	(wire
 		(pts
@@ -10324,7 +10320,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
 			(at 158.75 138.43 0)
 			(effects
 				(font
@@ -11033,71 +11029,6 @@
 			(project ""
 				(path "/9538e4ed-27e6-4c37-b989-9859dc0d49e8/00000000-0000-0000-0000-00005f1751cc"
 					(reference "C41")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GNDA")
-		(at 173.99 114.3 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "00000000-0000-0000-0000-00005f1afcae")
-		(property "Reference" "#PWR068"
-			(at 173.99 120.65 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GNDA"
-			(at 174.117 118.6942 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 173.99 114.3 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 173.99 114.3 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GNDA\" , analog ground"
-			(at 173.99 114.3 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "7919395c-6601-463e-9097-3893931ea12c")
-		)
-		(instances
-			(project ""
-				(path "/9538e4ed-27e6-4c37-b989-9859dc0d49e8/00000000-0000-0000-0000-00005f1751cc"
-					(reference "#PWR068")
 					(unit 1)
 				)
 			)
@@ -14402,7 +14333,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GNDA"
+		(property "Value" "GND"
 			(at 16.637 64.0842 0)
 			(effects
 				(font
@@ -14467,7 +14398,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GNDA"
+		(property "Value" "GND"
 			(at 16.637 47.5742 0)
 			(effects
 				(font
@@ -14532,7 +14463,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GNDA"
+		(property "Value" "GND"
 			(at 16.637 31.0642 0)
 			(effects
 				(font
@@ -15221,7 +15152,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical"
 			(at 29.21 90.17 0)
 			(effects
 				(font
@@ -17330,7 +17261,7 @@
 				)
 			)
 		)
-		(property "Value" "Jumper_2_Open"
+		(property "Value" "3V3 pullup on usb line"
 			(at 91.44 95.25 0)
 			(effects
 				(font
@@ -17338,7 +17269,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Jumper:SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm"
 			(at 91.44 99.06 0)
 			(effects
 				(font
@@ -17537,7 +17468,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "NetTie:NetTie-2_SMD_Pad0.5mm"
 			(at 60.96 68.58 0)
 			(effects
 				(font
@@ -17605,7 +17536,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "NetTie:NetTie-2_SMD_Pad0.5mm"
 			(at 52.07 21.59 0)
 			(effects
 				(font
@@ -17872,7 +17803,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "NetTie:NetTie-2_SMD_Pad0.5mm"
 			(at 48.26 54.61 0)
 			(effects
 				(font
@@ -18207,7 +18138,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
 			(at 33.02 134.62 0)
 			(effects
 				(font
@@ -18408,7 +18339,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "NetTie:NetTie-2_SMD_Pad0.5mm"
 			(at 52.07 38.1 0)
 			(effects
 				(font
