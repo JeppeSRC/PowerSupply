@@ -2705,6 +2705,12 @@
 		(uuid "a538aa90-6cdb-473c-b596-22c7f422c75b")
 	)
 	(junction
+		(at 152.4 68.58)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "a6abb71f-eb86-417a-9301-3161d4b3a019")
+	)
+	(junction
 		(at 62.23 143.51)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2993,6 +2999,16 @@
 			(type default)
 		)
 		(uuid "344c585b-4269-4ea0-815d-ef1e75f39366")
+	)
+	(wire
+		(pts
+			(xy 152.4 68.58) (xy 152.4 86.36)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "345e29b7-5b33-4baa-993e-6beb29b5bdc2")
 	)
 	(wire
 		(pts
@@ -3436,6 +3452,16 @@
 	)
 	(wire
 		(pts
+			(xy 146.05 72.39) (xy 146.05 68.58)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7fd8d946-50c7-4cb6-a24c-99a84ecc3c51")
+	)
+	(wire
+		(pts
 			(xy 181.61 118.11) (xy 181.61 119.38)
 		)
 		(stroke
@@ -3506,6 +3532,16 @@
 	)
 	(wire
 		(pts
+			(xy 146.05 68.58) (xy 152.4 68.58)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8eecf7dd-c0ab-45ec-ad13-4053d0421285")
+	)
+	(wire
+		(pts
 			(xy 57.15 143.51) (xy 62.23 143.51)
 		)
 		(stroke
@@ -3526,7 +3562,7 @@
 	)
 	(wire
 		(pts
-			(xy 152.4 57.15) (xy 152.4 86.36)
+			(xy 152.4 57.15) (xy 152.4 68.58)
 		)
 		(stroke
 			(width 0)
@@ -9398,6 +9434,140 @@
 			(project ""
 				(path "/9538e4ed-27e6-4c37-b989-9859dc0d49e8"
 					(reference "#PWR012")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GNDA")
+		(at 146.05 77.47 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "bc199dad-b466-450a-b1f9-c3eb3fd324dd")
+		(property "Reference" "#PWR06"
+			(at 146.05 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 146.177 81.8642 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 146.05 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 146.05 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GNDA\" , analog ground"
+			(at 146.05 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "c5e15928-d712-4e55-b8a7-e9bf8d7d646b")
+		)
+		(instances
+			(project "PowerSupply"
+				(path "/9538e4ed-27e6-4c37-b989-9859dc0d49e8"
+					(reference "#PWR06")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C_Small")
+		(at 146.05 74.93 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "c4632ca1-e4e9-4b0c-ac06-495b73bc8c9a")
+		(property "Reference" "C14"
+			(at 143.51 73.6662 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "OPEN"
+			(at 143.51 76.2062 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 146.05 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 146.05 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Unpolarized capacitor, small symbol"
+			(at 146.05 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "281bd843-41b9-4fda-a8f0-24a4ba4975fd")
+		)
+		(pin "1"
+			(uuid "41a54520-c9d9-4a52-9100-a81894a24706")
+		)
+		(instances
+			(project ""
+				(path "/9538e4ed-27e6-4c37-b989-9859dc0d49e8"
+					(reference "C14")
 					(unit 1)
 				)
 			)
