@@ -14143,7 +14143,7 @@
 	)
 	(symbol
 		(lib_id "power:+3V3")
-		(at 24.13 92.71 90)
+		(at 24.13 95.25 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -14151,7 +14151,7 @@
 		(dnp no)
 		(uuid "00000000-0000-0000-0000-00005f36bd81")
 		(property "Reference" "#PWR045"
-			(at 27.94 92.71 0)
+			(at 27.94 95.25 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14160,7 +14160,7 @@
 			)
 		)
 		(property "Value" "+3V3"
-			(at 20.8788 92.329 90)
+			(at 20.8788 94.869 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14169,7 +14169,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 24.13 92.71 0)
+			(at 24.13 95.25 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14178,7 +14178,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 24.13 92.71 0)
+			(at 24.13 95.25 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14187,7 +14187,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+3V3\""
-			(at 24.13 92.71 0)
+			(at 24.13 95.25 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15442,7 +15442,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 24.13 95.25 270)
+		(at 24.13 92.71 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -15450,7 +15450,7 @@
 		(dnp no)
 		(uuid "00000000-0000-0000-0000-00005f50dcd3")
 		(property "Reference" "#PWR046"
-			(at 17.78 95.25 0)
+			(at 17.78 92.71 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15459,7 +15459,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 19.7358 95.377 0)
+			(at 19.05 92.456 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15467,7 +15467,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 24.13 95.25 0)
+			(at 24.13 92.71 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15476,7 +15476,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 24.13 95.25 0)
+			(at 24.13 92.71 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15485,7 +15485,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 24.13 95.25 0)
+			(at 24.13 92.71 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16567,7 +16567,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
 			(at 103.632 113.03 90)
 			(effects
 				(font
@@ -16586,6 +16586,15 @@
 			)
 		)
 		(property "Description" "Resistor"
+			(at 105.41 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "RK73H2ATTD5101F"
 			(at 105.41 113.03 0)
 			(effects
 				(font
@@ -16821,7 +16830,7 @@
 		(at 60.96 68.58 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
@@ -16911,7 +16920,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
 			(at 96.012 113.03 90)
 			(effects
 				(font
@@ -16930,6 +16939,15 @@
 			)
 		)
 		(property "Description" "Resistor"
+			(at 97.79 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "RK73H2ATTD5101F"
 			(at 97.79 113.03 0)
 			(effects
 				(font
@@ -16958,7 +16976,7 @@
 		(at 52.07 21.59 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
@@ -17587,7 +17605,7 @@
 		(at 48.26 54.61 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
@@ -18303,7 +18321,7 @@
 		(at 52.07 38.1 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
