@@ -8896,7 +8896,7 @@
 				)
 				(uuid "82d8c752-a55a-4f35-9e17-25e287627077")
 			)
-			(table_cell "PA6, PA7"
+			(table_cell "PB6, PB7"
 				(exclude_from_sim no)
 				(at 241.3 69.85 0)
 				(size 17.78 2.54)
