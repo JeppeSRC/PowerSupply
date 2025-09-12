@@ -536,7 +536,7 @@
       "gencad": "",
       "idf": "",
       "netlist": "",
-      "plot": "",
+      "plot": "gerb/",
       "pos_files": "",
       "specctra_dsn": "",
       "step": "",
@@ -560,7 +560,7 @@
     },
     "bom_presets": [],
     "bom_settings": {
-      "exclude_dnp": true,
+      "exclude_dnp": false,
       "fields_ordered": [
         {
           "group_by": false,
@@ -653,7 +653,7 @@
           "show": false
         }
       ],
-      "filter_string": "",
+      "filter_string": "r",
       "group_symbols": true,
       "include_excluded_from_bom": false,
       "name": "",
