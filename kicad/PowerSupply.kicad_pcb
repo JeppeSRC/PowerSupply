@@ -10135,7 +10135,7 @@
 	(footprint "footprints:PEC12R-2xxxf-Sxxxx"
 		(layer "F.Cu")
 		(uuid "36468f3f-f5c8-43b5-8c52-70a06f4c7216")
-		(at 291.605 121.645)
+		(at 65.5 158)
 		(property "Reference" "SW4"
 			(at 0.15 -3.4 0)
 			(layer "F.SilkS")
@@ -37771,7 +37771,7 @@
 	(footprint "footprints:USB_C_Receptacle_GCT_USB4215-xx"
 		(layer "F.Cu")
 		(uuid "9bb782e7-8732-4435-a036-e0b3dbbfaee5")
-		(at 319.285 99.145)
+		(at 12.18 160)
 		(descr "USB 2.0 Type C Receptacle, GCT, 16P, top mounted, horizontal, 5A: https://gct.co/files/drawings/usb4105.pdf")
 		(tags "USB C Type-C Receptacle SMD USB 2.0 16P 16C USB4105-15-A USB4105-15-A-060 USB4105-15-A-120 USB4105-GF-A USB4105-GF-A-060 USB4105-GF-A-120")
 		(property "Reference" "J12"
@@ -38562,7 +38562,7 @@
 		(property "Reference" "HS2"
 			(at -0.05 -9.95 90)
 			(layer "F.SilkS")
-			(uuid "c1b8e9cf-c49b-4618-949d-4bb405ac95f1")
+			(uuid "73a182f0-281e-40e7-af07-3d1879bc78c2")
 			(effects
 				(font
 					(size 1 1)
@@ -38573,7 +38573,7 @@
 		(property "Value" "RA-T2X-25E"
 			(at 0 5.5 90)
 			(layer "F.Fab")
-			(uuid "d08b99b1-4225-4445-bce6-4585f4d8e3af")
+			(uuid "5891900c-8d08-47ed-a78a-df8e2aec3143")
 			(effects
 				(font
 					(size 1 1)
@@ -38585,7 +38585,7 @@
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "e1aa3f35-0262-461b-9dc4-9cb4d7b01296")
+			(uuid "494606a8-90a6-4d95-a8ae-60dbd7faa51f")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -38597,7 +38597,7 @@
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "1a78f041-8234-48b1-89a2-cf6b14fb960b")
+			(uuid "13e9188a-dcb5-4218-9f38-7a5b0effffb2")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -39575,13 +39575,13 @@
 	(footprint "Package_TO_SOT_THT:TO-220-3_Vertical"
 		(layer "F.Cu")
 		(uuid "a2fc4f31-f4d0-4bae-87ac-789b10ca8c30")
-		(at 67.05 58.46 -90)
+		(at 67.5 58.46 -90)
 		(descr "TO-220-3, Vertical, RM 2.54mm, see https://www.vishay.com/docs/66542/to-220-1.pdf, generated with kicad-footprint-generator TO_SOT_THT_generate.py")
 		(tags "TO-220-3 Vertical RM 2.54mm")
 		(property "Reference" "Q1"
 			(at 2.54 -4.1 90)
 			(layer "F.SilkS")
-			(uuid "0c0a6361-9f80-4930-8125-40ffcd4eaf22")
+			(uuid "2b0cba21-b32c-4e11-b788-e53ab8863578")
 			(effects
 				(font
 					(size 1 1)
@@ -39592,7 +39592,7 @@
 		(property "Value" "FQP17P10"
 			(at 2.54 2.2 90)
 			(layer "F.Fab")
-			(uuid "9fdf3488-d6b0-44e2-8e54-a6f64af00ec2")
+			(uuid "c2bf5bb5-779f-494e-a455-e185424fd360")
 			(effects
 				(font
 					(size 1 1)
@@ -39604,7 +39604,7 @@
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "0bcceccc-8b6f-482b-8d2f-e475d57f6896")
+			(uuid "c458239d-39d9-4b23-baae-cc2d1e36f397")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -39616,7 +39616,7 @@
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "913d1579-ece6-4811-b4fc-0c44d29bd16b")
+			(uuid "e65e958c-8dda-459d-a0f9-a3fd97f34b79")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -51614,7 +51614,7 @@
 		(property "Reference" "HS1"
 			(at -0.05 -9.95 90)
 			(layer "F.SilkS")
-			(uuid "4fa7975b-8b40-40ad-ad55-0b4b23cf57b5")
+			(uuid "c1f0428e-3118-4a3f-b1c9-a365512680ad")
 			(effects
 				(font
 					(size 1 1)
@@ -51625,7 +51625,7 @@
 		(property "Value" "RA-T2X-25E"
 			(at 0 5.5 90)
 			(layer "F.Fab")
-			(uuid "50cbcd55-3825-427f-bb03-6d8356726aea")
+			(uuid "652bbe16-f1e0-4c58-8ae1-3df17e636380")
 			(effects
 				(font
 					(size 1 1)
@@ -51637,7 +51637,7 @@
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "7f7a9a4c-24f2-4050-907f-14ef3d49a771")
+			(uuid "41cc8cd5-e86a-4456-b577-38baba2bce64")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -51649,7 +51649,7 @@
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "4299eeb9-0b06-462f-9d6e-d0d63d1b1b19")
+			(uuid "b2a8e362-329c-41d3-b657-a65eb6909725")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -52415,13 +52415,13 @@
 	(footprint "Package_TO_SOT_THT:TO-220-3_Vertical"
 		(layer "F.Cu")
 		(uuid "dec75b5b-6947-40a1-a20f-40a9d098bea7")
-		(at 101.05 58.46 -90)
+		(at 101.55 58.46 -90)
 		(descr "TO-220-3, Vertical, RM 2.54mm, see https://www.vishay.com/docs/66542/to-220-1.pdf, generated with kicad-footprint-generator TO_SOT_THT_generate.py")
 		(tags "TO-220-3 Vertical RM 2.54mm")
 		(property "Reference" "Q2"
 			(at 2.54 -4.1 90)
 			(layer "F.SilkS")
-			(uuid "4acfacb3-5aab-435e-94d2-0d6132d87e38")
+			(uuid "ec4a5871-e102-4ea8-bcc7-7ab521394c9c")
 			(effects
 				(font
 					(size 1 1)
@@ -52432,7 +52432,7 @@
 		(property "Value" "FQP17P10"
 			(at 2.54 2.2 90)
 			(layer "F.Fab")
-			(uuid "609d991f-0bbd-4c2a-bfad-b81523174a5b")
+			(uuid "a4ac7a40-d436-4926-97ce-1be1825f8eff")
 			(effects
 				(font
 					(size 1 1)
@@ -52444,7 +52444,7 @@
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "26a77368-7358-4ca9-8a82-d3f7e1c39173")
+			(uuid "79f25911-8390-4a6d-8eca-f960156833e9")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -52456,7 +52456,7 @@
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "e7cf7e5e-39bf-4a9f-9c9b-ea20f2f7bfaf")
+			(uuid "625fa122-ec66-49e2-871c-01db241d8a70")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -60742,7 +60742,7 @@
 	(footprint "footprints:PEC12R-2xxxf-Sxxxx"
 		(layer "F.Cu")
 		(uuid "f9cf04f9-c22b-40e3-9282-cd8d985cd63d")
-		(at 316.105 120.645)
+		(at 34.5 158)
 		(property "Reference" "SW3"
 			(at 0.15 -3.4 0)
 			(layer "F.SilkS")
